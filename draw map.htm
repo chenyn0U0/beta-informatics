@@ -39,47 +39,80 @@
     //_(:з」∠)_
     var cdn = new Array();
     var pointGroup = new Array();
-    var distances = 0;
+
+    //_(:з」∠)_
+    var container = document.getElementById('distance');
     //_(:з」∠)_
 
 
     map.getContainer().querySelector('#statue').onclick = function () {
         if (this.className != 'active') {
-            if(cdn.length!=0)
-            {
-            event.returnValue = confirm("You have already done your route. Are you sure you want to clear all the data and do it again?");
-            /*!!!!待添加清除数组以及距离信息
-            drawingornot = false;
-            undo.className = '';
-            finish.className = '';
-            cancel.className = '';
-            this.className = 'active';*/
-            }
-            else{
+            if(cdn.length==0){
             drawingornot = false;
             undo.className = '';
             finish.className = '';
             cancel.className = '';
             this.className = 'active';
             }
+            else
+            { var startconfirm=confirm("You have already done your route. Are you sure you want to clear all the data and do it again?");
+            if(startconfirm==true)
+            {
+            cdn.splice( 0, cdn.length );
+            pointGroup.splice(0,pointGroup.length);
+            pointshow=null;
+            drawingornot = false;
+            undo.className = '';
+            finish.className = '';
+            cancel.className = '';
+            this.className = 'active';
+            container.innerHTML = 'Click to draw your route';
+            }else{};
+            }
+
         }
         var myDate = new Date();
         timecompare = myDate.getTime();
     };
     map.getContainer().querySelector('#undo').onclick = function () {
+    
         var myDate = new Date();
         timecompare = myDate.getTime();
+        if(cdn.length==1){pointshow=null;}else{}
+    cdn.splice(cdn.length-1,1);
+    pointGroup.splice(pointGroup.length-1,1);
+
+      
+
     };
     map.getContainer().querySelector('#finish').onclick = function () {
-        var myDate = new Date();
-        timecompare = myDate.getTime();
+
+        if(cdn.length==0|| confirm("You cannot edit your present route again after submitting. Are you sure you want to finish drawing?")==true)
+        {
         statue.className = '';
         undo.className = 'cannotsee';
         finish.className = 'cannotsee';
         cancel.className = 'cannotsee';
         pointshow=cdn[cdn.length-1];
+        }
+
+        var myDate = new Date();
+        timecompare = myDate.getTime();
     };
     map.getContainer().querySelector('#cancel').onclick = function () {
+            if(cdn.length==0|| confirm("Are you sure you want to clear all the data you have drawn?")==true)
+        {
+        statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+            cdn.splice( 0, cdn.length );
+            pointGroup.splice(0,pointGroup.length);
+            pointshow=null;
+            container.innerHTML = 'Click to draw your route';
+        }
+
+
         var myDate = new Date();
         timecompare = myDate.getTime();
     };
@@ -91,13 +124,12 @@
 
     map.on('click', function (ev) {
         var myDate = new Date();
-        if (Number(myDate.getTime()) - Number(timecompare) < 10) { }
-        else {
+        if (Number(myDate.getTime()) - Number(timecompare) > 100) {
             if (statue.className == 'active') {
                 pointGroup[pointGroup.length] = ev.latlng;
                 cdn[cdn.length] = [pointGroup[pointGroup.length - 1].lng, pointGroup[pointGroup.length - 1].lat];
                 pointshow=cdn[0];
-            } else;}
+            } else{};}
 
                     var geojson = [
                           {
@@ -138,13 +170,17 @@
     
         featureLayer.setGeoJSON(geojson);
 
+            var distances=0;
        if (pointGroup.length > 1) {
-            var container = document.getElementById('distance');
-            distances = distances + Number((pointGroup[pointGroup.length - 2].distanceTo(pointGroup[pointGroup.length - 1])).toFixed(0));
-            container.innerHTML = 'Total distance:' + distances + 'm';
-        } else container.innerHTML = 'Click to draw your route';
+       for(var i = 0;i<pointGroup.length-1;i++)
+       {distances = distances + Number((pointGroup[i].distanceTo(pointGroup[i+1])).toFixed(0));}
+       container.innerHTML = 'Total distance:' + distances + 'm';
+        } else {container.innerHTML = 'Click to draw your route';}
         
-});
+}
+
+
+);
 </script>
     </form>
 </body>
