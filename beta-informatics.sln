@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "beta-informatics", ".", "{F4270885-5DAD-4C58-84C9-695A02D72BA5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/beta-informatics"
+		Debug.AspNetCompiler.PhysicalPath = "E:\beta-informatics\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\beta-informatics\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/beta-informatics"
+		Release.AspNetCompiler.PhysicalPath = "E:\beta-informatics\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\beta-informatics\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2898"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4270885-5DAD-4C58-84C9-695A02D72BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4270885-5DAD-4C58-84C9-695A02D72BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
