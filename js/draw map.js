@@ -1,37 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="draw map.aspx.cs" Inherits="Default3" %>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Draw the route</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
-
- <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
-</head>
-<body>
-    <form id="form1" runat="server">
-
-<div id='map'>
-<ul class='menu-ui'>
-  <li><a href='#' id='statue'>Start Drawing</a></li>
-  <ul>
-  <li><a href='#' id='undo' class = 'cannotsee'>Undo last step</a></li>
-  <li><a href='#' id='finish' class = 'cannotsee'>Finish Drawing</a></li>
-  <li><a href='#' id='cancel' class = 'cannotsee'>Cancel</a></li>
-  </ul>
-</ul>
-    </div>
-<pre id='distance' class='ui-distance'>Click to draw your route</pre>
-
-<script>
+﻿
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2hlbnluIiwiYSI6IkRBU0ZmMzAifQ.1oP7qZOoEwDsY86U5UrB-g';
-    var map = L.mapbox.map('map', 'examples.map-i86nkdio',{attributionControl: true })
+    var map = L.mapbox.map('map', 'examples.map-i86nkdio',{doubleClickZoom: false, attributionControl: true })
     .setView([55.964042, -3.21850], 15)
      .addControl(L.mapbox.geocoderControl('mapbox.places-v1')); ;
 
@@ -42,47 +11,98 @@
     //_(:з」∠)_
     var cdn = new Array();
     var pointGroup = new Array();
-    var distances = 0;
+
+    //_(:з」∠)_
+    var container = document.getElementById('distance');
     //_(:з」∠)_
 
 
     map.getContainer().querySelector('#statue').onclick = function () {
         if (this.className != 'active') {
-            if(cdn.length!=0)
-            {
-            event.returnValue = confirm("You have already done your route. Are you sure you want to clear all the data and do it again?");
-            /*!!!!待添加清除数组以及距离信息
-            drawingornot = false;
-            undo.className = '';
-            finish.className = '';
-            cancel.className = '';
-            this.className = 'active';*/
-            }
-            else{
+            if(cdn.length==0){
             drawingornot = false;
             undo.className = '';
             finish.className = '';
             cancel.className = '';
             this.className = 'active';
+            container.innerHTML = 'Click on the map to draw your point of departure first.';
             }
+            else
+            { var startconfirm=confirm("You have already done your route. Are you sure you want to clear all the data and do it again?");
+            if(startconfirm==true)
+            {
+            cdn.splice( 0, cdn.length );
+            pointGroup.splice(0,pointGroup.length);
+            pointshow=null;
+            drawingornot = false;
+            undo.className = '';
+            finish.className = '';
+            cancel.className = '';
+            this.className = 'active';
+            container.innerHTML = 'Click on the map to draw your point of departure first.';
+            }else{};
+            }
+
         }
         var myDate = new Date();
         timecompare = myDate.getTime();
     };
     map.getContainer().querySelector('#undo').onclick = function () {
+    
         var myDate = new Date();
         timecompare = myDate.getTime();
+        if(cdn.length==1){pointshow=null;container.innerHTML = 'Click on the map to draw your point of departure first.';}else{}
+    cdn.splice(cdn.length-1,1);
+    pointGroup.splice(pointGroup.length-1,1);
+
+      
+
     };
     map.getContainer().querySelector('#finish').onclick = function () {
-        var myDate = new Date();
-        timecompare = myDate.getTime();
+        if(cdn.length==0)
+        {
+        statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+        container.innerHTML = 'Click "Start drawing" to draw your route.';
+        }
+        else{
+        if(confirm("You cannot edit your present route again after submitting. Are you sure you want to finish drawing?")==true)
+        {
         statue.className = '';
         undo.className = 'cannotsee';
         finish.className = 'cannotsee';
         cancel.className = 'cannotsee';
         pointshow=cdn[cdn.length-1];
+        }}
+
+        var myDate = new Date();
+        timecompare = myDate.getTime();
     };
     map.getContainer().querySelector('#cancel').onclick = function () {
+        if(cdn.length==0)
+        {
+        statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+        container.innerHTML = 'Click "Start drawing" to draw your route.';
+        }
+        else{
+        if(confirm("Are you sure you want to clear all the data you have drawn?")==true)
+        {
+        statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+            cdn.splice( 0, cdn.length );
+            pointGroup.splice(0,pointGroup.length);
+            pointshow=null;
+            container.innerHTML = 'Click "Start drawing" to draw your route.';
+        }}
+
+
         var myDate = new Date();
         timecompare = myDate.getTime();
     };
@@ -94,13 +114,12 @@
 
     map.on('click', function (ev) {
         var myDate = new Date();
-        if (Number(myDate.getTime()) - Number(timecompare) < 10) { }
-        else {
+        if (Number(myDate.getTime()) - Number(timecompare) > 100) {
             if (statue.className == 'active') {
                 pointGroup[pointGroup.length] = ev.latlng;
                 cdn[cdn.length] = [pointGroup[pointGroup.length - 1].lng, pointGroup[pointGroup.length - 1].lat];
                 pointshow=cdn[0];
-            } else;}
+            } else{};}
 
                     var geojson = [
                           {
@@ -110,7 +129,8 @@
               "coordinates": pointshow
           },
           "properties": {
-              "marker-color": "#000000"
+              "marker-color": "#E575F6",
+              "marker-symbol": "star"
           }
       },
       {
@@ -120,7 +140,8 @@
               "coordinates": cdn[0]
           },
           "properties": {
-              "marker-color": "#333333"
+              "marker-color": "#07B1D0",
+              "marker-symbol": "bicycle"
           }
       },
 
@@ -132,7 +153,7 @@
            "coordinates": cdn,
        },
        "properties": {
-           "stroke": "#000",
+           "stroke": "#444444",
            "stroke-opacity": 0.5,
            "stroke-width": 4
        }
@@ -141,14 +162,14 @@
     
         featureLayer.setGeoJSON(geojson);
 
+            var distances=0;
        if (pointGroup.length > 1) {
-            var container = document.getElementById('distance');
-            distances = distances + Number((pointGroup[pointGroup.length - 2].distanceTo(pointGroup[pointGroup.length - 1])).toFixed(0));
-            container.innerHTML = 'Total distance:' + distances + 'm';
-        } else container.innerHTML = 'Click to draw your route';
+       for(var i = 0;i<pointGroup.length-1;i++)
+       {distances = distances + Number((pointGroup[i].distanceTo(pointGroup[i+1])).toFixed(0));}
+       container.innerHTML = 'Total distance:' + distances + 'm';
+        } else {container.innerHTML = 'Click to draw your route';}
         
-});
-</script>
-    </form>
-</body>
-</html>
+}
+
+
+);
