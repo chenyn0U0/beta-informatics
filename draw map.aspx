@@ -18,14 +18,12 @@
     <form id="form1" runat="server">
 
 <div id='map'>
-<ul class='menu-ui'>
-  <li><a href='#' id='statue'>Start Drawing</a></li>
-  <ul>
-  <li><a href='#' id='undo' class = 'cannotsee'>Undo last step</a></li>
-  <li><a href='#' id='finish' class = 'cannotsee'>Finish Drawing</a></li>
-  <li><a href='#' id='cancel' class = 'cannotsee'>Cancel</a></li>
-  </ul>
-</ul>
+<nav class='menu-ui'>
+  <a href='#' id='statue'>Start Drawing</a>
+  <a href='#' id='undo' class = 'cannotsee'>Undo last step</a>
+  <a href='#' id='finish' class = 'cannotsee'>Finish Drawing</a>
+  <a href='#' id='cancel' class = 'cannotsee'>Cancel</a>
+</nav>
     </div>
 <pre id='distance' class='ui-distance'>Click to draw your route</pre>
 

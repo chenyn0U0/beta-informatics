@@ -1,3 +1,138 @@
+* {
+  margin: 0px;
+}
+
+html {
+  background: url(http://imd.edumedia.ca/mars0277/code/grey.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sidebar 
+{
+  width: 250px;
+  height: 100%;
+  position:fixed;
+  background: url("http://themes.mediacreed.com/html/synergy/assets/patterns/menu/menu_pattern_1.png");
+  border-right: 10px solid #d00355;
+        z-index:9999;
+}
+.sidebar ul {
+  margin-top: 30px;
+}
+.sidebar li {
+  list-style: none;
+  padding: 10px;
+  position: relative;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #555;
+  font: 14px Open Sans;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000;
+}
+.sidebar .hover {
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  background: #d00355;
+  z-index: 0;
+  opacity: 0;
+
+}
+.sidebar a:hover {
+  color: #FFF;
+        z-index:9999;
+}
+.sidebar .fa-angle-right {
+  position: absolute;
+  left: 150px;
+  top: 1px;
+        z-index:9999;
+}
+.sidebar .sub-menu 
+{
+        z-index:9999;
+  position: absolute;
+  left: 210px;
+  top: -30px;
+  padding: 0px;
+  width: 220px;
+  display: none;
+  background: url("http://themes.mediacreed.com/html/synergy/assets/patterns/menu/menu_pattern_1.png");
+}
+.sidebar .sub-menu li a {
+  padding-left: 20px;
+  font-size: 13px;
+      z-index:9999;
+}
+.sidebar .sub-menu i 
+{
+        z-index:9999;
+  left: 180px;
+}
+.sidebar ul li:hover ul {
+  display: block;
+        z-index:9999;
+}
+.sidebar .push {
+  margin-right: 10px;
+        z-index:9999;
+}
+
+h1 {
+  color: #FFF;
+  font: 16px Open Sans;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+.color {
+  color: #d00355;
+}
+
+.content 
+{
+    width:100%;
+    height:100%;
+position:relative;
+left:260px;
+ font:normal 14px/24px 'MicroSoft YaHei';
+
+  background: #333333;
+
+
+
+  }
+
+.container
+{
+    height:100%;
+    width:100%;
+    background:#333333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -11,31 +146,33 @@ pre.ui-distance {
   font-size:11px;
   line-height:18px;
   border-radius:3px;
-  z-index:10;
   }
   .menu-ui {
-
+  background:#fff;
   position:absolute;
   top:150px;left:10px;
-  z-index:10;
+  z-index:1;
+  border-radius:3px;
   width:120px;
+  border:1px solid rgba(0,0,0,0.4);
   }
-  .menu-ui a 
-  {
-   border:1px solid rgba(0,0,0,0.4);
-   background:#fff;
+  .menu-ui a {
     font-size:13px;
     color:#404040;
     display:block;
     margin:0;padding:0;
     padding:5px 10px;
     text-decoration:none;
-    text-align:center;
-    border-top:1px solid rgba(0,0,0,0.25);
     border-bottom:1px solid rgba(0,0,0,0.25);
+    text-align:center;
     }
-
-
+    .menu-ui a:first-child {
+      border-radius:3px 3px 0 0;
+      }
+    .menu-ui a:last-child {
+      border:none;
+      border-radius:0 0 3px 3px;
+      }
     .menu-ui a:hover {
       background:#f8f8f8;
       color:#404040;
@@ -48,9 +185,7 @@ pre.ui-distance {
         background:#3074a4;}
      .menu-ui a.cannotsee 
      {
-         z-index:0;
-    visibility:hidden;
+         border:none;
+         background:#OFF;
+      visibility:hidden;
       }
-      
-body { margin:0; padding:0; }
-  #map {  height:600px;width:1000px;   z-index:5;}
