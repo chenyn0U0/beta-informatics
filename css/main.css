@@ -1,3 +1,27 @@
+/*
+COLORS
+
+green: 10d25e;
+
+green2: #0ca84b;
+
+green 3: #097e38;
+
+green 4: #043f1c;
+
+green 5: #07642d;
+
+green 6: #033216;
+
+black: #363636;
+
+grey: #747474;
+
+light grey: #898989;
+
+*/
+
+
 /* -------------------------------- 
 
 Primary style
@@ -22,12 +46,12 @@ html, body {
 body {
   font-size: 100%;
   font-family: "Titillium Web", sans-serif;
-  color: #4e6361;
-  background-color: #f5f4e9;
+  color: #898989;
+  background-color: #ffffff;
 }
 
 a {
-  color: #6cac70;
+  color: #10d25e;
   text-decoration: none;
 }
 
@@ -57,7 +81,7 @@ Main components
   /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
   min-height: 100%;
   position: relative;
-  background-color: #f5f4e9;
+  background-color: #ffffff;
   z-index: 2;
   padding-top: 50px;
   /* Force Hardware Acceleration in WebKit */
@@ -90,7 +114,7 @@ header {
   left: 0;
   height: 50px;
   width: 100%;
-  background: #4e6361;
+  background: #097e38;
   z-index: 3;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
@@ -126,6 +150,7 @@ header.is-fixed {
 }
 #cd-logo img {
   display: block;
+   width: 200px;
 }
 @media only screen and (min-width: 768px) {
   #cd-logo {
@@ -173,7 +198,7 @@ header.is-fixed {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: #64807d;
+  background-color: #043f1c;
 }
 #cd-menu-trigger .cd-menu-text {
   height: 100%;
@@ -267,7 +292,7 @@ header.is-fixed {
   /* the secondary navigation is covered by the main element */
   z-index: 1;
   width: 260px;
-  background-color: #242e30;
+  background-color: #021e0d;
   overflow-y: auto;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
@@ -296,10 +321,10 @@ header.is-fixed {
   display: block;
   line-height: 2em;
   padding: 0 16px 0 32px;
-  color: #aab5b7;
+  color: #898989;
 }
 #cd-lateral-nav a.current {
-  background-color: #3a4a4d;
+  background-color: #097e38;
   color: #FFF;
 }
 .no-touch #cd-lateral-nav a:hover {
@@ -391,7 +416,7 @@ header.is-fixed {
   background-position: -96px 0;
 }
 .no-touch #cd-lateral-nav .socials a:hover {
-  background-color: #4e6361;
+  background-color: #363636;
 }
 .no-touch #cd-lateral-nav .socials a:hover.cd-twitter {
   background-position: 0 -32px;
@@ -405,3 +430,20 @@ header.is-fixed {
 .no-touch #cd-lateral-nav .socials a:hover.cd-google {
   background-position: -96px -32px;
 }
+
+/***
+FOOTER
+***/
+#footer {
+  background-color: #021e0d;
+  text-align:center;
+  padding:50px 0; 
+  //font:normal 14px/24px 'MicroSoft YaHei';
+}
+
+#footer ul li {
+  display: inline-block;
+  margin-right: 5px;
+  padding-top: 5px;
+}
+
