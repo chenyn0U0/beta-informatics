@@ -129,6 +129,7 @@
               "coordinates": pointshow
           },
           "properties": {
+          "title": "Your Destination",
               "marker-color": "#E575F6",
               "marker-symbol": "star"
           }
@@ -140,6 +141,7 @@
               "coordinates": cdn[0]
           },
           "properties": {
+              "title": "Your Start Point",
               "marker-color": "#07B1D0",
               "marker-symbol": "bicycle"
           }
