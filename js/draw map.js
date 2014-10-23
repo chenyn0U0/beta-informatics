@@ -1,6 +1,6 @@
 ﻿﻿
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2hlbnluIiwiYSI6IkRBU0ZmMzAifQ.1oP7qZOoEwDsY86U5UrB-g';
-    var map = L.mapbox.map('map', 'examples.map-i86nkdio',{doubleClickZoom: false, attributionControl: true })
+    var map = L.mapbox.map('map', 'chenyn.jp82gon5',{doubleClickZoom: false, attributionControl: true })
     .setView([55.964042, -3.21850], 15)
      .addControl(L.mapbox.geocoderControl('mapbox.places-v1')); ;
 
@@ -20,25 +20,15 @@
     map.getContainer().querySelector('#statue').onclick = function () {
         if (this.className != 'active') {
             if(cdn.length==0){
-            drawingornot = false;
-            undo.className = '';
-            finish.className = '';
-            cancel.className = '';
-            this.className = 'active';
+showdrawing();
             container.innerHTML = 'Click on the map to draw your point of departure first.';
             }
             else
-            { var startconfirm=confirm("You have already done your route. Are you sure you want to clear all the data and do it again?");
+            { var startconfirm=confirm("You have already done your route. Are you sure you want to clear all the route and do it again?");
             if(startconfirm==true)
             {
-            cdn.splice( 0, cdn.length );
-            pointGroup.splice(0,pointGroup.length);
-            pointshow=null;
-            drawingornot = false;
-            undo.className = '';
-            finish.className = '';
-            cancel.className = '';
-            this.className = 'active';
+clearallpoints();
+showdrawing();
             container.innerHTML = 'Click on the map to draw your point of departure first.';
             }else{};
             }
@@ -61,19 +51,13 @@
     map.getContainer().querySelector('#finish').onclick = function () {
         if(cdn.length==0)
         {
-        statue.className = '';
-        undo.className = 'cannotsee';
-        finish.className = 'cannotsee';
-        cancel.className = 'cannotsee';
+         showonlystart();
         container.innerHTML = 'Click "Start drawing" to draw your route.';
         }
         else{
         if(confirm("You cannot edit your present route again after submitting. Are you sure you want to finish drawing?")==true)
         {
-        statue.className = '';
-        undo.className = 'cannotsee';
-        finish.className = 'cannotsee';
-        cancel.className = 'cannotsee';
+         showonlystart();
         pointshow=cdn[cdn.length-1];
         }}
 
@@ -83,22 +67,14 @@
     map.getContainer().querySelector('#cancel').onclick = function () {
         if(cdn.length==0)
         {
-        statue.className = '';
-        undo.className = 'cannotsee';
-        finish.className = 'cannotsee';
-        cancel.className = 'cannotsee';
+ showonlystart();
         container.innerHTML = 'Click "Start drawing" to draw your route.';
         }
         else{
-        if(confirm("Are you sure you want to clear all the data you have drawn?")==true)
+        if(confirm("Are you sure you want to clear all the route you have drawn?")==true)
         {
-        statue.className = '';
-        undo.className = 'cannotsee';
-        finish.className = 'cannotsee';
-        cancel.className = 'cannotsee';
-            cdn.splice( 0, cdn.length );
-            pointGroup.splice(0,pointGroup.length);
-            pointshow=null;
+       showonlystart();
+       clearallpoints();
             container.innerHTML = 'Click "Start drawing" to draw your route.';
         }}
 
@@ -164,6 +140,60 @@
     
         featureLayer.setGeoJSON(geojson);
 
+  //---------------------------------------------
+
+  for(i=0;i<2;i++){
+                      var geojson2 = [
+                          {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": pointshow
+          },
+          "properties": {
+          "title": "Your Destination",
+              "marker-color": "#E575F6",
+              "marker-symbol": "star"
+          }
+      },
+      {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": cdn[0]
+          },
+          "properties": {
+              "title": "Your Start Point",
+              "marker-color": "#07B1D0",
+              "marker-symbol": "bicycle"
+          }
+      },
+
+
+       {
+       "type": "Feature",
+       "geometry": {
+           "type": "LineString",
+           "coordinates": cdn,
+       },
+       "properties": {
+           "stroke": "#444444",
+           "stroke-opacity": 0.1,
+           "stroke-width": 4
+       }
+       }  
+    ];
+
+    geojson2[2].properties['stroke'] = '#ff8888';
+    L.mapbox.featureLayer(geojson2).addTo(map);
+
+}
+
+
+
+  //------------------------------------
+
+
             var distances=0;
        if (pointGroup.length > 1) {
        for(var i = 0;i<pointGroup.length-1;i++)
@@ -176,3 +206,34 @@
 
 );
 
+function showonlystart()
+{
+        statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+        //infobar.className ='infobar';
+            jQuery("#infobar").animate({
+            width: '250px'},"slow");
+}
+
+function showdrawing()
+{
+            drawingornot = false;
+            undo.className = '';
+            finish.className = '';
+            cancel.className = '';
+            //infobar.className ='cannotsee';
+            jQuery("#infobar").animate({
+            width: '0px'},"slow");
+            
+            statue.className = 'active';
+}
+
+
+function clearallpoints()
+{
+            cdn.splice( 0, cdn.length );
+            pointGroup.splice(0,pointGroup.length);
+            pointshow=null;
+}

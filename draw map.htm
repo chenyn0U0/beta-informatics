@@ -4,17 +4,28 @@
 <title>Draw the route</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
-
+<script src="js/jquery-1.11.1.min.js"></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
-
  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+ 
 
 </head>
 <body>
-    <form id="form1" runat="server">
-    <br /><br /><br /><br /><br />
-    <center>
-<div id='map'>
+<!---------function of lightbox------start----->
+<button onclick="showthetool()">click to see the map tool</button>
+<script>
+    function showthetool() {
+        jQuery("div.maptool").hide().css("visibility", "visible").show("slow");
+        jQuery("div.blackbackground").css("visibility", "visible").animate({ opacity: '0.8' }, "slow");
+    }
+
+</script>
+<div class='blackbackground'></div>
+<!---------function of lightbox-----end---------->
+
+
+
+<div id='map' class='maptool'>
 <nav class='menu-ui'>
   <a href='#' id='statue'>Start Drawing</a>
   <a href='#' id='undo' class = 'cannotsee'>Undo last step</a>
@@ -22,8 +33,9 @@
   <a href='#' id='cancel' class = 'cannotsee'>Cancel</a>
 </nav>   
  <pre id='distance' class='ui-distance'>Click "Start drawing" to draw your route.</pre>
- <div class='infobar'>
+ <div id='infobar' class='infobar'>
  <br/><br/><br/><br/>
+     <form id="form1" runat="server">
  <table>
  <tr><td>
   age:<select id="Select1">
@@ -47,26 +59,32 @@
       </select>
  </td></tr>
   <tr><td>
-  journey:
+  journey:<select id="Select4">
+          <option>Work</option>
+          <option>School</option>
+          <option>Leisure</option>
+          <option>Others</option>
+      </select>
  </td></tr>
   <tr><td>
-  Approximate journey start time:
+  Approximate journey start time: <input type="time" id="startTime"/>
  </td></tr>
   <tr><td>
-  Approximate journey end time:
+  Approximate journey end time:<input type="time" id="endTime" />
  </td></tr>
   <tr><td>
-  Weekday:
+  Weekday:<input id="Checkbox1" type="checkbox" />
  </td></tr>
    <tr><td>
        <hr /><br />
        <input id="Submit1" type="submit" value="submit" />
  </td></tr>
  </table>
+     </form>
  </div>
     </div>
-    </center>
+    
         <script src="js/draw map.js"></script>
-    </form>
+
 </body>
 </html>
