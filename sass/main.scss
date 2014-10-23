@@ -1,0 +1,163 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$turquese: #00B6D3;
+
+$white: #ffffff;
+
+$pink: #F750E3;
+
+$dark: #222222;
+
+
+//responsive
+$mobile-width: 600px;
+
+$main-sidePadding: 10px;
+
+
+/************************
+     BASICS 
+ ***********************/
+
+
+body {
+	font-family: sans-serif;
+	color: $white;
+	font-weight: 200;
+	background-color: $dark;
+}
+
+h1 {
+	font-size: 50px;
+	font-weight: bold;
+}
+
+h1 > span {
+	font-style: italic;
+	font-weight: 100;
+}
+
+a {
+	text-decoration: none;
+	color: $white;
+
+	&:hover {
+		color: $dark;
+	}
+}
+
+.width-sizer {
+	max-width: 1200px;
+	margin: auto;
+	display: block;
+}
+
+section {
+	width: 100%;
+}
+
+.sec-modPadding {
+	padding: $main-sidePadding 50px;
+}
+
+ /************************
+      HEADER 
+  ***********************/
+header {
+	position: fixed;
+	top: 0;
+	//height: 45px;
+	background-color: $turquese;
+	width: 100%;
+
+	.module-padding {
+		padding: $main-sidePadding 20px;
+		overflow: hidden;
+		text-align: right;
+	}
+
+	.filler {
+		height: 45px;
+		width: 1px;
+		display: inline-block;
+	}
+}
+
+#header-logo {
+	float: left;
+
+	img {
+		height: 45px;
+	}
+}
+
+#header-nav {
+	overflow: hidden;
+	display: inline-block;
+
+	li {
+		display: inline-block;
+		text-decoration: none;
+		margin-left: 5px;
+
+		a {
+			text-transform: uppercase;
+		}
+	}
+}
+
+#burger-button {
+	display: none;
+}
+
+
+@media only screen and (max-width: $mobile-width) {
+	#burger-button {
+		display: inline-block;
+		img {
+			height: 45px;
+		}
+	}
+
+	#header-nav {
+		display: none;
+	}
+
+	#header-nav.show {
+		display: block;
+		text-align: center;
+		width: 100%;
+
+		li {
+			display: block;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+	}
+	
+}
+
+
+  /************************
+       FOOTER 
+   ***********************/
+
+
+
+
+
+/************************
+   		MAIN CONTENT 
+***********************/
+
+#intro-sec {
+	margin-top: 80px;
+}
+
+
+
