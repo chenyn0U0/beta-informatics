@@ -7,7 +7,14 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
- 
+
+<script type="text/javascript">    function save(){
+        var query = $('#formId').serialize();
+        var url = "php-app/save-data.php";
+        $.post(url, query, function (response) {
+         alert (response);
+        });
+    }</script> 
 
 </head>
 <body>
@@ -35,10 +42,10 @@
  <pre id='distance' class='ui-distance'>Click "Start drawing" to draw your route.</pre>
  <div id='infobar' class='infobar'>
  <br/><br/><br/><br/>
-     <form id="form1" runat="server">
+ <form method="post" action="get-form.php">
  <table>
  <tr><td>
-  age:<select id="Select1">
+  age:<select id="Select1" name="age">
          <option>0-13</option>
          <option>13-18</option>
          <option>18-25</option>
@@ -46,20 +53,20 @@
      </select>
  </td></tr>
   <tr><td>
-  gender:<select id="Select2">
+  gender:<select id="Select2" name="gender">
           <option>Male</option>
           <option>Female</option>
       </select>
  </td></tr>
   <tr><td>
-  travel type:<select id="Select3">
+  travel type:<select id="Select3" name="travelType">
           <option>Bike</option>
           <option>Car</option>
           <option>Walk</option>
       </select>
  </td></tr>
   <tr><td>
-  journey:<select id="Select4">
+  journey:<select id="Select4" name="journeyType">
           <option>Work</option>
           <option>School</option>
           <option>Leisure</option>
@@ -67,17 +74,17 @@
       </select>
  </td></tr>
   <tr><td>
-  Approximate journey start time: <input type="time" id="startTime"/>
+  Approximate journey start time: <input type="time" id="startTime" name="startTime"/>
  </td></tr>
   <tr><td>
-  Approximate journey end time:<input type="time" id="endTime" />
+  Approximate journey end time:<input type="time" id="endTime" name="endTime"/>
  </td></tr>
   <tr><td>
-  Weekday:<input id="Checkbox1" type="checkbox" />
+  Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
  </td></tr>
    <tr><td>
        <hr /><br />
-       <input id="Submit1" type="submit" value="submit" />
+       <input type="button" value="Send" onclick=""/>
  </td></tr>
  </table>
      </form>
@@ -85,6 +92,9 @@
     </div>
     
         <script src="js/draw map.js"></script>
+
+
+
 
 </body>
 </html>

@@ -140,7 +140,7 @@ showdrawing();
     
         featureLayer.setGeoJSON(geojson);
 
-  //---------------------------------------------
+  /*
 
   for(i=0;i<2;i++){
                       var geojson2 = [
@@ -191,7 +191,7 @@ showdrawing();
 
 
 
-  //------------------------------------
+  */
 
 
             var distances=0;
@@ -237,3 +237,9 @@ function clearallpoints()
             pointGroup.splice(0,pointGroup.length);
             pointshow=null;
 }
+
+
+
+
+
+//other

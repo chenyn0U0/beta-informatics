@@ -1,8 +1,8 @@
 
 <?php
 
-$variable1 = $_POST['name']; 
+$age = $_POST['age']; 
 
-echo $variable1;
+echo $age;
 
 ?>

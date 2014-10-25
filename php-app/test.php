@@ -13,7 +13,7 @@
 		<?php
 			$servername = "localhost";
 			$username = "root";
-			$password = "root";
+			$password = "";
 			$dbname = "beta-informatics";
 
 			// Create connection
