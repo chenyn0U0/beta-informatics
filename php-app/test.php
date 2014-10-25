@@ -29,8 +29,8 @@
 			if ($result->num_rows > 0) {
 			    // output data of each row
 			    while($row = $result->fetch_assoc()) {
-			        //echo "<br> id: ". $row["id"]. " - Name: ". $row["firstname"]. " " . $row["lastname"];
-			        echo "here";
+			        echo "<br> id: ". $row["id"]. " - Name: ". $row["travelType"]. " " . $row["startTime"];
+			        
 			    }
 			} else {
 			    echo "0 results";
