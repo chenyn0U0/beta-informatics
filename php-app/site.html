@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+
+	<script type="text/javascript" src="../js/jquery.js"></script>
+
+</head>
+<body>
+	
+
+
+	<div id="input">asd</div>
+
+<script type="text/javascript">
+	function reqListener () {
+      console.log(this.responseText);
+    }
+
+    var test;
+
+    var oReq = new XMLHttpRequest(); //New request object
+    oReq.onload = function() {
+        //This is where you handle what to do with the response.
+        //The actual data is found on this.responseText
+        test = this.responseText;
+    	//console.log(test);
+
+    	$("#input").html(test);
+    };
+    oReq.open("get", "get-data.php", true);
+    //                               ^ Don't block the rest of the execution.
+    //                                 Don't wait until the request finishes to 
+    //                                 continue.
+    oReq.send();
+
+
+
+    function save(){
+        var query = $('#formId').serialize();
+        var url = 'save-data.php';
+        $.post(url, query, function (response) {
+         alert (response);
+        });
+
+    }
+
+</script>
+
+
+
+<form id="formId">
+           Name:<input type='text' name='name'>
+           E-mail:<input type='text' name='email'>
+           Gender:<select name='gender'>
+           <option value='male'>male</option>
+           <option value='female'>female</option>
+           </select>
+           Message:<textarea name='about'></textarea>
+           <input type="button" value="Send" onclick="save()"/>
+     </form>
+
+
+
+
+
+</body>
+</html>
