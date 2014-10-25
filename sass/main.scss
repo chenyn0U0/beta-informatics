@@ -15,14 +15,35 @@ $dark: #222222;
 
 
 //responsive
-$mobile-width: 600px;
+$mobile-width: 690px;
 
 $main-sidePadding: 10px;
 
 
-/************************
-     BASICS 
- ***********************/
+
+/* ------------------------------------------------------ */
+
+//To use rems like pixel sizes:
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+//use this for setting font-size
+@mixin remSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+
+/* ==========================================================================
+        BASICS
+   ========================================================================== */
+
+
+html {
+	font-size: 16px;
+}
 
 
 body {
@@ -33,13 +54,25 @@ body {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: calculateRem(55px);
 	font-weight: bold;
+	text-align: center;
+	margin-bottom: calculateRem(20px);
 }
 
 h1 > span {
 	font-style: italic;
 	font-weight: 100;
+}
+
+h2 {
+	font-size: calculateRem(36px);
+}
+
+h3 {
+	text-align: center;
+	font-size: calculateRem(28px);
+	margin-bottom: calculateRem(20px);
 }
 
 a {
@@ -59,11 +92,35 @@ a {
 
 section {
 	width: 100%;
+	overflow: hidden;
 }
 
-.sec-modPadding {
-	padding: $main-sidePadding 50px;
+.section-Padding {
+	padding: calculateRem(70px) $main-sidePadding;
+	overflow: hidden;
 }
+
+
+.main-btn {
+	display: inline-block;
+	background-color: $pink;
+	padding: calculateRem(10px);
+}
+
+
+
+@media only screen and (max-width: $mobile-width) {
+
+	html {
+		font-size: 14px;
+	} 
+	
+	.section-Padding {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
 
  /************************
       HEADER 
@@ -87,6 +144,7 @@ header {
 		display: inline-block;
 	}
 }
+
 
 #header-logo {
 	float: left;
@@ -156,7 +214,67 @@ header {
 ***********************/
 
 #intro-sec {
-	margin-top: 80px;
+	margin-top: calculateRem(60px);
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+
+	.section-Padding {
+		position: absolute;
+		background-color: transparentize($white, 0.2);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		padding-top: calculateRem(130px);
+		overflow: visible;
+		
+	}
+
+	.width-sizer {
+
+		h1,h3 {
+			color: $turquese;
+		}
+	}
+
+	.btn-container {
+		bottom: -14px;
+	    position: absolute;
+	    text-align: center;
+	    width: 100%;
+		
+		.main-btn {
+			margin-right: calculateRem(20px);
+		}
+	}
+
+
+
+	@media only screen and (max-width: $mobile-width) {
+		.section-Padding {
+			padding-top: calculateRem(100px);
+		}
+	}
+}
+
+
+#map-sec {
+	background-image: url("../img/bg_inverleith.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+	.section-Padding {
+		background-color: transparentize($turquese, 0.5);
+		padding-bottom: 200px;
+
+
+		.width-sizer {
+			float: right;
+			width: 50%;
+		}
+	}
 }
 
 
