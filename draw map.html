@@ -8,13 +8,7 @@
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 
-<script type="text/javascript">    function save(){
-        var query = $('#formId').serialize();
-        var url = "php-app/save-data.php";
-        $.post(url, query, function (response) {
-         alert (response);
-        });
-    }</script> 
+
 
 </head>
 <body>
@@ -42,8 +36,8 @@
  <pre id='distance' class='ui-distance'>Click "Start drawing" to draw your route.</pre>
  <div id='infobar' class='infobar'>
  <br/><br/><br/><br/>
- <form method="post" action="get-form.php">
- <table>
+ 
+ <table><form id="formId" method="post" action="get-form.php" onsubmit="return formCheck()">
  <tr><td>
   age:<select id="Select1" name="age">
          <option>0-13</option>
@@ -81,13 +75,19 @@
  </td></tr>
   <tr><td>
   Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
- </td></tr>
+ </td></tr> 
    <tr><td>
        <hr /><br />
-       <input type="button" value="Send" onclick=""/>
- </td></tr>
+       <input type="hidden" value="" name="route" id="route"/>
+       <input type="hidden" value="" name="distances" id="distances"/>
+       <input type="hidden" value="" name="startPoint" id="startPoint"/>
+       <input type="hidden" value="" name="endPoint" id="endPoint"/>
+         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
+       <input id="Submit1" type="submit" value="submit" />
+ </td></tr>   </form>
+    
  </table>
-     </form>
+ 
  </div>
     </div>
     

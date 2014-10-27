@@ -11,7 +11,7 @@
     //_(:з」∠)_
     var cdn = new Array();
     var pointGroup = new Array();
-
+    var distances=0;
     //_(:з」∠)_
     var container = document.getElementById('distance');
     //_(:з」∠)_
@@ -194,7 +194,7 @@ showdrawing();
   */
 
 
-            var distances=0;
+       distances=0;
        if (pointGroup.length > 1) {
        for(var i = 0;i<pointGroup.length-1;i++)
        {distances = distances + Number((pointGroup[i].distanceTo(pointGroup[i+1])).toFixed(0));}
@@ -243,3 +243,47 @@ function clearallpoints()
 
 
 //other
+function formCheck()
+{
+givevalue();
+ var nullitems="";
+  var startTime = document.getElementById("startTime");
+  var endTime=document.getElementById("endTime");
+    if(cdn=="") nullitems+="route,";
+    if(startTime.value=="") nullitems+="journey start time,";
+    if(endTime.value=="") nullitems+="journey end time,";
+    if(nullitems=="") return true;
+    else return cannotnull(nullitems);
+
+}
+
+
+
+function cannotnull(nullitem)
+{
+  alert("Please enter your "+nullitem+".");
+  return false;
+}
+
+function givevalue()
+{
+  var textforstartpoint="";
+var textforendpoint="";
+var textforroute="";
+textforstartpoint="POINT("+cdn[0][0]+" "+cdn[0][1]+")";
+textforendpoint="POINT("+cdn[cdn.length-1][0]+" "+cdn[cdn.length-1][1]+")";
+for(var i=0;i<cdn.length;i++)
+{
+if(textforroute=="")textforroute="LineString("+cdn[i][0]+" "+cdn[i][1];
+ else textforroute+=", "+cdn[i][0]+" "+cdn[i][1];
+}
+textforroute+=")";
+alert(textforroute+"|"+textforstartpoint+"|"+textforendpoint);
+
+
+    document.getElementById("distances").value=distances;
+    document.getElementById("route").value=textforroute;
+    document.getElementById("startPoint").value=textforstartpoint;
+    document.getElementById("endPoint").value=textforendpoint;
+
+}
