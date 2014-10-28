@@ -38,6 +38,22 @@
  <br/><br/><br/><br/>
  
  <table><form id="formId" method="post" action="get-form.php" onsubmit="return formCheck()">
+        </td></tr>
+         <tr><td align="center">
+      <div class='travelbuttondiv'><img src="img/logo_bike.png" alt="bike logo" class='travelbutton' onclick="bikeclick()"></div>
+       <div class='travelbuttondiv'><img src="img/logo_car.png" alt="car logo" class='travelbutton' onclick="carclick()"></div>
+       <div class='travelbuttondiv'><img src="img/logo_walk.png" alt="walk logo" class='travelbutton' onclick="walkclick()"></div>
+ </td></tr> 
+ 
+ 
+  <tr><td>
+  travel type:<select id="Select3" name="travelType" style="visibility:hidden">
+          <option>Bike</option>
+          <option>Car</option>
+          <option>Walk</option>
+      </select><br />
+
+ 
  <tr><td>
   age:<select id="Select1" name="age">
          <option>0-13</option>
@@ -52,13 +68,7 @@
           <option>Female</option>
       </select>
  </td></tr>
-  <tr><td>
-  travel type:<select id="Select3" name="travelType">
-          <option>Bike</option>
-          <option>Car</option>
-          <option>Walk</option>
-      </select>
- </td></tr>
+
   <tr><td>
   journey:<select id="Select4" name="journeyType">
           <option>Work</option>
