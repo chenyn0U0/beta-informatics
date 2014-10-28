@@ -18,6 +18,7 @@
   margin-top: 0;
  }
 
+
  .close-btn {
   text-align: right;
   margin-right: 20px;
@@ -67,15 +68,17 @@ pre.ui-distance {
   z-index:60;
    }
    .infobar
-   {position:absolute;
-   top:0px;
-   right:0px;
-   z-index:60;
-   width:250px;
-   height:100%;
-   background-color:#3887BE;
-   opacity:0.8;
-       }
+   {
+      position:absolute;
+     top:0px;
+     right:0px;
+     z-index:60;
+     width:250px;
+     height:100%;
+     background-color:#3887BE;
+     opacity:0.8;
+     padding: 10px;
+    }
    
    .menu-ui {  position:absolute;
    top:150px;left:10px;z-index:10;
@@ -104,29 +107,59 @@ pre.ui-distance {
        }
        .menu-ui a.active:hover {
          background:#3074a4;}
-      .menu-ui a.cannotsee 
-      {
-   visibility:hidden;
-     }
-     
-     .travelbutton
-     {width:50px;
-      height:50px;
-      
-       vertical-align:middle;
-         }
-         
-    .travelbutton:hover
-     {width:70px;
-      height:70px;
-         }
-         
+    .menu-ui a.cannotsee 
+    {
+        visibility:hidden;
+    }
+
          .travelbuttondiv
-         {width:70px;
-          height:80px;
+         {
+          overflow: hidden;
           float:left;
           position:relative;
           left:15px;
           line-height:70px;
+         }
+
+     .travel-btn
+     {
+        display: inline-block;
+        height: 27px;
+        vertical-align: middle;
+        width: 57px;
+    }
+
+  .row {
+    margin-bottom: 10px;
+  }
          
-             }
+
+    #car-btn {
+      background: url('../img/icon-sprite.png') left bottom no-repeat;
+      background-size: 200px;
+
+      &:hover {
+        background: url('../img/icon-sprite.png') left top no-repeat;
+        background-size: 200px;
+      }
+    }
+
+    #bike-btn {
+      background: url('../img/icon-sprite.png') right bottom no-repeat;
+      background-size: 200px;
+
+      &:hover {
+        background: url('../img/icon-sprite.png') right top no-repeat;
+        background-size: 200px;
+      }
+    }
+
+    #walk-btn {
+      background: url('../img/icon-sprite.png') center bottom no-repeat;
+      background-size: 200px;
+
+      &:hover {
+        background: url('../img/icon-sprite.png') center top no-repeat;
+        background-size: 200px;
+      }
+    }
