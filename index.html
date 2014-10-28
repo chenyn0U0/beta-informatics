@@ -8,8 +8,20 @@
 
 	<script src="js/jquery.js"></script>
 
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
+
 
 <script>
+
+	$(document).ready(function() {
+
+      $("#map-container").load("draw-map.html"); 
+
+	});
 
 	$(window).resize(function(){
 		setSectionsWithImagebackgrounds();
@@ -60,11 +72,29 @@
 		return  width / height;	
 	}
 
+
+	function showthetool() {
+        jQuery("#map").hide().css("visibility", "visible").show("slow");
+
+        
+		var screenHeight = $(document).height();
+
+        jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
+
+        console.log('showthetool');
+    }
+
 	</script>
 
 
 </head>
 <body>
+	
+	<div id="overlay"></div>
+
+	<div id="map-container">
+	</div>
+
 	<header>
 		<div class="module-padding">
 			<div class="width-sizer">
@@ -89,7 +119,7 @@
 				<h3>Mapping the journeys through your local community</h3>
 
 				<div class="btn-container">
-					<div class="main-btn"><a href="">Get started</a></div>
+					<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Get started</a></div>
 					<div class="main-btn"><a href="">Learn more</a></div>
 				</div>
 			</div>
@@ -117,8 +147,6 @@
 			</div>
 		</div>
 	</section>
-
-
 
 
 	<section id="team-sec">
