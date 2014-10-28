@@ -5,6 +5,64 @@
 	<title>PathsINverleith</title>
 
 	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/jquery.js"></script>
+
+
+<script>
+
+	$(window).resize(function(){
+		setSectionsWithImagebackgrounds();
+	});
+
+	$(window).load(function () {
+
+		setSectionsWithImagebackgrounds();
+
+		var x = getRatio($('#blackMap').attr('src'));
+		console.log(x);
+	});
+
+
+	function setSectionsWithImagebackgrounds() {
+		$('section.imgSection').each(
+			function() {
+				console.log('imgSection ' + $(this).attr('id'));
+				calculateHeight($(this));
+			}
+		)
+	}
+
+	function calculateHeight(id) {
+
+		imgSrc = $(id).find('.backgroundImage').attr('src');
+
+		var ratio = getRatio(imgSrc);
+//		console.log('ratio: ' + ratio);
+
+		var currentWidth = $(window).width();
+		var newH = currentWidth / ratio;
+
+		//console.log('ratio. ' + ratio + ' width: ' + currentWidth + ' newHeight:' + newH);
+		$(id).height(newH + 'px');
+	}
+
+	function getRatio(src)
+	{
+		var newImg = new Image();
+		newImg.src = src;
+
+		var height = newImg.height;
+		var width = newImg.width;
+		
+		console.log('getRatio:  ' + newImg , 'src: ' + src,  'imgsrc: ' + newImg.src);
+
+		return  width / height;	
+	}
+
+	</script>
+
+
 </head>
 <body>
 	<header>
@@ -12,7 +70,7 @@
 			<div class="width-sizer">
 				<a id="header-logo"href=""><img src="img/path_logo.png" alt="bike logo"></a>
 				<div class="filler"></div>
-				<a id="burger-button" href="#"><img src="img/burger.png" alt=""></a>
+				<a id="burger-button" href="#"><img src="img/burger2.png" alt=""></a>
 				<ul id="header-nav">
 					<li><a href="">GET STARTED</a></li>
 					<li><a href="">ABOUT</a></li>
@@ -23,10 +81,8 @@
 	</header>
 
 
-	<section id="intro-sec">
-		<img src="img/bg_bikes.png" alt="">
-		
-
+	<section id="intro-sec" class="imgSection">
+		<img id="bikes" class="backgroundImage" src="img/bg_bikes.png" alt="">
 		<div class="section-Padding" >
 			<div class="width-sizer">
 				<h1><span>PATHS</span> / Inverleith</h1>
@@ -38,10 +94,10 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 
-	<section id="map-sec">
+	<section id="about-sec" class="imgSection">
+		<img src="img/bg_inverleith.png" alt="" class="backgroundImage">
 		<div class="section-Padding">
 			<div class="width-sizer">
 				<h2>What's it all about?</h2>
@@ -50,6 +106,47 @@
 			</div>
 		</div>
 	</section>
+
+
+
+	<section id="map-sec" class="imgSection">
+		<img id="blackMap" class="backgroundImage" src="img/blackMap.png" alt="">
+		<div class="section-Padding">
+			<div class="width-sizer">
+				<h2>Here would be the output of our data.... processor or 3djs or something</h2>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section id="team-sec">
+		<div class="section-Padding">
+			<div class="width-sizer">
+				<h2>About us</h2>
+				<p>Come join us on Thursday 30th October from 6-9pm at Broughton High School to find out about tips, advice and support available to help you get started, to share ......</p>
+			</div>
+		</div>
+	</section>
+
+
+	<footer>
+		<div class="section-Padding">
+			<div class="width-sizer">
+				<img src="img/bi-logo.png" alt="logo beta-informatics">
+				<img src="img/uedin_logo.png" alt="logo University of Edinburgh">
+
+				<ul>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Contact us</a></li>
+					<li><a href="#">Living Lab</a></li>
+					<!-- <li><a href="#">Edinburgh Council?</a></li>
+					<li><a href="#">Edinburgh Neighbourhood thing?</a></li>
+ -->				</ul>
+			</div>
+		</div>
+	</footer>
 
 
 

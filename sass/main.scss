@@ -14,10 +14,46 @@ $pink: #F750E3;
 $dark: #222222;
 
 
+@font-face {
+	font-family: "robot";
+	src: url('roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: "robot-thin";
+	src: url('roboto/Roboto-Thin.ttf');
+}
+
+@font-face {
+	font-family: "robot-it";
+	src: url('roboto/Roboto-ThinItalic.ttf');
+}
+
+@font-face {
+	font-family: "robot-med";
+	src: url('roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: "robot-bold";
+	src: url('roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+	font-family: "robot-boldIt";
+	src: url('roboto/Roboto-MediumItalic.ttf');
+}
+
+@font-face {
+	font-family: "robotC-bold";
+	src: url('roboto/RobotoCondensed-LightItalic.ttf');
+}
+
+
 //responsive
 $mobile-width: 690px;
 
-$main-sidePadding: 10px;
+$main-sidePadding: 30px;
 
 
 
@@ -36,6 +72,12 @@ $main-sidePadding: 10px;
 }
 
 
+@function calculateImageHeight($url) {
+	$height: image-height($url);
+	@return #{$height}px;
+}
+
+
 /* ==========================================================================
         BASICS
    ========================================================================== */
@@ -43,11 +85,13 @@ $main-sidePadding: 10px;
 
 html {
 	font-size: 16px;
+
+	font-family: "robot", san-serif;
 }
 
 
 body {
-	font-family: sans-serif;
+	font-family: "robot", sans-serif;
 	color: $white;
 	font-weight: 200;
 	background-color: $dark;
@@ -55,24 +99,26 @@ body {
 
 h1 {
 	font-size: calculateRem(55px);
-	font-weight: bold;
 	text-align: center;
 	margin-bottom: calculateRem(20px);
 }
 
 h1 > span {
-	font-style: italic;
+	font-family: "robot-it", sans-serif;
 	font-weight: 100;
 }
 
 h2 {
 	font-size: calculateRem(36px);
+	margin-bottom: calculateRem(15px);
+	font-family: "robot-boldIt";
 }
 
 h3 {
 	text-align: center;
 	font-size: calculateRem(28px);
 	margin-bottom: calculateRem(20px);
+	font-family: "robot-med"
 }
 
 a {
@@ -105,6 +151,11 @@ section {
 	display: inline-block;
 	background-color: $pink;
 	padding: calculateRem(10px);
+	font-family: "robotC-bold";
+}
+
+.backgroundImage {
+	display: none;
 }
 
 
@@ -112,28 +163,25 @@ section {
 @media only screen and (max-width: $mobile-width) {
 
 	html {
-		font-size: 14px;
+		font-size: 12px;
 	} 
 	
-	.section-Padding {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
+	
 }
 
-
- /************************
-      HEADER 
-  ***********************/
+/* ==========================================================================
+       HEADER
+   ========================================================================== */
 header {
 	position: fixed;
 	top: 0;
+	z-index: 100;
 	//height: 45px;
 	background-color: $turquese;
 	width: 100%;
 
 	.module-padding {
-		padding: $main-sidePadding 20px;
+		padding: 10px $main-sidePadding;
 		overflow: hidden;
 		text-align: right;
 	}
@@ -178,7 +226,7 @@ header {
 	#burger-button {
 		display: inline-block;
 		img {
-			height: 45px;
+			height: 35px;
 		}
 	}
 
@@ -198,38 +246,73 @@ header {
 		}
 	}
 	
+	header {
+		.module-padding {
+			padding: 10px 30px;
+		}
+
+		.filler {
+			display: none;
+		}
+	}
+
+	#header-logo img{
+		height: 35px;
+	}
+
+	
+}
+
+/* ==========================================================================
+      FOOTER
+   ========================================================================== */
+footer {
+	font-size: calculateRem(36px);
+	background-color: $white;
+
+	img {
+		height: 200px;
+	}
+
+	ul {
+		float: right;
+	}
+	
+	a {
+		color: $turquese;
+
+		&:hover {
+			color: $white;
+		}
+	}
 }
 
 
-  /************************
-       FOOTER 
-   ***********************/
 
+/* ==========================================================================
+      MAIN CONTENT
+   ========================================================================== */
 
-
-
-
-/************************
-   		MAIN CONTENT 
-***********************/
 
 #intro-sec {
 	margin-top: calculateRem(60px);
 	position: relative;
-
-	img {
+	background: url("../img/bg_bikes.png") no-repeat;
+	background-size: 100%;
+	
+	
+	#bikes {
+		visibility: hidden;
 		width: 100%;
 	}
 
 	.section-Padding {
-		position: absolute;
 		background-color: transparentize($white, 0.2);
+		overflow: visible;
 		position: absolute;
 		top: 0;
 		width: 100%;
-		padding-top: calculateRem(130px);
-		overflow: visible;
-		
+		padding: 60px 0;
 	}
 
 	.width-sizer {
@@ -250,30 +333,68 @@ header {
 		}
 	}
 
-
-
 	@media only screen and (max-width: $mobile-width) {
 		.section-Padding {
 			padding-top: calculateRem(100px);
 		}
 	}
+	.invisibleDiv {
+		width: 100%;
+		height: calculateRem(100px);
+	}
 }
 
-
-#map-sec {
+/* 
+   about
+   ========================================================================== */
+#about-sec {
 	background-image: url("../img/bg_inverleith.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 
 	.section-Padding {
 		background-color: transparentize($turquese, 0.5);
-		padding-bottom: 200px;
-
+		height: 100%;
 
 		.width-sizer {
 			float: right;
 			width: 50%;
 		}
+	}
+}
+
+/* 
+   map
+   ========================================================================== */
+#map-sec {
+	position: relative;
+	background-image: url('../img/blackMap.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: calc(100% - 20px);
+
+	> img {
+		width: 100%;
+	}
+
+	.width-sizer {
+		width: 50%;
+		float: right;
+		padding: 0 $main-sidePadding;
+	}
+
+}
+
+/* 
+   about us
+   ========================================================================== */
+#team-sec {
+	background-color: $dark;
+	color: $turquese;
+
+	.width-sizer {
+		width: 50%;
+		float: left;
 	}
 }
 
