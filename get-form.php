@@ -1,6 +1,6 @@
 
 <html>
-<body>
+<body >
  <?php echo $_POST["startTime"]; ?><br/>
  <?php echo $_POST["endTime"]; ?><br/>
 

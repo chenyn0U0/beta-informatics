@@ -252,12 +252,13 @@ givevalue();
     if(cdn=="") nullitems+="route,";
     if(startTime.value=="") nullitems+="journey start time,";
     if(endTime.value=="") nullitems+="journey end time,";
-    if(nullitems=="") return true;
-    else return cannotnull(nullitems);
+    if(nullitems=="")
+     {//表单成功开始上传
+
 
 }
 
-
+}
 
 function cannotnull(nullitem)
 {
@@ -287,6 +288,8 @@ alert(textforroute+"|"+textforstartpoint+"|"+textforendpoint);
     document.getElementById("endPoint").value=textforendpoint;
 
 }
+
+
 
 
 
