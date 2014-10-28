@@ -97,49 +97,7 @@ showdrawing();
                 pointshow=cdn[0];
             } else{};}
 
-                    var geojson = [
-                          {
-          "type": "Feature",
-          "geometry": {
-              "type": "Point",
-              "coordinates": pointshow
-          },
-          "properties": {
-          "title": "Your Destination",
-              "marker-color": "#E575F6",
-              "marker-symbol": "star"
-          }
-      },
-      {
-          "type": "Feature",
-          "geometry": {
-              "type": "Point",
-              "coordinates": cdn[0]
-          },
-          "properties": {
-              "title": "Your Start Point",
-              "marker-color": "#07B1D0",
-              "marker-symbol": "bicycle"
-          }
-      },
-
-
-       {
-       "type": "Feature",
-       "geometry": {
-           "type": "LineString",
-           "coordinates": cdn,
-       },
-       "properties": {
-           "stroke": "#444444",
-           "stroke-opacity": 0.5,
-           "stroke-width": 4
-       }
-       }  
-    ];
-    
-        featureLayer.setGeoJSON(geojson);
-
+        updateroute();
   /*
 
   for(i=0;i<2;i++){
@@ -239,26 +197,76 @@ function clearallpoints()
 }
 
 
+function updateroute()
+{
+                      var geojson = [
+                          {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": pointshow
+          },
+          "properties": {
+          "title": "Your Destination",
+              "marker-color": "#E575F6",
+              "marker-symbol": "star"
+          }
+      },
+      {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": cdn[0]
+          },
+          "properties": {
+              "title": "Your Start Point",
+              "marker-color": "#07B1D0",
+              "marker-symbol": "bicycle"
+          }
+      },
 
+
+       {
+       "type": "Feature",
+       "geometry": {
+           "type": "LineString",
+           "coordinates": cdn,
+       },
+       "properties": {
+           "stroke": "#444444",
+           "stroke-opacity": 0.5,
+           "stroke-width": 4
+       }
+       }  
+    ];
+    
+        featureLayer.setGeoJSON(geojson);
+
+}
 
 
 //=============================存储数据用===============================
 function formCheck()
 {
-givevalue();
- var nullitems="";
+
+  var nullitems="";
   var startTime = document.getElementById("startTime");
   var endTime=document.getElementById("endTime");
-    if(cdn=="") nullitems+="route,";
-    if(startTime.value=="") nullitems+="journey start time,";
-    if(endTime.value=="") nullitems+="journey end time,";
+    if(cdn=="") nullitems+="route,";else;
+    if(startTime.value=="") nullitems+="journey start time,";else;
+    if(endTime.value=="") nullitems+="journey end time,";else;
     if(nullitems=="")
      {//表单成功开始上传
+        givevalue();
+$.post("get-form.php", $("#formId").serialize());
+alert("Thank you for your cooperation!");
 
-
-}
-
-}
+return true;
+        
+      }
+      else return cannotnull(nullitems);
+     return false;
+    }
 
 function cannotnull(nullitem)
 {
@@ -268,7 +276,7 @@ function cannotnull(nullitem)
 
 function givevalue()
 {
-  var textforstartpoint="";
+var textforstartpoint="";
 var textforendpoint="";
 var textforroute="";
 textforstartpoint="POINT("+cdn[0][0]+" "+cdn[0][1]+")";
@@ -279,8 +287,6 @@ if(textforroute=="")textforroute="LineString("+cdn[i][0]+" "+cdn[i][1];
  else textforroute+=", "+cdn[i][0]+" "+cdn[i][1];
 }
 textforroute+=")";
-alert(textforroute+"|"+textforstartpoint+"|"+textforendpoint);
-
 
     document.getElementById("distances").value=distances;
     document.getElementById("route").value=textforroute;
@@ -290,7 +296,12 @@ alert(textforroute+"|"+textforstartpoint+"|"+textforendpoint);
 }
 
 
-
+function hidemap()
+{
+      jQuery("#map-container").css("visibility", "hidden");
+      jQuery("#map").hide().css("visibility","hidden");
+      jQuery("#overlay").css("visibility", "hidden");
+}
 
 
 //=============================存储数据用===============================
