@@ -75,7 +75,7 @@
 	function showthetool() {
         jQuery("#map").hide().css("visibility", "visible").show("slow");
 
-        
+        jQuery("#map-container").css("visibility", "visible");
 		var screenHeight = $(document).height();
 
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");

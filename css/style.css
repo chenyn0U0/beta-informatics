@@ -3,9 +3,11 @@
   overflow: hidden;
   position: fixed;
   width: 100%;
+  z-index: 90;
+  visibility: hidden;
 }
 
-/* line 8, ../sass/style.scss */
+/* line 9, ../sass/style.scss */
 #map {
   height: 600px;
   width: 90%;
@@ -16,12 +18,12 @@
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 20, ../sass/style.scss */
+  /* line 22, ../sass/style.scss */
   #map {
     width: 100%;
   }
 }
-/* line 26, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -36,7 +38,7 @@
   visibility: hidden;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 pre.ui-distance {
   position: absolute;
   bottom: 10px;
@@ -50,7 +52,7 @@ pre.ui-distance {
   z-index: 60;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 .infobar {
   position: absolute;
   top: 0px;
@@ -62,7 +64,7 @@ pre.ui-distance {
   opacity: 0.8;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .menu-ui {
   position: absolute;
   top: 150px;
@@ -71,7 +73,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -87,42 +89,42 @@ pre.ui-distance {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* line 80, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 .menu-ui a:hover {
   background: #f8f8f8;
   color: #404040;
 }
 
-/* line 84, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .menu-ui a.active {
   background: #3887BE;
   color: #FFF;
 }
 
-/* line 88, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .menu-ui a.active:hover {
   background: #3074a4;
 }
 
-/* line 91, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 96, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 .travelbutton {
   width: 50px;
   height: 50px;
   vertical-align: middle;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 .travelbutton:hover {
   width: 70px;
   height: 70px;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 .travelbuttondiv {
   width: 70px;
   height: 80px;
