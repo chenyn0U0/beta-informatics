@@ -303,7 +303,15 @@ alert("bike");
 }
 
 
+function carclick()
+{
+  alert("car");
+}
 
+function walkclick()
+{
+  alert("walk");
+}
 
 
 
