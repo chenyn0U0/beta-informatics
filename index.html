@@ -73,14 +73,14 @@
 
 
 	function showthetool() {
-        jQuery("#map-container").css("visibility", "visible");
         
         var freeSpaceH = $(window).height() - $('header').height();
         var viewportHeigth = freeSpaceH * 0.7;
 
-        var marginTop = freeSpaceH * 0.15;
+        var paddingTop = freeSpaceH * 0.15;
+        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
         
-        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px", "margin-top": marginTop + "px"}).show("slow");
+        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show("slow");
 
 
 		var screenHeight = $(document).height();
@@ -89,13 +89,20 @@
         console.log('showthetool: ' + viewportHeigth);
     }
 
+    function hideMap() {
+    	jQuery("#map-container").css("visibility", "hidden");
+    	jQuery("#map").hide().css("visibility","hidden");
+    	jQuery("#overlay").css("visibility", "hidden");
+    	
+    }
+
 	</script>
 
 
 </head>
 <body>
 	
-	<div id="overlay"></div>
+	<div id="overlay" onclick="hideMap()"></div>
 
 	<div id="map-container"></div>
 

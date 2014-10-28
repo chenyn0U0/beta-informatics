@@ -317,13 +317,15 @@ footer {
 
 	.width-sizer {
 
+		position: relative;
+
 		h1,h3 {
 			color: $turquese;
 		}
 	}
 
 	.btn-container {
-		bottom: -14px;
+		bottom: -95px;
 	    position: absolute;
 	    text-align: center;
 	    width: 100%;

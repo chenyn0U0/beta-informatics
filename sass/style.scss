@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 90;
   visibility:hidden;
+  padding-top: 100px;
 }
 
 #map
@@ -14,7 +15,20 @@
   position:relative; 
   margin: 0 auto; 
   visibility:hidden;
-  margin-top: 100px;
+  margin-top: 0;
+ }
+
+ .close-btn {
+  text-align: right;
+  margin-right: 20px;
+
+    .main-btn {
+      background-color: unset;
+
+      a:hover {
+        color: #00B6D3;
+      }
+    }
  }
 
 
