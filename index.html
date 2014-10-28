@@ -73,14 +73,20 @@
 
 
 	function showthetool() {
-        jQuery("#map").hide().css("visibility", "visible").show("slow");
-
         jQuery("#map-container").css("visibility", "visible");
-		var screenHeight = $(document).height();
+        
+        var freeSpaceH = $(window).height() - $('header').height();
+        var viewportHeigth = freeSpaceH * 0.7;
 
+        var marginTop = freeSpaceH * 0.15;
+        
+        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px", "margin-top": marginTop + "px"}).show("slow");
+
+
+		var screenHeight = $(document).height();
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
-        console.log('showthetool');
+        console.log('showthetool: ' + viewportHeigth);
     }
 
 	</script>
