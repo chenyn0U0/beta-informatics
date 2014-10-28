@@ -242,7 +242,7 @@ function clearallpoints()
 
 
 
-//other
+//=============================存储数据用===============================
 function formCheck()
 {
 givevalue();
@@ -287,3 +287,33 @@ alert(textforroute+"|"+textforstartpoint+"|"+textforendpoint);
     document.getElementById("endPoint").value=textforendpoint;
 
 }
+
+
+
+//=============================存储数据用===============================
+
+
+
+//=============================好看点用===============================
+
+
+function bikeclick()
+{
+alert("bike");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=============================好看点用===============================

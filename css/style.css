@@ -50,7 +50,8 @@ pre.ui-distance {
    
    .menu-ui {  position:absolute;
    top:150px;left:10px;z-index:10;
-   width:120px;}.menu-ui a 
+   width:120px;}
+   .menu-ui a 
   {
    border:1px solid rgba(0,0,0,0.4);
    background:#fff;
@@ -79,3 +80,24 @@ pre.ui-distance {
    visibility:hidden;
      }
      
+     .travelbutton
+     {width:50px;
+      height:50px;
+      
+       vertical-align:middle;
+         }
+         
+    .travelbutton:hover
+     {width:70px;
+      height:70px;
+         }
+         
+         .travelbuttondiv
+         {width:70px;
+          height:80px;
+          float:left;
+          position:relative;
+          left:15px;
+          line-height:70px;
+         
+             }

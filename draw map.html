@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Draw the route</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+ <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
+
+
+
+</head>
+<body>
+<!---------function of lightbox------start----->
+<button onclick="showthetool()">click to see the map tool</button>
+<script>
+    function showthetool() {
+        jQuery("div.maptool").hide().css("visibility", "visible").show("slow");
+        jQuery("div.blackbackground").css("visibility", "visible").animate({ opacity: '0.8' }, "slow");
+    }
+
+</script>
+<div class='blackbackground'></div>
+<!---------function of lightbox-----end---------->
+
+
+
+<div id='map' class='maptool'>
+<nav class='menu-ui'>
+  <a href='#' id='statue'>Start Drawing</a>
+  <a href='#' id='undo' class = 'cannotsee'>Undo last step</a>
+  <a href='#' id='finish' class = 'cannotsee'>Finish Drawing</a>
+  <a href='#' id='cancel' class = 'cannotsee'>Cancel</a>
+</nav>   
+ <pre id='distance' class='ui-distance'>Click "Start drawing" to draw your route.</pre>
+ <div id='infobar' class='infobar'>
+ <br/><br/><br/><br/>
+ 
+ <table><form id="formId" method="post" action="get-form.php" onsubmit="return formCheck()">
+        </td></tr>
+         <tr><td align="center">
+      <div class='travelbuttondiv'><img src="img/logo_bike.png" alt="bike logo" class='travelbutton' onclick="bikeclick()"></div>
+       <div class='travelbuttondiv'><img src="img/logo_car.png" alt="car logo" class='travelbutton' onclick="carclick()"></div>
+       <div class='travelbuttondiv'><img src="img/logo_walk.png" alt="walk logo" class='travelbutton' onclick="walkclick()"></div>
+ </td></tr> 
+ 
+ 
+  <tr><td>
+  travel type:<select id="Select3" name="travelType" style="visibility:hidden">
+          <option>Bike</option>
+          <option>Car</option>
+          <option>Walk</option>
+      </select><br />
+
+ 
+ <tr><td>
+  age:<select id="Select1" name="age">
+         <option>0-13</option>
+         <option>13-18</option>
+         <option>18-25</option>
+         <option>over 25</option>
+     </select>
+ </td></tr>
+  <tr><td>
+  gender:<select id="Select2" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+      </select>
+ </td></tr>
+
+  <tr><td>
+  journey:<select id="Select4" name="journeyType">
+          <option>Work</option>
+          <option>School</option>
+          <option>Leisure</option>
+          <option>Others</option>
+      </select>
+ </td></tr>
+  <tr><td>
+  Approximate journey start time: <input type="time" id="startTime" name="startTime"/>
+ </td></tr>
+  <tr><td>
+  Approximate journey end time:<input type="time" id="endTime" name="endTime"/>
+ </td></tr>
+  <tr><td>
+  Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
+ </td></tr> 
+   <tr><td>
+       <hr /><br />
+       <input type="hidden" value="" name="route" id="route"/>
+       <input type="hidden" value="" name="distances" id="distances"/>
+       <input type="hidden" value="" name="startPoint" id="startPoint"/>
+       <input type="hidden" value="" name="endPoint" id="endPoint"/>
+         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
+       <input id="Submit1" type="submit" value="submit" />
+ </td></tr>   </form>
+    
+ </table>
+ 
+ </div>
+    </div>
+    
+        <script src="js/draw map.js"></script>
+
+
+
+
+</body>
+</html>
