@@ -152,33 +152,33 @@ pre.ui-distance {
 
 /* line 137, ../sass/style.scss */
 #car-btn {
-  background: url("../img/icon-sprite.png") left bottom no-repeat;
+  background: url("../img/icon-sprite.png") left top no-repeat;
   background-size: 200px;
 }
 /* line 141, ../sass/style.scss */
 #car-btn:hover {
-  background: url("../img/icon-sprite.png") left top no-repeat;
+  background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
 /* line 147, ../sass/style.scss */
 #bike-btn {
-  background: url("../img/icon-sprite.png") right bottom no-repeat;
+  background: url("../img/icon-sprite.png") right top no-repeat;
   background-size: 200px;
 }
 /* line 151, ../sass/style.scss */
 #bike-btn:hover {
-  background: url("../img/icon-sprite.png") right top no-repeat;
+  background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
 /* line 157, ../sass/style.scss */
 #walk-btn {
-  background: url("../img/icon-sprite.png") center bottom no-repeat;
+  background: url("../img/icon-sprite.png") center top no-repeat;
   background-size: 200px;
 }
 /* line 161, ../sass/style.scss */
 #walk-btn:hover {
-  background: url("../img/icon-sprite.png") center top no-repeat;
+  background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
 }
