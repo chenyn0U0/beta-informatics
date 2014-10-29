@@ -21,13 +21,24 @@
 
  .close-btn {
   text-align: right;
-  margin-right: 20px;
+  width: 90%;
+  margin: 0 auto;
 
     .main-btn {
       background-color: unset;
+      padding: 0 0 10px 0;
+
+      a {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background: url('../img/icon-close.png') no-repeat;
+        background-size: 40px;
+      }
 
       a:hover {
-        color: #00B6D3;
+        background: url('../img/icon-close.png') right 0 no-repeat;
+        background-size: 40px;
       }
     }
  }
