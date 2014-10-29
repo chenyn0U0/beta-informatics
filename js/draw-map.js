@@ -319,9 +319,10 @@ var traveltool="";
 
 function bikeclick()
 {
-jQuery("#bike-btn").addClass("bike-btn-clicked");
-jQuery("#car-btn").addClass("car-btn");
-jQuery("#bike-btn").addClass("bike-btn");
+
+  jQuery("#bike-btn").toggleClass("clicked");
+  jQuery("#car-btn").removeClass("clicked");
+  jQuery("#walk-btn").removeClass("clicked");
 
 traveltool="bike";
 }
@@ -329,17 +330,17 @@ traveltool="bike";
 
 function carclick()
 {
-jQuery("#bike-btn").addClass("bike-btn");
-jQuery("#car-btn").addClass("car-btn-clicked");
-jQuery("#bike-btn").addClass("bike-btn");
+jQuery("#bike-btn").removeClass("clicked");
+jQuery("#car-btn").toggleClass("clicked");
+jQuery("#walk-btn").removeClass("clicked");
   traveltool="car";
 }
 
 function walkclick()
 {
-jQuery("#bike-btn").addClass("bike-btn");
-jQuery("#car-btn").addClass("car-btn");
-jQuery("#bike-btn").addClass("bike-btn-clicked");
+jQuery("#bike-btn").removeClass("clicked");
+jQuery("#car-btn").removeClass("clicked");
+jQuery("#walk-btn").toggleClass("clicked");
   traveltool="walk";
 }
 
