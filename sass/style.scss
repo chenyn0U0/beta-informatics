@@ -139,7 +139,7 @@ pre.ui-distance {
         background: url('../img/icon-sprite.png') left top no-repeat;
         background-size: 200px;
 
-      &:hover,.car-btn-clicked {
+      &:hover,&.clicked {
         background: url('../img/icon-sprite.png') left bottom no-repeat;
         background-size: 200px;
       }
@@ -150,7 +150,7 @@ pre.ui-distance {
         background: url('../img/icon-sprite.png') right top no-repeat;
         background-size: 200px;
 
-      &:hover,.bike-btn-clicked {
+      &:hover,&.clicked {
         background: url('../img/icon-sprite.png') right bottom no-repeat;
         background-size: 200px;
       }
@@ -161,7 +161,7 @@ pre.ui-distance {
         background: url('../img/icon-sprite.png') center top no-repeat;
         background-size: 200px;
 
-      &:hover,.walk-btn-clicked {
+      &:hover,&.clicked {
         background: url('../img/icon-sprite.png') center bottom no-repeat;
         background-size: 200px;
       }

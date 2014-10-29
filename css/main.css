@@ -389,13 +389,14 @@ footer a:hover {
 /* line 361, ../sass/main.scss */
 #about-sec .section-Padding .width-sizer {
   float: right;
-  width: 50%;
+  width: 40%;
+  padding: 5%;
 }
 
 /* 
    map
    ========================================================================== */
-/* line 371, ../sass/main.scss */
+/* line 373, ../sass/main.scss */
 #map-sec {
   position: relative;
   background-image: url("../img/blackMap.png");
@@ -403,11 +404,11 @@ footer a:hover {
   background-size: 100%;
   height: calc(100% - 20px);
 }
-/* line 378, ../sass/main.scss */
+/* line 380, ../sass/main.scss */
 #map-sec > img {
   width: 100%;
 }
-/* line 382, ../sass/main.scss */
+/* line 384, ../sass/main.scss */
 #map-sec .width-sizer {
   width: 50%;
   float: right;
@@ -417,12 +418,12 @@ footer a:hover {
 /* 
    about us
    ========================================================================== */
-/* line 393, ../sass/main.scss */
+/* line 395, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
   color: #00b6d3;
 }
-/* line 397, ../sass/main.scss */
+/* line 399, ../sass/main.scss */
 #team-sec .width-sizer {
   width: 50%;
   float: left;
