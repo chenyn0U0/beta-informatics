@@ -17,8 +17,8 @@
    
 
      <form id="formId" method="post" action="index.html" onsubmit="return formCheck()">
-      <div id="input-thing" class="input-thing">
-        <div class="row">
+<div class="">
+        <div class="buttonrow">
           <a href="#" id="bike-btn" class="travel-btn" onclick="bikeclick()"></a>
           <a href="#" id="car-btn" class="travel-btn" onclick="carclick()"></a>
           <a href="#" id="walk-btn" class="travel-btn" onclick="walkclick()"></a>
@@ -27,10 +27,14 @@
         <div class="row">
           <label for="age">age</label>
           <select id="Select1" name="age">
-                 <option>0-13</option>
-                 <option>13-18</option>
-                 <option>18-25</option>
-                 <option>over 25</option>
+                 <option>0-11</option>
+                 <option>12-18</option>
+                 <option>19-23</option>
+                 <option>24-28</option>
+                 <option>29-39</option>
+                 <option>40-50</option>
+                 <option>51-65</option>
+                 <option>over 65</option>
              </select>
         </div>
           
@@ -54,10 +58,10 @@
         </div>
 
         <div class="row">
-            Approximate journey start time: <input type="time" id="startTime" name="startTime"/>
+            <label for="startTime">Approximate journey start time:</label> <input type="time" id="startTime" name="startTime"/>
         </div>
         <div class="row">
-            Approximate journey end time:<input type="time" id="endTime" name="endTime"/>
+           <label for="endTime">Approximate journey end time:</label><input type="time" id="endTime" name="endTime"/>
         </div>
 
         <div class="row">
@@ -70,7 +74,7 @@
         <input type="hidden" value="" name="endPoint" id="endPoint"/>
         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
         <input id="Submit1" type="submit" value="submit" />
-      </div>
+</div>
     </form>
    </div>
 </div>
