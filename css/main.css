@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,46 +24,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -71,37 +71,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
-
 @font-face {
   font-family: "robot-thin";
   src: url("roboto/Roboto-Thin.ttf");
 }
-
 @font-face {
   font-family: "robot-it";
   src: url("roboto/Roboto-ThinItalic.ttf");
 }
-
 @font-face {
   font-family: "robot-med";
   src: url("roboto/Roboto-Medium.ttf");
 }
-
 @font-face {
   font-family: "robot-bold";
   src: url("roboto/Roboto-Bold.ttf");
 }
-
 @font-face {
   font-family: "robot-boldIt";
   src: url("roboto/Roboto-MediumItalic.ttf");
 }
-
 @font-face {
   font-family: "robotC-bold";
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
-
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
@@ -115,7 +108,7 @@ html {
 /* line 93, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
-  color: white;
+  color: #ffffff;
   font-weight: 200;
   background-color: #222222;
 }
@@ -151,7 +144,7 @@ h3 {
 /* line 124, ../sass/main.scss */
 a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 /* line 128, ../sass/main.scss */
 a:hover {
@@ -180,7 +173,7 @@ section {
 /* line 150, ../sass/main.scss */
 .main-btn {
   display: inline-block;
-  background-color: #f750e3;
+  background-color: #F750E3;
   padding: 0.625rem;
   font-family: "robotC-bold";
 }
@@ -204,7 +197,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 100;
-  background-color: #00b6d3;
+  background-color: #00B6D3;
   width: 100%;
 }
 /* line 183, ../sass/main.scss */
@@ -298,7 +291,7 @@ header .filler {
 /* line 269, ../sass/main.scss */
 footer {
   font-size: 2.25rem;
-  background-color: white;
+  background-color: #ffffff;
 }
 /* line 273, ../sass/main.scss */
 footer img {
@@ -310,11 +303,11 @@ footer ul {
 }
 /* line 281, ../sass/main.scss */
 footer a {
-  color: #00b6d3;
+  color: #00B6D3;
 }
 /* line 284, ../sass/main.scss */
 footer a:hover {
-  color: white;
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -347,7 +340,7 @@ footer a:hover {
 }
 /* line 322, ../sass/main.scss */
 #intro-sec .width-sizer h1, #intro-sec .width-sizer h3 {
-  color: #00b6d3;
+  color: #00B6D3;
 }
 /* line 327, ../sass/main.scss */
 #intro-sec .btn-container {
@@ -421,7 +414,7 @@ footer a:hover {
 /* line 395, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
-  color: #00b6d3;
+  color: #00B6D3;
 }
 /* line 399, ../sass/main.scss */
 #team-sec .width-sizer {
