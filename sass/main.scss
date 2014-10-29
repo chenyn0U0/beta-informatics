@@ -267,12 +267,22 @@ header {
       FOOTER
    ========================================================================== */
 footer {
-	font-size: calculateRem(36px);
+	font-size: calculateRem(18px);
 	background-color: $white;
+	color: $turquese;
 
-	img {
-		height: 200px;
+	p {
+		margin-bottom: 10px;
 	}
+
+	.footer-logos {
+		display: inline-block;
+		img {
+			height: 100px;
+			margin-right: 10px;
+		}
+	}
+
 
 	ul {
 		float: right;
@@ -282,7 +292,7 @@ footer {
 		color: $turquese;
 
 		&:hover {
-			color: $white;
+			color: $dark;
 		}
 	}
 }
@@ -399,6 +409,10 @@ footer {
 	.width-sizer {
 		width: 50%;
 		float: left;
+	}
+
+	img.logo {
+		width: 70px;
 	}
 }
 

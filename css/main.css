@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,46 +24,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -71,30 +71,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
+
 @font-face {
   font-family: "robot-thin";
   src: url("roboto/Roboto-Thin.ttf");
 }
+
 @font-face {
   font-family: "robot-it";
   src: url("roboto/Roboto-ThinItalic.ttf");
 }
+
 @font-face {
   font-family: "robot-med";
   src: url("roboto/Roboto-Medium.ttf");
 }
+
 @font-face {
   font-family: "robot-bold";
   src: url("roboto/Roboto-Bold.ttf");
 }
+
 @font-face {
   font-family: "robot-boldIt";
   src: url("roboto/Roboto-MediumItalic.ttf");
 }
+
 @font-face {
   font-family: "robotC-bold";
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
+
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
@@ -108,7 +115,7 @@ html {
 /* line 93, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
-  color: #ffffff;
+  color: white;
   font-weight: 200;
   background-color: #222222;
 }
@@ -144,7 +151,7 @@ h3 {
 /* line 124, ../sass/main.scss */
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: white;
 }
 /* line 128, ../sass/main.scss */
 a:hover {
@@ -173,7 +180,7 @@ section {
 /* line 150, ../sass/main.scss */
 .main-btn {
   display: inline-block;
-  background-color: #F750E3;
+  background-color: #f750e3;
   padding: 0.625rem;
   font-family: "robotC-bold";
 }
@@ -197,7 +204,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 100;
-  background-color: #00B6D3;
+  background-color: #00b6d3;
   width: 100%;
 }
 /* line 183, ../sass/main.scss */
@@ -290,42 +297,52 @@ header .filler {
    ========================================================================== */
 /* line 269, ../sass/main.scss */
 footer {
-  font-size: 2.25rem;
-  background-color: #ffffff;
+  font-size: 1.125rem;
+  background-color: white;
+  color: #00b6d3;
 }
-/* line 273, ../sass/main.scss */
-footer img {
-  height: 200px;
+/* line 274, ../sass/main.scss */
+footer p {
+  margin-bottom: 10px;
 }
-/* line 277, ../sass/main.scss */
+/* line 278, ../sass/main.scss */
+footer .footer-logos {
+  display: inline-block;
+}
+/* line 280, ../sass/main.scss */
+footer .footer-logos img {
+  height: 100px;
+  margin-right: 10px;
+}
+/* line 287, ../sass/main.scss */
 footer ul {
   float: right;
 }
-/* line 281, ../sass/main.scss */
+/* line 291, ../sass/main.scss */
 footer a {
-  color: #00B6D3;
+  color: #00b6d3;
 }
-/* line 284, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 footer a:hover {
-  color: #ffffff;
+  color: #222222;
 }
 
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 297, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 #intro-sec {
   margin-top: 3.75rem;
   position: relative;
   background: url("../img/bg_bikes.png") no-repeat;
   background-size: 100%;
 }
-/* line 304, ../sass/main.scss */
+/* line 314, ../sass/main.scss */
 #intro-sec #bikes {
   visibility: hidden;
   width: 100%;
 }
-/* line 309, ../sass/main.scss */
+/* line 319, ../sass/main.scss */
 #intro-sec .section-Padding {
   background-color: rgba(255, 255, 255, 0.8);
   overflow: visible;
@@ -334,32 +351,32 @@ footer a:hover {
   width: 100%;
   padding: 60px 0;
 }
-/* line 318, ../sass/main.scss */
+/* line 328, ../sass/main.scss */
 #intro-sec .width-sizer {
   position: relative;
 }
-/* line 322, ../sass/main.scss */
+/* line 332, ../sass/main.scss */
 #intro-sec .width-sizer h1, #intro-sec .width-sizer h3 {
-  color: #00B6D3;
+  color: #00b6d3;
 }
-/* line 327, ../sass/main.scss */
+/* line 337, ../sass/main.scss */
 #intro-sec .btn-container {
   bottom: -95px;
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 333, ../sass/main.scss */
+/* line 343, ../sass/main.scss */
 #intro-sec .btn-container .main-btn {
   margin-right: 1.25rem;
 }
 @media only screen and (max-width: 690px) {
-  /* line 339, ../sass/main.scss */
+  /* line 349, ../sass/main.scss */
   #intro-sec .section-Padding {
     padding-top: 6.25rem;
   }
 }
-/* line 343, ../sass/main.scss */
+/* line 353, ../sass/main.scss */
 #intro-sec .invisibleDiv {
   width: 100%;
   height: 6.25rem;
@@ -368,18 +385,18 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 352, ../sass/main.scss */
+/* line 362, ../sass/main.scss */
 #about-sec {
   background-image: url("../img/bg_inverleith.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 357, ../sass/main.scss */
+/* line 367, ../sass/main.scss */
 #about-sec .section-Padding {
   background-color: rgba(0, 182, 211, 0.7);
   height: 100%;
 }
-/* line 361, ../sass/main.scss */
+/* line 371, ../sass/main.scss */
 #about-sec .section-Padding .width-sizer {
   float: right;
   width: 40%;
@@ -389,7 +406,7 @@ footer a:hover {
 /* 
    map
    ========================================================================== */
-/* line 373, ../sass/main.scss */
+/* line 383, ../sass/main.scss */
 #map-sec {
   position: relative;
   background-image: url("../img/blackMap.png");
@@ -397,11 +414,11 @@ footer a:hover {
   background-size: 100%;
   height: calc(100% - 20px);
 }
-/* line 380, ../sass/main.scss */
+/* line 390, ../sass/main.scss */
 #map-sec > img {
   width: 100%;
 }
-/* line 384, ../sass/main.scss */
+/* line 394, ../sass/main.scss */
 #map-sec .width-sizer {
   width: 50%;
   float: right;
@@ -411,13 +428,17 @@ footer a:hover {
 /* 
    about us
    ========================================================================== */
-/* line 395, ../sass/main.scss */
+/* line 405, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
-  color: #00B6D3;
+  color: #00b6d3;
 }
-/* line 399, ../sass/main.scss */
+/* line 409, ../sass/main.scss */
 #team-sec .width-sizer {
   width: 50%;
   float: left;
+}
+/* line 414, ../sass/main.scss */
+#team-sec img.logo {
+  width: 70px;
 }
