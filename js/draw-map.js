@@ -255,14 +255,18 @@ function formCheck()
     if(cdn=="") nullitems+="route,";else;
     if(startTime.value=="") nullitems+="journey start time,";else;
     if(endTime.value=="") nullitems+="journey end time,";else;
+    if(traveltool="") nullitems+="tool for transportation";
     if(nullitems=="")
      {//表单成功开始上传
         givevalue();
-$.post("get-form.php", $("#formId").serialize());
-alert("Thank you for your cooperation!");
-
-return true;
-        
+        var startconfirm=confirm("COMFIRMATION: Are you sure to submit your data?");
+        if(startconfirm==true)
+        {
+          $.post("get-form.php", $("#formId").serialize());
+          alert("Thank you for your cooperation!");
+          return true;
+        }
+        else return false;
       }
       else return cannotnull(nullitems);
      return false;
@@ -292,6 +296,7 @@ textforroute+=")";
     document.getElementById("route").value=textforroute;
     document.getElementById("startPoint").value=textforstartpoint;
     document.getElementById("endPoint").value=textforendpoint;
+    document.getElementById("travelType").value=traveltool;
 
 }
 
@@ -309,26 +314,37 @@ function hidemap()
 
 
 //=============================好看点用===============================
-
+//======1.for travel tool============
+var traveltool="";
 
 function bikeclick()
 {
-alert("bike");
+jQuery("#bike-btn").addClass("bike-btn-clicked");
+jQuery("#car-btn").addClass("car-btn");
+jQuery("#bike-btn").addClass("bike-btn");
+
+traveltool="bike";
 }
 
 
 function carclick()
 {
-  alert("car");
+jQuery("#bike-btn").addClass("bike-btn");
+jQuery("#car-btn").addClass("car-btn-clicked");
+jQuery("#bike-btn").addClass("bike-btn");
+  traveltool="car";
 }
 
 function walkclick()
 {
-  alert("walk");
+jQuery("#bike-btn").addClass("bike-btn");
+jQuery("#car-btn").addClass("car-btn");
+jQuery("#bike-btn").addClass("bike-btn-clicked");
+  traveltool="walk";
 }
 
 
-
+//======1.for travel tool============
 
 
 

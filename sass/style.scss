@@ -129,6 +129,7 @@ pre.ui-distance {
         width: 57px;
     }
 
+
   .row {
     margin-bottom: 10px;
   }
@@ -138,28 +139,44 @@ pre.ui-distance {
         background: url('../img/icon-sprite.png') left top no-repeat;
         background-size: 200px;
 
-      &:hover {
+      &:hover,.car-btn-clicked {
         background: url('../img/icon-sprite.png') left bottom no-repeat;
         background-size: 200px;
       }
     }
 
+
     #bike-btn {
         background: url('../img/icon-sprite.png') right top no-repeat;
         background-size: 200px;
 
-      &:hover {
+      &:hover,.bike-btn-clicked {
         background: url('../img/icon-sprite.png') right bottom no-repeat;
         background-size: 200px;
       }
     }
 
+
     #walk-btn {
         background: url('../img/icon-sprite.png') center top no-repeat;
         background-size: 200px;
 
-      &:hover {
+      &:hover,.walk-btn-clicked {
         background: url('../img/icon-sprite.png') center bottom no-repeat;
         background-size: 200px;
       }
+    }
+
+    
+    #car-btn-clicked{
+        background: url('../img/icon-sprite.png') left bottom no-repeat;
+        background-size: 200px;
+    }
+    #bike-btn-clicked{
+        background: url('../img/icon-sprite.png') right bottom no-repeat;
+        background-size: 200px;
+    }
+    #walk-btn-clicked{
+        background: url('../img/icon-sprite.png') center bottom no-repeat;
+        background-size: 200px;
     }
