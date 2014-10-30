@@ -42,21 +42,35 @@
           
         <div class="row">
           <label for="gender">gender</label>
-          <select id="Select2" name="gender">
-                  <option>Male</option>
-                  <option>Female</option>
-              </select>
+<div id="select2" class="select"></div>
+<script type="text/javascript">
+  $('#select2').SelectSimu({
+    width : 150,
+    zIndex : 190,
+    listNum : 2,
+    listValue : ['0','1'],
+    listOption : ['Male','Female'],
+    imgSrc : 'img/icon_down.png'
+  });
+</script>
         </div>
 
 
         <div class="row">
           <label for="journeyType">journey</label>
-            <select id="Select4" name="journeyType">
-                    <option>Work</option>
-                    <option>School</option>
-                    <option>Take children to school</option>
-                    <option>Others</option>
-                </select>
+
+<div id="select3" class="select"></div>
+<script type="text/javascript">
+  $('#select3').SelectSimu({
+    width : 200,
+    zIndex : 180,
+    listNum : 4,
+    listValue : ['0','1','2','3'],
+    listOption : ['Work','School','Take children to school','Others'],
+    imgSrc : 'img/icon_down.png'
+  });
+</script>
+
         </div>
 
         <div class="row">
@@ -69,7 +83,10 @@
         <div class="row">
             Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
         </div>
-         <input type="hidden" value="" name="travelType" id="travelType"/>
+        <input type="hidden" value="" name="age" id="age"/>
+        <input type="hidden" value="" name="gender" id="gender"/>
+        <input type="hidden" value="" name="journey" id="journey"/>
+        <input type="hidden" value="" name="travelType" id="travelType"/>
         <input type="hidden" value="" name="route" id="route"/>
         <input type="hidden" value="" name="distances" id="distances"/>
         <input type="hidden" value="" name="startPoint" id="startPoint"/>

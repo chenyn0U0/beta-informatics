@@ -30,7 +30,7 @@ dependon : jquery-1.7.js
 			_this.$e.before(cssStr);
 			//html代码导入
 			var	selectStr = '<div class="selectInput">'+
-								'<input type="hidden" name="selectInput[]" value="'+(_this.opts.listValue[0] ? _this.opts.listValue[0] : "")+'" />'+
+								'<input type="hidden" name="selectInput" value="'+(_this.opts.listValue[0] ? _this.opts.listValue[0] : "")+'" />'+
 								'<span>'+(_this.opts.listOption[0] ? _this.opts.listOption[0] : "")+'</span>'+
 								'<i></i>'+
 							'</div>'+

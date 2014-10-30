@@ -297,7 +297,14 @@ textforroute+=")";
     document.getElementById("startPoint").value=textforstartpoint;
     document.getElementById("endPoint").value=textforendpoint;
     document.getElementById("travelType").value=traveltool;
-    alert(document.getElementById("selectInput"));
+var valuegot= document.getElementsByName("selectInput"); //获得text
+document.getElementById("age").value=valuegot[0].value;
+if (valuegot[1].value)document.getElementById("gender").value="Female";
+else document.getElementById("gender").value="Male";
+if(valuegot[2].value==0) document.getElementById("journey").value="Work";
+if(valuegot[2].value==1) document.getElementById("journey").value="School";
+if(valuegot[2].value==2) document.getElementById("journey").value="Take children to school";
+if(valuegot[2].value==3) document.getElementById("journey").value="Other";
 
 }
 

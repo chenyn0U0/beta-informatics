@@ -15,7 +15,7 @@
   $finishPoint=$_POST["endPoint"];
   $distance=$_POST["distances"];
   $travelType=$_POST["travelType"];
-  $journeyType=$_POST["journeyType"];
+  $journeyType=$_POST["journey"];
   $age=$_POST["age"];
   $gender=$_POST["gender"];
   $weekday=$_POST["weekday"];
