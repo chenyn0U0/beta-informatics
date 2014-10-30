@@ -25,17 +25,19 @@
         </div>
 
         <div class="row">
-          <label for="age">age</label>
-          <select id="Select1" name="age">
-                 <option>0-11</option>
-                 <option>12-18</option>
-                 <option>19-23</option>
-                 <option>24-28</option>
-                 <option>29-39</option>
-                 <option>40-50</option>
-                 <option>51-65</option>
-                 <option>over 65</option>
-             </select>
+          <label>age</label>
+
+<div id="select1" class="select"></div>
+<script type="text/javascript">
+  $('#select1').SelectSimu({
+    width : 150,
+    zIndex : 200,
+    listNum : 7,
+    listValue : ['0-11','12-18','19-24','25-30','31-49','50-65','over 65'],
+    listOption : ['0-11','12-18','19-24','25-30','31-49','50-65','over 65'],
+    imgSrc : 'img/icon_down.png'
+  });
+</script>
         </div>
           
         <div class="row">

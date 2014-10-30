@@ -51,7 +51,7 @@ echo "<br/>";
 
 
 
-$con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
+$con = mysql_connect("localhost","root","");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
