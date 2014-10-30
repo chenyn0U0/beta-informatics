@@ -462,7 +462,7 @@ footer a:hover {
 @media only screen and (max-width: 690px) {
   /* line 389, ../sass/main.scss */
   #map-sec .section-Padding {
-    padding: 0 0;
+    padding: 0;
   }
 }
 
