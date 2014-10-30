@@ -252,11 +252,11 @@ function formCheck()
   var nullitems="";
   var startTime = document.getElementById("startTime");
   var endTime=document.getElementById("endTime");
-    if(cdn=="") nullitems+="route,";else;
-    if(startTime.value=="") nullitems+="journey start time,";else;
-    if(endTime.value=="") nullitems+="journey end time,";else;
-    if(traveltool=="") nullitems+="tool for transportation";else;
-    if(nullitems=="")
+    if(cdn=="") nullitems+=" route.";else;
+    if(st1.value==""||st2.value=="") nullitems+=" journey start time.";else;
+    if(et1.value==""||et2.value=="") nullitems+=" journey end time.";else;
+    if(traveltool=="") nullitems+=" tool for transportation.";else;
+    if(nullitems==""&&timecheck()!="")
      {//表单成功开始上传
         givevalue();
         var startconfirm=confirm("COMFIRMATION: Are you sure to submit your data?");
@@ -274,7 +274,8 @@ function formCheck()
 
 function cannotnull(nullitem)
 {
-  alert("Please enter your "+nullitem+".");
+  if(nullitem!="")  alert("Please complete your"+nullitem);
+  else alert("Time input is not allowed.");
   return false;
 }
 
@@ -297,6 +298,8 @@ textforroute+=")";
     document.getElementById("startPoint").value=textforstartpoint;
     document.getElementById("endPoint").value=textforendpoint;
     document.getElementById("travelType").value=traveltool;
+    document.getElementById("startTime").value=st1.value+":"+st2.value;
+    document.getElementById("endTime").value=et1.value+":"+et2.value;
 var valuegot= document.getElementsByName("selectInput"); //获得text
 document.getElementById("age").value=valuegot[0].value;
 if (valuegot[1].value)document.getElementById("gender").value="Female";
@@ -306,6 +309,12 @@ if(valuegot[2].value==1) document.getElementById("journey").value="School";
 if(valuegot[2].value==2) document.getElementById("journey").value="Take children to school";
 if(valuegot[2].value==3) document.getElementById("journey").value="Other";
 
+}
+
+function timecheck()
+{
+  if (st1.value<=24&&st1.value>=0&&st2<=60&&st2>=0&&et1.value<=24&&et1.value>=0&&et2<=60&&et2>=0) return "";
+  else return "Time input is not allowed.";
 }
 
 

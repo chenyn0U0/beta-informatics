@@ -73,16 +73,33 @@
 
         </div>
 
+<script language="javascript" type="text/javascript">
+        function IsNum(e) {
+            var k = window.event ? e.keyCode : e.which;
+            if (((k >= 48) && (k <= 57)) || k == 8 || k == 0) {
+            } else {
+                if (window.event) {
+                    window.event.returnValue = false;
+                }
+                else {
+                    e.preventDefault(); //for firefox 
+                }
+            }
+        } 
+    </script>
+
         <div class="row">
-            <label for="startTime">Approximate journey start time:</label> <input type="time" id="startTime" name="startTime"/>
+            <label for="startTime">Approximate journey start time:</label> <input type="text" size=1 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)" />:<input size=1  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>
         </div>
         <div class="row">
-           <label for="endTime">Approximate journey end time:</label><input type="time" id="endTime" name="endTime"/>
+           <label for="endTime">Approximate journey end time:</label> <input type="text" id="et1"  size=1 name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>:<input type="text" id="et2"  size=1 name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>
         </div>
 
         <div class="row">
             Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
         </div>
+        <input type="hidden" id="startTime" name="startTime"/>
+        <input type="hidden" id="endTime" name="endTime"/>
         <input type="hidden" value="" name="age" id="age"/>
         <input type="hidden" value="" name="gender" id="gender"/>
         <input type="hidden" value="" name="journey" id="journey"/>
