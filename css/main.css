@@ -102,52 +102,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
 
-@font-face {
-  font-family: "robot";
-  src: url("roboto/Roboto-Light.ttf");
-}
-
-@font-face {
-  font-family: "robot-thin";
-  src: url("roboto/Roboto-Thin.ttf");
-}
-
-@font-face {
-  font-family: "robot-it";
-  src: url("roboto/Roboto-ThinItalic.ttf");
-}
-
-@font-face {
-  font-family: "robot-med";
-  src: url("roboto/Roboto-Medium.ttf");
-}
-
-@font-face {
-  font-family: "robot-bold";
-  src: url("roboto/Roboto-Bold.ttf");
-}
-
-@font-face {
-  font-family: "robot-boldIt";
-  src: url("roboto/Roboto-MediumItalic.ttf");
-}
-
-@font-face {
-  font-family: "robotC-bold";
-  src: url("roboto/RobotoCondensed-LightItalic.ttf");
-}
-
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
    ========================================================================== */
-/* line 92, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 html {
   font-size: 16px;
+  line-height: 24px;
   font-family: "robot-thin", san-serif;
 }
 
-/* line 99, ../sass/main.scss */
+/* line 46, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
   color: white;
@@ -155,27 +121,29 @@ body {
   background-color: #222222;
 }
 
-/* line 106, ../sass/main.scss */
+/* line 53, ../sass/main.scss */
 h1 {
   font-size: 3.4375rem;
   text-align: center;
   margin-bottom: 1.25rem;
+  line-height: 3.75rem;
 }
 
-/* line 112, ../sass/main.scss */
+/* line 60, ../sass/main.scss */
 h1 > span {
   font-family: "robot-it", sans-serif;
   font-weight: 100;
 }
 
-/* line 117, ../sass/main.scss */
+/* line 65, ../sass/main.scss */
 h2 {
   font-size: 2.25rem;
   margin-bottom: 0.9375rem;
   font-family: "robot-boldIt";
+  line-height: 2.875rem;
 }
 
-/* line 123, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 h3 {
   text-align: center;
   font-size: 1.75rem;
@@ -183,70 +151,89 @@ h3 {
   font-family: "robot-med";
 }
 
-/* line 130, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 a {
   text-decoration: none;
   color: white;
 }
-/* line 134, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 a:hover {
   color: #222222;
 }
 
-/* line 139, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 p {
+  line-height: 1.875rem;
   font-size: 1.5rem;
   font-family: "robot-thin";
 }
 
-/* line 144, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .width-sizer {
   max-width: 1200px;
   margin: auto;
   display: block;
 }
 
-/* line 150, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 section {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 155, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 .section-Padding {
   padding: 4.375rem 30px;
   overflow: hidden;
 }
 
-/* line 161, ../sass/main.scss */
+/* line 111, ../sass/main.scss */
 .main-btn {
   display: inline-block;
   background-color: #f750e3;
   padding: 0.625rem;
-  font-family: "robotC-bold";
+  font-family: "robot-thin", san-serif;
+  font-size: 1.25rem;
+  font-style: italic;
 }
 
-/* line 168, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 .backgroundImage {
   display: none;
 }
 
+/* line 125, ../sass/main.scss */
+.column-left {
+  display: inline-block;
+  width: calc(50% - 5px);
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+/* line 132, ../sass/main.scss */
+.column-right {
+  display: inline-block;
+  width: calc(50% - 10px);
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 800px) {
-  /* line 176, ../sass/main.scss */
+  /* line 142, ../sass/main.scss */
   html {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 690px) {
-  /* line 185, ../sass/main.scss */
+  /* line 151, ../sass/main.scss */
   p {
-    font-size: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
   }
 }
 /* ==========================================================================
        HEADER
    ========================================================================== */
-/* line 192, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 header {
   position: fixed;
   top: 0;
@@ -254,88 +241,92 @@ header {
   background-color: #00b6d3;
   width: 100%;
 }
-/* line 200, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 header .module-padding {
   padding: 10px 30px;
   overflow: hidden;
   text-align: right;
 }
-/* line 206, ../sass/main.scss */
+/* line 173, ../sass/main.scss */
 header .filler {
   height: 45px;
   width: 1px;
   display: inline-block;
 }
 
-/* line 214, ../sass/main.scss */
+/* line 181, ../sass/main.scss */
 #header-logo {
   float: left;
 }
-/* line 217, ../sass/main.scss */
+/* line 184, ../sass/main.scss */
 #header-logo img {
   height: 45px;
 }
 
-/* line 222, ../sass/main.scss */
+/* line 189, ../sass/main.scss */
 #header-nav {
   overflow: hidden;
   display: inline-block;
 }
-/* line 226, ../sass/main.scss */
+/* line 193, ../sass/main.scss */
 #header-nav li {
   display: inline-block;
   text-decoration: none;
   margin-left: 5px;
 }
-/* line 231, ../sass/main.scss */
+/* line 198, ../sass/main.scss */
 #header-nav li a {
   text-transform: uppercase;
 }
 
-/* line 237, ../sass/main.scss */
+/* line 204, ../sass/main.scss */
 #burger-button {
   display: none;
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 243, ../sass/main.scss */
+  /* line 210, ../sass/main.scss */
   #burger-button {
     display: inline-block;
   }
-  /* line 245, ../sass/main.scss */
+  /* line 212, ../sass/main.scss */
   #burger-button img {
     height: 35px;
   }
 
-  /* line 250, ../sass/main.scss */
+  /* line 217, ../sass/main.scss */
   #header-nav {
     display: none;
     display: block;
     text-align: center;
     width: 100%;
   }
-  /* line 257, ../sass/main.scss */
+  /* line 224, ../sass/main.scss */
   #header-nav li {
     display: block;
     margin-bottom: 0px;
     padding: 10px;
   }
-  /* line 262, ../sass/main.scss */
+  /* line 229, ../sass/main.scss */
   #header-nav li a {
     display: block;
     padding: 10px 0;
   }
 
-  /* line 270, ../sass/main.scss */
+  /* line 236, ../sass/main.scss */
+  header {
+    font-size: 24px;
+  }
+  /* line 240, ../sass/main.scss */
   header .module-padding {
     padding: 10px 30px;
   }
-  /* line 274, ../sass/main.scss */
+  /* line 244, ../sass/main.scss */
   header .filler {
     display: none;
   }
 
-  /* line 279, ../sass/main.scss */
+  /* line 249, ../sass/main.scss */
   #header-logo img {
     height: 35px;
   }
@@ -343,34 +334,34 @@ header .filler {
 /* ==========================================================================
       FOOTER
    ========================================================================== */
-/* line 289, ../sass/main.scss */
+/* line 259, ../sass/main.scss */
 footer {
   font-size: 1.125rem;
   background-color: white;
   color: #00b6d3;
 }
-/* line 294, ../sass/main.scss */
+/* line 264, ../sass/main.scss */
 footer p {
   margin-bottom: 10px;
 }
-/* line 298, ../sass/main.scss */
+/* line 268, ../sass/main.scss */
 footer .footer-logos {
   display: inline-block;
 }
-/* line 300, ../sass/main.scss */
+/* line 270, ../sass/main.scss */
 footer .footer-logos img {
   height: 100px;
   margin-right: 10px;
 }
-/* line 307, ../sass/main.scss */
+/* line 277, ../sass/main.scss */
 footer ul {
   float: right;
 }
-/* line 311, ../sass/main.scss */
+/* line 281, ../sass/main.scss */
 footer a {
   color: #00b6d3;
 }
-/* line 314, ../sass/main.scss */
+/* line 284, ../sass/main.scss */
 footer a:hover {
   color: #222222;
 }
@@ -378,19 +369,19 @@ footer a:hover {
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 327, ../sass/main.scss */
+/* line 297, ../sass/main.scss */
 #intro-sec {
   margin-top: 3.75rem;
   position: relative;
   background: url("../img/bg_bikes.png") no-repeat;
   background-size: 100%;
 }
-/* line 334, ../sass/main.scss */
+/* line 304, ../sass/main.scss */
 #intro-sec #bikes {
   visibility: hidden;
   width: 100%;
 }
-/* line 339, ../sass/main.scss */
+/* line 309, ../sass/main.scss */
 #intro-sec .section-Padding {
   background-color: rgba(255, 255, 255, 0.8);
   overflow: visible;
@@ -399,32 +390,33 @@ footer a:hover {
   width: 100%;
   padding: 60px 0;
 }
-/* line 348, ../sass/main.scss */
+/* line 318, ../sass/main.scss */
 #intro-sec .width-sizer {
   position: relative;
 }
-/* line 352, ../sass/main.scss */
+/* line 322, ../sass/main.scss */
 #intro-sec .width-sizer h1, #intro-sec .width-sizer h3 {
   color: #00b6d3;
 }
-/* line 357, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 #intro-sec .btn-container {
   bottom: -95px;
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 363, ../sass/main.scss */
+/* line 333, ../sass/main.scss */
 #intro-sec .btn-container .main-btn {
   margin-right: 1.25rem;
+  font-family: "robot-thin";
 }
 @media only screen and (max-width: 690px) {
-  /* line 369, ../sass/main.scss */
+  /* line 340, ../sass/main.scss */
   #intro-sec .section-Padding {
     padding-top: 6.25rem;
   }
 }
-/* line 373, ../sass/main.scss */
+/* line 344, ../sass/main.scss */
 #intro-sec .invisibleDiv {
   width: 100%;
   height: 6.25rem;
@@ -433,60 +425,67 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 382, ../sass/main.scss */
+/* line 353, ../sass/main.scss */
 #about-sec {
   background-image: url("../img/bg_inverleith.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 387, ../sass/main.scss */
+/* line 358, ../sass/main.scss */
 #about-sec .section-Padding {
   background-color: rgba(0, 182, 211, 0.7);
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 393, ../sass/main.scss */
+/* line 364, ../sass/main.scss */
 #about-sec .section-Padding .width-sizer {
   float: right;
   width: 40%;
   padding: 5%;
 }
-@media only screen and (max-width: 690px) {
-  /* line 402, ../sass/main.scss */
-  #about-sec .width-sizer {
-    padding: 0 5%;
+@media only screen and (max-width: 800px) {
+  /* line 371, ../sass/main.scss */
+  #about-sec .section-Padding .width-sizer {
+    padding: 5%;
+    width: 60%;
   }
 }
 
 /* 
    map
    ========================================================================== */
-/* line 413, ../sass/main.scss */
+/* line 385, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
 @media only screen and (max-width: 690px) {
-  /* line 417, ../sass/main.scss */
+  /* line 389, ../sass/main.scss */
   #map-sec .section-Padding {
-    padding: inherit 0;
+    padding: 0 0;
   }
 }
 
 /* 
    about us
    ========================================================================== */
-/* line 427, ../sass/main.scss */
+/* line 399, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
   color: #00b6d3;
 }
-/* line 431, ../sass/main.scss */
-#team-sec .width-sizer {
-  width: 50%;
-  float: left;
+/* line 403, ../sass/main.scss */
+#team-sec img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
-/* line 436, ../sass/main.scss */
+/* line 409, ../sass/main.scss */
 #team-sec img.logo {
-  width: 200px;
+  width: 80%;
+  margin: 0;
+}
+/* line 414, ../sass/main.scss */
+#team-sec a:hover {
+  color: #f750e3;
 }
