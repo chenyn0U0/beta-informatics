@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "robot";
+  src: url("roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "robot-thin";
+  src: url("roboto/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: "robot-it";
+  src: url("roboto/Roboto-ThinItalic.ttf");
+}
+
+@font-face {
+  font-family: "robot-med";
+  src: url("roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "robot-bold";
+  src: url("roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "robot-boldIt";
+  src: url("roboto/Roboto-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "robotC-bold";
+  src: url("roboto/RobotoCondensed-LightItalic.ttf");
+}
+
+/* line 4, ../sass/slider.scss */
+.events {
+  list-style: none;
+}
+
+/* line 8, ../sass/slider.scss */
+.callbacks_container {
+  margin-bottom: 50px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+/* line 15, ../sass/slider.scss */
+.callbacks {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 24, ../sass/slider.scss */
+.callbacks li {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* line 31, ../sass/slider.scss */
+.callbacks img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  border: 0;
+}
+
+/* line 40, ../sass/slider.scss */
+.callbacks .caption {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  text-shadow: none;
+  color: #fff;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 20px;
+  margin: 0;
+  max-width: none;
+}
+
+/* line 57, ../sass/slider.scss */
+.callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  top: 52%;
+  left: 0;
+  opacity: 0.7;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("../img/themes.gif") no-repeat left top;
+  margin-top: -45px;
+}
+
+/* line 73, ../sass/slider.scss */
+.callbacks_nav:active {
+  opacity: 1.0;
+}
+
+/* line 77, ../sass/slider.scss */
+.callbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 87, ../sass/slider.scss */
+  .callbacks_nav {
+    top: 47%;
+  }
+}

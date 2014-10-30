@@ -8,7 +8,7 @@
   padding-top: 100px;
 }
 
-/* line 11, ../sass/style.scss */
+/* line 10, ../sass/style.scss */
 #map {
   height: 700px;
   width: 90%;
@@ -50,7 +50,7 @@
     width: 100%;
   }
 }
-/* line 54, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -79,7 +79,7 @@ pre.ui-distance {
   z-index: 60;
 }
 
-/* line 81, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .infobar {
   position: absolute;
   top: 0px;
@@ -101,7 +101,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -134,12 +134,12 @@ pre.ui-distance {
   background: #3074a4;
 }
 
-/* line 122, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -148,7 +148,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 136, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -162,7 +162,7 @@ pre.ui-distance {
   margin-left: 10px;
 }
 
-/* line 150, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .buttonrow {
   margin-top: 20px;
   margin-bottom: 25px;

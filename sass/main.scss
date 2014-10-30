@@ -5,55 +5,7 @@
 
 @import "compass/reset";
 
-$turquese: #00B6D3;
-
-$white: #ffffff;
-
-$pink: #F750E3;
-
-$dark: #222222;
-
-
-@font-face {
-	font-family: "robot";
-	src: url('roboto/Roboto-Light.ttf');
-}
-
-@font-face {
-	font-family: "robot-thin";
-	src: url('roboto/Roboto-Thin.ttf');
-}
-
-@font-face {
-	font-family: "robot-it";
-	src: url('roboto/Roboto-ThinItalic.ttf');
-}
-
-@font-face {
-	font-family: "robot-med";
-	src: url('roboto/Roboto-Medium.ttf');
-}
-
-@font-face {
-	font-family: "robot-bold";
-	src: url('roboto/Roboto-Bold.ttf');
-}
-
-@font-face {
-	font-family: "robot-boldIt";
-	src: url('roboto/Roboto-MediumItalic.ttf');
-}
-
-@font-face {
-	font-family: "robotC-bold";
-	src: url('roboto/RobotoCondensed-LightItalic.ttf');
-}
-
-
-//responsive
-$mobile-width: 690px;
-
-$main-sidePadding: 30px;
+@import "variables";
 
 
 
@@ -85,8 +37,9 @@ $main-sidePadding: 30px;
 
 html {
 	font-size: 16px;
+	line-height: 24px;
 
-	font-family: "robot", san-serif;
+	font-family: "robot-thin", san-serif;
 }
 
 
@@ -101,6 +54,7 @@ h1 {
 	font-size: calculateRem(55px);
 	text-align: center;
 	margin-bottom: calculateRem(20px);
+	line-height: calculateRem(60px);
 }
 
 h1 > span {
@@ -112,6 +66,7 @@ h2 {
 	font-size: calculateRem(36px);
 	margin-bottom: calculateRem(15px);
 	font-family: "robot-boldIt";
+	line-height: calculateRem(46px);
 }
 
 h3 {
@@ -128,6 +83,12 @@ a {
 	&:hover {
 		color: $dark;
 	}
+}
+
+p {
+	line-height: calculateRem(30px);
+	font-size: calculateRem(24px);
+	font-family: "robot-thin";
 }
 
 .width-sizer {
@@ -151,7 +112,9 @@ section {
 	display: inline-block;
 	background-color: $pink;
 	padding: calculateRem(10px);
-	font-family: "robotC-bold";
+	font-family: "robot-thin", san-serif;
+	font-size: calculateRem(20px);
+	font-style: italic;
 }
 
 .backgroundImage {
@@ -159,16 +122,37 @@ section {
 }
 
 
+.column-left {
+	display: inline-block;
+	width: calc(50% - 5px);
+	margin-right: 10px; 
+	overflow: hidden;
+}
 
-@media only screen and (max-width: $mobile-width) {
+.column-right {
+	display: inline-block;
+	width: calc(50% - 10px);
+	overflow: hidden;
+
+}
+
+
+@media only screen and (max-width: $tablet-width) {
 
 	html {
 		font-size: 12px;
 	} 
+
 	
 	
 }
+@media only screen and (max-width: $mobile-width) {
 
+	p {
+		font-size: calculateRem(18px);
+		line-height: calculateRem(24px);
+	}
+}
 /* ==========================================================================
        HEADER
    ========================================================================== */
@@ -232,21 +216,27 @@ header {
 
 	#header-nav {
 		display: none;
-	}
-
-	#header-nav.show {
+	
 		display: block;
 		text-align: center;
 		width: 100%;
 
 		li {
 			display: block;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 			padding: 10px;
+
+			a {
+				display: block;
+				padding: 10px 0;
+			}
 		}
 	}
 	
 	header {
+		
+		font-size: 24px;
+
 		.module-padding {
 			padding: 10px 30px;
 		}
@@ -267,12 +257,22 @@ header {
       FOOTER
    ========================================================================== */
 footer {
-	font-size: calculateRem(36px);
+	font-size: calculateRem(18px);
 	background-color: $white;
+	color: $turquese;
 
-	img {
-		height: 200px;
+	p {
+		margin-bottom: 10px;
 	}
+
+	.footer-logos {
+		display: inline-block;
+		img {
+			height: 100px;
+			margin-right: 10px;
+		}
+	}
+
 
 	ul {
 		float: right;
@@ -282,7 +282,7 @@ footer {
 		color: $turquese;
 
 		&:hover {
-			color: $white;
+			color: $dark;
 		}
 	}
 }
@@ -332,6 +332,7 @@ footer {
 		
 		.main-btn {
 			margin-right: calculateRem(20px);
+			font-family: "robot-thin"
 		}
 	}
 
@@ -357,6 +358,8 @@ footer {
 	.section-Padding {
 		background-color: transparentize($turquese, 0.3);
 		height: 100%;
+		padding-top:0;
+		padding-bottom:0;
 
 		.width-sizer {
 			float: right;
@@ -364,27 +367,28 @@ footer {
 			padding: 5%;
 
 		}
+		@media only screen and (max-width: $tablet-width) {
+			.width-sizer {
+				padding: 5%;
+				width: 60%;
+			}
+		}
 	}
+
+
 }
+
 
 /* 
    map
    ========================================================================== */
 #map-sec {
 	position: relative;
-	background-image: url('../img/blackMap.png');
-	background-repeat: no-repeat;
-	background-size: 100%;
-	height: calc(100% - 20px);
 
-	> img {
-		width: 100%;
-	}
-
-	.width-sizer {
-		width: 50%;
-		float: right;
-		padding: 0 $main-sidePadding;
+	@media only screen and (max-width: $mobile-width) {
+		.section-Padding {
+			padding: 0 0;
+		}
 	}
 
 }
@@ -396,9 +400,19 @@ footer {
 	background-color: $dark;
 	color: $turquese;
 
-	.width-sizer {
-		width: 50%;
-		float: left;
+	img {
+		width: 80%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	img.logo {
+		width: 80%;
+		margin: 0;
+	}
+
+	a:hover {
+		color: $pink;
 	}
 }
 

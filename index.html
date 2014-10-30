@@ -6,15 +6,19 @@
 
 	<link rel="stylesheet" href="css/main.css">
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
-	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/map.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" href="css/slider.css">
+  	
 
 	<script src="js/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<!-- <script src="js/jquery-1.11.1.min.js"></script> -->
 	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
 	<script type="text/javascript" src="js/jquery-1.7.js"></script>
 	<script type="text/javascript" src="js/SelectSimu.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
 
 
 
@@ -23,6 +27,21 @@
 	$(document).ready(function() {
 
       $("#map-container").load("draw-map.html"); 
+
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
 
 	});
 
@@ -36,14 +55,14 @@
 		setSectionsWithImagebackgrounds();
 
 		var x = getRatio($('#blackMap').attr('src'));
-		console.log(x);
+		//console.log(x);
 	});
 
 
 	function setSectionsWithImagebackgrounds() {
 		$('section.imgSection').each(
 			function() {
-				console.log('imgSection ' + $(this).attr('id'));
+				//console.log('imgSection ' + $(this).attr('id'));
 				calculateHeight($(this));
 			}
 		)
@@ -71,7 +90,7 @@
 		var height = newImg.height;
 		var width = newImg.width;
 		
-		console.log('getRatio:  ' + newImg , 'src: ' + src,  'imgsrc: ' + newImg.src);
+		//console.log('getRatio:  ' + newImg , 'src: ' + src,  'imgsrc: ' + newImg.src);
 
 		return  width / height;	
 	}
@@ -91,7 +110,7 @@
 		var screenHeight = $(document).height();
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
-        console.log('showthetool: ' + viewportHeigth);
+        //console.log('showthetool: ' + viewportHeigth);
     }
 
     function hideMap() {
@@ -100,6 +119,18 @@
     	jQuery("#overlay").css("visibility", "hidden");
     	
     }
+
+    function toggleNavi() {
+    	$('#header-nav').slideToggle();
+    }
+
+
+    function scrollTo(id){
+	    $('html, body').animate({
+	        scrollTop: ($('#' + id).offset().top  - 30)
+	    }, 500);
+	    return false;
+	}
 
 	</script>
 
@@ -116,11 +147,11 @@
 			<div class="width-sizer">
 				<a id="header-logo"href=""><img src="img/path_logo.png" alt="bike logo"></a>
 				<div class="filler"></div>
-				<a id="burger-button" href="#"><img src="img/burger2.png" alt=""></a>
+				<a id="burger-button" href="javascript:void(0);" onclick="toggleNavi();"><img src="img/burger2.png" alt=""></a>
 				<ul id="header-nav">
 					<li><a a href="javascript:void(0);" onclick="showthetool()">GET STARTED</a></li>
-					<li><a href="">ABOUT US</a></li>
-					<li><a href="">THE MAP</a></li>
+					<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');">THE MAP</a></li>
+					<li><a href="javascript:void(0);" onclick="scrollTo('team-anchor');">ABOUT US</a></li>
 				</ul>
 			</div>
 		</div>
@@ -136,12 +167,14 @@
 
 				<div class="btn-container">
 					<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Get started</a></div>
-					<div class="main-btn"><a href="">Learn more</a></div>
+					<div class="main-btn"><a href="javascript:void(0);" onclick="scrollTo('intro-anchor')">Learn more</a></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
+
+<a href="javascript:void(0);" id="intro-anchor"></a>
 	<section id="about-sec" class="imgSection">
 		<img src="img/bg_inverleith.png" alt="" class="backgroundImage">
 		<div class="section-Padding">
@@ -149,28 +182,57 @@
 				<h2>What's it all about?</h2>
 				<p>Whether you walk, cycle, drive or get a lift, draw your daily route on the interactive map, save your Path and see how other people in your local community are travelling around the area. </p>
 				<br>
-				<p>Come join us on Thursday 30th October from 6-9pm at Broughton High School to find out about tips, advice and support available to help you get started, to share ......</p>
+				<p>Come join us on Thursday 30th October from 6-9pm at Broughton High School to find out about tips, advice and support available to help you get started...</p>
 			</div>
 		</div>
 	</section>
 
 
-
-	<section id="map-sec" class="imgSection">
-		<img id="blackMap" class="backgroundImage" src="img/blackMap.png" alt="">
+<a href="" id="map-anchor"></a>
+	<section id="map-sec" class="">
+		<!-- Slideshow 4 -->
 		<div class="section-Padding">
-			<div class="width-sizer">
-				<h2>Here would be the output of our data.... processor or 3djs or something</h2>
-			</div>
+		    <div class="callbacks_container">
+		      <ul class="rslides" id="slider4">
+		        <li>
+		          <img src="img/maps/basic.png" alt="">
+		        </li>
+		        <li>
+		          <img src="img/maps/green.png" alt="">
+		        </li>
+		        <li>
+		          <img src="img/maps/satellite.png" alt="">
+		        </li>
+		        <li>
+		          <img src="img/maps/red2.png" alt="">
+		        </li>
+		        <li>
+		          <img src="img/maps/blackMap.png" alt="">
+		        </li>
+		      </ul>
+		    </div>
 		</div>
 	</section>
 
-
+<a href="javascript:void(0)" id="team-anchor"></a>
 	<section id="team-sec">
 		<div class="section-Padding">
 			<div class="width-sizer">
-				<h2>About us</h2>
-				<p>We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. This project is part of our university course "Design for Informatics". For other interesting projects see the website: <a href="livinglab.org"></a></p>
+
+				<div class="column-left">
+					<h2>About us</h2>
+		
+					<img class="logo" src="img/logos/logo_betaInfs2.png" alt="logo beta-informatics">
+					<br>
+					<p class="left">We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. 
+					</p>
+					<p>This project is part of our university course "Design for Informatics". For other interesting projects, that were developed in this course see the website: <a href="http://edinburghlivinglab.org/projects/" target="_blank">edinburghlivinglab.org</a></p>
+				</div>
+				<div class="column-right">
+					<img src="img/bike.png" alt="">
+				</div>
+
+
 			</div>
 		</div>
 	</section>
@@ -179,16 +241,19 @@
 	<footer>
 		<div class="section-Padding">
 			<div class="width-sizer">
-				<img src="img/bi-logo.png" alt="logo beta-informatics">
-				<img src="img/uedin_logo.png" alt="logo University of Edinburgh">
+				<p>Here are some links to projects, teams, ideas and institutions that have influenced or accompanied our project:</p>
 
-				<ul>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Contact us</a></li>
-					<li><a href="#">Living Lab</a></li>
-					<!-- <li><a href="#">Edinburgh Council?</a></li>
-					<li><a href="#">Edinburgh Neighbourhood thing?</a></li>
- -->				</ul>
+				<div class="footer-logos">
+					<a href="http://www.designinformatics.org/"><img src="img/logos/DesignInformatics.gif" alt=""></a>
+					
+					<a href="http://edinburghlivinglab.org/"><img src="img/logos/livingLab.png" alt=""></a>
+
+					<a href="http://www.cyclehack.com/"><img src="img/logos/cyclehack.png" alt="img/logos/cyclehack.png"></a>
+					
+					<a href="https://airinverleith-livinglab.rhcloud.com/"><img src="img/logos/airInverleith.png" alt=""></a>
+
+				</div>
+
 			</div>
 		</div>
 	</footer>
