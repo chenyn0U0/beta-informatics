@@ -382,19 +382,12 @@ footer {
    ========================================================================== */
 #map-sec {
 	position: relative;
-	background-image: url('../img/blackMap.png');
-	background-repeat: no-repeat;
-	background-size: 100%;
-	height: calc(100% - 20px);
 
-	> img {
-		width: 100%;
-	}
 
 	.width-sizer {
-		width: 50%;
+		width: 100%;
 		float: right;
-		padding: 0 $main-sidePadding;
+		padding: 0;
 	}
 
 }

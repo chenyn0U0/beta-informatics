@@ -409,36 +409,28 @@ footer a:hover {
 /* line 383, ../sass/main.scss */
 #map-sec {
   position: relative;
-  background-image: url("../img/blackMap.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: calc(100% - 20px);
 }
-/* line 390, ../sass/main.scss */
-#map-sec > img {
-  width: 100%;
-}
-/* line 394, ../sass/main.scss */
+/* line 387, ../sass/main.scss */
 #map-sec .width-sizer {
-  width: 50%;
+  width: 100%;
   float: right;
-  padding: 0 30px;
+  padding: 0;
 }
 
 /* 
    about us
    ========================================================================== */
-/* line 405, ../sass/main.scss */
+/* line 398, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
   color: #00b6d3;
 }
-/* line 409, ../sass/main.scss */
+/* line 402, ../sass/main.scss */
 #team-sec .width-sizer {
   width: 50%;
   float: left;
 }
-/* line 414, ../sass/main.scss */
+/* line 407, ../sass/main.scss */
 #team-sec img.logo {
   width: 200px;
 }
