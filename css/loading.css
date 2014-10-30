@@ -154,15 +154,15 @@ circle:nth-child(12n + 12) {
 }
 @-webkit-keyframes colors-stroke {
   0% {
-    stroke: yellowgreen;
+    stroke: purple;
   }
 
   10% {
-    stroke: gold;
+    stroke: #00B6D3;
   }
 
   75% {
-    stroke: crimson;
+    stroke: #F750E3;
   }
 }
 @keyframes colors-stroke {
@@ -178,23 +178,7 @@ circle:nth-child(12n + 12) {
     stroke: crimson;
   }
 }
-@-webkit-keyframes colors-2 {
-  0% {
-    fill: yellow;
-  }
 
-  50% {
-    fill: red;
-  }
-
-  65% {
-    fill: orangered;
-  }
-
-  95% {
-    fill: gold;
-  }
-}
 @keyframes colors-2 {
   0% {
     fill: yellow;
@@ -212,22 +196,7 @@ circle:nth-child(12n + 12) {
     fill: gold;
   }
 }
-@-webkit-keyframes colors-3 {
-  0% {
-    fill: yellowgreen;
-  }
 
-  50% {
-    fill: turquoise;
-  }
-
-  65% {
-    fill: yellow;
-  }
-
-  95% {
-    fill: orange;
-  }
 }
 @keyframes colors-3 {
   0% {
