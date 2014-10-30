@@ -255,7 +255,7 @@ function formCheck()
     if(cdn=="") nullitems+="route,";else;
     if(startTime.value=="") nullitems+="journey start time,";else;
     if(endTime.value=="") nullitems+="journey end time,";else;
-    if(traveltool="") nullitems+="tool for transportation";
+    if(traveltool=="") nullitems+="tool for transportation";else;
     if(nullitems=="")
      {//表单成功开始上传
         givevalue();
@@ -268,8 +268,8 @@ function formCheck()
         }
         else return false;
       }
-      else return cannotnull(nullitems);
-     return false;
+    else return cannotnull(nullitems);
+     
     }
 
 function cannotnull(nullitem)
@@ -297,6 +297,7 @@ textforroute+=")";
     document.getElementById("startPoint").value=textforstartpoint;
     document.getElementById("endPoint").value=textforendpoint;
     document.getElementById("travelType").value=traveltool;
+    alert(document.getElementById("selectInput"));
 
 }
 
@@ -356,3 +357,5 @@ jQuery("#walk-btn").toggleClass("clicked");
 
 
 //=============================好看点用===============================
+
+
