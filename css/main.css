@@ -102,17 +102,52 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
 
+@font-face {
+  font-family: "robot";
+  src: url("roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "robot-thin";
+  src: url("roboto/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: "robot-it";
+  src: url("roboto/Roboto-ThinItalic.ttf");
+}
+
+@font-face {
+  font-family: "robot-med";
+  src: url("roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "robot-bold";
+  src: url("roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "robot-boldIt";
+  src: url("roboto/Roboto-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "robotC-bold";
+  src: url("roboto/RobotoCondensed-LightItalic.ttf");
+}
+
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
    ========================================================================== */
-/* line 86, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 html {
   font-size: 16px;
-  font-family: "robot", san-serif;
+  font-family: "robot-thin", san-serif;
 }
 
-/* line 93, ../sass/main.scss */
+/* line 99, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
   color: white;
@@ -120,27 +155,27 @@ body {
   background-color: #222222;
 }
 
-/* line 100, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 h1 {
   font-size: 3.4375rem;
   text-align: center;
   margin-bottom: 1.25rem;
 }
 
-/* line 106, ../sass/main.scss */
+/* line 112, ../sass/main.scss */
 h1 > span {
   font-family: "robot-it", sans-serif;
   font-weight: 100;
 }
 
-/* line 111, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 h2 {
   font-size: 2.25rem;
   margin-bottom: 0.9375rem;
   font-family: "robot-boldIt";
 }
 
-/* line 117, ../sass/main.scss */
+/* line 123, ../sass/main.scss */
 h3 {
   text-align: center;
   font-size: 1.75rem;
@@ -148,36 +183,42 @@ h3 {
   font-family: "robot-med";
 }
 
-/* line 124, ../sass/main.scss */
+/* line 130, ../sass/main.scss */
 a {
   text-decoration: none;
   color: white;
 }
-/* line 128, ../sass/main.scss */
+/* line 134, ../sass/main.scss */
 a:hover {
   color: #222222;
 }
 
-/* line 133, ../sass/main.scss */
+/* line 139, ../sass/main.scss */
+p {
+  font-size: 1.5rem;
+  font-family: "robot-thin";
+}
+
+/* line 144, ../sass/main.scss */
 .width-sizer {
   max-width: 1200px;
   margin: auto;
   display: block;
 }
 
-/* line 139, ../sass/main.scss */
+/* line 150, ../sass/main.scss */
 section {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 144, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 .section-Padding {
   padding: 4.375rem 30px;
   overflow: hidden;
 }
 
-/* line 150, ../sass/main.scss */
+/* line 161, ../sass/main.scss */
 .main-btn {
   display: inline-block;
   background-color: #f750e3;
@@ -185,21 +226,27 @@ section {
   font-family: "robotC-bold";
 }
 
-/* line 157, ../sass/main.scss */
+/* line 168, ../sass/main.scss */
 .backgroundImage {
   display: none;
 }
 
-@media only screen and (max-width: 690px) {
-  /* line 165, ../sass/main.scss */
+@media only screen and (max-width: 800px) {
+  /* line 176, ../sass/main.scss */
   html {
     font-size: 12px;
+  }
+}
+@media only screen and (max-width: 690px) {
+  /* line 185, ../sass/main.scss */
+  p {
+    font-size: 1rem;
   }
 }
 /* ==========================================================================
        HEADER
    ========================================================================== */
-/* line 175, ../sass/main.scss */
+/* line 192, ../sass/main.scss */
 header {
   position: fixed;
   top: 0;
@@ -207,87 +254,88 @@ header {
   background-color: #00b6d3;
   width: 100%;
 }
-/* line 183, ../sass/main.scss */
+/* line 200, ../sass/main.scss */
 header .module-padding {
   padding: 10px 30px;
   overflow: hidden;
   text-align: right;
 }
-/* line 189, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 header .filler {
   height: 45px;
   width: 1px;
   display: inline-block;
 }
 
-/* line 197, ../sass/main.scss */
+/* line 214, ../sass/main.scss */
 #header-logo {
   float: left;
 }
-/* line 200, ../sass/main.scss */
+/* line 217, ../sass/main.scss */
 #header-logo img {
   height: 45px;
 }
 
-/* line 205, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
 #header-nav {
   overflow: hidden;
   display: inline-block;
 }
-/* line 209, ../sass/main.scss */
+/* line 226, ../sass/main.scss */
 #header-nav li {
   display: inline-block;
   text-decoration: none;
   margin-left: 5px;
 }
-/* line 214, ../sass/main.scss */
+/* line 231, ../sass/main.scss */
 #header-nav li a {
   text-transform: uppercase;
 }
 
-/* line 220, ../sass/main.scss */
+/* line 237, ../sass/main.scss */
 #burger-button {
   display: none;
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 226, ../sass/main.scss */
+  /* line 243, ../sass/main.scss */
   #burger-button {
     display: inline-block;
   }
-  /* line 228, ../sass/main.scss */
+  /* line 245, ../sass/main.scss */
   #burger-button img {
     height: 35px;
   }
 
-  /* line 233, ../sass/main.scss */
+  /* line 250, ../sass/main.scss */
   #header-nav {
     display: none;
-  }
-
-  /* line 237, ../sass/main.scss */
-  #header-nav.show {
     display: block;
     text-align: center;
     width: 100%;
   }
-  /* line 242, ../sass/main.scss */
-  #header-nav.show li {
+  /* line 257, ../sass/main.scss */
+  #header-nav li {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     padding: 10px;
   }
+  /* line 262, ../sass/main.scss */
+  #header-nav li a {
+    display: block;
+    padding: 10px 0;
+  }
 
-  /* line 250, ../sass/main.scss */
+  /* line 270, ../sass/main.scss */
   header .module-padding {
     padding: 10px 30px;
   }
-  /* line 254, ../sass/main.scss */
+  /* line 274, ../sass/main.scss */
   header .filler {
     display: none;
   }
 
-  /* line 259, ../sass/main.scss */
+  /* line 279, ../sass/main.scss */
   #header-logo img {
     height: 35px;
   }
@@ -295,34 +343,34 @@ header .filler {
 /* ==========================================================================
       FOOTER
    ========================================================================== */
-/* line 269, ../sass/main.scss */
+/* line 289, ../sass/main.scss */
 footer {
   font-size: 1.125rem;
   background-color: white;
   color: #00b6d3;
 }
-/* line 274, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 footer p {
   margin-bottom: 10px;
 }
-/* line 278, ../sass/main.scss */
+/* line 298, ../sass/main.scss */
 footer .footer-logos {
   display: inline-block;
 }
-/* line 280, ../sass/main.scss */
+/* line 300, ../sass/main.scss */
 footer .footer-logos img {
   height: 100px;
   margin-right: 10px;
 }
-/* line 287, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 footer ul {
   float: right;
 }
-/* line 291, ../sass/main.scss */
+/* line 311, ../sass/main.scss */
 footer a {
   color: #00b6d3;
 }
-/* line 294, ../sass/main.scss */
+/* line 314, ../sass/main.scss */
 footer a:hover {
   color: #222222;
 }
@@ -330,19 +378,19 @@ footer a:hover {
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 307, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 #intro-sec {
   margin-top: 3.75rem;
   position: relative;
   background: url("../img/bg_bikes.png") no-repeat;
   background-size: 100%;
 }
-/* line 314, ../sass/main.scss */
+/* line 334, ../sass/main.scss */
 #intro-sec #bikes {
   visibility: hidden;
   width: 100%;
 }
-/* line 319, ../sass/main.scss */
+/* line 339, ../sass/main.scss */
 #intro-sec .section-Padding {
   background-color: rgba(255, 255, 255, 0.8);
   overflow: visible;
@@ -351,32 +399,32 @@ footer a:hover {
   width: 100%;
   padding: 60px 0;
 }
-/* line 328, ../sass/main.scss */
+/* line 348, ../sass/main.scss */
 #intro-sec .width-sizer {
   position: relative;
 }
-/* line 332, ../sass/main.scss */
+/* line 352, ../sass/main.scss */
 #intro-sec .width-sizer h1, #intro-sec .width-sizer h3 {
   color: #00b6d3;
 }
-/* line 337, ../sass/main.scss */
+/* line 357, ../sass/main.scss */
 #intro-sec .btn-container {
   bottom: -95px;
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 343, ../sass/main.scss */
+/* line 363, ../sass/main.scss */
 #intro-sec .btn-container .main-btn {
   margin-right: 1.25rem;
 }
 @media only screen and (max-width: 690px) {
-  /* line 349, ../sass/main.scss */
+  /* line 369, ../sass/main.scss */
   #intro-sec .section-Padding {
     padding-top: 6.25rem;
   }
 }
-/* line 353, ../sass/main.scss */
+/* line 373, ../sass/main.scss */
 #intro-sec .invisibleDiv {
   width: 100%;
   height: 6.25rem;
@@ -385,52 +433,60 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 362, ../sass/main.scss */
+/* line 382, ../sass/main.scss */
 #about-sec {
   background-image: url("../img/bg_inverleith.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 367, ../sass/main.scss */
+/* line 387, ../sass/main.scss */
 #about-sec .section-Padding {
   background-color: rgba(0, 182, 211, 0.7);
   height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-/* line 371, ../sass/main.scss */
+/* line 393, ../sass/main.scss */
 #about-sec .section-Padding .width-sizer {
   float: right;
   width: 40%;
   padding: 5%;
 }
+@media only screen and (max-width: 690px) {
+  /* line 402, ../sass/main.scss */
+  #about-sec .width-sizer {
+    padding: 0 5%;
+  }
+}
 
 /* 
    map
    ========================================================================== */
-/* line 383, ../sass/main.scss */
+/* line 413, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
-/* line 387, ../sass/main.scss */
-#map-sec .width-sizer {
-  width: 100%;
-  float: right;
-  padding: 0;
+@media only screen and (max-width: 690px) {
+  /* line 417, ../sass/main.scss */
+  #map-sec .section-Padding {
+    padding: inherit 0;
+  }
 }
 
 /* 
    about us
    ========================================================================== */
-/* line 398, ../sass/main.scss */
+/* line 427, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
   color: #00b6d3;
 }
-/* line 402, ../sass/main.scss */
+/* line 431, ../sass/main.scss */
 #team-sec .width-sizer {
   width: 50%;
   float: left;
 }
-/* line 407, ../sass/main.scss */
+/* line 436, ../sass/main.scss */
 #team-sec img.logo {
   width: 200px;
 }

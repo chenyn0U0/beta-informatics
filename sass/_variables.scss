@@ -1,0 +1,53 @@
+$turquese: #00B6D3;
+
+$white: #ffffff;
+
+$pink: #F750E3;
+
+$dark: #222222;
+
+
+@font-face {
+	font-family: "robot";
+	src: url('roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: "robot-thin";
+	src: url('roboto/Roboto-Thin.ttf');
+}
+
+@font-face {
+	font-family: "robot-it";
+	src: url('roboto/Roboto-ThinItalic.ttf');
+}
+
+@font-face {
+	font-family: "robot-med";
+	src: url('roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: "robot-bold";
+	src: url('roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+	font-family: "robot-boldIt";
+	src: url('roboto/Roboto-MediumItalic.ttf');
+}
+
+@font-face {
+	font-family: "robotC-bold";
+	src: url('roboto/RobotoCondensed-LightItalic.ttf');
+}
+
+
+//responsive
+$tablet-width: 800px;
+
+$mobile-width: 690px;
+
+$mPortrait-width: 450px;
+
+$main-sidePadding: 30px;

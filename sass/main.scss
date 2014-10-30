@@ -5,6 +5,8 @@
 
 @import "compass/reset";
 
+@import "variables";
+
 $turquese: #00B6D3;
 
 $white: #ffffff;
@@ -51,7 +53,11 @@ $dark: #222222;
 
 
 //responsive
+$tablet-width: 800px;
+
 $mobile-width: 690px;
+
+$mPortrait-width: 450px;
 
 $main-sidePadding: 30px;
 
@@ -86,7 +92,7 @@ $main-sidePadding: 30px;
 html {
 	font-size: 16px;
 
-	font-family: "robot", san-serif;
+	font-family: "robot-thin", san-serif;
 }
 
 
@@ -130,6 +136,11 @@ a {
 	}
 }
 
+p {
+	font-size: calculateRem(24px);
+	font-family: "robot-thin";
+}
+
 .width-sizer {
 	max-width: 1200px;
 	margin: auto;
@@ -160,15 +171,21 @@ section {
 
 
 
-@media only screen and (max-width: $mobile-width) {
+@media only screen and (max-width: $tablet-width) {
 
 	html {
 		font-size: 12px;
 	} 
+
 	
 	
 }
+@media only screen and (max-width: $mobile-width) {
 
+	p {
+		font-size: calculateRem(16px);
+	}
+}
 /* ==========================================================================
        HEADER
    ========================================================================== */
@@ -232,17 +249,20 @@ header {
 
 	#header-nav {
 		display: none;
-	}
-
-	#header-nav.show {
+	
 		display: block;
 		text-align: center;
 		width: 100%;
 
 		li {
 			display: block;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 			padding: 10px;
+
+			a {
+				display: block;
+				padding: 10px 0;
+			}
 		}
 	}
 	
@@ -367,6 +387,8 @@ footer {
 	.section-Padding {
 		background-color: transparentize($turquese, 0.3);
 		height: 100%;
+		padding-top:0;
+		padding-bottom:0;
 
 		.width-sizer {
 			float: right;
@@ -375,7 +397,15 @@ footer {
 
 		}
 	}
+
+	@media only screen and (max-width: $mobile-width) {
+			.width-sizer {
+				padding: 0 5%;
+			}
+		}
+
 }
+
 
 /* 
    map
@@ -383,11 +413,10 @@ footer {
 #map-sec {
 	position: relative;
 
-
-	.width-sizer {
-		width: 100%;
-		float: right;
-		padding: 0;
+	@media only screen and (max-width: $mobile-width) {
+		.section-Padding {
+			padding: inherit 0;
+		}
 	}
 
 }
