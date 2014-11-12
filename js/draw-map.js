@@ -262,7 +262,7 @@ function formCheck()
         var startconfirm=confirm("COMFIRMATION: Are you sure to submit your data?");
         if(startconfirm==true)
         {
-          $.post("get-form.php", $("#formId").serialize());
+          $.post("saveData.php", $("#formId").serialize());
           alert("Thank you for your cooperation!");
           return true;
         }
