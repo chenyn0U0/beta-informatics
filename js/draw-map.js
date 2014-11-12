@@ -330,7 +330,7 @@ function hidemap()
 
 
 //==================上传数据用===========================
-$("#div1").load("gpx.gpx trkpt");
+$("#imadivbutyoucannotseemehahaha").load("gpx.gpx trkpt");
 $("button").click(function(){
     var x=$("trkpt").first();
     var beforecdn=new Array();
