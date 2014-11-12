@@ -101,9 +101,12 @@
 		var screenHeight = $(document).height();
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
-        $("#drawUploadSelect").show();
+        $('#uploadDiv').load("upload.php", function(){
+        	$("#drawUploadSelect").show();
+        })
 	}
 
+	//opens up the map 
 	function showthetool() {
 
 		 $("#map-container").load("draw-map.html", function(){
