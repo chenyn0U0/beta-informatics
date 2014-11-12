@@ -1,18 +1,5 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>
-	<meta charset="UTF-8">
-	<title>test of file reading</title>
-	<script src="js/jquery.js"></script>
-</head>
-<div id="imadivbutyoucannotseemehahaha" style="visibility: hidden;"/>
 
-<body>
-<?php
-session_start();
-// store session data
-$_SESSION['filecontent']="";
-?>
+
 
 <form id="uploadfile"  enctype="multipart/form-data" >
 <input id="file" name="file" type="file" onchange="selectFile(this)"/> 
@@ -21,30 +8,6 @@ $_SESSION['filecontent']="";
 
 </form>
 
-<?php echo "abc"; ?>
-<?php echo $_SESSION['filecontent']; ?>
-<p id=""></div>
-
-
-
-
-
-</body>
-
-<?php
-if(is_uploaded_file($_FILES['geodata']['tmp_name'])){
-  $root_dir ="upload_path/";
-  $filename =  $_FILES['filename']['name'];
-  $uploadfile = $root_dir . $filename;
-  if (move_uploaded_file($_FILES['filename']['tmp_name'], $uploadfile)) {
-        echo "uploaded";
-  }  
-}
-
-
-$_SESSION['filecontent']=readfile("gpx.gpx");
-
-?>
 
 
 
@@ -55,7 +18,7 @@ $_SESSION['filecontent']=readfile("gpx.gpx");
 //传文件至另一个php
 function uploadroute()
 {
-	$.post("uploadfile.php", $("#uploadfile").serialize());
+	$.post("draw-map.html", $("#uploadfile").serialize());
 }
 
 <script type="text/javascript">
