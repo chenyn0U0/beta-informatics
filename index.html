@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" href="css/main.css">
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
-	<link rel="stylesheet" href="css/map.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<link rel="stylesheet" href="css/slider.css">
@@ -26,7 +26,6 @@
 
 	$(document).ready(function() {
 
-      $("#map-container").load("draw-map.html"); 
 
       // Slideshow 4
       $("#slider4").responsiveSlides({
@@ -68,6 +67,7 @@
 		)
 	}
 
+	//caluclates the height of an image given the current screen width
 	function calculateHeight(id) {
 
 		imgSrc = $(id).find('.backgroundImage').attr('src');
@@ -82,6 +82,7 @@
 		$(id).height(newH + 'px');
 	}
 
+	//gets the width-height ratio of an image given the src
 	function getRatio(src)
 	{
 		var newImg = new Image();
@@ -95,28 +96,40 @@
 		return  width / height;	
 	}
 
-
-	function showthetool() {
-        
-        var freeSpaceH = $(window).height() - $('header').height();
-        var viewportHeigth = freeSpaceH * 0.7;
-
-        var paddingTop = freeSpaceH * 0.15;
-        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
-        
-        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show("slow");
-
-
+	//open up the overlay and the select-box for drawing / uploading
+	function showDrawUploadSelect() {
 		var screenHeight = $(document).height();
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
+
+        $("#drawUploadSelect").show();
+	}
+
+	function showthetool() {
+
+		 $("#map-container").load("draw-map.html", function(){
+
+	        var freeSpaceH = $(window).height() - $('header').height();
+	        var viewportHeigth = freeSpaceH * 0.7;
+
+	        var paddingTop = freeSpaceH * 0.15;
+	        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
+	        
+	        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show("slow");
+		 	
+		 }); 
+
+
+		// var screenHeight = $(document).height();
+        // jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
         //console.log('showthetool: ' + viewportHeigth);
     }
 
-    function hideMap() {
+    function hideAll() {
     	jQuery("#map-container").css("visibility", "hidden");
     	jQuery("#map").hide().css("visibility","hidden");
     	jQuery("#overlay").css("visibility", "hidden");
+    	$("#drawUploadSelect").hide();
     	
     }
 
@@ -138,7 +151,14 @@
 </head>
 <body>
 
-	<div id="overlay" onclick="hideMap()"></div>
+	<div id="overlay" onclick="hideAll()"></div>
+
+	<div id="drawUploadSelect">
+		<div class="container">
+			<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Draw</a></div>
+			<div id="uploadDiv"></div>
+		</div>
+	</div>
 
 	<div id="map-container"></div>
 
@@ -166,7 +186,7 @@
 				<h3>Mapping the journeys through your local community</h3>
 
 				<div class="btn-container">
-					<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Get started</a></div>
+					<div class="main-btn"><a href="javascript:void(0);" onclick="showDrawUploadSelect()">Get started</a></div>
 					<div class="main-btn"><a href="javascript:void(0);" onclick="scrollTo('intro-anchor')">Learn more</a></div>
 				</div>
 			</div>

@@ -42,11 +42,12 @@
 .callbacks_container {
   margin-bottom: 50px;
   position: relative;
-  float: left;
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-/* line 15, ../sass/slider.scss */
+/* line 16, ../sass/slider.scss */
 .callbacks {
   position: relative;
   list-style: none;
@@ -56,7 +57,7 @@
   margin: 0;
 }
 
-/* line 24, ../sass/slider.scss */
+/* line 25, ../sass/slider.scss */
 .callbacks li {
   position: absolute;
   width: 100%;
@@ -64,7 +65,7 @@
   top: 0;
 }
 
-/* line 31, ../sass/slider.scss */
+/* line 32, ../sass/slider.scss */
 .callbacks img {
   display: block;
   position: relative;
@@ -74,7 +75,7 @@
   border: 0;
 }
 
-/* line 40, ../sass/slider.scss */
+/* line 41, ../sass/slider.scss */
 .callbacks .caption {
   display: block;
   position: absolute;
@@ -92,7 +93,7 @@
   max-width: none;
 }
 
-/* line 57, ../sass/slider.scss */
+/* line 58, ../sass/slider.scss */
 .callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -109,12 +110,12 @@
   margin-top: -45px;
 }
 
-/* line 73, ../sass/slider.scss */
+/* line 74, ../sass/slider.scss */
 .callbacks_nav:active {
   opacity: 1.0;
 }
 
-/* line 77, ../sass/slider.scss */
+/* line 78, ../sass/slider.scss */
 .callbacks_nav.next {
   left: auto;
   background-position: right top;
@@ -122,7 +123,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  /* line 87, ../sass/slider.scss */
+  /* line 88, ../sass/slider.scss */
   .callbacks_nav {
     top: 47%;
   }

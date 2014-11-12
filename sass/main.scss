@@ -293,7 +293,6 @@ footer {
       MAIN CONTENT
    ========================================================================== */
 
-
 #intro-sec {
 	margin-top: calculateRem(60px);
 	position: relative;
@@ -382,6 +381,35 @@ footer {
 /* 
    map
    ========================================================================== */
+#overlay
+{
+	margin:0;padding:0;
+	position:absolute;
+	left:0px;
+	top:0px;
+    height:100%;
+    width:100%;
+    background:#000000;
+    opacity:0;
+    z-index:40;
+    visibility:hidden;
+}
+
+#drawUploadSelect {
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+
+    display: none;
+
+    .container {
+    	width: 30%;
+    	margin: 0 auto;
+    	text-align: center;
+    }
+}
+
+
 #map-sec {
 	position: relative;
 

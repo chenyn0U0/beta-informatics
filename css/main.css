@@ -369,19 +369,19 @@ footer a:hover {
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 297, ../sass/main.scss */
+/* line 296, ../sass/main.scss */
 #intro-sec {
   margin-top: 3.75rem;
   position: relative;
   background: url("../img/bg_bikes.png") no-repeat;
   background-size: 100%;
 }
-/* line 304, ../sass/main.scss */
+/* line 303, ../sass/main.scss */
 #intro-sec #bikes {
   visibility: hidden;
   width: 100%;
 }
-/* line 309, ../sass/main.scss */
+/* line 308, ../sass/main.scss */
 #intro-sec .section-Padding {
   background-color: rgba(255, 255, 255, 0.8);
   overflow: visible;
@@ -390,33 +390,33 @@ footer a:hover {
   width: 100%;
   padding: 60px 0;
 }
-/* line 318, ../sass/main.scss */
+/* line 317, ../sass/main.scss */
 #intro-sec .width-sizer {
   position: relative;
 }
-/* line 322, ../sass/main.scss */
+/* line 321, ../sass/main.scss */
 #intro-sec .width-sizer h1, #intro-sec .width-sizer h3 {
   color: #00b6d3;
 }
-/* line 327, ../sass/main.scss */
+/* line 326, ../sass/main.scss */
 #intro-sec .btn-container {
   bottom: -95px;
   position: absolute;
   text-align: center;
   width: 100%;
 }
-/* line 333, ../sass/main.scss */
+/* line 332, ../sass/main.scss */
 #intro-sec .btn-container .main-btn {
   margin-right: 1.25rem;
   font-family: "robot-thin";
 }
 @media only screen and (max-width: 690px) {
-  /* line 340, ../sass/main.scss */
+  /* line 339, ../sass/main.scss */
   #intro-sec .section-Padding {
     padding-top: 6.25rem;
   }
 }
-/* line 344, ../sass/main.scss */
+/* line 343, ../sass/main.scss */
 #intro-sec .invisibleDiv {
   width: 100%;
   height: 6.25rem;
@@ -425,27 +425,27 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 353, ../sass/main.scss */
+/* line 352, ../sass/main.scss */
 #about-sec {
   background-image: url("../img/bg_inverleith.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 358, ../sass/main.scss */
+/* line 357, ../sass/main.scss */
 #about-sec .section-Padding {
   background-color: rgba(0, 182, 211, 0.7);
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
 }
-/* line 364, ../sass/main.scss */
+/* line 363, ../sass/main.scss */
 #about-sec .section-Padding .width-sizer {
   float: right;
   width: 40%;
   padding: 5%;
 }
 @media only screen and (max-width: 800px) {
-  /* line 371, ../sass/main.scss */
+  /* line 370, ../sass/main.scss */
   #about-sec .section-Padding .width-sizer {
     padding: 5%;
     width: 60%;
@@ -456,11 +456,40 @@ footer a:hover {
    map
    ========================================================================== */
 /* line 385, ../sass/main.scss */
+#overlay {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  opacity: 0;
+  z-index: 40;
+  visibility: hidden;
+}
+
+/* line 398, ../sass/main.scss */
+#drawUploadSelect {
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  display: none;
+}
+/* line 405, ../sass/main.scss */
+#drawUploadSelect .container {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 413, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
 @media only screen and (max-width: 690px) {
-  /* line 389, ../sass/main.scss */
+  /* line 417, ../sass/main.scss */
   #map-sec .section-Padding {
     padding: 0;
   }
@@ -469,23 +498,23 @@ footer a:hover {
 /* 
    about us
    ========================================================================== */
-/* line 399, ../sass/main.scss */
+/* line 427, ../sass/main.scss */
 #team-sec {
   background-color: #222222;
   color: #00b6d3;
 }
-/* line 403, ../sass/main.scss */
+/* line 431, ../sass/main.scss */
 #team-sec img {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
-/* line 409, ../sass/main.scss */
+/* line 437, ../sass/main.scss */
 #team-sec img.logo {
   width: 80%;
   margin: 0;
 }
-/* line 414, ../sass/main.scss */
+/* line 442, ../sass/main.scss */
 #team-sec a:hover {
   color: #f750e3;
 }
