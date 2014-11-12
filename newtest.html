@@ -19,6 +19,8 @@
 
 <script type="text/javascript">
 
+
+
 $("#div1").load("gpx.gpx trkpt");
 $("button").click(function(){
     var x=$("trkpt").first();
@@ -31,9 +33,7 @@ $("button").click(function(){
            x=x.next();
            beforeendpoint=[x.attr("lon"),x.attr("lat")];
     } 
-    alert(beforecdn);
-
-});
+    alert(beforecdn);});
 
 
 </script>
