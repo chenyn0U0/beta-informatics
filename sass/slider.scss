@@ -8,8 +8,9 @@
 .callbacks_container {
   margin-bottom: 50px;
   position: relative;
-  float: left;
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   }
 
 .callbacks {
