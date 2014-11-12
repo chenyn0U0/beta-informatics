@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+<script src="js/jquery.js"></script>
+ </head>
+ <body>
+
+
+
+
+<div id="div1"></div>
+
+<button>upload</button>
+
+ </body>
+</html>
+
+
+
+<script type="text/javascript">
+
+$("#div1").load("gpx.gpx trkpt");
+$("button").click(function(){
+    var x=$("trkpt").first();
+    var latstring="";
+
+        latstring+=x.attr("lat")+",";
+        x=x.next();
+    
+
+    alert(latstring);
+});
+
+
+</script>

@@ -89,14 +89,14 @@
     </script>
 
         <div class="row">
-            <label for="startTime">Approximate journey start time:</label> <input type="text" size=1 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)" />:<input size=1  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>
+            <label for="startTime">Approximate journey start time:</label> <input type="text" size=4 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)"  onMouseOver="this.focus()" onClick="this.focus()"/>:<input size=4  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()" onClick="this.focus()"/>
         </div>
         <div class="row">
-           <label for="endTime">Approximate journey end time:</label> <input type="text" id="et1"  size=1 name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>:<input type="text" id="et2"  size=1 name="startTime"  maxlength=2 onkeypress="return IsNum(event)"/>
+           <label for="endTime">Approximate journey end time:</label> <input type="text" id="et1"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()" onClick="this.focus()"/>:<input type="text" id="et2"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()" onClick="this.focus()"/>
         </div>
 
         <div class="row">
-            Weekday:<input id="Checkbox1" type="checkbox" name="weekday" />
+            Weekday:<input  id="Checkbox1" type="checkbox" name="weekday" />
         </div>
         <input type="hidden" id="startTime" name="startTime"/>
         <input type="hidden" id="endTime" name="endTime"/>

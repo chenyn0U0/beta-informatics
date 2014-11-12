@@ -19,6 +19,10 @@
   margin-top: 0;
 }
 
+input{
+  z-index:101;
+}
+
 /* line 22, ../sass/style.scss */
 .close-btn {
   text-align: right;
