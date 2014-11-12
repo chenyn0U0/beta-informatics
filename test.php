@@ -16,7 +16,7 @@
            
            // jQuery("#div1").load(oFREvent.target.result);
 
-           console.log(data.target.result);
+           console.log(data.readAsDataURL);
 
 
         };
