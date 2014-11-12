@@ -329,6 +329,33 @@ function hidemap()
 //=============================存储数据用===============================
 
 
+//==================上传数据用===========================
+$("#div1").load("gpx.gpx trkpt");
+$("button").click(function(){
+    var x=$("trkpt").first();
+    var beforecdn=new Array();
+    var beforestartpoint=[x.attr("lon"),x.attr("lat")];
+    var beforeendpoint;
+    while(x.attr("lat"))
+    {
+           beforecdn[beforecdn.length]=[x.attr("lon"),x.attr("lat")];
+           x=x.next();
+           beforeendpoint=[x.attr("lon"),x.attr("lat")];
+    } 
+    alert(beforecdn);});
+
+
+
+
+
+
+
+//==================上传数据用===========================
+
+
+
+
+
 
 //=============================好看点用===============================
 //======1.for travel tool============

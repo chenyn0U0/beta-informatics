@@ -5,7 +5,7 @@
 	<title>test of file reading</title>
 	<script src="js/jquery.js"></script>
 </head>
-
+<div id="imadivbutyoucannotseemehahaha" style="visibility: hidden;"/>
 
 <body>
 <?php

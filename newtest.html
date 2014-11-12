@@ -22,13 +22,17 @@
 $("#div1").load("gpx.gpx trkpt");
 $("button").click(function(){
     var x=$("trkpt").first();
-    var latstring="";
+    var beforecdn=new Array();
+    var beforestartpoint=[x.attr("lon"),x.attr("lat")];
+    var beforeendpoint;
+    while(x.attr("lat"))
+    {
+           beforecdn[beforecdn.length]=[x.attr("lon"),x.attr("lat")];
+           x=x.next();
+           beforeendpoint=[x.attr("lon"),x.attr("lat")];
+    } 
+    alert(beforecdn);
 
-        latstring+=x.attr("lat")+",";
-        x=x.next();
-    
-
-    alert(latstring);
 });
 
 
