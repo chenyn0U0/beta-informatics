@@ -1,10 +1,9 @@
 
-<html>
-<body >
-
 
   <?php 
  
+$startTime=$_GET["startTime"];
+
 
 // $con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
 $con = mysql_connect("localhost","root","root");
@@ -16,27 +15,97 @@ if (!$con)
 mysql_select_db("beta-informatics", $con);
 
 
+// debug_to_console('its working');
 
-$sql="SELECT * FROM `journey`";
-// $bool = mysql_query($sql,$con);
-$data = mysql_query($sql);
+// $allRowsArr = getAllRows();
 
-if (!$data)
-  {
-    die('Error: ' . mysql_error());
-  }
-  else {
-    echo "1 record loaded";
+// echo $allRowsArr[0][0];
 
-    while ($info = mysql_fetch_array($data)) {
-      echo "data";
-    }
-  }
 
+$result = getRowByid(45);
+$line = $result['gender'];
+
+//echo json_encode($line, JSON_PRETTY_PRINT);
+echo $startTime;
 mysql_close($con);
 
 
 
+
+
+
+// #########################  functions  #######################
+
+//gets and returns the row with the given id
+//returns null if an error occurs
+function getRowByid($id) {
+  $sql="SELECT * FROM `journey` WHERE `id` = $id";
+  $data = mysql_query($sql);
+      // $num_rows = mysql_num_rows($sql);
+  $row = null;
+
+  if (!$data)
+    {
+      debug_to_console('Error occured, data could not be found');
+    }
+    else {
+
+      debug_to_console("data was loaded");
+
+      $row = mysql_fetch_assoc($data);
+      // echo $row['gender'];      
+
+    }
+
+    return $row;
+}
+
+
+//this function gets all the rows from our only existing table
+//returns null if error
+function getAllRows() {
+  $sql="SELECT * FROM `journey`";
+  $data = mysql_query($sql);
+      // $num_rows = mysql_num_rows($sql);
+
+  $rows = array();
+
+  if (!$data)
+    {
+      debug_to_console('Error occured, data could not be found');
+      $rows = null;
+    }
+    else {
+
+      debug_to_console("data was loaded");
+
+      $rowsNr = mysql_num_rows($data);
+       
+      
+
+      while ($row = mysql_fetch_array($data)) {
+        
+        // debug_to_console($row[0]);
+        array_push($rows, $row);;
+
+      }
+    }
+
+    return $rows;
+}
+
+
+
+function debug_to_console( $data ) {
+
+    // if ( is_array( $data ) )
+    //     $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+    // else
+    //     $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+    // echo $output;
+}
+
+
+
 ?>
-</body>
-</html>

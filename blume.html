@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blume</title>
+
+	<script src="js/jquery.js"></script>
+
+<script>
+	$(document).ready(function(){
+
+		console.log("test");
+
+
+
+		$.get( "loadData.php?startTime=1", function( data ) {
+			
+			console.log( "Load was performed.", data );
+		});
+	});
+
+
+
+</script>
+
+</head>
+<body>
+	
+
+Some Text bla bla
+
+</body>
+</html>
