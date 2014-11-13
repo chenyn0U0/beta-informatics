@@ -34,7 +34,7 @@ mysql_select_db("beta-informatics", $con);
 
 $sql="INSERT INTO journey (travelType, startTime, endTime, weekday, journeyType, age, gender, insertTime, userIP, distance, route, startPoint, finishPoint)
 VALUES
-('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance',GeomFromText('$route'),GeomFromText('$startPoint'),GeomFromText('$finishPoint'))";
+('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance','$route','$startPoint','$finishPoint')";
 
 
 if (!mysql_query($sql,$con))

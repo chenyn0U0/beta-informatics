@@ -203,7 +203,7 @@ function clearallpoints()
 
 function updateroute()
 {
-                      var geojson = [
+        var geojson = [
                           {
           "type": "Feature",
           "geometry": {
@@ -290,14 +290,13 @@ function givevalue()
 var textforstartpoint="";
 var textforendpoint="";
 var textforroute="";
-textforstartpoint="POINT("+cdn[0][0]+" "+cdn[0][1]+")";
-textforendpoint="POINT("+cdn[cdn.length-1][0]+" "+cdn[cdn.length-1][1]+")";
+textforstartpoint=cdn[0][0]+","+cdn[0][1];
+textforendpoint=cdn[cdn.length-1][0]+","+cdn[cdn.length-1][1];
 for(var i=0;i<cdn.length;i++)
 {
-if(textforroute=="")textforroute="LineString("+cdn[i][0]+" "+cdn[i][1];
- else textforroute+=", "+cdn[i][0]+" "+cdn[i][1];
+if(textforroute=="")textforroute=cdn[i][0]+","+cdn[i][1];
+ else textforroute+=";"+cdn[i][0]+","+cdn[i][1];
 }
-textforroute+=")";
 
     document.getElementById("distances").value=distances;
     document.getElementById("route").value=textforroute;
@@ -361,8 +360,9 @@ var beforeendpoint=new Array();
   else if(mime==".kml")
   {
   }
-  else if(mime==".geojson")
+  else if(mime==".json")
   {
+    geojsonread(datatext);
   }
   else
   {
@@ -390,13 +390,13 @@ function gpxread(datatext){
             updateroute();alert("done");
 }
 
+function geojsonread(datatext){
+  var obj = JSON.parse(str); (datatext, filter); 
+  alert(json); 
+}
 
 
-
-//==================上传数据用===========================
-
-
-
+//==================上传数据用===========================g
 
 
 
