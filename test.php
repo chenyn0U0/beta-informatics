@@ -9,14 +9,14 @@
 
     function PreviewImage() {
         var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+        oFReader.readAsText(document.getElementById("uploadImage").files[0]);
 
         oFReader.onload = function (data) {
            // document.getElementById("uploadPreview").src = oFREvent.target.result;
            
            // jQuery("#div1").load(oFREvent.target.result);
 
-           console.log(data.readAsDataURL);
+           alert(data.target.result);
 
 
         };
