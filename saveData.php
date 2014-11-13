@@ -1,8 +1,6 @@
 
 <html>
 <body >
- <?php echo $_POST["startTime"]; ?><br/>
- <?php echo $_POST["endTime"]; ?><br/>
 
 
   <?php 
@@ -22,36 +20,11 @@
   if ($weekday=="on") $weekday=1;
   else $weekday=0;
 
-echo $ip;
-echo "<br/>";
-
-echo $insertTime;
-echo "<br/>";
-
-echo $_POST["distances"];
-echo "<br/>";
-
-echo $_POST["route"];
-echo "<br/>";
-
-echo $_POST["startPoint"];
-echo "<br/>";
-
-echo $weekday;
-echo "<br/>";
-
-echo $_POST["endPoint"];
-echo "<br/>";
-
-
-?>
-
-
-<?php
 
 
 
-$con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
+// $con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
+$con = mysql_connect("localhost","root","root");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
@@ -73,10 +46,10 @@ if (!mysql_query($sql,$con))
 echo "1 record added";
 
 mysql_close($con);
-?>
 
 
-<?php
+// ######################################################################
+
 session_start();
 $hashCode    =trim($_POST['hashCode']);
 if(!isset($_SESSION['ACTION'])||$_SESSION['ACTION']!=$hashCode){
