@@ -122,10 +122,10 @@
 		 }); 
 
 
-		// var screenHeight = $(document).height();
-        // jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
+		var screenHeight = $(document).height();
+        jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
-        //console.log('showthetool: ' + viewportHeigth);
+        console.log('showthetool: ' + viewportHeigth);
     }
 
     function hideAll() {
@@ -156,12 +156,12 @@
 
 	<div id="overlay" onclick="hideAll()"></div>
 
-	<div id="drawUploadSelect">
+	<!-- <div id="drawUploadSelect">
 		<div class="container">
 			<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Draw</a></div>
 			<div id="uploadDiv"></div>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="map-container"></div>
 
@@ -189,7 +189,7 @@
 				<h3>Mapping the journeys through your local community</h3>
 
 				<div class="btn-container">
-					<div class="main-btn"><a href="javascript:void(0);" onclick="showDrawUploadSelect()">Get started</a></div>
+					<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Get started</a></div>
 					<div class="main-btn"><a href="javascript:void(0);" onclick="scrollTo('intro-anchor')">Learn more</a></div>
 				</div>
 			</div>
