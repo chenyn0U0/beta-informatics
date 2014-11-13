@@ -63,6 +63,10 @@ showdrawing();
 
         var myDate = new Date();
         timecompare = myDate.getTime();
+
+
+        //llalalla!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        alert(cdn);
     };
     map.getContainer().querySelector('#cancel').onclick = function () {
         if(cdn.length==0)
@@ -332,22 +336,59 @@ function hidemap()
 
 
 //==================上传数据用===========================
-$("#imadivbutyoucannotseemehahaha").load("gpx.gpx trkpt");
-$("button").click(function(){
-    var x=$("trkpt").first();
-    var beforecdn=new Array();
-    var beforestartpoint=[x.attr("lon"),x.attr("lat")];
-    var beforeendpoint;
-    while(x.attr("lat"))
-    {
-           beforecdn[beforecdn.length]=[x.attr("lon"),x.attr("lat")];
-           x=x.next();
-           beforeendpoint=[x.attr("lon"),x.attr("lat")];
-    } 
-    alert(beforecdn);});
 
+var datatext="";
+var beforecdn=new Array();
+var beforestartpoint=new Array();
+var beforeendpoint=new Array();
 
+    function datatotext() {
+        var oFReader = new FileReader();
+        oFReader.readAsText(document.getElementById("datainput").files[0]);
+// 读文件时运行
+        oFReader.onload = function(data) {
+          //存储data内容
+        datatext=data.target.result;
 
+//判断文件类型
+  var filename = datainput.value; 
+  var mime = filename.toLowerCase().substr(filename.lastIndexOf(".")); 
+
+  if(mime==".gpx") 
+  { 
+  gpxread(datatext);
+  }
+  else if(mime==".kml")
+  {
+  }
+  else if(mime==".geojson")
+  {
+  }
+  else
+  {
+  alert("Please upload a gpx or geojson file."); 
+  datainput.outerHTML=datainput.outerHTML; 
+  }
+        };
+    };
+
+//GPX
+function gpxread(datatext){
+            $("#imadivbutyoucannotseemehahaha").html(datatext);
+            var x=$("trkpt").first();
+            var beforecdn=new Array();
+            var beforestartpoint=[Number(x.attr("lon")),Number(x.attr("lat"))];
+            var beforeendpoint;
+            while(x.attr("lat"))
+            {
+                   beforecdn[beforecdn.length]=[Number(x.attr("lon")),Number(x.attr("lat"))];
+                   beforeendpoint=[Number(x.attr("lon")),Number(x.attr("lat"))];
+                   x=x.next();
+            } 
+            cdn=beforecdn;
+            pointshow=beforeendpoint;
+            updateroute();alert("done");
+}
 
 
 

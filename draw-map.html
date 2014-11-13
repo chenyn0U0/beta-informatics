@@ -1,5 +1,4 @@
-﻿<div id="imadivbutyoucannotseemehahaha">
-<!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
+﻿<!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
   <div class="close-btn">
     <div class="main-btn"><a href="javascript:void(0);" onclick="hideMap()"></a></div>
   </div>
@@ -98,6 +97,12 @@
         <div class="row">
             Weekday:<input  id="Checkbox1" type="checkbox" name="weekday" />
         </div>
+
+        <div class="row">
+        <input id="datainput" type="file" name="myPhoto" onchange="datatotext()" />
+        <div id="imadivbutyoucannotseemehahaha" style="visibility:hidden"></div>
+        </div>
+
         <input type="hidden" id="startTime" name="startTime"/>
         <input type="hidden" id="endTime" name="endTime"/>
         <input type="hidden" value="" name="age" id="age"/>
