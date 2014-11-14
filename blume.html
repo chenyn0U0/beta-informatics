@@ -15,10 +15,49 @@
 
 		$.get( "loadData.php?startTime=1", function( data ) {
 			
-			console.log( "Load was performed.", data );
+
+			console.log( "Load was performed.",  data );
+			var arr = data.split(";");
+			console.log( "Load was performed.",  arr );
+
+			var coordinates = new Array();
+
+			for (var i = 0; i < arr.length; i++) {
+				var x = arr[i].split(",");
+
+				//set individual values to int
+				
+
+				coordinates.push(x);
+			};
+			console.log( coordinates );
+
 		});
+
 	});
 
+
+	function createGeoJson(data) {
+
+		//get data from string and put it in array
+
+		// var geojson = [
+
+	 //       {
+		//        "type": "Feature",
+		//        "geometry": {
+		//            "type": "LineString",
+		//            "coordinates": [],
+	 //       		},
+		//        "properties": {
+		//            "stroke": "#444444",
+		//            "stroke-opacity": 0.1,
+		//            "stroke-width": 4
+  //      			}
+  //      		}  
+  //   	];
+
+	}
 
 
 </script>
