@@ -272,8 +272,6 @@ function formCheck()
     if(nullitems==""&&timecheck()!="")
      {//表单成功开始上传
         givevalue();
-        console.log(document.getElementById("route").value);
-
         var startconfirm=confirm("COMFIRMATION: Are you sure to submit your data?");
         if(startconfirm==true)
         {

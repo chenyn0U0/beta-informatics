@@ -4,6 +4,7 @@
 
 
   <?php 
+  $comment=$_POST["comment"];
   $startTime=$_POST["startTime"];
   $endTime=$_POST["endTime"];
   $ip=$_SERVER["REMOTE_ADDR"];
@@ -32,9 +33,9 @@ mysql_select_db("beta-informatics", $con);
 
 
 
-$sql="INSERT INTO journey (travelType, startTime, endTime, weekday, journeyType, age, gender, insertTime, userIP, distance, route, startPoint, finishPoint)
+$sql="INSERT INTO journey (travelType, startTime, endTime, weekday, journeyType, age, gender, insertTime, userIP, distance, route, startPoint, finishPoint, comment)
 VALUES
-('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance','$route','$startPoint','$finishPoint')";
+('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance','$route','$startPoint','$finishPoint','$comment')";
 
 
 if (!mysql_query($sql,$con))
