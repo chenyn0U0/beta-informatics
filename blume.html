@@ -5,8 +5,30 @@
 	<title>Blume</title>
 
 	<script src="js/jquery.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+
+    <style>
+		#map {
+			width: 900px;
+			height: 600px;
+		}
+    </style>
+
+
+
+</head>
+<body>
+	
+
+Some Text bla bla
+
+ <div id="map"></div>
 <script>
+
+	var collection = null;
 	$(document).ready(function(){
 
 		console.log("test");
@@ -15,19 +37,123 @@
 
 		$.get( "loadData.php?startTime=1", function( data ) {
 			
-			console.log( "Load was performed.", data );
+			collection = createGeoJson(data);
+
+			drawMap();
+
 		});
+
 	});
 
+	//this function takes coordinates as a string "5.123234345,4.234245345;5.10809823748,4.2734980"
+	// and makes a geojson from it
+	function createGeoJson(data) {
+
+		//get data from string and put it in array
+		data = data.replace(/\n/g,'');
+		data = data.replace(/ /g,'');
+
+		// console.log( "Load was performed.",  data );
+		var arr = data.split(";");
+		var coordinates = new Array();
+
+		//go through all the coordinates, split them by ',' and put them back into main array
+		for (var i = 0; i < arr.length; i++) {
+			var x = arr[i].split(",");
+
+			//set individual values to int
+			for (var j = 0; j < x.length; j++) {
+				x[j] = parseFloat(x[j]);
+			};
+
+			coordinates.push(x);
+		};
+
+
+
+		var geojson =   {"type": "FeatureCollection",
+			       		"features": {
+					       "type": "Feature",
+					       "geometry": {
+					           "type": "LineString",
+					           "coordinates": coordinates,
+				       		},
+					       "properties": {
+					           "stroke": "#444444",
+					           "stroke-opacity": 0.1,
+					           "stroke-width": 4
+			       			}
+				       	}
+       				};
+
+		console.log(geojson);
+
+		return geojson;
+	}
+
+	function drawMap() {
+		// var basemap = L.tileLayer(
+        //         'http://{s}.tiles.mapbox.com/v3/kimrdot.k7jn77op/{z}/{x}/{y}.png',
+        //                           {     maxZoom: 18     });
+
+
+        //second way to do it
+        var map = new L.Map("map", {center: [55.960, -3.210], zoom: 14})
+    	.addLayer(new L.TileLayer("http://{s}.tiles.mapbox.com/v3/kimrdot.k7jn77op/{z}/{x}/{y}.png"));
+
+        var svg = d3.select(map.getPanes().overlayPane).append("svg"),
+    		g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+
+    	d3.json("datafile/person-01.json", function(coll) {
+		  // code here
+		  	console.log(collection);
+
+
+		  	var transform = d3.geo.transform({point: projectPoint}),
+	    	path = d3.geo.path().projection(transform);
+
+	    	var feature = g.selectAll("path")
+			    .data(coll.features)
+			  .enter().append("path");
+
+
+			map.on("viewreset", reset);
+			reset();
+
+			//necessary to redraw the svg when user zooms out
+			function reset() {
+			  	var bounds = path.bounds(coll),
+			    topLeft = bounds[0],
+			    bottomRight = bounds[1];
+
+			    svg .attr("width", bottomRight[0] - topLeft[0])
+			    .attr("height", bottomRight[1] - topLeft[1])
+			    .style("left", topLeft[0] + "px")
+			    .style("top", topLeft[1] + "px");
+				g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+			  	
+			  	feature.attr("d", path);
+			}
+
+		});
+
+
+		//necessary to map from d3 to leavelet
+		function projectPoint(x, y) {
+		  var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+		  this.stream.point(point.x, point.y);
+		}
+
+		
+	}
+
+	 
+
+		
 
 
 </script>
-
-</head>
-<body>
-	
-
-Some Text bla bla
 
 </body>
 </html>

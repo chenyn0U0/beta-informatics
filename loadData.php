@@ -23,10 +23,10 @@ mysql_select_db("beta-informatics", $con);
 
 
 $result = getRowByid(45);
-$line = $result['gender'];
+$line = $result['route'];
 
 //echo json_encode($line, JSON_PRETTY_PRINT);
-echo $startTime;
+echo $line;
 mysql_close($con);
 
 
