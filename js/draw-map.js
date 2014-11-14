@@ -65,8 +65,7 @@ showdrawing();
         timecompare = myDate.getTime();
 
 
-        //llalalla!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        alert(cdn);
+
     };
     map.getContainer().querySelector('#cancel').onclick = function () {
         if(cdn.length==0)
@@ -155,18 +154,27 @@ showdrawing();
 
   */
 
+getdistance();
 
-       distances=0;
-       if (pointGroup.length > 1) {
-       for(var i = 0;i<pointGroup.length-1;i++)
-       {distances = distances + Number((pointGroup[i].distanceTo(pointGroup[i+1])).toFixed(0));}
-       container.innerHTML = 'Total distance:' + distances + 'm';
-        } else {container.innerHTML = 'Click to draw your route';}
         
 }
 
 
 );
+
+
+
+function getdistance()
+{
+         distances=0;
+       if (pointGroup.length > 1) {
+       for(var i = 0;i<pointGroup.length-1;i++)
+       {distances = distances + Number((pointGroup[i].distanceTo(pointGroup[i+1])).toFixed(0));}
+       container.innerHTML = 'Total distance:' + distances + 'm';
+        } else {container.innerHTML = 'Click to draw your route';}
+}
+
+
 
 function showonlystart()
 {
@@ -198,6 +206,7 @@ function clearallpoints()
             cdn.splice( 0, cdn.length );
             pointGroup.splice(0,pointGroup.length);
             pointshow=null;
+            datainput.outerHTML=datainput.outerHTML; 
 }
 
 
@@ -359,6 +368,7 @@ var beforeendpoint=new Array();
   }
   else if(mime==".kml")
   {
+    kmlread(datatext);
   }
   else if(mime==".json")
   {
@@ -374,27 +384,79 @@ var beforeendpoint=new Array();
 
 //GPX
 function gpxread(datatext){
+  try{
             $("#imadivbutyoucannotseemehahaha").html(datatext);
             var x=$("trkpt").first();
             var beforecdn=new Array();
             var beforestartpoint=[Number(x.attr("lon")),Number(x.attr("lat"))];
             var beforeendpoint;
+            var beforpointgroup=new Array();
             while(x.attr("lat"))
             {
                    beforecdn[beforecdn.length]=[Number(x.attr("lon")),Number(x.attr("lat"))];
+                   beforpointgroup[beforpointgroup.length]=new L.LatLng(Number(x.attr("lat")),Number(x.attr("lon")));
                    beforeendpoint=[Number(x.attr("lon")),Number(x.attr("lat"))];
                    x=x.next();
             } 
             cdn=beforecdn;
+            pointGroup=beforpointgroup;
             pointshow=beforeendpoint;
-            updateroute();alert("done");
+            updateroute();
+            getdistance();
+            alert("done");}
+  catch(e){alert("Your file is not correct");  datainput.outerHTML=datainput.outerHTML; }
 }
 
 function geojsonread(datatext){
-  var obj = JSON.parse(str); (datatext, filter); 
-  alert(json); 
+  try{
+datatext=datatext.split("coordinates")[1].split(":[[")[1].split("]]")[0];
+var beforebeforecdn=datatext.split("],[");
+            var beforecdn=new Array();
+            var beforestartpoint=[Number(beforebeforecdn[0].split(",")[0]),Number(beforebeforecdn[0].split(",")[1])];
+            var beforeendpoint;
+            var beforpointgroup=new Array();
+for(var i=0;i<beforebeforecdn.length;i++)
+{
+  beforecdn[i]=[Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1])];
+  beforeendpoint=[Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1])];
+  beforpointgroup[i]=new L.LatLng(Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1]));
+
+}
+            cdn=beforecdn;
+            pointGroup=beforpointgroup;
+            pointshow=beforeendpoint;
+            updateroute();
+            getdistance();
+            alert("done");
+          }
+  catch(e){alert("Your file is not correct");  datainput.outerHTML=datainput.outerHTML;}
 }
 
+
+function kmlread(datatext){
+  try{
+datatext=datatext.split("<coordinates>")[1].split("</coordinates>")[0];
+var beforebeforecdn=datatext.split(" ");
+            var beforecdn=new Array();
+            var beforestartpoint=[Number(beforebeforecdn[0].split(",")[0]),Number(beforebeforecdn[0].split(",")[1])];
+            var beforeendpoint;
+            var beforpointgroup=new Array();
+for(var i=0;i<beforebeforecdn.length;i++)
+{
+  beforecdn[i]=[Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1])];
+  beforeendpoint=[Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1])];
+  beforpointgroup[i]=new L.LatLng(Number(beforebeforecdn[i].split(",")[0]),Number(beforebeforecdn[i].split(",")[1]));
+
+}
+            cdn=beforecdn;
+            pointGroup=beforpointgroup;
+            pointshow=beforeendpoint;
+            updateroute();
+            getdistance();
+            alert("done");
+          }
+  catch(e){alert("Your file is not correct");  datainput.outerHTML=datainput.outerHTML;}
+}
 
 //==================上传数据用===========================g
 
