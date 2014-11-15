@@ -40,10 +40,10 @@ elseif ($mode == "oneRow") {
   //echo json_encode($line, JSON_PRETTY_PRINT);
   
   //make an array out of it
-  $arr = array();
-  array_push($arr,json_encode($result));
+  // $arr = array();
+  // array_push($arr,json_encode($result));
 
-  echo $arr;
+  echo json_encode($result);
 }
 
 mysql_close($con);
@@ -76,7 +76,10 @@ function getRowByid($id) {
 
     }
 
-    return $row;
+    $arr = array();
+
+    array_push($arr, $row);
+    return $arr;
 }
 
 

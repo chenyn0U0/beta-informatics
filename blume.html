@@ -34,15 +34,15 @@
 
 	$(document).ready(function(){
 
-		// $.get( "loadData.php?mode=oneRow&id=45", function( data ) {
-		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
+		$.get( "loadData.php?mode=oneRow&id=45", function( data ) {
+		// $.get( "loadData.php?mode=allRows&id=45", function( data ) {
 		//use underscore.js for transformation?
 
 		var jsonData = JSON.parse(data);
 
-		// var collection = createGeoJson(jsonData);
+		var collection = createGeoJson(jsonData);
 
-			console.log("here", jsonData );
+			// console.log("here", jsonData );
 
 			// drawMap(collection);
 
