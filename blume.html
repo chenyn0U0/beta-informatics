@@ -38,13 +38,13 @@
 		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
 		//use underscore.js for transformation?
 
-		var jsonData = JSON.parse(data);
+		// var jsonData = JSON.parse(data);
 
-		var collection = createGeoJson(jsonData);
+		// var collection = createGeoJson(jsonData);
 
-			// console.log("here", jsonData );
+			console.log("here", data );
 
-			drawMap(collection);
+			// drawMap(collection);
 
 		});
 
