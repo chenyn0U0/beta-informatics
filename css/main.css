@@ -165,7 +165,7 @@ a:hover {
 /* line 86, ../sass/main.scss */
 p {
   line-height: 1.875rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: "robot-thin";
 }
 
@@ -376,12 +376,21 @@ footer a:hover {
       MAIN CONTENT
    ========================================================================== */
 /* line 299, ../sass/main.scss */
+#footprints {
+  position: absolute;
+  z-index: 10;
+  width: 23%;
+  max-width: 300px;
+  opacity: 0.5;
+}
+
+/* line 307, ../sass/main.scss */
 #intro-sec {
   margin-top: 5rem;
   position: relative;
   background-color: #0072bc;
 }
-/* line 330, ../sass/main.scss */
+/* line 338, ../sass/main.scss */
 #intro-sec .btn-container {
   text-align: center;
 }
@@ -389,19 +398,19 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 353, ../sass/main.scss */
+/* line 361, ../sass/main.scss */
 #about-sec {
   background-color: #454549;
 }
-/* line 360, ../sass/main.scss */
+/* line 368, ../sass/main.scss */
 #about-sec h2 {
   text-align: center;
 }
-/* line 364, ../sass/main.scss */
+/* line 372, ../sass/main.scss */
 #about-sec #pointingArrow {
   margin-top: 0.625rem;
 }
-/* line 368, ../sass/main.scss */
+/* line 376, ../sass/main.scss */
 #about-sec .section-Padding {
   padding-bottom: 0;
 }
@@ -409,7 +418,43 @@ footer a:hover {
 /* 
    map
    ========================================================================== */
-/* line 396, ../sass/main.scss */
+/* line 419, ../sass/main.scss */
+#map-sec {
+  position: relative;
+}
+/* line 422, ../sass/main.scss */
+#map-sec .section-Padding {
+  padding: 0;
+}
+
+/* 
+   about us
+   ========================================================================== */
+/* line 430, ../sass/main.scss */
+#team-sec {
+  background-color: #0072bc;
+  color: white;
+}
+/* line 434, ../sass/main.scss */
+#team-sec img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 440, ../sass/main.scss */
+#team-sec img.logo {
+  width: 80%;
+  margin: 0;
+}
+/* line 445, ../sass/main.scss */
+#team-sec a:hover {
+  color: #f750e3;
+}
+
+/* ==========================================================================
+		INPUT MAP   
+   ========================================================================== */
+/* line 454, ../sass/main.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -422,53 +467,4 @@ footer a:hover {
   opacity: 0;
   z-index: 40;
   visibility: hidden;
-}
-
-/* line 409, ../sass/main.scss */
-#drawUploadSelect {
-  position: fixed;
-  width: 100%;
-  z-index: 200;
-  display: none;
-}
-/* line 416, ../sass/main.scss */
-#drawUploadSelect .container {
-  width: 30%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* line 424, ../sass/main.scss */
-#map-sec {
-  position: relative;
-}
-@media only screen and (max-width: 690px) {
-  /* line 428, ../sass/main.scss */
-  #map-sec .section-Padding {
-    padding: 0;
-  }
-}
-
-/* 
-   about us
-   ========================================================================== */
-/* line 438, ../sass/main.scss */
-#team-sec {
-  background-color: #0054a6;
-  color: white;
-}
-/* line 442, ../sass/main.scss */
-#team-sec img {
-  width: 80%;
-  display: block;
-  margin: 0 auto;
-}
-/* line 448, ../sass/main.scss */
-#team-sec img.logo {
-  width: 80%;
-  margin: 0;
-}
-/* line 453, ../sass/main.scss */
-#team-sec a:hover {
-  color: #f750e3;
 }

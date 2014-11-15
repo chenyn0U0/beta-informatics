@@ -58,22 +58,21 @@
 			drawOutputMap(collection);
 
 		});
-
 	});
 
-
+	
 	$(window).load(function () {
 		//activate loadingIcon
 		$("#loading").fadeOut("slow"); 
 
-		//set Sections
-		setSectionsWithImagebackgrounds();
-		var x = getRatio($('#blackMap').attr('src'));
+		// //set Sections
+		// setSectionsWithImagebackgrounds();
+		// var x = getRatio($('#blackMap').attr('src'));
 	});
 
-	$(window).resize(function(){
-			setSectionsWithImagebackgrounds();
-	});
+	// $(window).resize(function(){
+	// 		setSectionsWithImagebackgrounds();
+	// });
 
 </script>
 
@@ -111,6 +110,8 @@
 	</div> -->
 
 	<div id="map-container"></div>
+
+	<img src="img/footprints.png" alt="" id="footprints">
 
 	<header>
 		<div class="module-padding">
@@ -224,7 +225,6 @@
 
 	<a href="" id="map-anchor"></a>
 	<section id="map-sec" class="">
-		<!-- Slideshow 4 -->
 		<div class="section-Padding">
 			<div id="resultMap"></div>
 		</div>
@@ -233,17 +233,18 @@
 <a href="javascript:void(0)" id="team-anchor"></a>
 	<section id="team-sec">
 		<div class="section-Padding">
-			<div class="width-sizer">
+			<div class="gridWrapper">
 
-				<div class="column-left">
+				<div class="column-6">
 					<h2>About us</h2>
 		
-					<p class="left">We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. 
+					<p class="left">We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. This project is part of our university course "Design for Informatics". 
 					</p>
-					<p>This project is part of our university course "Design for Informatics". For other interesting projects, that were developed in this course see the website: <a href="http://edinburghlivinglab.org/projects/" target="_blank">edinburghlivinglab.org</a></p>
+					<br>
+					<p>For other interesting projects, that were developed in this course see the website: <a href="http://edinburghlivinglab.org/projects/" target="_blank">edinburghlivinglab.org</a></p>
 				</div>
-				<div class="column-right">
-					<img src="img/bike.png" alt="">
+				<div class="column-6">
+					<img src="img/teamFoto.jpg" alt="">
 				</div>
 
 
@@ -254,22 +255,25 @@
 
 	<footer>
 		<div class="section-Padding">
-			<div class="width-sizer">
 				<p>Here are some links to projects, teams, ideas and institutions that have influenced or accompanied our project:</p>
 
-				<div class="footer-logos">
-					<a href="http://www.designinformatics.org/"><img src="img/logos/DesignInformatics.gif" alt=""></a>
-					
-					<a href="http://edinburghlivinglab.org/"><img src="img/logos/livingLab.png" alt=""></a>
+				<div class="gridWrapper">
+					<div class="column-2">
+						<a href="http://www.designinformatics.org/"><img src="img/logos/DesignInformatics.gif" alt=""></a>
+					</div>
 
-					<a href="http://www.cyclehack.com/"><img src="img/logos/cyclehack.png" alt="img/logos/cyclehack.png"></a>
-					
-					<a href="https://airinverleith-livinglab.rhcloud.com/"><img src="img/logos/airInverleith.png" alt=""></a>
-
+					<div class="column-2">
+						<a href="http://edinburghlivinglab.org/"><img src="img/logos/livingLab.png" alt=""></a>
+					</div>
+					<div class="column-2">
+						<a href="http://www.cyclehack.com/"><img src="img/logos/cyclehack.png" alt="img/logos/cyclehack.png"></a>
+					</div>
+					<div class="column-2">
+						<a href="https://airinverleith-livinglab.rhcloud.com/"><img src="img/logos/airInverleith.png" alt=""></a>
+					</div>
 
 				</div>
 
-			</div>
 		</div>
 	</footer>
 

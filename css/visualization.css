@@ -7,6 +7,21 @@
 /* line 6, ../sass/visualization.scss */
 .journey {
   fill: none;
-  stroke: #000000;
   stroke-width: 3;
+  stroke-opacity: 0.3;
+}
+
+/* line 12, ../sass/visualization.scss */
+.bike {
+  stroke: green;
+}
+
+/* line 16, ../sass/visualization.scss */
+.car {
+  stroke: blue;
+}
+
+/* line 20, ../sass/visualization.scss */
+.walk {
+  stroke: yellow;
 }
