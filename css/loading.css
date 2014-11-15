@@ -18,7 +18,7 @@ background-color: black;
   text-align: center;
 }
 
-svg {
+#loadingsvg {
   height: 120px;
   width: 120px;
   margin: 0 2em 2em;

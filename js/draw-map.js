@@ -407,6 +407,8 @@ function gpxread(datatext){
 
 function geojsonread(datatext){
   try{
+    datatext = datatext.replace(/\n/g,''); 
+    datatext = datatext.replace(/\s/g,''); 
 datatext=datatext.split("coordinates")[1].split(":[[")[1].split("]]")[0];
 var beforebeforecdn=datatext.split("],[");
             var beforecdn=new Array();
@@ -433,6 +435,7 @@ for(var i=0;i<beforebeforecdn.length;i++)
 
 function kmlread(datatext){
   try{
+    datatext = datatext.replace(/\n/g,''); 
 datatext=datatext.split("<coordinates>")[1].split("</coordinates>")[0];
 var beforebeforecdn=datatext.split(" ");
             var beforecdn=new Array();
