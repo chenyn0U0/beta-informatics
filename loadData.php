@@ -2,7 +2,7 @@
 
   <?php 
  
-$startTime=$_GET["startTime"];
+$mode=$_GET["mode"];
 
 
 // $con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
@@ -22,11 +22,23 @@ mysql_select_db("beta-informatics", $con);
 // echo $allRowsArr[0][0];
 
 
-$result = getRowByid(45);
-$line = $result['route'];
+if($mode == "allRows") {
+  $result = getAllRows();
 
-//echo json_encode($line, JSON_PRETTY_PRINT);
-echo $line;
+  echo $result;
+}
+
+if($mode == "oneRow") {
+
+  $id = $_GET["id"];
+
+  $result = getRowByid($id);
+  $line = $result['route'];
+
+  //echo json_encode($line, JSON_PRETTY_PRINT);
+  echo $line;
+}
+
 mysql_close($con);
 
 
