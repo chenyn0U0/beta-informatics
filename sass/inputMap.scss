@@ -1,3 +1,5 @@
+@import "variables";
+
 #map-container {
   overflow: hidden;
   position: fixed;
@@ -16,6 +18,7 @@
   margin: 0 auto; 
   visibility:hidden;
   margin-top: 0;
+  float: none;
  }
 
 
@@ -198,7 +201,7 @@ pre.ui-distance {
 
 
 
-//  /*清除浮动 start*/
+//  /*start*/
 //  .clearfix:after {content:".";display:block;height:0;clear:both; visibility:hidden;}
 //  .clearfix { display:inline-block; }
 //  * html .clearfix { height:1%; }
@@ -207,3 +210,30 @@ pre.ui-distance {
 //  /**normal**/
 //  input{}
     
+
+
+#routeinputselection{
+ text-align: right;
+  width: 90%;  
+  height:60px;
+  margin: 0 auto;
+  background-color:darkblue;
+  vertical-align: middle;
+}
+
+#route-draw{
+  width: 50%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  border-color: grey;
+    vertical-align: middle;
+}
+#route-upload{
+  width: 50%;
+  height: 100%;
+  float: right;
+  text-align: center;
+  border-color: grey;
+    vertical-align: middle;
+}

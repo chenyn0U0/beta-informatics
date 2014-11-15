@@ -333,7 +333,7 @@ function timecheck()
 function hidemap()
 {
       jQuery("#map-container").css("visibility", "hidden");
-      jQuery("#map").hide().css("visibility","hidden");
+      jQuery("#incontainer").hide().css("visibility","hidden");
       jQuery("#overlay").css("visibility", "hidden");
 }
 
@@ -505,14 +505,39 @@ jQuery("#walk-btn").toggleClass("clicked");
 
 
 
-//=============================好看点用===============================
+//=============================俩button用===============================
+allhideforbutton();
+function allhideforbutton()
+{      
+  statue.className = '';
+        undo.className = 'cannotsee';
+        finish.className = 'cannotsee';
+        cancel.className = 'cannotsee';
+clearallpoints();
+$("#drawcontroler").hide();
+jQuery("#infobar").css({width: '0px'});
+$("#datainput").hide();
+
+container.innerHTML = 'Choose one method to draw your route.';
+}
+
+$("#route-draw").click(function(){
+  allhideforbutton();
+  $("#drawcontroler").show("slow");
+jQuery("#infobar").animate({
+            width: '250px'},"slow");
+container.innerHTML = 'Click to draw your route.';
+
+});
 
 
-
-
-
-
-
+$("#route-upload").click(function(){
+  allhideforbutton();
+  $("#datainput").show();
+jQuery("#infobar").animate({
+            width: '250px'},"slow");
+container.innerHTML = 'Please upload your route in information bar on the right.';
+});
 
 
 
