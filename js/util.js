@@ -63,7 +63,9 @@ function setSectionsWithImagebackgrounds() {
 	        var paddingTop = freeSpaceH * 0.15;
 	        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
 	        
-	        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show("slow");
+	        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show();
+
+	       // jQuery("#incontainer").hide().css({"visibility":"visible", "height": (viewportHeigth+60) + "px"}).show("slow");
 		 	
 		 }); 
 
@@ -77,6 +79,7 @@ function setSectionsWithImagebackgrounds() {
     function hideAll() {
     	jQuery("#map-container").css("visibility", "hidden");
     	jQuery("#map").hide().css("visibility","hidden");
+    	jQuery("#incontainer").hide().css("visibility","hidden");
     	jQuery("#overlay").css("visibility", "hidden");
     	$("#drawUploadSelect").hide();
     	

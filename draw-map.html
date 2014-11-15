@@ -1,21 +1,17 @@
 ﻿<!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
- 
+ <div id="incontainer">
   <div class="close-btn">
     <div class="main-btn"><a href="javascript:void(0);" onclick="hideAll()"></a></div>
   </div>
 
 <!-- for button -->
 <div id="routeinputselection">
-  <div id="route-draw"></div>
-  <div id="route-upload"></div>
+  <div id="route-draw">DRAW MAP</div>
+  <div id="route-upload">UPLOAD ROUTE FILE</div>
 </div>
 
-
-
-
-
 <div id='map' class='maptool'>
-  <nav class='menu-ui'>
+  <nav id="drawcontroler" class='menu-ui'>
     <a href='#' id='statue'>Start Drawing</a>
     <a href='#' id='undo' class = 'cannotsee'>Undo last step</a>
     <a href='#' id='finish' class = 'cannotsee'>Finish Drawing</a>
@@ -141,6 +137,7 @@
         <input type="hidden" value="" name="endPoint" id="endPoint"/>
         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
         <input id="Submit1" type="submit" value="submit" />
+        <br/><br/><br/>
 
 
         <div id="imadivbutyoucannotseemehahaha" style="display:none"></div>
@@ -148,7 +145,7 @@
     </form>
    </div>
 </div>
-    
+    </div>
 <script src="js/draw-map.js"></script>
 
 
