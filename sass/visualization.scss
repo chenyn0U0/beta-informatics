@@ -1,22 +1,25 @@
 #resultMap {
-			width: 100%;
-			height: 600px;
-		}
+	width: 100%;
+	height: 600px;
 
-		.journey {
-			fill: none;
-			stroke-width: 3;
-			stroke-opacity: 0.3;
-		}
+	.journey {
+		fill: none;
+		stroke-width: 3;
+		stroke-opacity: 0.3;
+	}
 
-		.bike {
-			stroke: green;
-		}
+	.bike {
+		stroke: green;
+	}
 
-		.car {
-			stroke: blue;
-		}
+	.car {
+		stroke: blue;
+	}
 
-		.walk {
-			stroke: yellow;
-		}
+	.walk {
+		stroke: red;
+	}
+		
+
+
+}

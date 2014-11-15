@@ -223,12 +223,28 @@ function drawOutputMap(featureCollection) {
 		  		else {
 		  			return "journey"; 
 		  		}
-		  	});
+		  	})
+		  	.on("mouseover", mouseOverLine)
+		  	.on("mouseout", mouseOutLine)
+		  	.on("click", showCommentBox);
 
 		}
 
 	// });
 
+	function mouseOverLine(d) {
+		d3.select(this)
+			.transition().duration(100).style('stroke-width',6);
+	}
+
+	function mouseOutLine(d) {
+		d3.select(this)
+			.transition().duration(100).style('stroke-width', 3);
+	}
+
+	function showCommentBox(d) {
+		
+	}
 
 	//necessary to map from d3 to leavelet
 	function projectPoint(x, y) {

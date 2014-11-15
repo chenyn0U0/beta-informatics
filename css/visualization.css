@@ -3,25 +3,21 @@
   width: 100%;
   height: 600px;
 }
-
-/* line 6, ../sass/visualization.scss */
-.journey {
+/* line 5, ../sass/visualization.scss */
+#resultMap .journey {
   fill: none;
   stroke-width: 3;
   stroke-opacity: 0.3;
 }
-
-/* line 12, ../sass/visualization.scss */
-.bike {
+/* line 11, ../sass/visualization.scss */
+#resultMap .bike {
   stroke: green;
 }
-
-/* line 16, ../sass/visualization.scss */
-.car {
+/* line 15, ../sass/visualization.scss */
+#resultMap .car {
   stroke: blue;
 }
-
-/* line 20, ../sass/visualization.scss */
-.walk {
-  stroke: yellow;
+/* line 19, ../sass/visualization.scss */
+#resultMap .walk {
+  stroke: red;
 }
