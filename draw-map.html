@@ -25,33 +25,35 @@
      <form id="formId" method="post" action="index.html" onsubmit="return formCheck()">
 <div class="">
         <div class="buttonrow">
+          <label>Type of your transportation:</label><br/>
           <a href="#" id="bike-btn" class="travel-btn" onclick="bikeclick()"></a>
           <a href="#" id="car-btn" class="travel-btn" onclick="carclick()"></a>
           <a href="#" id="walk-btn" class="travel-btn" onclick="walkclick()"></a>
         </div>
 
-        <div class="row">
-          <label>age</label>
 
-<div id="select1" class="select"></div>
-<script type="text/javascript">
-  $('#select1').SelectSimu({
-    width : 150,
-    zIndex : 200,
-    listNum : 7,
-    listValue : ['0-11','12-18','19-24','25-30','31-49','50-65','over 65'],
-    listOption : ['0-11','12-18','19-24','25-30','31-49','50-65','over 65'],
-    imgSrc : 'img/icon_down.png'
-  });
-</script>
+<div id="manyinput">
+
+
+        <div class="row">
+        <br/>
+        <input id="datainput" type="file"  onchange="datatotext()" />
+        </div>
+
+
+
+
+        <div class="row">
+          <label>age:</label>
+ <input type="text" id="age"  size=8 name="age"  maxlength=2 onkeypress="return IsNum(event)" value="20" onMouseOver="this.focus()"  onClick="this.focus()"/>:
         </div>
           
         <div class="row">
-          <label for="gender">gender</label>
+          <label for="gender">gender: </label>
 <div id="select2" class="select"></div>
 <script type="text/javascript">
   $('#select2').SelectSimu({
-    width : 150,
+    width : 80,
     zIndex : 190,
     listNum : 2,
     listValue : ['0','1'],
@@ -72,7 +74,7 @@
     zIndex : 180,
     listNum : 4,
     listValue : ['0','1','2','3'],
-    listOption : ['Work','School','Take children to school','Others'],
+    listOption : ['Work place <-> Home','School <-> Home','Take children to/back school','Others'],
     imgSrc : 'img/icon_down.png'
   });
 </script>
@@ -110,7 +112,7 @@
         </div>
 
         <div class="row">
-            Weekday:<input  id="Checkbox1" type="checkbox" name="weekday" />
+            <label for="weekday">Weekday:</label><input  id="Checkbox1" type="checkbox" name="weekday" />
         </div>
 
 
@@ -120,14 +122,9 @@
         <textarea rows="4" name="comment" id="comment"  onMouseOver="this.focus()"  onClick="this.focus()"></textarea>
         </div>
 
-        <div class="row">
-        <br/>
-        <input id="datainput" type="file"  onchange="datatotext()" />
-        </div>
 
         <input type="hidden" id="startTime" name="startTime"/>
         <input type="hidden" id="endTime" name="endTime"/>
-        <input type="hidden" value="" name="age" id="age"/>
         <input type="hidden" value="" name="gender" id="gender"/>
         <input type="hidden" value="" name="journey" id="journey"/>
         <input type="hidden" value="" name="travelType" id="travelType"/>
@@ -136,11 +133,14 @@
         <input type="hidden" value="" name="startPoint" id="startPoint"/>
         <input type="hidden" value="" name="endPoint" id="endPoint"/>
         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
-        <input id="Submit1" type="submit" value="submit" />
+
+<div id="submit" class="submitbutton"><a href="javascript:void(0);" onclick="formCheck()">Submit</a></div>
+
         <br/><br/><br/>
 
 
         <div id="imadivbutyoucannotseemehahaha" style="display:none"></div>
+</div>
 </div>
     </form>
    </div>

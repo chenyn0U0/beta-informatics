@@ -277,6 +277,7 @@ function formCheck()
         {
           $.post("saveData.php", $("#formId").serialize());
           alert("Thank you for your cooperation!");
+          window.navigate("index.html");
           return true;
         }
         else return false;
@@ -313,13 +314,12 @@ if(textforroute=="")textforroute=cdn[i][0]+","+cdn[i][1];
     document.getElementById("startTime").value=st1.value+":"+st2.value;
     document.getElementById("endTime").value=et1.value+":"+et2.value;
 var valuegot= document.getElementsByName("selectInput"); //获得text
-document.getElementById("age").value=valuegot[0].value;
-if (valuegot[1].value)document.getElementById("gender").value="Female";
+if (valuegot[0].value)document.getElementById("gender").value="Female";
 else document.getElementById("gender").value="Male";
-if(valuegot[2].value==0) document.getElementById("journey").value="Work";
-if(valuegot[2].value==1) document.getElementById("journey").value="School";
-if(valuegot[2].value==2) document.getElementById("journey").value="Take children to school";
-if(valuegot[2].value==3) document.getElementById("journey").value="Other";
+if(valuegot[1].value==0) document.getElementById("journey").value="Work place <-> Home";
+if(valuegot[1].value==1) document.getElementById("journey").value="School <-> Home";
+if(valuegot[1].value==2) document.getElementById("journey").value="Take children to/back school";
+if(valuegot[1].value==3) document.getElementById("journey").value="Other";
 
 }
 
@@ -475,6 +475,7 @@ function bikeclick()
   jQuery("#walk-btn").removeClass("clicked");
 
 traveltool="bike";
+putmanyinputright()
 }
 
 
@@ -484,6 +485,7 @@ jQuery("#bike-btn").removeClass("clicked");
 jQuery("#car-btn").toggleClass("clicked");
 jQuery("#walk-btn").removeClass("clicked");
   traveltool="car";
+  putmanyinputright()
 }
 
 function walkclick()
@@ -492,6 +494,7 @@ jQuery("#bike-btn").removeClass("clicked");
 jQuery("#car-btn").removeClass("clicked");
 jQuery("#walk-btn").toggleClass("clicked");
   traveltool="walk";
+  putmanyinputright()
 }
 
 
@@ -499,7 +502,11 @@ jQuery("#walk-btn").toggleClass("clicked");
 
 
 
-
+function putmanyinputright()
+{
+  if(traveltool=="") $("#manyinput").hide();
+else $("#manyinput").show();
+}
 
 
 
@@ -517,7 +524,7 @@ clearallpoints();
 $("#drawcontroler").hide();
 jQuery("#infobar").css({width: '0px'});
 $("#datainput").hide();
-
+putmanyinputright();
 container.innerHTML = 'Choose one method to draw your route.';
 }
 

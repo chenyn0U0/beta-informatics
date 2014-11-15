@@ -53,7 +53,9 @@
   }
 }
 
-
+label{
+  color: white;
+}
 
 
 pre.ui-distance {
@@ -76,7 +78,7 @@ pre.ui-distance {
      z-index:60;
      width:250px;
      height:100%;
-     background-color:#3887BE;
+     background-color:$darkGrey;
      opacity:0.8;
      padding: 10px;
      overflow:auto; 
@@ -140,8 +142,6 @@ pre.ui-distance {
          
  .buttonrow
          {
-              margin-top: 20px;
-              margin-bottom: 25px;
               margin-left: 10px;
                text-align:center;
          }
@@ -215,25 +215,22 @@ pre.ui-distance {
 #routeinputselection{
  text-align: right;
   width: 90%;  
-  height:60px;
   margin: 0 auto;
-  background-color:darkblue;
   vertical-align: middle;
 }
 
 #route-draw{
   width: 50%;
-  height: 100%;
+  padding: 15px 0;
   float: left;
   text-align: center;
-  border-color: grey;
-    vertical-align: middle;
+  background-color: $pink;
 }
 #route-upload{
   width: 50%;
+  padding: 15px 0;
   height: 100%;
   float: right;
   text-align: center;
-  border-color: grey;
-    vertical-align: middle;
+  background-color: $pink;
 }

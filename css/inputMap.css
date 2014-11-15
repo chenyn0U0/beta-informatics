@@ -79,7 +79,12 @@
     width: 100%;
   }
 }
-/* line 59, ../sass/inputMap.scss */
+/* line 56, ../sass/inputMap.scss */
+label {
+  color: white;
+}
+
+/* line 61, ../sass/inputMap.scss */
 pre.ui-distance {
   position: absolute;
   bottom: 10px;
@@ -93,7 +98,7 @@ pre.ui-distance {
   z-index: 60;
 }
 
-/* line 71, ../sass/inputMap.scss */
+/* line 73, ../sass/inputMap.scss */
 .infobar {
   position: absolute;
   top: 0px;
@@ -101,14 +106,14 @@ pre.ui-distance {
   z-index: 60;
   width: 250px;
   height: 100%;
-  background-color: #3887BE;
+  background-color: #454549;
   opacity: 0.8;
   padding: 10px;
   overflow: auto;
   overflow-x: hidden;
 }
 
-/* line 86, ../sass/inputMap.scss */
+/* line 88, ../sass/inputMap.scss */
 .menu-ui {
   position: absolute;
   top: 150px;
@@ -117,7 +122,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 89, ../sass/inputMap.scss */
+/* line 91, ../sass/inputMap.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -133,29 +138,29 @@ pre.ui-distance {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* line 103, ../sass/inputMap.scss */
+/* line 105, ../sass/inputMap.scss */
 .menu-ui a:hover {
   background: #f8f8f8;
   color: #404040;
 }
 
-/* line 107, ../sass/inputMap.scss */
+/* line 109, ../sass/inputMap.scss */
 .menu-ui a.active {
   background: #3887BE;
   color: #FFF;
 }
 
-/* line 111, ../sass/inputMap.scss */
+/* line 113, ../sass/inputMap.scss */
 .menu-ui a.active:hover {
   background: #3074a4;
 }
 
-/* line 113, ../sass/inputMap.scss */
+/* line 115, ../sass/inputMap.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 118, ../sass/inputMap.scss */
+/* line 120, ../sass/inputMap.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -164,7 +169,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 127, ../sass/inputMap.scss */
+/* line 129, ../sass/inputMap.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -172,16 +177,14 @@ pre.ui-distance {
   width: 57px;
 }
 
-/* line 136, ../sass/inputMap.scss */
+/* line 138, ../sass/inputMap.scss */
 .row {
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
-/* line 141, ../sass/inputMap.scss */
+/* line 143, ../sass/inputMap.scss */
 .buttonrow {
-  margin-top: 20px;
-  margin-bottom: 25px;
   margin-left: 10px;
   text-align: center;
 }
@@ -241,28 +244,25 @@ pre.ui-distance {
 #routeinputselection {
   text-align: right;
   width: 90%;
-  height: 60px;
   margin: 0 auto;
-  background-color: darkblue;
   vertical-align: middle;
 }
 
-/* line 224, ../sass/inputMap.scss */
+/* line 222, ../sass/inputMap.scss */
 #route-draw {
   width: 50%;
-  height: 100%;
+  padding: 15px 0;
   float: left;
   text-align: center;
-  border-color: grey;
-  vertical-align: middle;
+  background-color: #F750E3;
 }
 
-/* line 232, ../sass/inputMap.scss */
+/* line 229, ../sass/inputMap.scss */
 #route-upload {
   width: 50%;
+  padding: 15px 0;
   height: 100%;
   float: right;
   text-align: center;
-  border-color: grey;
-  vertical-align: middle;
+  background-color: #F750E3;
 }
