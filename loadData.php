@@ -22,21 +22,28 @@ mysql_select_db("beta-informatics", $con);
 // echo $allRowsArr[0][0];
 
 
+// +++++++++++++++++++++++
 if($mode == "allRows") {
   $result = getAllRows();
 
-  echo $result;
+  echo json_encode($result);
 }
 
-if($mode == "oneRow") {
+// +++++++++++++++++++++++
+elseif ($mode == "oneRow") {
 
   $id = $_GET["id"];
 
   $result = getRowByid($id);
-  $line = $result['route'];
+  // $line = $result['route'];
 
   //echo json_encode($line, JSON_PRETTY_PRINT);
-  echo $line;
+  
+  //make an array out of it
+  $arr = array();
+  array_push($arr,json_encode($result));
+
+  echo $arr;
 }
 
 mysql_close($con);

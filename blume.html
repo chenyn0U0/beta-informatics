@@ -34,13 +34,17 @@
 
 	$(document).ready(function(){
 
-		$.get( "loadData.php?mode=oneRow&id=45", function( data ) {
-			
-			var collection = createGeoJson(data);
+		// $.get( "loadData.php?mode=oneRow&id=45", function( data ) {
+		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
+		//use underscore.js for transformation?
 
-			console.log(data);
+		var jsonData = JSON.parse(data);
 
-			drawMap(collection);
+		// var collection = createGeoJson(jsonData);
+
+			console.log("here", jsonData );
+
+			// drawMap(collection);
 
 		});
 
@@ -50,48 +54,66 @@
 	// and makes a geojson from it
 	function createGeoJson(data) {
 
-		//get data from string and put it in array
-		data = data.replace(/\n/g,'');
-		data = data.replace(/ /g,'');
+		//for every feature
+		for (var i = 0; i < data.length; i++) {
+			
+			console.log(data[i]);
 
-		// console.log( "Load was performed.",  data );
-		var arr = data.split(";");
-		var coordinates = new Array();
+		// 	// //get data from string and put it in array
+		// 	// data[i] = data[i].replace(/\n/g,'');
+		// 	// data[i] = data[i].replace(/ /g,'');
 
-		//go through all the coordinates, split them by ',' and put them back into main array
-		for (var i = 0; i < arr.length; i++) {
-			var x = arr[i].split(",");
+		// 	// // console.log( "Load was performed.",  data );
+		// 	// var arr = data[i].split(";");
+		// 	// var coordinates = new Array();
 
-			//set individual values to int
-			for (var j = 0; j < x.length; j++) {
-				x[j] = parseFloat(x[j]);
-			};
+		// 	// //go through all the coordinates, split them by ',' and put them back into main array
+		// 	// for (var k = 0; k < arr.length; k++) {
+		// 	// 	var x = arr[k].split(",");
 
-			coordinates.push(x);
+		// 	// 	//set individual values to int
+		// 	// 	for (var j = 0; j < x.length; j++) {
+		// 	// 		x[j] = parseFloat(x[j]);
+		// 	// 	};
+
+		// 	// 	coordinates.push(x);
+		// 	// };
+
 		};
 
-		var features = [
-			       			{
-						       "type": "Feature",
-						       "geometry": {
-						           "type": "LineString",
-						           "coordinates": coordinates,
-					       		},
-						       "properties": {
-						           "stroke": "#444444",
-						           "stroke-opacity": 0.1,
-						           "stroke-width": 4
-				       			}
-			       			}
-			       		];
+		// console.log(coordinates);
 
-		var geojson =   {"type": "FeatureCollection",
-			       		"features": features
-       				};
+		//create the geojson object
+		// var features = [];
+
+		// for (var i = 0; i < coordinates.length; i++) {
+
+		// 	features.push({
+		//         id: i,
+		//         type: "Feature"
+		// 	       		// 	{
+		// 				      //  "type": "Feature",
+		// 				      //  "geometry": {
+		// 				      //      "type": "LineString",
+		// 				      //      "coordinates": coordinates,
+		// 			       // 		},
+		// 				      //  "properties": {
+		// 				      //      "stroke": "#444444",
+		// 				      //      "stroke-opacity": 0.1,
+		// 				      //      "stroke-width": 4
+		// 		       	// 		}
+		// 	       		// 	}
+		// 	       		// ];
+		// 	})	;
+		//  };
+
+		// var geojson =   {"type": "FeatureCollection",
+		// 	       		"features": features
+  //      				}
 
 		// console.log(geojson);
 
-		return geojson;
+		return null;
 	}
 
 
