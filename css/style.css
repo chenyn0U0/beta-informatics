@@ -76,9 +76,10 @@ pre.ui-distance {
   opacity: 0.8;
   padding: 10px;
   overflow: auto;
+  overflow-x: hidden;
 }
 
-/* line 82, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .menu-ui {
   position: absolute;
   top: 150px;
@@ -87,7 +88,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 85, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -103,29 +104,29 @@ pre.ui-distance {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* line 99, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .menu-ui a:hover {
   background: #f8f8f8;
   color: #404040;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 .menu-ui a.active {
   background: #3887BE;
   color: #FFF;
 }
 
-/* line 107, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .menu-ui a.active:hover {
   background: #3074a4;
 }
 
-/* line 109, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 114, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -134,7 +135,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -142,13 +143,13 @@ pre.ui-distance {
   width: 57px;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .row {
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .buttonrow {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -156,52 +157,52 @@ pre.ui-distance {
   text-align: center;
 }
 
-/* line 145, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 #car-btn {
   background: url("../img/icon-sprite.png") left top no-repeat;
   background-size: 200px;
 }
-/* line 149, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #car-btn:hover, #car-btn.clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 156, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 #bike-btn {
   background: url("../img/icon-sprite.png") right top no-repeat;
   background-size: 200px;
 }
-/* line 160, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 #bike-btn:hover, #bike-btn.clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 167, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 #walk-btn {
   background: url("../img/icon-sprite.png") center top no-repeat;
   background-size: 200px;
 }
-/* line 171, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 #walk-btn:hover, #walk-btn.clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 178, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 #car-btn-clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 182, ../sass/style.scss */
+/* line 183, ../sass/style.scss */
 #bike-btn-clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 186, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 #walk-btn-clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;

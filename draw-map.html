@@ -84,18 +84,22 @@
                     e.preventDefault(); //for firefox 
                 }
             }
+            if(document.getElementById("st1").value>23) document.getElementById("st1").value=23;
+            if(document.getElementById("et1").value>23) document.getElementById("et1").value=23;
+            if(document.getElementById("st2").value>59) document.getElementById("st2").value=59;
+            if(document.getElementById("et2").value>59) document.getElementById("et2").value=59;
         } 
     </script>
 
         <div class="row">
             <label for="startTime">Approximate journey start time:</label> <br/>
-            <input type="text" size=4 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)"  onMouseOver="this.focus()"  onClick="this.focus()"/>:
-            <input size=4  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()"  onClick="this.focus()"/>
+            <input type="text" size=4 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
+            <input size=4  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
         </div>
         <div class="row">
            <label for="endTime">Approximate journey end time:</label> <br/>
-           <input type="text" id="et1"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()"  onClick="this.focus()"/>:
-           <input type="text" id="et2"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" onMouseOver="this.focus()"  onClick="this.focus()"/>
+           <input type="text" id="et1"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
+           <input type="text" id="et2"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
         </div>
 
         <div class="row">
@@ -106,7 +110,7 @@
 
         <div class="row">
         <label for="comment">Any comments for this route about cycling?</label> <br/>
-        <textarea rows="4" name="comment" id="comment"></textarea>
+        <textarea rows="4" name="comment" id="comment"  onMouseOver="this.focus()"  onClick="this.focus()"></textarea>
         </div>
 
         <div class="row">
