@@ -34,8 +34,8 @@
 
 	$(document).ready(function(){
 
-		$.get( "loadData.php?mode=oneRow&id=45", function( data ) {
-		// $.get( "loadData.php?mode=allRows&id=45", function( data ) {
+		// $.get( "loadData.php?mode=oneRow&id=45", function( data ) {
+		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
 		//use underscore.js for transformation?
 
 		var jsonData = JSON.parse(data);
@@ -44,7 +44,7 @@
 
 			// console.log("here", jsonData );
 
-			// drawMap(collection);
+			drawMap(collection);
 
 		});
 
@@ -54,66 +54,61 @@
 	// and makes a geojson from it
 	function createGeoJson(data) {
 
+		var features = [];
+		
 		//for every feature
 		for (var i = 0; i < data.length; i++) {
 			
-			console.log(data[i]);
 
-		// 	// //get data from string and put it in array
-		// 	// data[i] = data[i].replace(/\n/g,'');
-		// 	// data[i] = data[i].replace(/ /g,'');
+			//correctly format the location data
+			// data[i].route = data[i].replace(/\n/g,'');
+			// data[i] = data[i].replace(/ /g,'');
 
-		// 	// // console.log( "Load was performed.",  data );
-		// 	// var arr = data[i].split(";");
-		// 	// var coordinates = new Array();
+			// // console.log( "Load was performed.",  data );
+			var arr = data[i].route.split(";");
+			var coordinates = new Array();
 
-		// 	// //go through all the coordinates, split them by ',' and put them back into main array
-		// 	// for (var k = 0; k < arr.length; k++) {
-		// 	// 	var x = arr[k].split(",");
+			//go through all the coordinate pairs, split them by ',' and put them back into main array
+			for (var k = 0; k < arr.length; k++) {
+				var x = arr[k].split(",");
 
-		// 	// 	//set individual values to int
-		// 	// 	for (var j = 0; j < x.length; j++) {
-		// 	// 		x[j] = parseFloat(x[j]);
-		// 	// 	};
+			// 	//set individual values to int
+				for (var j = 0; j < x.length; j++) {
+					x[j] = parseFloat(x[j]);
+				};
 
-		// 	// 	coordinates.push(x);
-		// 	// };
+				coordinates.push(x);
+			};
+			// console.log(coordinates);
+
+			//build the array for the feature
+			features.push({
+	        	id: data[i].id,
+	        	type: "Feature",
+	        	geometry: {
+	        		type: "LineString",
+	        		coordinates: coordinates
+	        	},
+	        	properties: {
+	        		gender: data[i].gender,
+	        		journeyType: data[i].journeyType,
+	        		weekday: data[i].weekday,
+	        		comment: data[i].comment
+
+	        	}
+			})	;
+
 
 		};
 
-		// console.log(coordinates);
 
-		//create the geojson object
-		// var features = [];
-
-		// for (var i = 0; i < coordinates.length; i++) {
-
-		// 	features.push({
-		//         id: i,
-		//         type: "Feature"
-		// 	       		// 	{
-		// 				      //  "type": "Feature",
-		// 				      //  "geometry": {
-		// 				      //      "type": "LineString",
-		// 				      //      "coordinates": coordinates,
-		// 			       // 		},
-		// 				      //  "properties": {
-		// 				      //      "stroke": "#444444",
-		// 				      //      "stroke-opacity": 0.1,
-		// 				      //      "stroke-width": 4
-		// 		       	// 		}
-		// 	       		// 	}
-		// 	       		// ];
-		// 	})	;
-		//  };
-
-		// var geojson =   {"type": "FeatureCollection",
-		// 	       		"features": features
-  //      				}
+		var geojson =   {"type": "FeatureCollection",
+			       		"features": features
+       				}
 
 		// console.log(geojson);
 
-		return null;
+		return geojson;
 	}
 
 
