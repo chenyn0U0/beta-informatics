@@ -261,7 +261,6 @@ function updateroute()
 //=============================存储数据用===============================
 function formCheck()
 {
-
   var nullitems="";
   var startTime = document.getElementById("startTime");
   var endTime=document.getElementById("endTime");
@@ -277,7 +276,7 @@ function formCheck()
         {
           $.post("saveData.php", $("#formId").serialize());
           alert("Thank you for your cooperation!");
-          window.navigate("index.html");
+          location.reload();
           return true;
         }
         else return false;
