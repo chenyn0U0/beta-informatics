@@ -102,6 +102,11 @@ section {
 	overflow: hidden;
 }
 
+
+.fullHeightSection {
+	height: 100vh;
+}
+
 .section-Padding {
 	padding: calculateRem(70px) $main-sidePadding;
 	overflow: hidden;
@@ -161,7 +166,7 @@ header {
 	top: 0;
 	z-index: 100;
 	//height: 45px;
-	background-color: $turquese;
+	background-color: $darkBlue;
 	width: 100%;
 
 	.module-padding {
@@ -258,8 +263,8 @@ header {
    ========================================================================== */
 footer {
 	font-size: calculateRem(18px);
-	background-color: $white;
-	color: $turquese;
+	background-color: $dark;
+	color: $white;
 
 	p {
 		margin-bottom: 10px;
@@ -279,10 +284,10 @@ footer {
 	}
 	
 	a {
-		color: $turquese;
+		color: $lightBlue;
 
 		&:hover {
-			color: $dark;
+			color: $white;
 		}
 	}
 }
@@ -296,54 +301,52 @@ footer {
 #intro-sec {
 	margin-top: calculateRem(60px);
 	position: relative;
-	background: url("../img/bg_bikes.png") no-repeat;
-	background-size: 100%;
+	// background: url("../img/bg_bikes.png") no-repeat;
+	// background-size: 100%;
+	background-color: $lightBlue;
 	
 	
-	#bikes {
-		visibility: hidden;
-		width: 100%;
-	}
+	// #bikes {
+	// 	visibility: hidden;
+	// 	width: 100%;
+	// }
 
-	.section-Padding {
-		background-color: transparentize($white, 0.2);
-		overflow: visible;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		padding: 60px 0;
-	}
+// 	.section-Padding {
+// 		background-color: transparentize($white, 0.2);
+// 		overflow: visible;
+// 		position: absolute;
+// 		top: 0;
+// 		width: 100%;
+// 		padding: 60px 0;
+// 	}
 
-	.width-sizer {
+// 	.width-sizer {
 
-		position: relative;
+// 		position: relative;
 
-		h1,h3 {
-			color: $turquese;
-		}
-	}
+// 		h1,h3 {
+// 			color: $white;
+// 		}
+// 	}
 
 	.btn-container {
-		bottom: -95px;
-	    position: absolute;
 	    text-align: center;
-	    width: 100%;
 		
-		.main-btn {
-			margin-right: calculateRem(20px);
-			font-family: "robot-thin"
-		}
+		// .main-btn {
+		// 	margin-right: calculateRem(20px);
+		// 	font-family: "robot-thin"
+		// }
 	}
 
-	@media only screen and (max-width: $mobile-width) {
-		.section-Padding {
-			padding-top: calculateRem(100px);
-		}
-	}
-	.invisibleDiv {
-		width: 100%;
-		height: calculateRem(100px);
-	}
+// 	@media only screen and (max-width: $mobile-width) {
+// 		.section-Padding {
+// 			padding-top: calculateRem(100px);
+// 		}
+// 	}
+// 	.invisibleDiv {
+// 		width: 100%;
+// 		height: calculateRem(100px);
+// 	}
 }
 
 /* 
