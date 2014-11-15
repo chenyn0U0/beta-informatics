@@ -1,4 +1,4 @@
-/* line 1, ../sass/style.scss */
+/* line 1, ../sass/inputMap.scss */
 #map-container {
   overflow: hidden;
   position: fixed;
@@ -8,7 +8,7 @@
   padding-top: 100px;
 }
 
-/* line 10, ../sass/style.scss */
+/* line 11, ../sass/inputMap.scss */
 #map {
   height: 700px;
   width: 90%;
@@ -19,18 +19,18 @@
   margin-top: 0;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 22, ../sass/inputMap.scss */
 .close-btn {
   text-align: right;
   width: 90%;
   margin: 0 auto;
 }
-/* line 27, ../sass/style.scss */
+/* line 27, ../sass/inputMap.scss */
 .close-btn .main-btn {
   background-color: transparent;
   padding: 0 0 10px 0;
 }
-/* line 31, ../sass/style.scss */
+/* line 31, ../sass/inputMap.scss */
 .close-btn .main-btn a {
   display: inline-block;
   height: 20px;
@@ -38,19 +38,19 @@
   background: url("../img/icon-close.png") no-repeat;
   background-size: 40px;
 }
-/* line 39, ../sass/style.scss */
+/* line 39, ../sass/inputMap.scss */
 .close-btn .main-btn a:hover {
   background: url("../img/icon-close.png") right 0 no-repeat;
   background-size: 40px;
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 48, ../sass/style.scss */
+  /* line 48, ../sass/inputMap.scss */
   #map {
     width: 100%;
   }
 }
-/* line 56, ../sass/style.scss */
+/* line 56, ../sass/inputMap.scss */
 pre.ui-distance {
   position: absolute;
   bottom: 10px;
@@ -64,7 +64,7 @@ pre.ui-distance {
   z-index: 60;
 }
 
-/* line 68, ../sass/style.scss */
+/* line 69, ../sass/inputMap.scss */
 .infobar {
   position: absolute;
   top: 0px;
@@ -79,7 +79,7 @@ pre.ui-distance {
   overflow-x: hidden;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 83, ../sass/inputMap.scss */
 .menu-ui {
   position: absolute;
   top: 150px;
@@ -88,7 +88,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 86, ../sass/style.scss */
+/* line 87, ../sass/inputMap.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -104,29 +104,29 @@ pre.ui-distance {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* line 100, ../sass/style.scss */
+/* line 100, ../sass/inputMap.scss */
 .menu-ui a:hover {
   background: #f8f8f8;
   color: #404040;
 }
 
-/* line 104, ../sass/style.scss */
+/* line 104, ../sass/inputMap.scss */
 .menu-ui a.active {
   background: #3887BE;
   color: #FFF;
 }
 
-/* line 108, ../sass/style.scss */
+/* line 108, ../sass/inputMap.scss */
 .menu-ui a.active:hover {
   background: #3074a4;
 }
 
-/* line 110, ../sass/style.scss */
+/* line 111, ../sass/inputMap.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 115, ../sass/style.scss */
+/* line 116, ../sass/inputMap.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -135,7 +135,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 125, ../sass/inputMap.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -143,13 +143,13 @@ pre.ui-distance {
   width: 57px;
 }
 
-/* line 133, ../sass/style.scss */
+/* line 133, ../sass/inputMap.scss */
 .row {
   margin-bottom: 10px;
   margin-left: 10px;
 }
 
-/* line 138, ../sass/style.scss */
+/* line 139, ../sass/inputMap.scss */
 .buttonrow {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -157,52 +157,52 @@ pre.ui-distance {
   text-align: center;
 }
 
-/* line 146, ../sass/style.scss */
+/* line 146, ../sass/inputMap.scss */
 #car-btn {
   background: url("../img/icon-sprite.png") left top no-repeat;
   background-size: 200px;
 }
-/* line 150, ../sass/style.scss */
+/* line 150, ../sass/inputMap.scss */
 #car-btn:hover, #car-btn.clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 157, ../sass/style.scss */
+/* line 157, ../sass/inputMap.scss */
 #bike-btn {
   background: url("../img/icon-sprite.png") right top no-repeat;
   background-size: 200px;
 }
-/* line 161, ../sass/style.scss */
+/* line 161, ../sass/inputMap.scss */
 #bike-btn:hover, #bike-btn.clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 168, ../sass/style.scss */
+/* line 168, ../sass/inputMap.scss */
 #walk-btn {
   background: url("../img/icon-sprite.png") center top no-repeat;
   background-size: 200px;
 }
-/* line 172, ../sass/style.scss */
+/* line 172, ../sass/inputMap.scss */
 #walk-btn:hover, #walk-btn.clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 179, ../sass/inputMap.scss */
 #car-btn-clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 183, ../sass/style.scss */
+/* line 183, ../sass/inputMap.scss */
 #bike-btn-clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 187, ../sass/style.scss */
+/* line 187, ../sass/inputMap.scss */
 #walk-btn-clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
