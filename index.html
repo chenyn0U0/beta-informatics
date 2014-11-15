@@ -12,6 +12,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
 	<link rel="stylesheet" href="css/slider.css">
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<link rel="stylesheet" href="css/grid.css">
   	
 
 
@@ -127,12 +128,12 @@
 	</header>
 
 
-	<section id="intro-sec" class="fullHeightSection">
+	<section id="intro-sec" class="">
 		<!-- <img id="bikes" class="backgroundImage" src="img/bg_bikes.png" alt=""> -->
 		<div class="section-Padding" >
 			<div class="width-sizer">
-				<h1><span>PATHS</span> / Inverleith</h1>
-				<h3>Mapping the journeys through your local community</h3>
+				<h1>Paths</h1>
+				<h3>Helping to make it greener, safer and more fun to travel around Edinburgh</h3>
 
 				<div class="btn-container">
 					<div class="main-btn"><a href="javascript:void(0);" onclick="showthetool()">Get started</a></div>
@@ -144,14 +145,41 @@
 
 
 <a href="javascript:void(0);" id="intro-anchor"></a>
-	<section id="about-sec" class="imgSection">
-		<img src="img/bg_inverleith.png" alt="" class="backgroundImage">
+	<section id="about-sec" class="">
 		<div class="section-Padding">
-			<div class="width-sizer">
-				<h2>What's it all about?</h2>
-				<p>Whether you walk, cycle, drive or get a lift, draw your daily route on the interactive map, save your Path and see how other people in your local community are travelling around the area. </p>
+			<h2>What's it all about?</h2>
+			<div class="gridWrapper">
+				<div class="row">
+					<div class="column-6">
+						<p>The Paths project is about helping to get more people walking and cycling by understanding how people move around the Inverleith area.</p>
+						<p>We are working with the City of Edinburgh Council and the local community to capture the regular journeys that people take as well as the frustrations and suggestions that could help us to reduce the barriers to walking and cycling</p>
+					</div>
+					<div class="column-6">
+						<div class="row">
+							<div class="column-3">
+								<img src="img/cross.png" alt="">
+							</div>
+							<p>Draw your route on the interactive map <a href="javascript:void(0)" onclick="showthetool();">here</a></p>
+						</div>
+						<div class="row">
+							<div class="column-3">
+								<img src="img/pencil.png" alt="">
+							</div>
+							<div class="column-9">
+								<p>If you use a GPS smartphone app to track your routes, you can also upload them <a href="javascript:void(0);" onclick="showthetool();">here</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
 				<br>
-				<p>Come join us on Thursday 30th October from 6-9pm at Broughton High School to find out about tips, advice and support available to help you get started...</p>
+				<br>
+				<div class="column-6">
+					<p>See how people are travelling around your community
+					</p>
+				</div>
+				<div class="column-6">
+					<img src="img/Arrow_wh.png" alt="" id="pointingArrow">
+				</div>
 			</div>
 		</div>
 	</section>
@@ -198,7 +226,6 @@
 	<section id="map-sec" class="">
 		<!-- Slideshow 4 -->
 		<div class="section-Padding">
-		<h3>RESULTS:</h3>
 			<div id="resultMap"></div>
 		</div>
 	</section>
@@ -211,8 +238,6 @@
 				<div class="column-left">
 					<h2>About us</h2>
 		
-					<img class="logo" src="img/logos/logo_betaInfs2.png" alt="logo beta-informatics">
-					<br>
 					<p class="left">We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. 
 					</p>
 					<p>This project is part of our university course "Design for Informatics". For other interesting projects, that were developed in this course see the website: <a href="http://edinburghlivinglab.org/projects/" target="_blank">edinburghlivinglab.org</a></p>

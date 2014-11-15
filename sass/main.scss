@@ -51,16 +51,13 @@ body {
 }
 
 h1 {
-	font-size: calculateRem(55px);
+	font-size: calculateRem(120px);
 	text-align: center;
-	margin-bottom: calculateRem(20px);
-	line-height: calculateRem(60px);
+	margin-bottom: calculateRem(40px);
+	line-height: calculateRem(140px);
+	font-family: "chalk", sans-serif;
 }
 
-h1 > span {
-	font-family: "robot-it", sans-serif;
-	font-weight: 100;
-}
 
 h2 {
 	font-size: calculateRem(36px);
@@ -72,8 +69,9 @@ h2 {
 h3 {
 	text-align: center;
 	font-size: calculateRem(28px);
+	line-height: calculateRem(32px);
 	margin-bottom: calculateRem(20px);
-	font-family: "robot-med"
+	font-family: "robot-thin"
 }
 
 a {
@@ -104,7 +102,7 @@ section {
 
 
 .fullHeightSection {
-	height: 100vh;
+	height: 80vh;
 }
 
 .section-Padding {
@@ -299,7 +297,7 @@ footer {
    ========================================================================== */
 
 #intro-sec {
-	margin-top: calculateRem(60px);
+	margin-top: calculateRem(80px);
 	position: relative;
 	// background: url("../img/bg_bikes.png") no-repeat;
 	// background-size: 100%;
@@ -353,29 +351,39 @@ footer {
    about
    ========================================================================== */
 #about-sec {
-	background-image: url("../img/bg_inverleith.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
+	// background-image: url("../img/bg_inverleith.png");
+	// background-size: 100%;
+	// background-repeat: no-repeat;
+
+	background-color: $dark;
+
+	h2 {
+		text-align: center;
+	}
+
+	#pointingArrow {
+		margin-top: calculateRem(10px);
+	}
 
 	.section-Padding {
-		background-color: transparentize($turquese, 0.3);
-		height: 100%;
-		padding-top:0;
+	// 	// background-color: transparentize($turquese, 0.3);
+	// 	// height: 100%;
+		// padding-top:0;
 		padding-bottom:0;
-
-		.width-sizer {
-			float: right;
-			width: 40%;
-			padding: 5%;
-
-		}
-		@media only screen and (max-width: $tablet-width) {
-			.width-sizer {
-				padding: 5%;
-				width: 60%;
-			}
-		}
 	}
+
+	// 	.width-sizer {
+	// 		float: right;
+	// 		width: 40%;
+	// 		padding: 5%;
+
+	// 	}
+	// 	@media only screen and (max-width: $tablet-width) {
+	// 		.width-sizer {
+	// 			padding: 5%;
+	// 			width: 60%;
+	// 		}
+	// 	}
 
 
 }
@@ -428,8 +436,8 @@ footer {
    about us
    ========================================================================== */
 #team-sec {
-	background-color: $dark;
-	color: $turquese;
+	background-color: $darkBlue;
+	color: $white;
 
 	img {
 		width: 80%;
