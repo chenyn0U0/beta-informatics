@@ -51,16 +51,13 @@ body {
 }
 
 h1 {
-	font-size: calculateRem(55px);
+	font-size: calculateRem(120px);
 	text-align: center;
-	margin-bottom: calculateRem(20px);
-	line-height: calculateRem(60px);
+	margin-bottom: calculateRem(40px);
+	line-height: calculateRem(140px);
+	font-family: "chalk", sans-serif;
 }
 
-h1 > span {
-	font-family: "robot-it", sans-serif;
-	font-weight: 100;
-}
 
 h2 {
 	font-size: calculateRem(36px);
@@ -72,8 +69,9 @@ h2 {
 h3 {
 	text-align: center;
 	font-size: calculateRem(28px);
+	line-height: calculateRem(32px);
 	margin-bottom: calculateRem(20px);
-	font-family: "robot-med"
+	font-family: "robot-thin"
 }
 
 a {
@@ -87,7 +85,7 @@ a {
 
 p {
 	line-height: calculateRem(30px);
-	font-size: calculateRem(24px);
+	font-size: calculateRem(20px);
 	font-family: "robot-thin";
 }
 
@@ -104,7 +102,7 @@ section {
 
 
 .fullHeightSection {
-	height: 100vh;
+	height: 80vh;
 }
 
 .section-Padding {
@@ -298,8 +296,16 @@ footer {
       MAIN CONTENT
    ========================================================================== */
 
+#footprints {
+	position: absolute;
+	z-index: 10;
+	width: 23%;
+	max-width: 300px;
+	opacity: 0.5;
+}
+
 #intro-sec {
-	margin-top: calculateRem(60px);
+	margin-top: calculateRem(80px);
 	position: relative;
 	// background: url("../img/bg_bikes.png") no-repeat;
 	// background-size: 100%;
@@ -353,29 +359,39 @@ footer {
    about
    ========================================================================== */
 #about-sec {
-	background-image: url("../img/bg_inverleith.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
+	// background-image: url("../img/bg_inverleith.png");
+	// background-size: 100%;
+	// background-repeat: no-repeat;
+
+	background-color: $dark;
+
+	h2 {
+		text-align: center;
+	}
+
+	#pointingArrow {
+		margin-top: calculateRem(10px);
+	}
 
 	.section-Padding {
-		background-color: transparentize($turquese, 0.3);
-		height: 100%;
-		padding-top:0;
+	// 	// background-color: transparentize($turquese, 0.3);
+	// 	// height: 100%;
+		// padding-top:0;
 		padding-bottom:0;
-
-		.width-sizer {
-			float: right;
-			width: 40%;
-			padding: 5%;
-
-		}
-		@media only screen and (max-width: $tablet-width) {
-			.width-sizer {
-				padding: 5%;
-				width: 60%;
-			}
-		}
 	}
+
+	// 	.width-sizer {
+	// 		float: right;
+	// 		width: 40%;
+	// 		padding: 5%;
+
+	// 	}
+	// 	@media only screen and (max-width: $tablet-width) {
+	// 		.width-sizer {
+	// 			padding: 5%;
+	// 			width: 60%;
+	// 		}
+	// 	}
 
 
 }
@@ -384,52 +400,36 @@ footer {
 /* 
    map
    ========================================================================== */
-#overlay
-{
-	margin:0;padding:0;
-	position:absolute;
-	left:0px;
-	top:0px;
-    height:100%;
-    width:100%;
-    background:#000000;
-    opacity:0;
-    z-index:40;
-    visibility:hidden;
-}
 
-#drawUploadSelect {
-    position: fixed;
-    width: 100%;
-    z-index: 200;
+// #drawUploadSelect {
+//     position: fixed;
+//     width: 100%;
+//     z-index: 200;
 
-    display: none;
+//     display: none;
 
-    .container {
-    	width: 30%;
-    	margin: 0 auto;
-    	text-align: center;
-    }
-}
+//     .container {
+//     	width: 30%;
+//     	margin: 0 auto;
+//     	text-align: center;
+//     }
+// }
 
 
 #map-sec {
 	position: relative;
 
-	@media only screen and (max-width: $mobile-width) {
-		.section-Padding {
-			padding:  0;
-		}
+	.section-Padding {
+		padding: 0;
 	}
-
 }
 
 /* 
    about us
    ========================================================================== */
 #team-sec {
-	background-color: $dark;
-	color: $turquese;
+	background-color: $lightBlue;
+	color: $white;
 
 	img {
 		width: 80%;
@@ -446,6 +446,24 @@ footer {
 		color: $pink;
 	}
 }
+
+/* ==========================================================================
+		INPUT MAP   
+   ========================================================================== */
+#overlay
+{
+	margin:0;padding:0;
+	position:absolute;
+	left:0px;
+	top:0px;
+    height:100%;
+    width:100%;
+    background:#000000;
+    opacity:0;
+    z-index:40;
+    visibility:hidden;
+}
+
 
 
 

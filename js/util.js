@@ -106,6 +106,7 @@ function setSectionsWithImagebackgrounds() {
 // and makes a geojson from it
 function createGeoJson(data) {
 
+		// console.log( "Data format from Database: ",  data );
 	var features = [];
 	
 	//for every feature
@@ -116,7 +117,6 @@ function createGeoJson(data) {
 		// data[i].route = data[i].replace(/\n/g,'');
 		// data[i] = data[i].replace(/ /g,'');
 
-		// // console.log( "Load was performed.",  data );
 		var arr = data[i].route.split(";");
 		var coordinates = new Array();
 
@@ -145,7 +145,8 @@ function createGeoJson(data) {
         		gender: data[i].gender,
         		journeyType: data[i].journeyType,
         		weekday: data[i].weekday,
-        		comment: data[i].comment
+        		comment: data[i].comment,
+        		transport: data[i].travelType
 
         	}
 		})	;
@@ -176,8 +177,8 @@ function drawOutputMap(featureCollection) {
 	console.log(featureCollection);
 
     //second way to do it
-    var map = new L.Map("resultMap", {center: [55.960, -3.210], zoom: 14})
-	.addLayer(new L.TileLayer("http://{s}.tiles.mapbox.com/v3/kimrdot.k7jn77op/{z}/{x}/{y}.png"));
+    var map = new L.Map("resultMap", {scrollWheelZoom: false, center: [55.960, -3.210], zoom: 14})
+	.addLayer(new L.TileLayer("http://{s}.tiles.mapbox.com/v3/lucas-g.jj533h5a/{z}/{x}/{y}.png"));
 
     var svg = d3.select(map.getPanes().overlayPane).append("svg"),
 		g = svg.append("g").attr("class", "leaflet-zoom-hide");
@@ -209,7 +210,21 @@ function drawOutputMap(featureCollection) {
 			g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
 		  	feature.attr("d", path)
-		  	.attr("class", function(d) { return "journey" });
+		  	.attr("class", function(d) { 
+		  		if(d.properties.transport == "bike") {
+		  			return "journey bike";
+		  		}
+		  		else if (d.properties.transport == "walk"){
+		  			return "journey walk";
+		  		}
+		  		else if (d.properties.transport == "car"){
+		  			return "journey car";
+		  		}
+		  		else {
+		  			return "journey"; 
+		  		}
+		  	});
+
 		}
 
 	// });

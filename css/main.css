@@ -68,6 +68,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
+  font-family: "chalk";
+  src: url("CoalhandLuke.ttf");
+}
+
+@font-face {
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
@@ -123,19 +128,14 @@ body {
 
 /* line 53, ../sass/main.scss */
 h1 {
-  font-size: 3.4375rem;
+  font-size: 7.5rem;
   text-align: center;
-  margin-bottom: 1.25rem;
-  line-height: 3.75rem;
+  margin-bottom: 2.5rem;
+  line-height: 8.75rem;
+  font-family: "chalk", sans-serif;
 }
 
-/* line 60, ../sass/main.scss */
-h1 > span {
-  font-family: "robot-it", sans-serif;
-  font-weight: 100;
-}
-
-/* line 65, ../sass/main.scss */
+/* line 62, ../sass/main.scss */
 h2 {
   font-size: 2.25rem;
   margin-bottom: 0.9375rem;
@@ -143,56 +143,57 @@ h2 {
   line-height: 2.875rem;
 }
 
-/* line 72, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 h3 {
   text-align: center;
   font-size: 1.75rem;
+  line-height: 2rem;
   margin-bottom: 1.25rem;
-  font-family: "robot-med";
+  font-family: "robot-thin";
 }
 
-/* line 79, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 a {
   text-decoration: none;
   color: white;
 }
-/* line 83, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 a:hover {
   color: #454549;
 }
 
-/* line 88, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 p {
   line-height: 1.875rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: "robot-thin";
 }
 
-/* line 94, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 .width-sizer {
   max-width: 1200px;
   margin: auto;
   display: block;
 }
 
-/* line 100, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 section {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 106, ../sass/main.scss */
+/* line 104, ../sass/main.scss */
 .fullHeightSection {
-  height: 100vh;
+  height: 80vh;
 }
 
-/* line 110, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 .section-Padding {
   padding: 4.375rem 30px;
   overflow: hidden;
 }
 
-/* line 116, ../sass/main.scss */
+/* line 114, ../sass/main.scss */
 .main-btn {
   display: inline-block;
   background-color: #f750e3;
@@ -202,12 +203,12 @@ section {
   font-style: italic;
 }
 
-/* line 125, ../sass/main.scss */
+/* line 123, ../sass/main.scss */
 .backgroundImage {
   display: none;
 }
 
-/* line 130, ../sass/main.scss */
+/* line 128, ../sass/main.scss */
 .column-left {
   display: inline-block;
   width: calc(50% - 5px);
@@ -215,7 +216,7 @@ section {
   overflow: hidden;
 }
 
-/* line 137, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 .column-right {
   display: inline-block;
   width: calc(50% - 10px);
@@ -223,13 +224,13 @@ section {
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 147, ../sass/main.scss */
+  /* line 145, ../sass/main.scss */
   html {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 690px) {
-  /* line 156, ../sass/main.scss */
+  /* line 154, ../sass/main.scss */
   p {
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -238,7 +239,7 @@ section {
 /* ==========================================================================
        HEADER
    ========================================================================== */
-/* line 164, ../sass/main.scss */
+/* line 162, ../sass/main.scss */
 header {
   position: fixed;
   top: 0;
@@ -246,92 +247,92 @@ header {
   background-color: #0054a6;
   width: 100%;
 }
-/* line 172, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 header .module-padding {
   padding: 10px 30px;
   overflow: hidden;
   text-align: right;
 }
-/* line 178, ../sass/main.scss */
+/* line 176, ../sass/main.scss */
 header .filler {
   height: 45px;
   width: 1px;
   display: inline-block;
 }
 
-/* line 186, ../sass/main.scss */
+/* line 184, ../sass/main.scss */
 #header-logo {
   float: left;
 }
-/* line 189, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
 #header-logo img {
   height: 45px;
 }
 
-/* line 194, ../sass/main.scss */
+/* line 192, ../sass/main.scss */
 #header-nav {
   overflow: hidden;
   display: inline-block;
 }
-/* line 198, ../sass/main.scss */
+/* line 196, ../sass/main.scss */
 #header-nav li {
   display: inline-block;
   text-decoration: none;
   margin-left: 5px;
 }
-/* line 203, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 #header-nav li a {
   text-transform: uppercase;
 }
 
-/* line 209, ../sass/main.scss */
+/* line 207, ../sass/main.scss */
 #burger-button {
   display: none;
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 215, ../sass/main.scss */
+  /* line 213, ../sass/main.scss */
   #burger-button {
     display: inline-block;
   }
-  /* line 217, ../sass/main.scss */
+  /* line 215, ../sass/main.scss */
   #burger-button img {
     height: 35px;
   }
 
-  /* line 222, ../sass/main.scss */
+  /* line 220, ../sass/main.scss */
   #header-nav {
     display: none;
     display: block;
     text-align: center;
     width: 100%;
   }
-  /* line 229, ../sass/main.scss */
+  /* line 227, ../sass/main.scss */
   #header-nav li {
     display: block;
     margin-bottom: 0px;
     padding: 10px;
   }
-  /* line 234, ../sass/main.scss */
+  /* line 232, ../sass/main.scss */
   #header-nav li a {
     display: block;
     padding: 10px 0;
   }
 
-  /* line 241, ../sass/main.scss */
+  /* line 239, ../sass/main.scss */
   header {
     font-size: 24px;
   }
-  /* line 245, ../sass/main.scss */
+  /* line 243, ../sass/main.scss */
   header .module-padding {
     padding: 10px 30px;
   }
-  /* line 249, ../sass/main.scss */
+  /* line 247, ../sass/main.scss */
   header .filler {
     display: none;
   }
 
-  /* line 254, ../sass/main.scss */
+  /* line 252, ../sass/main.scss */
   #header-logo img {
     height: 35px;
   }
@@ -339,34 +340,34 @@ header .filler {
 /* ==========================================================================
       FOOTER
    ========================================================================== */
-/* line 264, ../sass/main.scss */
+/* line 262, ../sass/main.scss */
 footer {
   font-size: 1.125rem;
   background-color: #454549;
   color: white;
 }
-/* line 269, ../sass/main.scss */
+/* line 267, ../sass/main.scss */
 footer p {
   margin-bottom: 10px;
 }
-/* line 273, ../sass/main.scss */
+/* line 271, ../sass/main.scss */
 footer .footer-logos {
   display: inline-block;
 }
-/* line 275, ../sass/main.scss */
+/* line 273, ../sass/main.scss */
 footer .footer-logos img {
   height: 100px;
   margin-right: 10px;
 }
-/* line 282, ../sass/main.scss */
+/* line 280, ../sass/main.scss */
 footer ul {
   float: right;
 }
-/* line 286, ../sass/main.scss */
+/* line 284, ../sass/main.scss */
 footer a {
   color: #0072bc;
 }
-/* line 289, ../sass/main.scss */
+/* line 287, ../sass/main.scss */
 footer a:hover {
   color: white;
 }
@@ -374,13 +375,22 @@ footer a:hover {
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 301, ../sass/main.scss */
+/* line 299, ../sass/main.scss */
+#footprints {
+  position: absolute;
+  z-index: 10;
+  width: 23%;
+  max-width: 300px;
+  opacity: 0.5;
+}
+
+/* line 307, ../sass/main.scss */
 #intro-sec {
-  margin-top: 3.75rem;
+  margin-top: 5rem;
   position: relative;
   background-color: #0072bc;
 }
-/* line 332, ../sass/main.scss */
+/* line 338, ../sass/main.scss */
 #intro-sec .btn-container {
   text-align: center;
 }
@@ -388,74 +398,33 @@ footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 355, ../sass/main.scss */
+/* line 361, ../sass/main.scss */
 #about-sec {
-  background-image: url("../img/bg_inverleith.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-color: #454549;
 }
-/* line 360, ../sass/main.scss */
+/* line 368, ../sass/main.scss */
+#about-sec h2 {
+  text-align: center;
+}
+/* line 372, ../sass/main.scss */
+#about-sec #pointingArrow {
+  margin-top: 0.625rem;
+}
+/* line 376, ../sass/main.scss */
 #about-sec .section-Padding {
-  background-color: rgba(0, 182, 211, 0.7);
-  height: 100%;
-  padding-top: 0;
   padding-bottom: 0;
-}
-/* line 366, ../sass/main.scss */
-#about-sec .section-Padding .width-sizer {
-  float: right;
-  width: 40%;
-  padding: 5%;
-}
-@media only screen and (max-width: 800px) {
-  /* line 373, ../sass/main.scss */
-  #about-sec .section-Padding .width-sizer {
-    padding: 5%;
-    width: 60%;
-  }
 }
 
 /* 
    map
    ========================================================================== */
-/* line 388, ../sass/main.scss */
-#overlay {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  background: #000000;
-  opacity: 0;
-  z-index: 40;
-  visibility: hidden;
-}
-
-/* line 401, ../sass/main.scss */
-#drawUploadSelect {
-  position: fixed;
-  width: 100%;
-  z-index: 200;
-  display: none;
-}
-/* line 408, ../sass/main.scss */
-#drawUploadSelect .container {
-  width: 30%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* line 416, ../sass/main.scss */
+/* line 419, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
-@media only screen and (max-width: 690px) {
-  /* line 420, ../sass/main.scss */
-  #map-sec .section-Padding {
-    padding: 0;
-  }
+/* line 422, ../sass/main.scss */
+#map-sec .section-Padding {
+  padding: 0;
 }
 
 /* 
@@ -463,8 +432,8 @@ footer a:hover {
    ========================================================================== */
 /* line 430, ../sass/main.scss */
 #team-sec {
-  background-color: #454549;
-  color: #00b6d3;
+  background-color: #0072bc;
+  color: white;
 }
 /* line 434, ../sass/main.scss */
 #team-sec img {
@@ -480,4 +449,22 @@ footer a:hover {
 /* line 445, ../sass/main.scss */
 #team-sec a:hover {
   color: #f750e3;
+}
+
+/* ==========================================================================
+		INPUT MAP   
+   ========================================================================== */
+/* line 454, ../sass/main.scss */
+#overlay {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  opacity: 0;
+  z-index: 40;
+  visibility: hidden;
 }
