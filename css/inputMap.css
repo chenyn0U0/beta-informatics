@@ -270,3 +270,17 @@ pre.ui-distance {
   text-align: center;
   background-color: #F750E3;
 }
+
+/* line 238, ../sass/inputMap.scss */
+.main-btn {
+  /*  padding: 3px 0;
+    background-color: $pink;
+    width: 90px;
+    text-align: center;
+   font-size: 14px;
+   font-weight: bold;*/
+}
+/* line 245, ../sass/inputMap.scss */
+.main-btn a {
+  color: white;
+}
