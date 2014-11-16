@@ -246,40 +246,53 @@ pre.ui-distance {
 
 /* line 215, ../sass/inputMap.scss */
 #routeinputselection {
-  text-align: right;
   width: 90%;
   margin: 0 auto;
-  vertical-align: middle;
   background-color: #454549;
+  overflow: hidden;
 }
-/* line 223, ../sass/inputMap.scss */
+/* line 222, ../sass/inputMap.scss */
 #routeinputselection #route-draw {
   width: 50%;
   float: left;
   text-align: center;
   padding: 5px 0;
+  background-color: #454549;
 }
-/* line 230, ../sass/inputMap.scss */
+/* line 231, ../sass/inputMap.scss */
 #routeinputselection #route-upload {
   width: 50%;
   height: 100%;
   float: right;
   text-align: center;
   padding: 5px 0;
+  background-color: #454549;
 }
-/* line 238, ../sass/inputMap.scss */
+/* line 240, ../sass/inputMap.scss */
 #routeinputselection img {
   height: 50px;
   width: 50px;
 }
-/* line 244, ../sass/inputMap.scss */
-#routeinputselection a {
+/* line 245, ../sass/inputMap.scss */
+#routeinputselection .main-btn {
   background-color: #F750E3;
-  padding: 5px 0;
-  width: 50px;
+  padding: 8px;
+  float: right;
+  margin: 0 10%;
+  right: 10%;
+  font-size: 14px;
+  font-style: bold;
+  font-family: Arial;
+}
+/* line 255, ../sass/inputMap.scss */
+#routeinputselection p {
+  width: 90%;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-/* line 258, ../sass/inputMap.scss */
+/* line 270, ../sass/inputMap.scss */
 #submit.main-btn {
   position: relative;
   padding: 3px 0;
@@ -287,7 +300,7 @@ pre.ui-distance {
   text-align: center;
   font-size: 12px;
 }
-/* line 264, ../sass/inputMap.scss */
+/* line 276, ../sass/inputMap.scss */
 #submit.main-btn a {
   color: white;
 }
