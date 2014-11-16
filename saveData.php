@@ -22,7 +22,7 @@
   else $weekday=0;
 
 
-// $con = mysql_connect("localhost","beta-informatics","crossEdinburgh");
+//$con = mysql_connect("localhost","beta-inf","password");
 $con = mysql_connect("localhost","root","root");
 if (!$con)
   {
