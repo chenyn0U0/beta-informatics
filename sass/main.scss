@@ -326,6 +326,15 @@ footer#footer {
 	width: 23%;
 	max-width: 300px;
 	opacity: 0.5;
+	left: -50px;
+}
+
+#ghostbike {
+	position: absolute;
+	z-index: 10;
+	right: 0;
+	width: 12%;
+	bottom: 0;
 }
 
 #intro-sec {

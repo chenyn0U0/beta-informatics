@@ -2,34 +2,42 @@
   font-family: "chalk";
   src: url("CoalhandLuke.ttf");
 }
+
 @font-face {
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
+
 @font-face {
   font-family: "robot-thin";
   src: url("roboto/Roboto-Thin.ttf");
 }
+
 @font-face {
   font-family: "robot-it";
   src: url("roboto/Roboto-ThinItalic.ttf");
 }
+
 @font-face {
   font-family: "robot-med";
   src: url("roboto/Roboto-Medium.ttf");
 }
+
 @font-face {
   font-family: "robot-bold";
   src: url("roboto/Roboto-Bold.ttf");
 }
+
 @font-face {
   font-family: "robot-boldIt";
   src: url("roboto/Roboto-MediumItalic.ttf");
 }
+
 @font-face {
   font-family: "robotC-bold";
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
+
 /* line 3, ../sass/inputMap.scss */
 #map-container {
   overflow: hidden;
@@ -40,7 +48,7 @@
   padding-top: 100px;
 }
 
-/* line 12, ../sass/inputMap.scss */
+/* line 13, ../sass/inputMap.scss */
 #map {
   height: 700px;
   width: 90%;
@@ -102,7 +110,7 @@ pre.ui-distance {
   z-index: 60;
 }
 
-/* line 73, ../sass/inputMap.scss */
+/* line 74, ../sass/inputMap.scss */
 .infobar {
   position: absolute;
   top: 0px;
@@ -126,7 +134,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 91, ../sass/inputMap.scss */
+/* line 92, ../sass/inputMap.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -159,12 +167,12 @@ pre.ui-distance {
   background: #3074a4;
 }
 
-/* line 115, ../sass/inputMap.scss */
+/* line 116, ../sass/inputMap.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 120, ../sass/inputMap.scss */
+/* line 121, ../sass/inputMap.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -173,7 +181,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 129, ../sass/inputMap.scss */
+/* line 130, ../sass/inputMap.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -187,7 +195,7 @@ pre.ui-distance {
   margin-left: 10px;
 }
 
-/* line 143, ../sass/inputMap.scss */
+/* line 144, ../sass/inputMap.scss */
 .buttonrow {
   margin-left: 10px;
   text-align: center;
@@ -258,7 +266,7 @@ pre.ui-distance {
   padding: 15px 0;
   float: left;
   text-align: center;
-  background-color: #F750E3;
+  background-color: #f750e3;
 }
 
 /* line 229, ../sass/inputMap.scss */
@@ -268,7 +276,7 @@ pre.ui-distance {
   height: 100%;
   float: right;
   text-align: center;
-  background-color: #F750E3;
+  background-color: #f750e3;
 }
 
 /* line 238, ../sass/inputMap.scss */
