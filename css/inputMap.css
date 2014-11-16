@@ -270,8 +270,8 @@ pre.ui-distance {
 }
 /* line 240, ../sass/inputMap.scss */
 #routeinputselection img {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 /* line 245, ../sass/inputMap.scss */
 #routeinputselection .main-btn {
@@ -287,7 +287,7 @@ pre.ui-distance {
 /* line 255, ../sass/inputMap.scss */
 #routeinputselection p {
   width: 90%;
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
   margin-bottom: 10px;
 }
