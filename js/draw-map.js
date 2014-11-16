@@ -532,7 +532,7 @@ $("#route-draw").click(function(){
   $("#drawcontroler").show("slow");
 jQuery("#infobar").animate({
             width: '250px'},"slow");
-container.innerHTML = 'Click to draw your route.';
+container.innerHTML = 'Click "Start Drawing" to draw your route.';
 
 });
 
