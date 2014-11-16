@@ -189,9 +189,39 @@ function drawOutputMap(featureCollection) {
 	  	var transform = d3.geo.transform({point: projectPoint}),
     	path = d3.geo.path().projection(transform);
 
-    	var feature = g.selectAll("path")
+    	var features = g.selectAll("path")
 		    .data(collection.features)
 		  .enter().append("path");
+
+		 var tooltips = svg.selectAll("rect")
+		 					.data(collection.features)
+		 					.enter()
+		 					.append("rect")
+		 					.attr("width", 20)
+		 					.attr("height", 20)
+		 					.attr("fill", "#000000")
+		 					.attr("opacity",0.7)
+		 					.attr("y", function(d,i) {
+		 						console.log(d.geometry.coordinates[0]);
+		 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][0],d.geometry.coordinates[0][1]));
+		 						console.log(bla.y);
+
+		 						return 10 * i;
+		 					})
+		 					.attr("x", 10)
+		 					.attr("text", function(d){
+		 						return "bla";
+		 					})
+		 					.attr("visibility","hidden");
+
+		 	// circles.attr("r",20)
+		 	// 	.attr("fill", "red")
+		 	// 	.attr("cx", function(d,i){
+		 	// 		return i * 10;
+		 	// 	})
+		 	// 	attr("cy", function(d,i) {
+		 	// 		return i * 10;
+		 	// 	})
 
 
 		map.on("viewreset", reset);
@@ -209,7 +239,7 @@ function drawOutputMap(featureCollection) {
 		    .style("top", topLeft[1] + "px");
 			g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
-		  	feature.attr("d", path)
+		  	features.attr("d", path)
 		  	.attr("class", function(d) { 
 		  		if(d.properties.transport == "bike") {
 		  			return "journey bike";
@@ -228,6 +258,7 @@ function drawOutputMap(featureCollection) {
 		  	.on("mouseout", mouseOutLine)
 		  	.on("click", showCommentBox);
 
+
 		}
 
 	// });
@@ -243,7 +274,7 @@ function drawOutputMap(featureCollection) {
 	}
 
 	function showCommentBox(d) {
-		
+
 	}
 
 	//necessary to map from d3 to leavelet
