@@ -5,248 +5,170 @@
  *
  * Copyright (C) 2013 Hakim El Hattab, http://hakim.se
  */
-/* line 11, ../sass/kontext.scss */
 .kontext {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
-/* line 16, ../sass/kontext.scss */
 .kontext .layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  /*box-shadow: 0px 0px 120px rgba( 0, 0, 0, 0.8 );*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	/*box-shadow: 0px 0px 120px rgba( 0, 0, 0, 0.8 );*/
 }
 
-/* line 26, ../sass/kontext.scss */
 .kontext .layer.show {
-  visibility: visible;
+	visibility: visible;
 }
 
-/* line 30, ../sass/kontext.scss */
 .kontext.capable {
-  -webkit-perspective: 1000px;
-  -moz-perspective: 1000px;
-  perspective: 1000px;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	   -moz-perspective: 1000px;
+	        perspective: 1000px;
+
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 }
 
-/* line 40, ../sass/kontext.scss */
 .kontext.capable .layer {
-  -webkit-transform: translateZ(-100px);
-  -moz-transform: translateZ(-100px);
-  transform: translateZ(-100px);
+	-webkit-transform: translateZ( -100px );
+	   -moz-transform: translateZ( -100px );
+	        transform: translateZ( -100px );
 }
 
-/* line 46, ../sass/kontext.scss */
 .kontext.capable .layer.show {
-  -webkit-transform: translateZ(0px);
-  -moz-transform: translateZ(0px);
-  transform: translateZ(0px);
+	-webkit-transform: translateZ( 0px );
+	   -moz-transform: translateZ( 0px );
+	        transform: translateZ( 0px );
 }
 
-/* line 52, ../sass/kontext.scss */
 .kontext.capable.animate .layer.show.right {
-  -webkit-animation: show-right 1s forwards ease;
-  -moz-animation: show-right 1s forwards ease;
-  animation: show-right 1s forwards ease;
+	-webkit-animation: show-right 1s forwards ease;
+	   -moz-animation: show-right 1s forwards ease;
+	        animation: show-right 1s forwards ease;
 }
 
-/* line 58, ../sass/kontext.scss */
 .kontext.capable.animate .layer.hide.right {
-  -webkit-animation: hide-right 1s forwards ease;
-  -moz-animation: hide-right 1s forwards ease;
-  animation: hide-right 1s forwards ease;
+	-webkit-animation: hide-right 1s forwards ease;
+	   -moz-animation: hide-right 1s forwards ease;
+	        animation: hide-right 1s forwards ease;
 }
 
-/* line 64, ../sass/kontext.scss */
 .kontext.capable.animate .layer.show.left {
-  -webkit-animation: show-left 1s forwards ease;
-  -moz-animation: show-left 1s forwards ease;
-  animation: show-left 1s forwards ease;
+	-webkit-animation: show-left 1s forwards ease;
+	   -moz-animation: show-left 1s forwards ease;
+	        animation: show-left 1s forwards ease;
 }
 
-/* line 70, ../sass/kontext.scss */
 .kontext.capable.animate .layer.hide.left {
-  -webkit-animation: hide-left 1s forwards ease;
-  -moz-animation: hide-left 1s forwards ease;
-  animation: hide-left 1s forwards ease;
+	-webkit-animation: hide-left 1s forwards ease;
+	   -moz-animation: hide-left 1s forwards ease;
+	        animation: hide-left 1s forwards ease;
 }
+
 
 /* CSS animation keyframes */
+
 @-webkit-keyframes show-right {
-  0% {
-    -webkit-transform: translateZ(-200px);
-  }
-  40% {
-    -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    -webkit-transform: translateZ(0px);
-  }
+	0%   { -webkit-transform: translateZ( -200px ); }
+	40%  { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { -webkit-transform: translateZ( 0px ); }
 }
+
 @-webkit-keyframes hide-right {
-  0% {
-    -webkit-transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    -webkit-transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { -webkit-transform: translateZ( 0px ); visibility: visible; }
+	40%  { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { -webkit-transform: translateZ( -200px ); visibility: hidden; }
 }
+
 @-moz-keyframes show-right {
-  0% {
-    -moz-transform: translateZ(-200px);
-  }
-  40% {
-    -moz-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    -moz-transform: translateZ(0px);
-  }
+	0%   { -moz-transform: translateZ( -200px ); }
+	40%  { -moz-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { -moz-transform: translateZ( 0px ); }
 }
+
 @-moz-keyframes hide-right {
-  0% {
-    -moz-transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    -moz-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    -moz-transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { -moz-transform: translateZ( 0px ); visibility: visible; }
+	40%  { -moz-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { -moz-transform: translateZ( -200px ); visibility: hidden; }
 }
+
 @keyframes show-right {
-  0% {
-    transform: translateZ(-200px);
-  }
-  40% {
-    transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    transform: translateZ(0px);
-  }
+	0%   { transform: translateZ( -200px ); }
+	40%  { transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { transform: translateZ( 0px ); }
 }
+
 @keyframes hide-right {
-  0% {
-    transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { transform: translateZ( 0px ); visibility: visible; }
+	40%  { transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { transform: translateZ( -200px ); visibility: hidden; }
 }
+
+
 @-webkit-keyframes show-left {
-  0% {
-    -webkit-transform: translateZ(-200px);
-  }
-  40% {
-    -webkit-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    -webkit-transform: translateZ(0px);
-  }
+	0%   { -webkit-transform: translateZ( -200px ); }
+	40%  { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { -webkit-transform: translateZ( 0px ); }
 }
+
 @-webkit-keyframes hide-left {
-  0% {
-    -webkit-transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    -webkit-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    -webkit-transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { -webkit-transform: translateZ( 0px ); visibility: visible; }
+	40%  { -webkit-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { -webkit-transform: translateZ( -200px ); visibility: hidden; }
 }
+
 @-moz-keyframes show-left {
-  0% {
-    -moz-transform: translateZ(-200px);
-  }
-  40% {
-    -moz-transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    -moz-transform: translateZ(0px);
-  }
+	0%   { -moz-transform: translateZ( -200px ); }
+	40%  { -moz-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { -moz-transform: translateZ( 0px ); }
 }
+
 @-moz-keyframes hide-left {
-  0% {
-    -moz-transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    -moz-transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    -moz-transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { -moz-transform: translateZ( 0px ); visibility: visible; }
+	40%  { -moz-transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { -moz-transform: translateZ( -200px ); visibility: hidden; }
 }
+
 @keyframes show-left {
-  0% {
-    transform: translateZ(-200px);
-  }
-  40% {
-    transform: translate(-40%, 0) scale(0.8) rotateY(20deg);
-  }
-  100% {
-    transform: translateZ(0px);
-  }
+	0%   { transform: translateZ( -200px ); }
+	40%  { transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); }
+	100% { transform: translateZ( 0px ); }
 }
+
 @keyframes hide-left {
-  0% {
-    transform: translateZ(0px);
-    visibility: visible;
-  }
-  40% {
-    transform: translate(40%, 0) scale(0.8) rotateY(-20deg);
-  }
-  100% {
-    transform: translateZ(-200px);
-    visibility: hidden;
-  }
+	0%   { transform: translateZ( 0px ); visibility: visible; }
+	40%  { transform: translate( 40%, 0 ) scale( 0.8 ) rotateY( -20deg ); }
+	100% { transform: translateZ( -200px ); visibility: hidden; }
 }
+
+
 /* Dimmer */
-/* line 155, ../sass/kontext.scss */
+
 .kontext .layer .dimmer {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  visibility: hidden;
-  background: transparent;
-  z-index: 100;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	background: transparent;
+	z-index: 100;
 }
 
-/* line 167, ../sass/kontext.scss */
-.kontext.capable.animate .layer .dimmer {
-  -webkit-transition: background 0.7s ease;
-  -moz-transition: background 0.7s ease;
-  transition: background 0.7s ease;
-}
+	.kontext.capable.animate .layer .dimmer {
+		-webkit-transition: background 0.7s ease;
+		   -moz-transition: background 0.7s ease;
+		        transition: background 0.7s ease;
+	}
 
-/* line 173, ../sass/kontext.scss */
-.kontext.capable.animate .layer.hide .dimmer {
-  visibility: visible;
-  background: rgba(0, 0, 0, 0.8);
-}
+	.kontext.capable.animate .layer.hide .dimmer {
+		visibility: visible;
+		background: rgba( 0, 0, 0, 0.8 );
+	}
+

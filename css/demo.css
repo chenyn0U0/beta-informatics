@@ -1,106 +1,96 @@
-/* line 2, ../sass/demo.scss */
 html,
 body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
 }
 
-/* line 11, ../sass/demo.scss */
 body {
-  background-color: #222;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
-  background-repeat: repeat;
-  font-family: Helvetica, sans-serif;
-  font-size: 16px;
-  color: #fff;
+	background-color: #222;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+	background-repeat: repeat;
+
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	color: #fff;
 }
 
-/* line 22, ../sass/demo.scss */
+
 .layer {
-  text-align: center;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.1 );
 }
 
-/* line 27, ../sass/demo.scss */
 .layer h2 {
-  position: relative;
-  top: 30%;
-  margin: 0;
-  font-size: 6.25em;
+	position: relative;
+	top: 30%;
+	margin: 0;
+	font-size: 6.25em;
 }
 
-/* line 34, ../sass/demo.scss */
 .layer p {
-  position: relative;
-  top: 30%;
-  margin: 0;
+	position: relative;
+	top: 30%;
+	margin: 0;
 }
 
-/* line 40, ../sass/demo.scss */
 .layer.one {
-  background: #dc6c5f;
+	background: #dc6c5f;
 }
 
-/* line 44, ../sass/demo.scss */
 .layer.two {
-  background: #95dc84;
+	background: #95dc84;
 }
 
-/* line 48, ../sass/demo.scss */
 .layer.three {
-  background: #64b9d2;
+	background: #64b9d2;
 }
 
-/* line 52, ../sass/demo.scss */
 .bullets {
-  position: relative;
-  width: 100%;
-  bottom: 20px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
 }
 
-/* line 61, ../sass/demo.scss */
-.bullets li {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 0 3px;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
+	.bullets li {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		margin: 0 3px;
 
-/* line 75, ../sass/demo.scss */
-.bullets li:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
+		background: rgba( 255, 255, 255, 0.5 );
+		box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2 );
+		cursor: pointer;
 
-/* line 79, ../sass/demo.scss */
-.bullets li.active {
-  cursor: default;
-  background: #fff;
-}
+		-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+	}
+
+		.bullets li:hover {
+			background: rgba( 255, 255, 255, 0.8 );
+		}
+
+		.bullets li.active {
+			cursor: default;
+			background: #fff;
+		}
 
 @media screen and (max-width: 400px) {
-  /* line 85, ../sass/demo.scss */
-  body {
-    font-size: 12px;
-  }
+	body {
+		font-size: 12px;
+	}
 
-  /* line 89, ../sass/demo.scss */
-  .layer h2 {
-    font-size: 5em;
-  }
+	.layer h2 {
+		font-size: 5em;
+	}
 
-  /* line 93, ../sass/demo.scss */
-  .bullets li {
-    margin: 0 6px;
-  }
+	.bullets li {
+		margin: 0 6px;
+	}
 }
+
