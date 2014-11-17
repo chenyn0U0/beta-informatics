@@ -533,6 +533,7 @@ $("#route-draw").click(function(){
 jQuery("#infobar").animate({
             width: '250px'},"slow");
 container.innerHTML = 'Click "Start Drawing" to draw your route.';
+$("#routeinputselection").animate({height: '0px'},"slow");
 
 });
 
@@ -543,6 +544,7 @@ $("#route-upload").click(function(){
 jQuery("#infobar").animate({
             width: '250px'},"slow");
 container.innerHTML = 'Please upload your route in information bar on the right.';
+$("#routeinputselection").animate({height: '0px'},"slow");
 });
 
 
