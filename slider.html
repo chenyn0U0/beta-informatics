@@ -1,30 +1,67 @@
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+	<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/visualization.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/slider.css">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  	
+
+
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="js/jquery.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> <!-- needs to be before mapbox! -->
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+  	<script src="js/util.js"></script>
 
 <link rel="stylesheet" href="css/demo.css">
-
 <link rel="stylesheet" href="css/kontext.css">
 
+<script>
+
+$(document).ready(function() {
+
+	//initialize resultMap
+  		// $.get( "loadData.php?mode=oneRow&id=45", function( data ) {
+		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
+		//use underscore.js for transformation?
+
+		var jsonData = JSON.parse(data);
+
+		var collection = createGeoJson(jsonData);
+
+			console.log("here", collection );
+
+			drawOutputMap(collection);
+
+		});
+});
+
+</script>
+
+<!-- 
+</head>
+<body> -->
 
 <article class="kontext">
 	<div class="layer one show">
-		<div style="background-color:blue">
-			<br/>
-					<h2>About us</h2>
-		
-					<p >We are a small team working with City of Edinburgh Council and the University of Edinburgh. We create tools to help people make it safer, greener and more fun to travel around Inverleith. This project is part of our university course "Design for Informatics". <br/><br/><br/><br/><br/><br/>
-					</p>
-					<br>
-					<img src="img/teamFoto.jpg" alt="">
-
-					<p>For other interesting projects, that were developed in this course see the website: <a href="http://edinburghlivinglab.org/projects/" target="_blank">edinburghlivinglab.org</a></p>
-	</div></div>
-	<div id="two" class="layer two" style="background-color:white">
-		<h2>Layer Two</h2>
+		<section id="map-sec" class="">
+				<div id="resultMap"></div>
+		</section>
 	</div>
-	<div class="layer three" style="background-color:yellow">
-		<h2>Layer Three</h2>
+	<div class="layer two">
+		<h2>Coming Soon</h2>
+	</div>
+	<div class="layer three">
+		<h2>Coming Soon</h2>
 	</div>
 </article>
 
 <ul class="bullets"></ul>
 
+
+
+
+
 <script src="js/kontext.js"></script>
+<!-- 
+</body>
+</html> -->

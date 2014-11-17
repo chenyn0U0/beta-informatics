@@ -6,11 +6,6 @@
 
 	<!-- <link rel="stylesheet" href="css/main.css"> -->
 
-	<link rel="stylesheet" href="css/demo.css">
-
-	<link rel="stylesheet" href="css/kontext.css">
-
-
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
 	<link rel="stylesheet" href="css/inputMap.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="css/main.css" media="screen" type="text/css" />
@@ -50,22 +45,8 @@
       });
 
 
-      	//initialize resultMap
-  		// $.get( "loadData.php?mode=oneRow&id=45", function( data ) {
-		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
-		//use underscore.js for transformation?
-
-		var jsonData = JSON.parse(data);
-
-		var collection = createGeoJson(jsonData);
-
-			console.log("here", collection );
-
-			drawOutputMap(collection);
-
-		});
 		//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		$("#sliderlalala").load("slider.html");
+		//$("#sliderlalala").load("slider.html");
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	});
 
@@ -117,7 +98,7 @@
 				<a id="burger-button" href="javascript:void(0);" onclick="toggleNavi();"><img src="img/burger2.png" alt=""></a>
 				<ul id="header-nav">
 					<li><a a href="javascript:void(0);" onclick="showthetool()">GET STARTED</a></li>
-					<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');">THE MAP</a></li>
+					<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');">THE TOOL</a></li>
 					<li><a href="javascript:void(0);" onclick="scrollTo('team-anchor');">ABOUT US</a></li>
 				</ul>
 			</div>
@@ -220,11 +201,15 @@
 
 
 	<a href="" id="map-anchor"></a>
-	<section id="map-sec" class="">
+<!-- 	<section id="map-sec" class="">
 		<div class="section-Padding">
 			<div id="resultMap"></div>
 		</div>
-	</section>
+	</section> -->
+
+<div id="sliderlalala">
+	<iframe border="0" id="content" src="slider.html" frameborder="0" height="100%" width="100%" style="height: 592px;"></iframe>
+</div>
 
 <a href="javascript:void(0)" id="team-anchor"></a>
 	<section id="team-sec">
@@ -267,26 +252,21 @@
 					</div>
 
 					<div class="column-4">
+						<ul id="footer-nav">
+							<li><a href="javascript:void(0);" onclick="showthetool()">get started</a></li>
+							<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');">the tool</a></li>
+							<li><a href="#">faq</a></li>
+						</ul>
+
+						<br>
+						<br>
 						<h3>Contact us:</h3> 
 						<a href="mailto:betaInformatics@yahoo.com">betaInformatics@yahoo.com</a>
 
-						<ul id="footer-nav">
-							<li><a href="">get started</a></li>
-							<li><a href="">the tool</a></li>
-							<li><a href="">faq</a></li>
-						</ul>
 					</div>
 				</div>
 		</div>
 	</footer>
-
-
-
-	
-		<div id="sliderlalala">
-			<iframe border="0" id="content" src="slider.html" frameborder="0" height="100%" width="100%" style="height: 592px;"></iframe>
-		</div>
-	
 
 
 </body>

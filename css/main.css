@@ -377,7 +377,6 @@ footer#footer .footer-logos img {
 /* line 295, ../sass/main.scss */
 footer#footer #footer-nav {
   width: 100%;
-  margin-top: 1.25rem;
 }
 /* line 299, ../sass/main.scss */
 footer#footer #footer-nav li {
@@ -446,15 +445,23 @@ footer#footer a:hover {
 #about-sec .section-Padding {
   padding-bottom: 0;
 }
+/* line 415, ../sass/main.scss */
+#about-sec .section-Padding a {
+  color: #f750e3;
+}
+/* line 418, ../sass/main.scss */
+#about-sec .section-Padding a:hover {
+  color: white;
+}
 
 /* 
    map
    ========================================================================== */
-/* line 452, ../sass/main.scss */
+/* line 460, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
-/* line 455, ../sass/main.scss */
+/* line 463, ../sass/main.scss */
 #map-sec .section-Padding {
   padding: 0;
 }
@@ -462,23 +469,23 @@ footer#footer a:hover {
 /* 
    about us
    ========================================================================== */
-/* line 463, ../sass/main.scss */
+/* line 471, ../sass/main.scss */
 #team-sec {
   background-color: #0072bc;
   color: white;
 }
-/* line 467, ../sass/main.scss */
+/* line 475, ../sass/main.scss */
 #team-sec img {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
-/* line 473, ../sass/main.scss */
+/* line 481, ../sass/main.scss */
 #team-sec img.logo {
   width: 80%;
   margin: 0;
 }
-/* line 478, ../sass/main.scss */
+/* line 486, ../sass/main.scss */
 #team-sec a:hover {
   color: #f750e3;
 }
@@ -486,7 +493,7 @@ footer#footer a:hover {
 /* ==========================================================================
 		INPUT MAP   
    ========================================================================== */
-/* line 487, ../sass/main.scss */
+/* line 495, ../sass/main.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -504,7 +511,7 @@ footer#footer a:hover {
 /* ==========================================================================
 		FOR LOADING   
    ========================================================================== */
-/* line 505, ../sass/main.scss */
+/* line 513, ../sass/main.scss */
 .loading {
   position: fixed;
   width: 100%;
@@ -513,7 +520,7 @@ footer#footer a:hover {
   background-color: black;
 }
 
-/* line 513, ../sass/main.scss */
+/* line 521, ../sass/main.scss */
 .l-wrapper {
   position: absolute;
   width: 480px;

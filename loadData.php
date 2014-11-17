@@ -45,6 +45,14 @@ elseif ($mode == "oneRow") {
 
   echo json_encode($result);
 }
+// +++++++++++++++++++++++
+elseif ($mode == "getColumnByName") {
+  $name = $_GET['name'];
+
+  $result = getColumnByName($name);
+
+  echo json_encode($result);
+}
 
 mysql_close($con);
 
@@ -55,6 +63,10 @@ mysql_close($con);
 
 // #########################  functions  #######################
 
+
+/* 
+   By id
+   ========================================================================== */
 //gets and returns the row with the given id
 //returns null if an error occurs
 function getRowByid($id) {
@@ -69,7 +81,7 @@ function getRowByid($id) {
     }
     else {
 
-      debug_to_console("data was loaded");
+      // debug_to_console("data was loaded");
 
       $row = mysql_fetch_assoc($data);
       // echo $row['gender'];      
@@ -83,6 +95,9 @@ function getRowByid($id) {
 }
 
 
+/* 
+   All Rows
+   ========================================================================== */
 //this function gets all the rows from our only existing table
 //returns null if error
 function getAllRows() {
@@ -115,6 +130,38 @@ function getAllRows() {
 
     return $rows;
 }
+
+
+/* 
+   Get Column by name
+   ========================================================================== */
+
+function getColumnByName($name) {
+  $sql="SELECT $name FROM `journey`";
+  $data = mysql_query($sql);
+      // $num_rows = mysql_num_rows($sql);
+  $coll = null;
+
+  if (!$data)
+    {
+      debug_to_console('Error occured, data could not be found');
+    }
+    else {
+
+      // debug_to_console("data was loaded");
+
+      $coll = mysql_fetch_assoc($data);
+      // echo $row['gender'];      
+
+    }
+
+    // $arr = array();
+
+    // array_push($arr, $row);
+    return $coll;
+}
+
+
 
 
 

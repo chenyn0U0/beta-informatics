@@ -217,23 +217,43 @@ pre.ui-distance {
   width: 90%;  
   margin: 0 auto;
   vertical-align: middle;
-}
+  background-color: $darkGrey;
+
 
 #route-draw{
   width: 50%;
-  padding: 15px 0;
   float: left;
   text-align: center;
-  background-color: $pink;
+  padding: 5px 0;
 }
+
 #route-upload{
   width: 50%;
-  padding: 15px 0;
   height: 100%;
   float: right;
   text-align: center;
-  background-color: $pink;
+  padding: 5px 0;
 }
+
+img{
+  height: 50px;
+  width:50px;
+
+}
+
+a{
+  background-color: $pink;
+  padding: 5px 0;
+  width: 50px;
+}
+
+}
+
+
+
+
+
+
 
 #submit.main-btn {
   position: relative;

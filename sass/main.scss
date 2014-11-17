@@ -294,7 +294,7 @@ footer#footer {
 
 	#footer-nav {
 		width: 100%;
-		margin-top: calculateRem(20px);
+		// margin-top: calculateRem(20px);
 
 		li {
 			display: inline-block;
@@ -411,6 +411,14 @@ footer#footer {
 	// 	// height: 100%;
 		// padding-top:0;
 		padding-bottom:0;
+
+		a {
+			color: $pink;
+
+			&:hover {
+				color: $white;
+			}
+		}
 	}
 
 	// 	.width-sizer {
