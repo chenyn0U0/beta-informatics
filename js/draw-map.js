@@ -1,6 +1,6 @@
 ﻿﻿
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2hlbnluIiwiYSI6IkRBU0ZmMzAifQ.1oP7qZOoEwDsY86U5UrB-g';
-    var map = L.mapbox.map('map', 'chenyn.jp82gon5',{doubleClickZoom: false, attributionControl: true })
+    var map = L.mapbox.map('map', 'chenyn.jp82gon5',{doubleClickZoom: false, scrollWheelZoom: false, attributionControl: true })
     .setView([55.964042, -3.21850], 15)
      .addControl(L.mapbox.geocoderControl('mapbox.places-v1')); ;
 
