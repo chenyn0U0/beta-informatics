@@ -264,7 +264,7 @@ function formCheck()
   var nullitems="";
   var startTime = document.getElementById("startTime");
   var endTime=document.getElementById("endTime");
-    if(cdn=="") nullitems+=" route.";else;
+    if(cdn=="") nullitems+=" route by clicking on the 'Start Drawing' on the left or uploading your route file.";else;
     if(st1.value==""||st2.value=="") nullitems+=" journey start time.";else;
     if(et1.value==""||et2.value=="") nullitems+=" journey end time.";else;
     if(traveltool=="") nullitems+=" tool for transportation.";else;
