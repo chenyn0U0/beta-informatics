@@ -373,7 +373,7 @@ var beforeendpoint=new Array();
   }
   else
   {
-  alert("Please upload a gpx or geojson file."); 
+  alert("Please upload a gpx or kml or geojson file."); 
   datainput.outerHTML=datainput.outerHTML; 
   }
         };
