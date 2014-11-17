@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,46 +24,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -71,42 +71,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-family: "chalk";
   src: url("CoalhandLuke.ttf");
 }
-
 @font-face {
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
-
 @font-face {
   font-family: "robot-thin";
   src: url("roboto/Roboto-Thin.ttf");
 }
-
 @font-face {
   font-family: "robot-it";
   src: url("roboto/Roboto-ThinItalic.ttf");
 }
-
 @font-face {
   font-family: "robot-med";
   src: url("roboto/Roboto-Medium.ttf");
 }
-
 @font-face {
   font-family: "robot-bold";
   src: url("roboto/Roboto-Bold.ttf");
 }
-
 @font-face {
   font-family: "robot-boldIt";
   src: url("roboto/Roboto-MediumItalic.ttf");
 }
-
 @font-face {
   font-family: "robotC-bold";
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
-
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
@@ -121,7 +113,7 @@ html {
 /* line 46, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
-  color: white;
+  color: #ffffff;
   font-weight: 200;
   background-color: #454549;
 }
@@ -155,7 +147,7 @@ h3 {
 /* line 77, ../sass/main.scss */
 a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 /* line 81, ../sass/main.scss */
 a:hover {
@@ -196,7 +188,7 @@ section {
 /* line 114, ../sass/main.scss */
 .main-btn {
   display: inline-block;
-  background-color: #f750e3;
+  background-color: #F750E3;
   padding: 0.625rem;
   font-family: "robot-thin", san-serif;
   font-size: 1.25rem;
@@ -286,7 +278,7 @@ header .filler {
 }
 /* line 204, ../sass/main.scss */
 #header-nav li a:hover {
-  color: #f750e3;
+  color: #F750E3;
 }
 
 /* line 211, ../sass/main.scss */
@@ -348,7 +340,7 @@ header .filler {
 footer#footer {
   font-size: 1.125rem;
   background-color: #454549;
-  color: white;
+  color: #ffffff;
 }
 /* line 271, ../sass/main.scss */
 footer#footer p {
@@ -390,7 +382,7 @@ footer#footer #footer-nav li {
 }
 /* line 312, ../sass/main.scss */
 footer#footer a {
-  color: white;
+  color: #ffffff;
 }
 /* line 315, ../sass/main.scss */
 footer#footer a:hover {
@@ -451,11 +443,11 @@ footer#footer a:hover {
 }
 /* line 419, ../sass/main.scss */
 #about-sec .section-Padding a {
-  color: #f750e3;
+  color: #F750E3;
 }
 /* line 422, ../sass/main.scss */
 #about-sec .section-Padding a:hover {
-  color: white;
+  color: #ffffff;
 }
 
 /* 
@@ -476,7 +468,7 @@ footer#footer a:hover {
 /* line 475, ../sass/main.scss */
 #team-sec {
   background-color: #0072bc;
-  color: white;
+  color: #ffffff;
 }
 /* line 479, ../sass/main.scss */
 #team-sec img {
@@ -491,13 +483,13 @@ footer#footer a:hover {
 }
 /* line 490, ../sass/main.scss */
 #team-sec a:hover {
-  color: #f750e3;
+  color: #F750E3;
 }
 
 /* ==========================================================================
 		INPUT MAP   
    ========================================================================== */
-/* line 499, ../sass/main.scss */
+/* line 498, ../sass/main.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -535,4 +527,27 @@ footer#footer a:hover {
   left: 0;
   margin: auto;
   text-align: center;
+}
+
+/* ==========================================================================
+		FOR FAQ  
+   ========================================================================== */
+/* line 544, ../sass/main.scss */
+#FAQ h2 {
+  margin-top: 70px;
+  padding: 30px;
+}
+/* line 548, ../sass/main.scss */
+#FAQ p {
+  padding: 20px;
+  margin: 10px;
+  width: 70%;
+  font-weight: bold;
+}
+/* line 554, ../sass/main.scss */
+#FAQ #ghostbiketwo {
+  position: relative;
+  top: -50px;
+  left: 70%;
+  width: 200px;
 }

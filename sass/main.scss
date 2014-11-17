@@ -533,3 +533,28 @@ background-color: black;
   margin: auto;
   text-align: center;
 }
+
+
+/* ==========================================================================
+		FOR FAQ  
+   ========================================================================== */
+
+ #FAQ
+ {
+ 	h2{
+ 		margin-top: 70px;
+ 		padding: 30px;
+ 	}
+ 	p{
+ 		padding: 20px;
+ 		margin: 10px;
+ 		width:70%;
+ 		font-weight: bold;
+ 	}
+ 	#ghostbiketwo{
+		position: relative;
+		top: -50px;
+		left: 70%;
+		width:200px;
+ 	}
+ }
