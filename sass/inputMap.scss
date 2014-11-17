@@ -11,7 +11,7 @@
 
 #map
 {
-  height:700px;
+  height:1000px;
   width:90%;
   z-index:50;
   position:relative; 
@@ -217,6 +217,9 @@ pre.ui-distance {
   margin: 0 auto;
   background-color: $darkGrey;
   overflow:hidden;
+  z-index: 90;
+  position: absolute;
+  left: 5%;
 
 
 #route-draw{

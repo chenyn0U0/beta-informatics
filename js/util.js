@@ -58,9 +58,10 @@ function setSectionsWithImagebackgrounds() {
 		 $("#map-container").load("draw-map.html", function(){
 
 	        var freeSpaceH = $(window).height() - $('header').height();
-	        var viewportHeigth = freeSpaceH * 0.8;
+	        var viewportHeigth = freeSpaceH * 0.9;
 
-	        var paddingTop = freeSpaceH * 0.02;
+	        // var paddingTop = freeSpaceH * 0.02;
+	        var paddingTop = 5;
 	        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
 	        
 	        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show();
