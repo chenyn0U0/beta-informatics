@@ -200,6 +200,10 @@ header {
 
 		a {
 			text-transform: uppercase;
+
+			&:hover {
+				color: $pink;
+			}
 		}
 	}
 }
