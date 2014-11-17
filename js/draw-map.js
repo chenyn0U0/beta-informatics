@@ -525,9 +525,10 @@ jQuery("#infobar").css({width: '0px'});
 $("#datainput").hide();
 putmanyinputright();
 container.innerHTML = 'Choose one method to draw your route.';
+
 }
 
-$("#route-draw").click(function(){
+function choosedraw(){
   allhideforbutton();
   $("#drawcontroler").show("slow");
 jQuery("#infobar").animate({
@@ -535,17 +536,17 @@ jQuery("#infobar").animate({
 container.innerHTML = 'Click "Start Drawing" to draw your route.';
 $("#routeinputselection").animate({height: '0px'},"slow");
 
-});
+}
 
 
-$("#route-upload").click(function(){
+function chooseupload(){
   allhideforbutton();
   $("#datainput").show();
 jQuery("#infobar").animate({
             width: '250px'},"slow");
 container.innerHTML = 'Please upload your route in information bar on the right.';
 $("#routeinputselection").animate({height: '0px'},"slow");
-});
+}
 
 
 

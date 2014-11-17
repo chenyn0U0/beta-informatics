@@ -16,7 +16,7 @@
       <p>Use the interactive map to draw your regular journey through Inverleith - whether it's your route to work or a school run, create your path and add a comment.</p>
     </div>
     <div class="row">
-      <div class="main-btn"><a href="javascript:void(0)" onclick="">Draw your path</a></div>
+      <div class="main-btn"><a href="javascript:void(0)" onclick="choosedraw()">Draw your path</a></div>
       </div></div>
     </div>
     <div class="gridWrapper" id="route-upload">
@@ -28,7 +28,7 @@
       <p>If you use a smartphone app to track your regular route then you can upload the file here. Paths can use most GPS file formats.</p>
     </div>
         <div class="row">
-      <div class="main-btn"> <a href="javascript:void(0)" onclick="">Upload your path</a></div>
+      <div class="main-btn"> <a href="javascript:void(0)" onclick="chooseupload()">Upload your path</a></div>
     </div>
     </div>
     </div>
@@ -164,7 +164,7 @@
         <input type="hidden" value="" name="startPoint" id="startPoint"/>
         <input type="hidden" value="" name="endPoint" id="endPoint"/>
         <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
-       
+       </div>
 
 <div class="buttonrow">
 <div id="submit" class="main-btn"><a href="javascript:void(0);" onclick="formCheck()">Submit</a></div>
@@ -173,7 +173,7 @@
 
 
         <div id="imadivbutyoucannotseemehahaha" style="display:none"></div>
-</div>
+
 </div>
     </form>
    </div>
