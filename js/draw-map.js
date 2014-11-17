@@ -18,7 +18,12 @@
 
 
     map.getContainer().querySelector('#statue').onclick = function () {
-        if (this.className != 'active') {
+          start_click();
+    };
+
+function start_click()
+{
+          if (this.className != 'active') {
             if(cdn.length==0){
 showdrawing();
             container.innerHTML = 'Click on the map to draw your point of departure first.';
@@ -47,7 +52,13 @@ showdrawing();
 
       
 
-    };
+}
+
+
+
+
+
+
     map.getContainer().querySelector('#finish').onclick = function () {
         if(cdn.length==0)
         {
@@ -264,10 +275,10 @@ function formCheck()
   var nullitems="";
   var startTime = document.getElementById("startTime");
   var endTime=document.getElementById("endTime");
-    if(cdn=="") nullitems+=" route by clicking on the 'Start Drawing' on the left or uploading your route file.";else;
+    if(cdn=="") nullitems+=" route.";else;
     if(st1.value==""||st2.value=="") nullitems+=" journey start time.";else;
     if(et1.value==""||et2.value=="") nullitems+=" journey end time.";else;
-    if(traveltool=="") nullitems+=" tool for transportation.";else;
+    if(traveltool=="") nullitems+=" type for transportation.";else;
     if(nullitems==""&&timecheck()!="")
      {//表单成功开始上传
         givevalue();
@@ -531,11 +542,9 @@ container.innerHTML = 'Choose one method to draw your route.';
 function choosedraw(){
   allhideforbutton();
   $("#drawcontroler").show("slow");
-jQuery("#infobar").animate({
-            width: '250px'},"slow");
 container.innerHTML = 'Click "Start Drawing" to draw your route.';
 $("#routeinputselection").animate({height: '0px'},"slow");
-
+  start_click();
 }
 
 
