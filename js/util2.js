@@ -218,7 +218,11 @@ function drawOutputMap(featureCollection) {
 		  var commentGroups = svg.selectAll("g")
 		  					.data(collection.features)
 		  					.enter()
-		  					.append("g");
+		  					.append("g")
+		  					.attr("class", "commentBox")
+		  					.attr("id", function(d,i){
+		  						return "commentBox" + i;
+		  					});
 
 				 var tooltips = commentGroups.append("rect")
 				 					.attr("width", 100)
@@ -309,9 +313,11 @@ function drawOutputMap(featureCollection) {
 			.transition().duration(100).style('stroke-width', 3);
 	}
 
-	function showCommentBox(d) {
+	function showCommentBox(d, i) {
+		$(".commentBox").hide();
 
-	}
+		$("#commentBox" + i).show();
+ 	}
 
 	//necessary to map from d3 to leavelet
 	function projectPoint(x, y) {
