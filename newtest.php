@@ -49,17 +49,23 @@ var jsonData;
 		.append("rect")
 		.attr("x",0)
 		.attr("y",function(d,i){ return i*100;})
-		.attr("width",function(d){return (Number(d.properties.weekday)+1)*100;})
+		.attr("width",function(d){return Number(d.properties.distance)/10;})
 		.attr("height",50)
 		.attr("fill",function(d){if(d.properties.gender=="Male") return "#0072bc";else return "#F750E3";});
+
 	roadVisual.selectAll("text")
 		.data(collection.features)
 		.enter()
 		.append("text")
-		.attr("x",0)
-		.attr("y",function(d,i){ return i*100;})
-		.attr("text",function(d){ return d.properties.comment ;})
-		.attr("fill","white");
+		.attr("x",20)
+		.attr("y",function(d,i){ return i*100+30;})
+		.text(function(d){ return d.properties.comment ;})
+		.attr("fill","black")
+		.attr("font-size","9px")
+		.attr("font-family","Arial");
+
+
+
 
 
 		});
