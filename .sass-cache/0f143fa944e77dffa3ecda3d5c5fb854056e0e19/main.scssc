@@ -1,7 +1,7 @@
 3.2.12 (Media Mark)
-2e9befedff7e610280c392e42f7a43fb09b9133d
+83db73456b2f5474d8fa1e8f5499bdbac3be24a3
 o:Sass::Tree::RootNode
-:@template" /* Welcome to Compass.
+:@template"¦!/* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
@@ -535,7 +535,32 @@ background-color: black;
   left: 0;
   margin: auto;
   text-align: center;
-}:@has_childrenT:@options{ :@children[:o:Sass::Tree::CommentNode
+}
+
+
+/* ==========================================================================
+		FOR FAQ  
+   ========================================================================== */
+
+ #FAQ
+ {
+ 	h2{
+ 		margin-top: 70px;
+ 		padding: 30px;
+ 	}
+ 	p{
+ 		padding: 20px;
+ 		margin: 10px;
+ 		width:70%;
+ 		font-weight: bold;
+ 	}
+ 	#ghostbiketwo{
+		position: relative;
+		top: -50px;
+		left: 70%;
+		width:200px;
+ 	}
+ }:@has_childrenT:@options{ :@children[<o:Sass::Tree::CommentNode
 :
 @type:normal:@value["/* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
@@ -827,4 +852,18 @@ black;@;1;2;@;3i ;	[ ;i
 width;o;*;;+;"
 480px;@;1;2;@;3i ;	[ ;io;0;["height;o;*;;+;"
 300px;@;1;2;@;3i ;	[ ;io;0;["top;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["
-right;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["bottom;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["	left;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["margin;o;*;;+;"	auto;@;1;2;@;3i ;	[ ;io;0;["text-align;o;*;;+;"center;@;1;2;@;3i ;	[ ;i;i;C[".l-wrapper;i
+right;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["bottom;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["	left;o;*;;+;"0;@;1;2;@;3i ;	[ ;io;0;["margin;o;*;;+;"	auto;@;1;2;@;3i ;	[ ;io;0;["text-align;o;*;;+;"center;@;1;2;@;3i ;	[ ;i;i;C[".l-wrappero;
+
+;;;["ª/* ==========================================================================
+		FOR FAQ  
+   ========================================================================== */;@;	[ ;io;6;7o;8;9[o;:;9[o;;
+;9[o;P;["FAQ;>" ;i;?o;@;A{ ;>@Ï	;i;B0;>@Ï	;i;T;@;3i ;	[o;6;7o;8;9[o;:;9[o;;
+;9[o;<	;=0;["h2;>" ;i ;?o;@;A{ ;>@Ý	;i ;B0;>@Ý	;i ;T;@;3i ;	[o;0;["margin-top;o;*;;+;"	70px;@;1;2;@;3i ;	[ ;i!o;0;["padding;o;*;;+;"	30px;@;1;2;@;3i ;	[ ;i";i ;C["h2o;6;7o;8;9[o;:;9[o;;
+;9[o;<	;=0;["p;>" ;i$;?o;@;A{ ;>@ù	;i$;B0;>@ù	;i$;T;@;3i ;	[	o;0;["padding;o;*;;+;"	20px;@;1;2;@;3i ;	[ ;i%o;0;["margin;o;*;;+;"	10px;@;1;2;@;3i ;	[ ;i&o;0;["
+width;o;*;;+;"70%;@;1;2;@;3i ;	[ ;i'o;0;["font-weight;o;*;;+;"	bold;@;1;2;@;3i ;	[ ;i(;i$;C["po;6;7o;8;9[o;:;9[o;;
+;9[o;P;["ghostbiketwo;>" ;i*;?o;@;A{ ;>@!
+;i*;B0;>@!
+;i*;T;@;3i ;	[	o;0;["position;o;*;;+;"relative;@;1;2;@;3i ;	[ ;i+o;0;["top;o;*;;+;"
+-50px;@;1;2;@;3i ;	[ ;i,o;0;["	left;o;*;;+;"70%;@;1;2;@;3i ;	[ ;i-o;0;["
+width;o;*;;+;"
+200px;@;1;2;@;3i ;	[ ;i.;i*;C["#ghostbiketwo;i;C["	#FAQ;i
