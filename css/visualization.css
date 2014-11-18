@@ -15,9 +15,9 @@
 }
 /* line 15, ../sass/visualization.scss */
 #resultMap .car {
-  stroke: blue;
+  stroke: red;
 }
 /* line 19, ../sass/visualization.scss */
 #resultMap .walk {
-  stroke: red;
+  stroke: blue;
 }
