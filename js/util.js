@@ -218,24 +218,19 @@ function drawOutputMap(featureCollection) {
 		  var commentGroups = svg.selectAll("g")
 		  					.data(collection.features)
 		  					.enter()
-		  					.append("g");
+		  					.append("g")
+		  					.attr("class", "commentBox")
+		  					.attr("id", function(d,i){
+		  						return "commentBox" + i;
+		  					})
+		  					.attr("display","none");
+
 
 				 var tooltips = commentGroups.append("rect")
 				 					.attr("width", 100)
 				 					.attr("height", 20)
 				 					.attr("fill", "#000000")
 				 					.attr("opacity",0.7)
-				 					.attr("y", function(d,i) {
-				 						console.log(d.geometry.coordinates[0]);
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						console.log(bla.y);
-
-				 						return bla.y;
-				 					})
-				 					.attr("x", function(d,i){
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						return bla.x;
-				 					})
 				 					.text(function(d){
 				 						return "bla";
 				 					});
@@ -243,17 +238,6 @@ function drawOutputMap(featureCollection) {
 				 	var texts = commentGroups.append("text")
 				 				.text("bla")
 				 				.attr("fill", "#ffffff")
-			 					.attr("y", function(d,i) {
-				 						// console.log(d.geometry.coordinates[0]);
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						console.log(bla.y);
-
-				 						return bla.y  + 10;
-				 					})
-				 					.attr("x", function(d,i){
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						return bla.x;
-				 					})
 				 					.text(function(d){
 				 						return d.properties.comment;
 				 					});
@@ -268,13 +252,12 @@ function drawOutputMap(featureCollection) {
 		  	var bounds = path.bounds(collection),
 		    topLeft = bounds[0],
 		    bottomRight = bounds[1];
-		    console.log(bounds);
 
 		    svg .attr("width", bottomRight[0] - topLeft[0])
 		    .attr("height", bottomRight[1] - topLeft[1])
 		    .style("left", topLeft[0] + "px")
 		    .style("top", topLeft[1] + "px");
-			g   .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+			d3.select("body").selectAll("g").attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
 		  	features.attr("d", path)
 		  	.attr("class", function(d) { 
@@ -295,6 +278,29 @@ function drawOutputMap(featureCollection) {
 		  	.on("mouseout", mouseOutLine)
 		  	.on("click", showCommentBox);
 
+						texts.attr("y", function(d,i) {
+				 						// console.log(d.geometry.coordinates[0]);
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						console.log(bla.y);
+
+				 						return bla.y  + 10;
+				 					})
+				 					.attr("x", function(d,i){
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						return bla.x;
+				 					})
+
+						tooltips.attr("y", function(d,i) {
+				 						console.log(d.geometry.coordinates[0]);
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						console.log(bla.y);
+
+				 						return bla.y;
+				 					})
+				 					.attr("x", function(d,i){
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						return bla.x;
+				 					})
 
 		}
 
@@ -310,8 +316,10 @@ function drawOutputMap(featureCollection) {
 			.transition().duration(100).style('stroke-width', 3);
 	}
 
-	function showCommentBox(d) {
+	function showCommentBox(d, i) {
+		$(".commentBox").hide();
 
+		$("#commentBox" + i).show();
 	}
 
 	//necessary to map from d3 to leavelet
