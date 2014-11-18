@@ -559,6 +559,20 @@ $("#routeinputselection").animate({height: '0px'},"slow");
 
 
 
+function scrollDown(){
+  var pos = $('#scroll-container').scrollTop();
+  var height = $('#scroll-container').height() / 2;
+
+  $('#scroll-container').animate({scrollTop: (pos + height)},500);
+}
+
+function scrollUp(){
+  var pos = $('#scroll-container').scrollTop();
+  var height = $('#scroll-container').height() / 2;
+  $('#scroll-container').animate({scrollTop: (pos - height)},500);
+}
+
+
 
 
 

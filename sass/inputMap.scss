@@ -83,6 +83,7 @@ pre.ui-distance {
      padding: 10px;
      padding-bottom: 23px;
      overflow:hidden; 
+     padding-right: 0;
      // overflow:auto; 
      // overflow-x:hidden;
     }
@@ -91,6 +92,7 @@ pre.ui-distance {
       height: 100%;
       padding-bottom: 30px;
       position: relative;
+      padding-right: 30px;
     }
    
    .menu-ui {  position:absolute;
@@ -157,6 +159,7 @@ pre.ui-distance {
     margin-bottom: 20px;
     // margin-left: 10px;
      text-align:center;
+     padding: 0 10px;
 
      #bike-btn {
       float: left;
@@ -295,6 +298,7 @@ p{
   height: 100%;
   overflow: auto;
   overflow-x:hidden;
+  -webkit-overflow-scrolling: touch;
 
 }
 
@@ -325,5 +329,48 @@ p{
   a{
     color: white;
   }
+}
+
+
+// Scroll buttons
+#down-btn {
+
+    bottom: 30px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    width: 40px;
+
+    .container {
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      right: 5px;
+      bottom: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+}
+
+#up-btn {
+    top: 0;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    width: 40px;
+
+    .container {
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      right: 5px;
+      top: 0;
+    }
+
+    img {
+      width: 100%;
+    }
 }
 
