@@ -254,6 +254,7 @@ function drawOutputMap(featureCollection) {
 		  	var bounds = path.bounds(collection),
 		    topLeft = bounds[0],
 		    bottomRight = bounds[1];
+		    console.log(bounds);
 
 		    svg .attr("width", bottomRight[0] - topLeft[0])
 		    .attr("height", bottomRight[1] - topLeft[1])
