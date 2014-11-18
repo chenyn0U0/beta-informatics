@@ -165,8 +165,11 @@ function createGeoJson(data) {
         		journeyType: data[i].journeyType,
         		weekday: data[i].weekday,
         		comment: data[i].comment,
-        		transport: data[i].travelType
-
+        		transport: data[i].travelType,
+        		distance: data[i].distance,
+        		startTime: data[i].startTime,
+        		endTime: data[i].endTime,
+        		insertTime: data[i].insertTime
         	}
 		})	;
 
