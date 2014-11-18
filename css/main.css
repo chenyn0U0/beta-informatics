@@ -532,19 +532,24 @@ footer#footer a:hover {
 /* ==========================================================================
 		FOR FAQ  
    ========================================================================== */
-/* line 544, ../sass/main.scss */
+/* line 542, ../sass/main.scss */
+#FAQ {
+  left: 2%;
+  position: relative;
+}
+/* line 546, ../sass/main.scss */
 #FAQ h2 {
   margin-top: 70px;
   padding: 30px;
 }
-/* line 548, ../sass/main.scss */
+/* line 550, ../sass/main.scss */
 #FAQ p {
   padding: 20px;
   margin: 10px;
   width: 70%;
   font-weight: bold;
 }
-/* line 554, ../sass/main.scss */
+/* line 556, ../sass/main.scss */
 #FAQ #ghostbiketwo {
   position: relative;
   top: -50px;
