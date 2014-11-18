@@ -215,35 +215,49 @@ function drawOutputMap(featureCollection) {
 		    .data(collection.features)
 		  .enter().append("path");
 
-		 var tooltips = svg.selectAll("rect")
-		 					.data(collection.features)
-		 					.enter()
-		 					.append("rect")
-		 					.attr("width", 20)
-		 					.attr("height", 20)
-		 					.attr("fill", "#000000")
-		 					.attr("opacity",0.7)
-		 					.attr("y", function(d,i) {
-		 						console.log(d.geometry.coordinates[0]);
-		 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][0],d.geometry.coordinates[0][1]));
-		 						console.log(bla.y);
+		  var commentGroups = svg.selectAll("g")
+		  					.data(collection.features)
+		  					.enter()
+		  					.append("g");
 
-		 						return 10 * i;
-		 					})
-		 					.attr("x", 10)
-		 					.attr("text", function(d){
-		 						return "bla";
-		 					})
-		 					.attr("visibility","hidden");
+				 var tooltips = commentGroups.append("rect")
+				 					.attr("width", 100)
+				 					.attr("height", 20)
+				 					.attr("fill", "#000000")
+				 					.attr("opacity",0.7)
+				 					.attr("y", function(d,i) {
+				 						console.log(d.geometry.coordinates[0]);
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						console.log(bla.y);
 
-		 	// circles.attr("r",20)
-		 	// 	.attr("fill", "red")
-		 	// 	.attr("cx", function(d,i){
-		 	// 		return i * 10;
-		 	// 	})
-		 	// 	attr("cy", function(d,i) {
-		 	// 		return i * 10;
-		 	// 	})
+				 						return bla.y;
+				 					})
+				 					.attr("x", function(d,i){
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						return bla.x;
+				 					})
+				 					.text(function(d){
+				 						return "bla";
+				 					});
+
+				 	var texts = commentGroups.append("text")
+				 				.text("bla")
+				 				.attr("fill", "#ffffff")
+			 					.attr("y", function(d,i) {
+				 						// console.log(d.geometry.coordinates[0]);
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						console.log(bla.y);
+
+				 						return bla.y  + 10;
+				 					})
+				 					.attr("x", function(d,i){
+				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+				 						return bla.x;
+				 					})
+				 					.text(function(d){
+				 						return d.properties.comment;
+				 					});
+
 
 
 		map.on("viewreset", reset);
