@@ -53,28 +53,43 @@ function setSectionsWithImagebackgrounds() {
 	}
 
 	//opens up the map 
-	function showthetool() {
+	function showthetool(mode) {
+
+		$('header').hide();
 
 		 $("#map-container").load("draw-map.html", function(){
+		 	 if(mode == 'draw') {
+	        	choosedraw();
 
-	        var freeSpaceH = $(window).height() - $('header').height();
-	        var viewportHeigth = freeSpaceH * 0.9;
+	        	$("html, body").animate({ scrollTop: 0 }, "slow");
+	        }
+
+	        if(mode == 'upload') {
+	        	chooseupload();
+	        	$("html, body").animate({ scrollTop: 0 }, "slow");
+	        }
+
+	        // var freeSpaceH = $(window).height() - $('header').height();
+	        var freeSpaceH = $(window).height();
+	        var viewportHeigth = freeSpaceH * 0.8;
 
 	        // var paddingTop = freeSpaceH * 0.02;
-	        var paddingTop = 5;
-	        jQuery("#map-container").css({"visibility": "visible","padding-top": paddingTop + "px"});
+	        var top = freeSpaceH * 0.05;
+	        jQuery("#map-container").css({"visibility": "visible","top": top + "px"});
 	        
 	        jQuery("#map").hide().css({"visibility":"visible", "height": viewportHeigth + "px"}).show();
 
+	       
+
 	       // jQuery("#incontainer").hide().css({"visibility":"visible", "height": (viewportHeigth+60) + "px"}).show("slow");
 		 	
+        	// console.log('showthetool: ' + viewportHeigth);
 		 }); 
 
 
 		var screenHeight = $(document).height();
         jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 
-        console.log('showthetool: ' + viewportHeigth);
     }
 
     function hideAll() {
@@ -83,6 +98,8 @@ function setSectionsWithImagebackgrounds() {
     	jQuery("#incontainer").hide().css("visibility","hidden");
     	jQuery("#overlay").css("visibility", "hidden");
     	$("#drawUploadSelect").hide();
+
+    	$('header').show();
     	
     }
 
@@ -97,6 +114,7 @@ function setSectionsWithImagebackgrounds() {
 	    }, 500);
 	    return false;
 	}
+
 
 
 /* 

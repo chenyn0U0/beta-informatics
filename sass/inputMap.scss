@@ -2,11 +2,11 @@
 
 #map-container {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 90;
   visibility:hidden;
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 #map
@@ -81,6 +81,7 @@ pre.ui-distance {
      background-color:$darkGrey;
      opacity:0.8;
      padding: 10px;
+     padding-bottom: 20px;
      overflow:auto; 
      overflow-x:hidden;
     }

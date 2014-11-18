@@ -98,8 +98,8 @@ setTimeout(function(){$("#loading").fadeOut("slow"); },15000);
 				<a id="burger-button" href="javascript:void(0);" onclick="toggleNavi();"><img src="img/burger2.png" alt=""></a>
 				<ul id="header-nav">
 					<li><a a href="javascript:void(0);" onclick="showthetool()">GET STARTED</a></li>
-					<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');">THE TOOL</a></li>
-					<li><a href="javascript:void(0);" onclick="scrollTo('team-anchor');">ABOUT US</a></li>
+					<li><a href="javascript:void(0);" onclick="scrollTo('map-anchor');hideAll();">THE TOOL</a></li>
+					<li><a href="javascript:void(0);" onclick="scrollTo('team-anchor');hideAll();">ABOUT US</a></li>
 				</ul>
 			</div>
 		</div>
@@ -139,13 +139,13 @@ setTimeout(function(){$("#loading").fadeOut("slow"); },15000);
 							<div class="column-3">
 								<img src="img/pencil.png" alt="">
 							</div>
-							<p>Draw your route on the interactive map <a href="javascript:void(0)" onclick="showthetool();">here</a></p>
+							<p>Draw your route on the interactive map <a href="javascript:void(0)" onclick="showthetool('draw')">here</a></p>
 						</div>
 						<div class="row">
 							<div class="column-3">
 								<img src="img/cross.png" alt="">
 							</div>
-								<p>If you use a GPS smartphone app to track your routes, you can also upload them <a href="javascript:void(0);" onclick="showthetool();">here</a></p>
+								<p>If you use a GPS smartphone app to track your routes, you can also upload them <a href="javascript:void(0);" onclick="showthetool('upload');">here</a></p>
 						</div>
 					</div>
 				</div>
