@@ -46,139 +46,140 @@
     <a href='#' id='cancel' class = 'cannotsee'>Cancel</a>
   </nav>   
    <pre id='distance' class='ui-distance'>Click "Start drawing" to draw your route.</pre>
-   <div id='infobar' class='infobar'>
-  
    
 
-     <form id="formId" method="post" action="index.html" onsubmit="return formCheck()">
-<div class="">
-        <div class="buttonrow">
-          <label>Your type of transportation:</label><br/>
-          <a href="#" id="bike-btn" class="travel-btn" onclick="bikeclick()"></a>
-          <a href="#" id="car-btn" class="travel-btn" onclick="carclick()"></a>
-          <a href="#" id="walk-btn" class="travel-btn" onclick="walkclick()"></a>
-        </div>
+     <div id='infobar' class='infobar'>
+      <form id="formId" method="post" action="index.html" onsubmit="return formCheck()">
+          <div id="scroll-container">
 
+            <label class="fullLabel">Your type of transportation:</label>
+            <div class="buttonrow">
+              <a href="#" id="bike-btn" class="travel-btn" onclick="bikeclick()"></a>
+              <a href="#" id="car-btn" class="travel-btn" onclick="carclick()"></a>
+              <a href="#" id="walk-btn" class="travel-btn" onclick="walkclick()"></a>
+            </div>
 
+            <!-- For selection of upload file -->
+            <div class="row">
+                <input id="datainput" type="file"  onchange="datatotext()" />
+            </div>
 
-
-
-        <div class="buttonrow">
-          <div class="row">
-        <br/>
-        <input id="datainput" type="file"  onchange="datatotext()" />
-        </div></div>
-
-
-
-<div id="manyinput">
-        <div class="row">
-          <label>age:</label>
- <input type="text" id="age"  size=8 name="age"  maxlength=2 onkeypress="return IsNum(event)" value="20" onMouseOver="this.focus()"  onClick="this.focus()"/>:
-        </div>
+          <div id="manyinput">
           
-        <div class="row"  style="float:hidden">
-          <div  style="float:left">
-          <label for="gender">gender: </label></div>
-<div id="select2" class="select" style="float:left"></div>
-<script type="text/javascript">
-  $('#select2').SelectSimu({
-    width : 80,
-    zIndex : 190,
-    listNum : 2,
-    listValue : ['0','1'],
-    listOption : ['Male','Female'],
-    imgSrc : 'img/icon_down.png'
-  });
-</script><br>
+           <!-- AGE and GENDER -->
+            <div class="gridWrapper">
+               
+                <div class="column-6">
+                  <label class="fullLabel">age:</label>
+                  <input type="text" id="age"  size="2" name="age"  maxlength=2 onkeypress="return IsNum(event)" value="20" onMouseOver="this.focus()"  onClick="this.focus()"/>:
+                </div>
+                  
+                <div class="column-6"  style="">
+                  <label for="gender" class="fullLabel">gender: </label>
+                  <!-- <div  style="float:left">
+                  </div> -->
+                  <div id="select2" class="select" style="float:left"></div>
+                </div>
+            </div>
+                  <script type="text/javascript">
+                    $('#select2').SelectSimu({
+                      width : 80,
+                      zIndex : 190,
+                      listNum : 2,
+                      listValue : ['0','1'],
+                      listOption : ['Male','Female'],
+                      imgSrc : 'img/icon_down.png'
+                    });
+                  </script>
+                  
+
+              <div class="row">
+                <label for="journeyType" class="fullLabel">Your purpose for this journey:</label>
+                <div id="select3" class="select"></div>
+                
+                <script type="text/javascript">
+                  $('#select3').SelectSimu({
+                    width : 200,
+                    zIndex : 180,
+                    listNum : 4,
+                    listValue : ['0','1','2','3'],
+                    listOption : ['Work place <-> Home','School <-> Home','Take children to/back school','Others'],
+                    imgSrc : 'img/icon_down.png'
+                  });
+                </script>
+
+              </div>
+
+                <script language="javascript" type="text/javascript">
+                        function IsNum(e) {
+                            var k = window.event ? e.keyCode : e.which;
+                            if (((k >= 48) && (k <= 57)) || k == 8 || k == 0) {
+                            } else {
+                                if (window.event) {
+                                    window.event.returnValue = false;
+                                }
+                                else {
+                                    e.preventDefault(); //for firefox 
+                                }
+                            }
+                            if(document.getElementById("st1").value>23) document.getElementById("st1").value=23;
+                            if(document.getElementById("et1").value>23) document.getElementById("et1").value=23;
+                            if(document.getElementById("st2").value>59) document.getElementById("st2").value=59;
+                            if(document.getElementById("et2").value>59) document.getElementById("et2").value=59;
+                        } 
+                </script>
+
+              <div class="row timeRow">
+                  <label class="fullLabel" for="startTime">Approximate journey start time:</label> 
+                  <input type="text" size=2 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
+                  <input size=2  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
+              </div>
+              <div class="row">
+                 <label class="fullLabel" for="endTime">Approximate journey end time:</label>
+                 <input type="text" id="et1"  size=2 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
+                 <input type="text" id="et2"  size=2 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
+              </div>
+
+              <div class="row">
+                  <label for="weekday">Weekday:</label><input  id="Checkbox1" type="checkbox" name="weekday" />
+              </div>
+
+
+              <div class="row">
+                <label for="comment">Feel free to leave any comments about this route (e.g. is it a good route to travel? Is there something that annoyes you about it)</label>
+                <br>
+                <textarea rows="4" style="width:200px" name="comment" id="comment"  onMouseOver="this.focus()"  onClick="this.focus()"></textarea>
+              </div>
+
+            </div> <!-- Many input -->
+                
+                <input type="hidden" id="startTime" name="startTime"/>
+                <input type="hidden" id="endTime" name="endTime"/>
+                <input type="hidden" value="" name="gender" id="gender"/>
+                <input type="hidden" value="" name="journey" id="journey"/>
+                <input type="hidden" value="" name="travelType" id="travelType"/>
+                <input type="hidden" value="" name="route" id="route"/>
+                <input type="hidden" value="" name="distances" id="distances"/>
+                <input type="hidden" value="" name="startPoint" id="startPoint"/>
+                <input type="hidden" value="" name="endPoint" id="endPoint"/>
+                <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
+             </div>
+
+            <div id="submit-div" class="">
+              <div id="submit" class="main-btn">
+                <a href="javascript:void(0);" onclick="formCheck()">Submit</a>
+              </div>
+            </div>
+
+
+            <div id="imadivbutyoucannotseemehahaha" style="display:none"></div>
+
         </div>
-
-
-        <div class="row">
-          <label for="journeyType">Your purpose for this journey:</label>
-
-<div id="select3" class="select"></div>
-<script type="text/javascript">
-  $('#select3').SelectSimu({
-    width : 200,
-    zIndex : 180,
-    listNum : 4,
-    listValue : ['0','1','2','3'],
-    listOption : ['Work place <-> Home','School <-> Home','Take children to/back school','Others'],
-    imgSrc : 'img/icon_down.png'
-  });
-</script>
-
-        </div>
-
-<script language="javascript" type="text/javascript">
-        function IsNum(e) {
-            var k = window.event ? e.keyCode : e.which;
-            if (((k >= 48) && (k <= 57)) || k == 8 || k == 0) {
-            } else {
-                if (window.event) {
-                    window.event.returnValue = false;
-                }
-                else {
-                    e.preventDefault(); //for firefox 
-                }
-            }
-            if(document.getElementById("st1").value>23) document.getElementById("st1").value=23;
-            if(document.getElementById("et1").value>23) document.getElementById("et1").value=23;
-            if(document.getElementById("st2").value>59) document.getElementById("st2").value=59;
-            if(document.getElementById("et2").value>59) document.getElementById("et2").value=59;
-        } 
-    </script>
-
-        <div class="row">
-            <label for="startTime">Approximate journey start time:</label> <br/>
-            <input type="text" size=4 id="st1" name="startTime" maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
-            <input size=4  type="text" id="st2" name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
-        </div>
-        <div class="row">
-           <label for="endTime">Approximate journey end time:</label> <br/>
-           <input type="text" id="et1"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="12" onMouseOver="this.focus()"  onClick="this.focus()"/>:
-           <input type="text" id="et2"  size=4 name="startTime"  maxlength=2 onkeypress="return IsNum(event)" value="00" onMouseOver="this.focus()"  onClick="this.focus()"/>
-        </div>
-
-        <div class="row">
-            <label for="weekday">Weekday:</label><input  id="Checkbox1" type="checkbox" name="weekday" />
-        </div>
-
-
-
-        <div class="row">
-        <label for="comment">Feel free to leave any comments about this route (e.g. is it a good route to travel? Is there something that annoyes you about it)</label> <br/>
-
-        <textarea rows="4" style="width:200px" name="comment" id="comment"  onMouseOver="this.focus()"  onClick="this.focus()"></textarea>
-        </div>
-
-
-        <input type="hidden" id="startTime" name="startTime"/>
-        <input type="hidden" id="endTime" name="endTime"/>
-        <input type="hidden" value="" name="gender" id="gender"/>
-        <input type="hidden" value="" name="journey" id="journey"/>
-        <input type="hidden" value="" name="travelType" id="travelType"/>
-        <input type="hidden" value="" name="route" id="route"/>
-        <input type="hidden" value="" name="distances" id="distances"/>
-        <input type="hidden" value="" name="startPoint" id="startPoint"/>
-        <input type="hidden" value="" name="endPoint" id="endPoint"/>
-        <input type="hidden" name="hashCode" value="<?php echo time()?>"/>
-       </div>
-
-<div class="buttonrow">
-<div id="submit" class="main-btn"><a href="javascript:void(0);" onclick="formCheck()">Submit</a></div>
+      </form>
+    </div>    <!-- inforbar -->
+  </div> <!-- map -->
 </div>
-        <br/><br/><br/>
 
-
-        <div id="imadivbutyoucannotseemehahaha" style="display:none"></div>
-
-</div>
-    </form>
-   </div>
-</div>
-    </div>
 <script src="js/draw-map.js"></script>
 
 

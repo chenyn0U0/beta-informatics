@@ -19,7 +19,7 @@ dependon : jquery-1.7.js
 			var cssStr = 	'<style>'+
 							className + '{position:relative; width:'+_this.opts.width+'px; z-index:'+_this.opts.zIndex+';}'+
 							className + '.selectInput{position: relative; border:1px solid #ccc; padding:2px; background:#fff; width:100%; font-family: "宋体";}'+
-							className + '.selectInput span{width:80%; height: 13px; line-height:15px; padding:2px; display: block; overflow: hidden; border:none;}'+
+							className + '.selectInput span{width:80%;line-height:15px; padding:2px; display: block; overflow: hidden; border:none;}'+
 							className + '.selectInput i{display:block; position: absolute; right:1px; top:4px; background: url("'+_this.opts.imgSrc+'") center center no-repeat; width:14px; height: 14px;}'+
 							className + '.selectList{position: absolute; border:1px solid #ccc; width:100%; padding:2px; margin-top:-1px; cursor: default; font-family: "宋体"; background:#fff; display:none;}'+
 							className + '.selectList ul li{height: 20px; line-height: 20px; padding-left:2px; overflow:hidden;}'+

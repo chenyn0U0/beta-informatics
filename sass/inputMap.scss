@@ -81,9 +81,16 @@ pre.ui-distance {
      background-color:$darkGrey;
      opacity:0.8;
      padding: 10px;
-     padding-bottom: 20px;
-     overflow:auto; 
-     overflow-x:hidden;
+     padding-bottom: 23px;
+     overflow:hidden; 
+     // overflow:auto; 
+     // overflow-x:hidden;
+    }
+
+    #formId {
+      height: 100%;
+      padding-bottom: 30px;
+      position: relative;
     }
    
    .menu-ui {  position:absolute;
@@ -137,15 +144,33 @@ pre.ui-distance {
 
 
   .row {
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin-bottom: 20px;
+    // margin-left: 10px;
+  }
+
+  .timeRow {
+    margin-bottom: 5px;
   }
          
  .buttonrow
-         {
-              margin-left: 10px;
-               text-align:center;
-         }
+  {
+    margin-bottom: 20px;
+    // margin-left: 10px;
+     text-align:center;
+
+     #bike-btn {
+      float: left;
+     }
+
+     #walk-btn {
+      float: right;
+     }
+   }
+
+  #formId .fullLabel {
+    display: block;
+    margin-bottom: 10px;
+  }
 
     #car-btn {
         background: url('../img/icon-sprite.png') left top no-repeat;
@@ -265,19 +290,40 @@ p{
 
 }
 
+//for the stuff that can be cut off above submit button
+#scroll-container {
+  height: 100%;
+  overflow: auto;
+  overflow-x:hidden;
+
+}
+
+//cause im using gridWrapper
+#manyinput > .gridWrapper > .column-6 {
+    padding-left: 0;
+    padding-top: 0;
+}
 
 
-
+#submit-div {
+  position: absolute;
+  bottom: 0; 
+  margin-left: 0;
+  text-align: center;
+  width: 100%;
+}
 
 
 
 #submit.main-btn {
-  position: relative;
+  // position: relative;
   padding: 3px 0;
   width: 60px;
-  text-align: center;
+  // text-align: center;
   font-size: 12px;
-a{
-  color: white;
+  
+  a{
+    color: white;
+  }
 }
-}
+
