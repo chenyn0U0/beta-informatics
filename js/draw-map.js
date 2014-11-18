@@ -324,8 +324,8 @@ if(textforroute=="")textforroute=cdn[i][0]+","+cdn[i][1];
     document.getElementById("startTime").value=st1.value+":"+st2.value;
     document.getElementById("endTime").value=et1.value+":"+et2.value;
 var valuegot= document.getElementsByName("selectInput"); //获得text
-if (valuegot[0].value)document.getElementById("gender").value="Female";
-else document.getElementById("gender").value="Male";
+if (valuegot[0].value==1)document.getElementById("gender").value="Female";
+if (valuegot[0].value==0) document.getElementById("gender").value="Male";
 if(valuegot[1].value==0) document.getElementById("journey").value="Work place <-> Home";
 if(valuegot[1].value==1) document.getElementById("journey").value="School <-> Home";
 if(valuegot[1].value==2) document.getElementById("journey").value="Take children to/back school";
