@@ -123,16 +123,18 @@ pre.ui-distance {
   padding: 10px;
   padding-bottom: 23px;
   overflow: hidden;
+  padding-right: 0;
 }
 
-/* line 90, ../sass/inputMap.scss */
+/* line 91, ../sass/inputMap.scss */
 #formId {
   height: 100%;
   padding-bottom: 30px;
   position: relative;
+  padding-right: 30px;
 }
 
-/* line 96, ../sass/inputMap.scss */
+/* line 98, ../sass/inputMap.scss */
 .menu-ui {
   position: absolute;
   top: 150px;
@@ -141,7 +143,7 @@ pre.ui-distance {
   width: 120px;
 }
 
-/* line 100, ../sass/inputMap.scss */
+/* line 102, ../sass/inputMap.scss */
 .menu-ui a {
   border: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
@@ -157,29 +159,29 @@ pre.ui-distance {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-/* line 113, ../sass/inputMap.scss */
+/* line 115, ../sass/inputMap.scss */
 .menu-ui a:hover {
   background: #f8f8f8;
   color: #404040;
 }
 
-/* line 117, ../sass/inputMap.scss */
+/* line 119, ../sass/inputMap.scss */
 .menu-ui a.active {
   background: #3887BE;
   color: #FFF;
 }
 
-/* line 121, ../sass/inputMap.scss */
+/* line 123, ../sass/inputMap.scss */
 .menu-ui a.active:hover {
   background: #3074a4;
 }
 
-/* line 124, ../sass/inputMap.scss */
+/* line 126, ../sass/inputMap.scss */
 .menu-ui a.cannotsee {
   visibility: hidden;
 }
 
-/* line 129, ../sass/inputMap.scss */
+/* line 131, ../sass/inputMap.scss */
 .travelbuttondiv {
   overflow: hidden;
   float: left;
@@ -188,7 +190,7 @@ pre.ui-distance {
   line-height: 70px;
 }
 
-/* line 138, ../sass/inputMap.scss */
+/* line 140, ../sass/inputMap.scss */
 .travel-btn {
   display: inline-block;
   height: 27px;
@@ -196,88 +198,88 @@ pre.ui-distance {
   width: 57px;
 }
 
-/* line 146, ../sass/inputMap.scss */
+/* line 148, ../sass/inputMap.scss */
 .row {
   margin-bottom: 20px;
 }
 
-/* line 151, ../sass/inputMap.scss */
+/* line 153, ../sass/inputMap.scss */
 .timeRow {
   margin-bottom: 5px;
 }
 
-/* line 156, ../sass/inputMap.scss */
+/* line 158, ../sass/inputMap.scss */
 .buttonrow {
   margin-bottom: 20px;
   text-align: center;
 }
-/* line 161, ../sass/inputMap.scss */
+/* line 163, ../sass/inputMap.scss */
 .buttonrow #bike-btn {
   float: left;
 }
-/* line 165, ../sass/inputMap.scss */
+/* line 167, ../sass/inputMap.scss */
 .buttonrow #walk-btn {
   float: right;
 }
 
-/* line 170, ../sass/inputMap.scss */
+/* line 172, ../sass/inputMap.scss */
 #formId .fullLabel {
   display: block;
   margin-bottom: 10px;
 }
 
-/* line 175, ../sass/inputMap.scss */
+/* line 177, ../sass/inputMap.scss */
 #car-btn {
   background: url("../img/icon-sprite.png") left top no-repeat;
   background-size: 200px;
 }
-/* line 179, ../sass/inputMap.scss */
+/* line 181, ../sass/inputMap.scss */
 #car-btn:hover, #car-btn.clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 186, ../sass/inputMap.scss */
+/* line 188, ../sass/inputMap.scss */
 #bike-btn {
   background: url("../img/icon-sprite.png") right top no-repeat;
   background-size: 200px;
 }
-/* line 190, ../sass/inputMap.scss */
+/* line 192, ../sass/inputMap.scss */
 #bike-btn:hover, #bike-btn.clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 197, ../sass/inputMap.scss */
+/* line 199, ../sass/inputMap.scss */
 #walk-btn {
   background: url("../img/icon-sprite.png") center top no-repeat;
   background-size: 200px;
 }
-/* line 201, ../sass/inputMap.scss */
+/* line 203, ../sass/inputMap.scss */
 #walk-btn:hover, #walk-btn.clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 208, ../sass/inputMap.scss */
+/* line 210, ../sass/inputMap.scss */
 #car-btn-clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 212, ../sass/inputMap.scss */
+/* line 214, ../sass/inputMap.scss */
 #bike-btn-clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 216, ../sass/inputMap.scss */
+/* line 218, ../sass/inputMap.scss */
 #walk-btn-clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
 }
 
-/* line 241, ../sass/inputMap.scss */
+/* line 243, ../sass/inputMap.scss */
 #routeinputselection {
   width: 90%;
   margin: 0 auto;
@@ -287,7 +289,7 @@ pre.ui-distance {
   position: absolute;
   left: 5%;
 }
-/* line 251, ../sass/inputMap.scss */
+/* line 253, ../sass/inputMap.scss */
 #routeinputselection #route-draw {
   width: 50%;
   float: left;
@@ -295,7 +297,7 @@ pre.ui-distance {
   padding: 5px 0;
   background-color: #454549;
 }
-/* line 260, ../sass/inputMap.scss */
+/* line 262, ../sass/inputMap.scss */
 #routeinputselection #route-upload {
   width: 50%;
   height: 100%;
@@ -304,12 +306,12 @@ pre.ui-distance {
   padding: 5px 0;
   background-color: #454549;
 }
-/* line 269, ../sass/inputMap.scss */
+/* line 271, ../sass/inputMap.scss */
 #routeinputselection img {
   height: 70px;
   width: 70px;
 }
-/* line 274, ../sass/inputMap.scss */
+/* line 276, ../sass/inputMap.scss */
 #routeinputselection .main-btn {
   background-color: #f750e3;
   padding: 8px;
@@ -320,7 +322,7 @@ pre.ui-distance {
   font-style: bold;
   font-family: Arial;
 }
-/* line 284, ../sass/inputMap.scss */
+/* line 286, ../sass/inputMap.scss */
 #routeinputselection p {
   width: 90%;
   font-size: 15px;
@@ -328,20 +330,21 @@ pre.ui-distance {
   margin-bottom: 10px;
 }
 
-/* line 294, ../sass/inputMap.scss */
+/* line 296, ../sass/inputMap.scss */
 #scroll-container {
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* line 302, ../sass/inputMap.scss */
+/* line 305, ../sass/inputMap.scss */
 #manyinput > .gridWrapper > .column-6 {
   padding-left: 0;
   padding-top: 0;
 }
 
-/* line 308, ../sass/inputMap.scss */
+/* line 311, ../sass/inputMap.scss */
 #submit-div {
   position: absolute;
   bottom: 0;
@@ -350,13 +353,55 @@ pre.ui-distance {
   width: 100%;
 }
 
-/* line 318, ../sass/inputMap.scss */
+/* line 321, ../sass/inputMap.scss */
 #submit.main-btn {
   padding: 3px 0;
   width: 60px;
   font-size: 12px;
 }
-/* line 325, ../sass/inputMap.scss */
+/* line 328, ../sass/inputMap.scss */
 #submit.main-btn a {
   color: white;
+}
+
+/* line 335, ../sass/inputMap.scss */
+#down-btn {
+  bottom: 30px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+/* line 343, ../sass/inputMap.scss */
+#down-btn .container {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+}
+/* line 351, ../sass/inputMap.scss */
+#down-btn img {
+  width: 100%;
+}
+
+/* line 356, ../sass/inputMap.scss */
+#up-btn {
+  top: 0;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+/* line 363, ../sass/inputMap.scss */
+#up-btn .container {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+/* line 371, ../sass/inputMap.scss */
+#up-btn img {
+  width: 100%;
 }
