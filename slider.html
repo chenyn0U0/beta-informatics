@@ -31,6 +31,7 @@ $(document).ready(function() {
 			console.log("here", collection );
 
 			drawOutputMap(collection);
+			drawCommentOutput(collection);
 
 		});
 });
@@ -41,20 +42,17 @@ $(document).ready(function() {
 </head>
 <body> -->
 
-<article class="kontext">
+<article id="outputSlider" class="kontext">
 	<div class="layer one show">
 		<section id="map-sec" class="">
 				<div id="resultMap"></div>
 		</section>
 	</div>
 	<div class="layer two">
-
-  <embed src="img/mapflash-black.swf"  width="100%" height="100%"></embed>
-  <h2>Coming Soon</h2>
-
+  		<embed src="img/mapflash-black.swf"  width="100%" height="100%"></embed>
 	</div>
 	<div class="layer three">
-		<h2>Coming Soon</h2>
+			<div id="commentOutput"></div>
 	</div>
 </article>
 

@@ -1,3 +1,10 @@
+@import "variables";
+
+
+#outputSlider {
+
+
+
 #resultMap {
 	width: 100%;
 	height: 600px;
@@ -23,3 +30,138 @@
 
 
 }
+
+
+/* 
+   For the Comment Section
+   ========================================================================== */
+
+#commentOutput {
+	color: $dark;
+}
+
+.gridWrapper {
+	max-width: 2000px;
+}
+
+
+#filter-sidebar {
+	width: 215px;
+
+	h4 {
+		margin-bottom: 15px;
+	}
+}
+
+#comment-pane {
+	height: 100%;
+	overflow: scroll;
+	width: calc(100% - 220px);
+
+	.comment {
+		// border: solid 2px white;
+
+		margin-bottom: 10px;
+		height: 200px;
+
+		.comment-text{
+			height: 100%;
+			overflow: scroll;
+			background-color: transparentize($dark,0.3);
+			color: $white;
+		}
+
+		.overlay {
+			display: none;
+			height: inherit;
+		}
+
+		&:hover {
+			background-color: transparentize(white,0.5);
+		}
+	}
+
+
+	//to toggleComments
+	.comment {
+		display: none;
+	}
+
+	&.bike {
+		.comment.bike {
+			display: block;
+		}
+	}
+
+	&.car {
+		.comment.walk {
+			display: block;
+		}
+	}
+
+	&.walk {
+		.comment.car {
+			display: block;
+		}
+	}
+
+}
+
+@media only screen and (max-width: $tablet-width) {
+	#comment-pane {
+		.comment {
+			height: 100px;
+		}
+	}
+}
+
+
+/* 
+   For the Filter
+   ========================================================================== */
+
+.travel-btn
+     {
+        display: inline-block;
+        height: 27px;
+        vertical-align: middle;
+        width: 57px;
+    }
+
+
+#car-btn {
+        background: url('../img/icon-sprite.png') left top no-repeat;
+        background-size: 200px;
+
+      &:hover,&.clicked {
+        background: url('../img/icon-sprite.png') left bottom no-repeat;
+        background-size: 200px;
+      }
+    }
+
+
+    #bike-btn {
+        background: url('../img/icon-sprite.png') right top no-repeat;
+        background-size: 200px;
+
+      &:hover,&.clicked {
+        background: url('../img/icon-sprite.png') right bottom no-repeat;
+        background-size: 200px;
+      }
+    }
+
+
+    #walk-btn {
+        background: url('../img/icon-sprite.png') center top no-repeat;
+        background-size: 200px;
+
+      &:hover,&.clicked {
+        background: url('../img/icon-sprite.png') center bottom no-repeat;
+        background-size: 200px;
+      }
+    }
+
+    
+
+
+    } //outoutSlider

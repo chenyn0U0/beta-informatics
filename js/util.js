@@ -330,3 +330,37 @@ function drawOutputMap(featureCollection) {
 
 	
 }
+
+
+/* 
+   Comment Map
+   ========================================================================== */
+
+function drawCommentOutput(featureCollection) {
+	$('#commentOutput').load("commentOutput.html", function(){
+		var features = featureCollection.features;
+
+		for(var i = 0; i < features.length; i++) {
+
+			var comment = features[i].properties.comment;
+			console.log(comment);
+
+			if(comment != "" && comment != null) {
+				//set the classes for filtering
+				var classes = features[i].properties.transport;
+				if(features[i].properties.weekday == 1) {
+					classes = classes + ' ' + "weekday";
+				}
+
+				$('#comment-pane').append("<div class='comment column-4 " + classes + "'><div class='comment-text'><p>" + comment + "</p></div></div>");
+			}
+		}
+	});
+}
+
+function filterTransport(elem, mode) {
+	console.log(mode);
+	$(elem).toggleClass("clicked");
+	$('#comment-pane').toggleClass(mode);
+}
+
