@@ -568,3 +568,18 @@ background-color: black;
 		width:200px;
  	}
  }
+
+ /* ==========================================================================
+    OUTPUT MAP
+    ========================================================================== */
+ 
+ #outputSlider {
+ 	height: 700px;
+	
+	@media only screen and (max-width: $tablet-width) {
+			height: 500px;
+	}
+ }
+
+
+ 

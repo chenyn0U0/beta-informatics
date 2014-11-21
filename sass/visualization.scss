@@ -36,7 +36,9 @@ $header-height: 80px;
 #outputSlider {
 
 
-
+/* 
+   MAP WITH PATHS
+   ========================================================================== */
 #resultMap {
 	width: 100%;
 	height: 700px;
@@ -49,7 +51,7 @@ $header-height: 80px;
 	.journey {
 		fill: none;
 		stroke-width: 3;
-		stroke-opacity: 0.3;
+		stroke-opacity: 0.5;
 	}
 
 	.bike {
@@ -75,6 +77,7 @@ $header-height: 80px;
 
 #commentOutput {
 	color: $dark;
+	position: relative;
 }
 
 .gridWrapper {
@@ -95,27 +98,47 @@ $header-height: 80px;
 	height: 100%;
 	overflow: scroll;
 	width: calc(100% - 220px);
+	// position: relative;
+
+
+	#overlayComment {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-color: transparentize($dark, 0.3);
+		display: none;
+	}
 
 	.comment {
 		// border: solid 2px white;
 
 		margin-bottom: 10px;
-		height: 200px;
+		// height: 110px;
 
 		.comment-text{
-			height: 100%;
-			overflow: scroll;
+			// height: 100%;
+			overflow: hidden;
 			background-color: transparentize($dark,0.3);
 			color: $white;
+			text-align: left;
+			padding: 30px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			> p {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
 		}
 
-		.overlay {
-			display: none;
-			height: inherit;
-		}
 
 		&:hover {
-			background-color: transparentize(white,0.5);
+			cursor: pointer;
+
+			.comment-text {
+				background-color: transparentize($dark,0.1);
+			}
 		}
 	}
 

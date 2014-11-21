@@ -1,7 +1,7 @@
 3.2.12 (Media Mark)
-551394930147314d424b56f9219c41c5e7bd0971
+4acbb9cfedd2276c3ff09e9f338562130dce6ba8
 o:Sass::Tree::RootNode
-:@template"f"/* Welcome to Compass.
+:@template"Ž#/* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
@@ -570,7 +570,22 @@ background-color: black;
 		left: 70%;
 		width:200px;
  	}
- }:@has_childrenT:@options{ :@children[=o:Sass::Tree::CommentNode
+ }
+
+ /* ==========================================================================
+    OUTPUT MAP
+    ========================================================================== */
+ 
+ #outputSlider {
+ 	height: 700px;
+	
+	@media only screen and (max-width: $tablet-width) {
+			height: 500px;
+	}
+ }
+
+
+ :@has_childrenT:@options{ :@children[?o:Sass::Tree::CommentNode
 :
 @type:normal:@value["/* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
@@ -880,4 +895,14 @@ width;o;*;;+;"70%;@;1;2;@;3i ;	[ ;i1o;0;["font-weight;o;*;;+;
 ;i4;T;@;3i ;	[	o;0;["position;o;*;;+;"relative;@;1;2;@;3i ;	[ ;i5o;0;["top;o;*;;+;"
 -50px;@;1;2;@;3i ;	[ ;i6o;0;["	left;o;*;;+;"70%;@;1;2;@;3i ;	[ ;i7o;0;["
 width;o;*;;+;"
-200px;@;1;2;@;3i ;	[ ;i8;i4;C["#ghostbiketwo;i';C["	#FAQ;i
+200px;@;1;2;@;3i ;	[ ;i8;i4;C["#ghostbiketwo;i';C["	#FAQo;
+
+;;;["¬/* ==========================================================================
+   OUTPUT MAP
+   ========================================================================== */;@;	[ ;i<o;6;7o;8;9[o;:;9[o;;
+;9[o;O;["outputSlider;>" ;i@;?o;@;A{ ;>@ž
+;i@;B0;>@ž
+;i@;T;@;3i ;	[o;0;["height;o;*;;+;"
+700px;@;1;2;@;3i ;	[ ;iAo;M;T;" ;@;3i ;	[o;0;["height;o;*;;+;"
+500px;@;1;2;@;3i ;	[ ;iD;N["	only" "screen"
+ and "(o;*	;;+;"max-width;@;iC": o;	;"tablet-width;@;"tablet_width;iC");iC;i@;C["#outputSlider;i

@@ -46,9 +46,11 @@ body {
 
 .layer.three {
 	background: #ffffff;
-	background-image: url('../img/mapComment.png');
-	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background: url('../img/mapComment.png') no-repeat center center fixed #ffffff; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bullets {

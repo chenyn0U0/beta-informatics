@@ -71,138 +71,157 @@
 /* line 36, ../sass/visualization.scss */
 #outputSlider {
   /* 
+     MAP WITH PATHS
+     ========================================================================== */
+  /* 
      For the Comment Section
      ========================================================================== */
   /* 
      For the Filter
      ========================================================================== */
 }
-/* line 40, ../sass/visualization.scss */
+/* line 42, ../sass/visualization.scss */
 #outputSlider #resultMap {
   width: 100%;
   height: 700px;
 }
-/* line 45, ../sass/visualization.scss */
+/* line 47, ../sass/visualization.scss */
 #outputSlider #resultMap .leaflet-top .leaflet-control {
   margin-top: 90px;
 }
-/* line 49, ../sass/visualization.scss */
+/* line 51, ../sass/visualization.scss */
 #outputSlider #resultMap .journey {
   fill: none;
   stroke-width: 3;
-  stroke-opacity: 0.3;
+  stroke-opacity: 0.5;
 }
-/* line 55, ../sass/visualization.scss */
+/* line 57, ../sass/visualization.scss */
 #outputSlider #resultMap .bike {
   stroke: green;
 }
-/* line 59, ../sass/visualization.scss */
+/* line 61, ../sass/visualization.scss */
 #outputSlider #resultMap .car {
   stroke: red;
 }
-/* line 63, ../sass/visualization.scss */
+/* line 65, ../sass/visualization.scss */
 #outputSlider #resultMap .walk {
   stroke: blue;
 }
-/* line 76, ../sass/visualization.scss */
+/* line 78, ../sass/visualization.scss */
 #outputSlider #commentOutput {
   color: #454549;
+  position: relative;
 }
-/* line 80, ../sass/visualization.scss */
+/* line 83, ../sass/visualization.scss */
 #outputSlider .gridWrapper {
   max-width: 2000px;
   padding-top: 80px;
 }
-/* line 86, ../sass/visualization.scss */
+/* line 89, ../sass/visualization.scss */
 #outputSlider #filter-sidebar {
   width: 215px;
 }
-/* line 89, ../sass/visualization.scss */
+/* line 92, ../sass/visualization.scss */
 #outputSlider #filter-sidebar h4 {
   margin-bottom: 15px;
 }
-/* line 94, ../sass/visualization.scss */
+/* line 97, ../sass/visualization.scss */
 #outputSlider #comment-pane {
   height: 100%;
   overflow: scroll;
   width: calc(100% - 220px);
 }
-/* line 99, ../sass/visualization.scss */
-#outputSlider #comment-pane .comment {
-  margin-bottom: 10px;
-  height: 200px;
-}
-/* line 105, ../sass/visualization.scss */
-#outputSlider #comment-pane .comment .comment-text {
-  height: 100%;
-  overflow: scroll;
+/* line 104, ../sass/visualization.scss */
+#outputSlider #comment-pane #overlayComment {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   background-color: rgba(69, 69, 73, 0.7);
-  color: white;
+  display: none;
 }
 /* line 112, ../sass/visualization.scss */
-#outputSlider #comment-pane .comment .overlay {
-  display: none;
-  height: inherit;
+#outputSlider #comment-pane .comment {
+  margin-bottom: 10px;
 }
-/* line 117, ../sass/visualization.scss */
+/* line 118, ../sass/visualization.scss */
+#outputSlider #comment-pane .comment .comment-text {
+  overflow: hidden;
+  background-color: rgba(69, 69, 73, 0.7);
+  color: white;
+  text-align: left;
+  padding: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 128, ../sass/visualization.scss */
+#outputSlider #comment-pane .comment .comment-text > p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 136, ../sass/visualization.scss */
 #outputSlider #comment-pane .comment:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
-/* line 124, ../sass/visualization.scss */
+/* line 139, ../sass/visualization.scss */
+#outputSlider #comment-pane .comment:hover .comment-text {
+  background-color: rgba(69, 69, 73, 0.9);
+}
+/* line 147, ../sass/visualization.scss */
 #outputSlider #comment-pane .comment {
   display: none;
 }
-/* line 129, ../sass/visualization.scss */
+/* line 152, ../sass/visualization.scss */
 #outputSlider #comment-pane.bike .comment.bike {
   display: block;
 }
-/* line 135, ../sass/visualization.scss */
+/* line 158, ../sass/visualization.scss */
 #outputSlider #comment-pane.car .comment.walk {
   display: block;
 }
-/* line 141, ../sass/visualization.scss */
+/* line 164, ../sass/visualization.scss */
 #outputSlider #comment-pane.walk .comment.car {
   display: block;
 }
 @media only screen and (max-width: 800px) {
-  /* line 150, ../sass/visualization.scss */
+  /* line 173, ../sass/visualization.scss */
   #outputSlider #comment-pane .comment {
     height: 100px;
   }
 }
-/* line 162, ../sass/visualization.scss */
+/* line 185, ../sass/visualization.scss */
 #outputSlider .travel-btn {
   display: inline-block;
   height: 27px;
   vertical-align: middle;
   width: 57px;
 }
-/* line 170, ../sass/visualization.scss */
+/* line 193, ../sass/visualization.scss */
 #outputSlider #car-btn {
   background: url("../img/icon-sprite.png") left top no-repeat;
   background-size: 200px;
 }
-/* line 174, ../sass/visualization.scss */
+/* line 197, ../sass/visualization.scss */
 #outputSlider #car-btn:hover, #outputSlider #car-btn.clicked {
   background: url("../img/icon-sprite.png") left bottom no-repeat;
   background-size: 200px;
 }
-/* line 181, ../sass/visualization.scss */
+/* line 204, ../sass/visualization.scss */
 #outputSlider #bike-btn {
   background: url("../img/icon-sprite.png") right top no-repeat;
   background-size: 200px;
 }
-/* line 185, ../sass/visualization.scss */
+/* line 208, ../sass/visualization.scss */
 #outputSlider #bike-btn:hover, #outputSlider #bike-btn.clicked {
   background: url("../img/icon-sprite.png") right bottom no-repeat;
   background-size: 200px;
 }
-/* line 192, ../sass/visualization.scss */
+/* line 215, ../sass/visualization.scss */
 #outputSlider #walk-btn {
   background: url("../img/icon-sprite.png") center top no-repeat;
   background-size: 200px;
 }
-/* line 196, ../sass/visualization.scss */
+/* line 219, ../sass/visualization.scss */
 #outputSlider #walk-btn:hover, #outputSlider #walk-btn.clicked {
   background: url("../img/icon-sprite.png") center bottom no-repeat;
   background-size: 200px;
