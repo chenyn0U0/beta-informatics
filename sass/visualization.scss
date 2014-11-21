@@ -1,13 +1,50 @@
 @import "variables";
 
+$header-height: 80px;
 
+
+/* ==========================================================================
+   HEADING
+   ========================================================================== */
+#sliderHeader {
+    background: none repeat scroll 0 0;
+    background-color: transparentize($dark, 0.4);
+    height: $header-height;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    .section-Padding {
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    }
+
+    .sliderHeader-content {
+    	display: none;
+
+    	&.show {
+    		display: block;
+    	}
+    }
+}
+
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
 #outputSlider {
 
 
 
 #resultMap {
 	width: 100%;
-	height: 600px;
+	height: 700px;
+
+	//reposition the zoom things, so the header has some space
+	.leaflet-top .leaflet-control {
+	    margin-top: $header-height + 10px;
+	}
 
 	.journey {
 		fill: none;
@@ -42,6 +79,7 @@
 
 .gridWrapper {
 	max-width: 2000px;
+	padding-top: $header-height;
 }
 
 

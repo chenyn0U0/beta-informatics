@@ -198,7 +198,10 @@ var k = kontext( document.querySelector( '.kontext' ) );
 		var bullet = document.createElement( 'li' );
 		bullet.className = i === 0 ? 'active' : '';
 		bullet.setAttribute( 'index', i );
-		bullet.onclick = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
+		bullet.onclick = function( event ) { 
+			k.show( event.target.getAttribute( 'index' ) );
+			showHeaderContent(event.target.getAttribute( 'index' ));
+			 };
 		bullet.ontouchstart = function( event ) { k.show( event.target.getAttribute( 'index' ) ) };
 		bulletsContainer.appendChild( bullet );
 	}
@@ -238,3 +241,15 @@ var k = kontext( document.querySelector( '.kontext' ) );
 			}
 		}
 	}, false );
+
+
+/* 
+   Change the content in header when layer changes
+   ========================================================================== */
+
+function showHeaderContent(index) {
+	console.log('showHeaderContent ' + index);
+	$('.sliderHeader-content').removeClass('show');
+	$('.sliderHeader-content.content' + index).addClass('show');
+
+}
