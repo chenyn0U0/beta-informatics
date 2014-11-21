@@ -1,4 +1,12 @@
+	// var spaceData;
+	// $.get( "loadPlusData.php?mode=getCycleEntrance", function( data ) {
+	// 	spaceData=JSON.parse(data);
+	// 	for(var i=0;i<spaceData.length;i++)
+	// 	{
+	// 		console.log(spaceData[i].spaceName);
+	// 	}
 
+	// 	});
 
 
 /* 

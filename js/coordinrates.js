@@ -9,3 +9,6 @@ var recogdist=0.0004;
 
 
 
+function estdist(Array){
+
+}
