@@ -68,34 +68,69 @@
   height: 100%;
   width: 250px;
   float: left;
-  padding: 8px;
+  padding-left: 8px;
+  margin-top: 8px;
   border-right: 10px;
   border-color: #0072bc;
   background-color: #0054a6;
 }
 
-/* line 49, ../sass/roadVisual.scss */
-.bike {
+/* line 50, ../sass/roadVisual.scss */
+g .bike {
+  stroke: green;
+  fill: green;
+  opacity: 0.8;
+}
+/* line 55, ../sass/roadVisual.scss */
+g .bike:hover {
+  stroke: #7CFC00;
+  fill: #7CFC00;
+}
+/* line 61, ../sass/roadVisual.scss */
+g .car {
+  stroke: red;
+  fill: red;
+  opacity: 0.8;
+}
+/* line 66, ../sass/roadVisual.scss */
+g .car:hover {
+  stroke: #FF7F50;
+  fill: #FF7F50;
+}
+/* line 72, ../sass/roadVisual.scss */
+g .walk {
+  stroke: blue;
+  fill: blue;
+  opacity: 0.8;
+}
+/* line 77, ../sass/roadVisual.scss */
+g .walk:hover {
+  stroke: #87CEEB;
+  fill: #87CEEB;
+}
+
+/* line 86, ../sass/roadVisual.scss */
+body {
+  background-color: #454549;
+}
+
+/* line 92, ../sass/roadVisual.scss */
+.bike-conline {
   stroke: green;
   fill: green;
   opacity: 0.8;
 }
 
-/* line 55, ../sass/roadVisual.scss */
-.car {
+/* line 98, ../sass/roadVisual.scss */
+.car-conline {
   stroke: red;
   fill: red;
   opacity: 0.8;
 }
 
-/* line 61, ../sass/roadVisual.scss */
-.walk {
+/* line 104, ../sass/roadVisual.scss */
+.walk-conline {
   stroke: blue;
   fill: blue;
   opacity: 0.8;
-}
-
-/* line 67, ../sass/roadVisual.scss */
-body {
-  background-color: #454549;
 }
