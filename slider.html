@@ -31,6 +31,7 @@ $(document).ready(function() {
 			console.log("here", collection );
 
 			drawOutputMap(collection);
+			drawCommentOutput(collection);
 
 		});
 });
@@ -41,19 +42,20 @@ $(document).ready(function() {
 </head>
 <body> -->
 
-<article class="kontext">
+<article id="outputSlider" class="kontext">
 	<div class="layer one show">
 		<section id="map-sec" class="">
 				<div id="resultMap"></div>
 		</section>
 	</div>
 	<div class="layer two">
+		
 <iframe border="0" id="content" src="newtest.php" frameborder="0" height="100%" width="100%" style="height: 592px;"></iframe>
   <h2>Coming Soon</h2>
 
 	</div>
 	<div class="layer three">
-		<h2>Coming Soon</h2>
+			<div id="commentOutput"></div>
 	</div>
 </article>
 

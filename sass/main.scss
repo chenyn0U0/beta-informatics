@@ -71,7 +71,15 @@ h3 {
 	font-size: calculateRem(28px);
 	line-height: calculateRem(32px);
 	margin-bottom: calculateRem(20px);
-	font-family: "robot-thin"
+	font-family: "robot-thin";
+}
+
+h4 {
+	text-align: left;
+	font-size: calculateRem(24px);
+	line-height: calculateRem(28px);
+	margin-bottom: calculateRem(15px);
+	font-family: "robot-thin";
 }
 
 a {
@@ -328,7 +336,7 @@ footer#footer {
 	position: absolute;
 	z-index: 10;
 	width: 23%;
-	max-width: 300px;
+	max-width: 250px;
 	opacity: 0.5;
 	left: -50px;
 }

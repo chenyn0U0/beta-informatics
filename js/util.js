@@ -233,7 +233,6 @@ function drawOutputMap(featureCollection) {
 		  					})
 		  					.attr("display","none");
 
-
 				 var tooltips = commentGroups.append("rect")
 				 					.attr("width", 100)
 				 					.attr("height", 20)
@@ -286,29 +285,29 @@ function drawOutputMap(featureCollection) {
 		  	.on("mouseout", mouseOutLine)
 		  	.on("click", showCommentBox);
 
-						texts.attr("y", function(d,i) {
-				 						// console.log(d.geometry.coordinates[0]);
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						console.log(bla.y);
+			texts.attr("y", function(d,i) {
+	 						// console.log(d.geometry.coordinates[0]);
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						console.log(bla.y);
 
-				 						return bla.y  + 10;
-				 					})
-				 					.attr("x", function(d,i){
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						return bla.x;
-				 					})
+	 						return bla.y  + 10;
+	 					})
+	 					.attr("x", function(d,i){
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						return bla.x;
+	 					})
 
-						tooltips.attr("y", function(d,i) {
-				 						console.log(d.geometry.coordinates[0]);
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						console.log(bla.y);
+			tooltips.attr("y", function(d,i) {
+	 						console.log(d.geometry.coordinates[0]);
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						console.log(bla.y);
 
-				 						return bla.y;
-				 					})
-				 					.attr("x", function(d,i){
-				 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-				 						return bla.x;
-				 					})
+	 						return bla.y;
+	 					})
+	 					.attr("x", function(d,i){
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						return bla.x;
+	 					})
 
 		}
 
@@ -328,7 +327,8 @@ function drawOutputMap(featureCollection) {
 		$(".commentBox").hide();
 
 		$("#commentBox" + i).show();
-	}
+ 	}
+
 
 	//necessary to map from d3 to leavelet
 	function projectPoint(x, y) {
@@ -338,3 +338,37 @@ function drawOutputMap(featureCollection) {
 
 	
 }
+
+
+/* 
+   Comment Map
+   ========================================================================== */
+
+function drawCommentOutput(featureCollection) {
+	$('#commentOutput').load("commentOutput.html", function(){
+		var features = featureCollection.features;
+
+		for(var i = 0; i < features.length; i++) {
+
+			var comment = features[i].properties.comment;
+			console.log(comment);
+
+			if(comment != "" && comment != null) {
+				//set the classes for filtering
+				var classes = features[i].properties.transport;
+				if(features[i].properties.weekday == 1) {
+					classes = classes + ' ' + "weekday";
+				}
+
+				$('#comment-pane').append("<div class='comment column-4 " + classes + "'><div class='comment-text'><p>" + comment + "</p></div></div>");
+			}
+		}
+	});
+}
+
+function filterTransport(elem, mode) {
+	console.log(mode);
+	$(elem).toggleClass("clicked");
+	$('#comment-pane').toggleClass(mode);
+}
+

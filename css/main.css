@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,46 +24,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, G:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -71,34 +71,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: "chalk";
   src: url("CoalhandLuke.ttf");
 }
+
 @font-face {
   font-family: "robot";
   src: url("roboto/Roboto-Light.ttf");
 }
+
 @font-face {
   font-family: "robot-thin";
   src: url("roboto/Roboto-Thin.ttf");
 }
+
 @font-face {
   font-family: "robot-it";
   src: url("roboto/Roboto-ThinItalic.ttf");
 }
+
 @font-face {
   font-family: "robot-med";
   src: url("roboto/Roboto-Medium.ttf");
 }
+
 @font-face {
   font-family: "robot-bold";
   src: url("roboto/Roboto-Bold.ttf");
 }
+
 @font-face {
   font-family: "robot-boldIt";
   src: url("roboto/Roboto-MediumItalic.ttf");
 }
+
 @font-face {
   font-family: "robotC-bold";
   src: url("roboto/RobotoCondensed-LightItalic.ttf");
 }
+
 /* ------------------------------------------------------ */
 /* ==========================================================================
         BASICS
@@ -113,7 +121,7 @@ html {
 /* line 46, ../sass/main.scss */
 body {
   font-family: "robot", sans-serif;
-  color: #ffffff;
+  color: white;
   font-weight: 200;
   background-color: #454549;
 }
@@ -145,62 +153,71 @@ h3 {
 }
 
 /* line 77, ../sass/main.scss */
+h4 {
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.9375rem;
+  font-family: "robot-thin";
+}
+
+/* line 85, ../sass/main.scss */
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: white;
 }
-/* line 81, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 a:hover {
   color: #454549;
 }
 
-/* line 86, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 p {
   line-height: 1.875rem;
   font-size: 1.25rem;
   font-family: "robot-thin";
 }
 
-/* line 92, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 .width-sizer {
   max-width: 1200px;
   margin: auto;
   display: block;
 }
 
-/* line 98, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 section {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 104, ../sass/main.scss */
+/* line 112, ../sass/main.scss */
 .fullHeightSection {
   height: 80vh;
 }
 
-/* line 108, ../sass/main.scss */
+/* line 116, ../sass/main.scss */
 .section-Padding {
   padding: 4.375rem 100px;
   overflow: hidden;
 }
 
-/* line 114, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .main-btn {
   display: inline-block;
-  background-color: #F750E3;
+  background-color: #f750e3;
   padding: 0.625rem;
   font-family: "robot-thin", san-serif;
   font-size: 1.25rem;
   font-style: italic;
 }
 
-/* line 123, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 .backgroundImage {
   display: none;
 }
 
-/* line 128, ../sass/main.scss */
+/* line 136, ../sass/main.scss */
 .column-left {
   display: inline-block;
   width: calc(50% - 5px);
@@ -208,7 +225,7 @@ section {
   overflow: hidden;
 }
 
-/* line 135, ../sass/main.scss */
+/* line 143, ../sass/main.scss */
 .column-right {
   display: inline-block;
   width: calc(50% - 10px);
@@ -216,13 +233,13 @@ section {
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 145, ../sass/main.scss */
+  /* line 153, ../sass/main.scss */
   html {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 690px) {
-  /* line 154, ../sass/main.scss */
+  /* line 162, ../sass/main.scss */
   p {
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -231,7 +248,7 @@ section {
 /* ==========================================================================
        HEADER
    ========================================================================== */
-/* line 162, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 header {
   position: fixed;
   top: 0;
@@ -239,96 +256,96 @@ header {
   background-color: #0054a6;
   width: 100%;
 }
-/* line 170, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 header .module-padding {
   padding: 10px 100px;
   overflow: hidden;
   text-align: right;
 }
-/* line 176, ../sass/main.scss */
+/* line 184, ../sass/main.scss */
 header .filler {
   height: 45px;
   width: 1px;
   display: inline-block;
 }
 
-/* line 184, ../sass/main.scss */
+/* line 192, ../sass/main.scss */
 #header-logo {
   float: left;
 }
-/* line 187, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 #header-logo img {
   height: 45px;
 }
 
-/* line 192, ../sass/main.scss */
+/* line 200, ../sass/main.scss */
 #header-nav {
   overflow: hidden;
   display: inline-block;
 }
-/* line 196, ../sass/main.scss */
+/* line 204, ../sass/main.scss */
 #header-nav li {
   display: inline-block;
   text-decoration: none;
   margin-left: 5px;
 }
-/* line 201, ../sass/main.scss */
+/* line 209, ../sass/main.scss */
 #header-nav li a {
   text-transform: uppercase;
 }
-/* line 204, ../sass/main.scss */
+/* line 212, ../sass/main.scss */
 #header-nav li a:hover {
-  color: #F750E3;
+  color: #f750e3;
 }
 
-/* line 211, ../sass/main.scss */
+/* line 219, ../sass/main.scss */
 #burger-button {
   display: none;
 }
 
 @media only screen and (max-width: 690px) {
-  /* line 217, ../sass/main.scss */
+  /* line 225, ../sass/main.scss */
   #burger-button {
     display: inline-block;
   }
-  /* line 219, ../sass/main.scss */
+  /* line 227, ../sass/main.scss */
   #burger-button img {
     height: 35px;
   }
 
-  /* line 224, ../sass/main.scss */
+  /* line 232, ../sass/main.scss */
   #header-nav {
     display: none;
     display: block;
     text-align: center;
     width: 100%;
   }
-  /* line 231, ../sass/main.scss */
+  /* line 239, ../sass/main.scss */
   #header-nav li {
     display: block;
     margin-bottom: 0px;
     padding: 10px;
   }
-  /* line 236, ../sass/main.scss */
+  /* line 244, ../sass/main.scss */
   #header-nav li a {
     display: block;
     padding: 10px 0;
   }
 
-  /* line 243, ../sass/main.scss */
+  /* line 251, ../sass/main.scss */
   header {
     font-size: 24px;
   }
-  /* line 247, ../sass/main.scss */
+  /* line 255, ../sass/main.scss */
   header .module-padding {
     padding: 10px 30px;
   }
-  /* line 251, ../sass/main.scss */
+  /* line 259, ../sass/main.scss */
   header .filler {
     display: none;
   }
 
-  /* line 256, ../sass/main.scss */
+  /* line 264, ../sass/main.scss */
   #header-logo img {
     height: 35px;
   }
@@ -336,55 +353,55 @@ header .filler {
 /* ==========================================================================
       FOOTER
    ========================================================================== */
-/* line 266, ../sass/main.scss */
+/* line 274, ../sass/main.scss */
 footer#footer {
   font-size: 1.125rem;
   background-color: #454549;
-  color: #ffffff;
+  color: white;
 }
-/* line 271, ../sass/main.scss */
+/* line 279, ../sass/main.scss */
 footer#footer p {
   margin-bottom: 10px;
 }
-/* line 275, ../sass/main.scss */
+/* line 283, ../sass/main.scss */
 footer#footer h3 {
   text-align: left;
 }
-/* line 279, ../sass/main.scss */
+/* line 287, ../sass/main.scss */
 footer#footer img {
   width: 20%;
   margin-right: 3%;
   vertical-align: top;
 }
-/* line 285, ../sass/main.scss */
+/* line 293, ../sass/main.scss */
 footer#footer img:nth-of-type {
   margin-right: 0;
   float: right;
 }
-/* line 291, ../sass/main.scss */
+/* line 299, ../sass/main.scss */
 footer#footer .footer-logos {
   display: inline-block;
 }
-/* line 293, ../sass/main.scss */
+/* line 301, ../sass/main.scss */
 footer#footer .footer-logos img {
   height: 100px;
   margin-right: 10px;
 }
-/* line 299, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 footer#footer #footer-nav {
   width: 100%;
 }
-/* line 303, ../sass/main.scss */
+/* line 311, ../sass/main.scss */
 footer#footer #footer-nav li {
   display: inline-block;
   margin-right: 10px;
   text-transform: uppercase;
 }
-/* line 312, ../sass/main.scss */
+/* line 320, ../sass/main.scss */
 footer#footer a {
-  color: #ffffff;
+  color: white;
 }
-/* line 315, ../sass/main.scss */
+/* line 323, ../sass/main.scss */
 footer#footer a:hover {
   color: #0072bc;
 }
@@ -392,17 +409,17 @@ footer#footer a:hover {
 /* ==========================================================================
       MAIN CONTENT
    ========================================================================== */
-/* line 327, ../sass/main.scss */
+/* line 335, ../sass/main.scss */
 #footprints {
   position: absolute;
   z-index: 10;
   width: 23%;
-  max-width: 300px;
+  max-width: 250px;
   opacity: 0.5;
   left: -50px;
 }
 
-/* line 336, ../sass/main.scss */
+/* line 344, ../sass/main.scss */
 #ghostbike {
   position: absolute;
   z-index: 10;
@@ -411,13 +428,13 @@ footer#footer a:hover {
   bottom: 0;
 }
 
-/* line 344, ../sass/main.scss */
+/* line 352, ../sass/main.scss */
 #intro-sec {
   margin-top: 5rem;
   position: relative;
   background-color: #0072bc;
 }
-/* line 375, ../sass/main.scss */
+/* line 383, ../sass/main.scss */
 #intro-sec .btn-container {
   text-align: center;
 }
@@ -425,39 +442,39 @@ footer#footer a:hover {
 /* 
    about
    ========================================================================== */
-/* line 398, ../sass/main.scss */
+/* line 406, ../sass/main.scss */
 #about-sec {
   background-color: #454549;
 }
-/* line 405, ../sass/main.scss */
+/* line 413, ../sass/main.scss */
 #about-sec h2 {
   text-align: center;
 }
-/* line 409, ../sass/main.scss */
+/* line 417, ../sass/main.scss */
 #about-sec #pointingArrow {
   margin-top: 0.625rem;
 }
-/* line 413, ../sass/main.scss */
+/* line 421, ../sass/main.scss */
 #about-sec .section-Padding {
   padding-bottom: 0;
 }
-/* line 419, ../sass/main.scss */
+/* line 427, ../sass/main.scss */
 #about-sec .section-Padding a {
-  color: #F750E3;
+  color: #f750e3;
 }
-/* line 422, ../sass/main.scss */
+/* line 430, ../sass/main.scss */
 #about-sec .section-Padding a:hover {
-  color: #ffffff;
+  color: white;
 }
 
 /* 
    map
    ========================================================================== */
-/* line 464, ../sass/main.scss */
+/* line 472, ../sass/main.scss */
 #map-sec {
   position: relative;
 }
-/* line 467, ../sass/main.scss */
+/* line 475, ../sass/main.scss */
 #map-sec .section-Padding {
   padding: 0;
 }
@@ -465,31 +482,31 @@ footer#footer a:hover {
 /* 
    about us
    ========================================================================== */
-/* line 475, ../sass/main.scss */
+/* line 483, ../sass/main.scss */
 #team-sec {
   background-color: #0072bc;
-  color: #ffffff;
+  color: white;
 }
-/* line 479, ../sass/main.scss */
+/* line 487, ../sass/main.scss */
 #team-sec img {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
-/* line 485, ../sass/main.scss */
+/* line 493, ../sass/main.scss */
 #team-sec img.logo {
   width: 80%;
   margin: 0;
 }
-/* line 490, ../sass/main.scss */
+/* line 498, ../sass/main.scss */
 #team-sec a:hover {
-  color: #F750E3;
+  color: #f750e3;
 }
 
 /* ==========================================================================
 		INPUT MAP   
    ========================================================================== */
-/* line 498, ../sass/main.scss */
+/* line 507, ../sass/main.scss */
 #overlay {
   margin: 0;
   padding: 0;
@@ -507,7 +524,7 @@ footer#footer a:hover {
 /* ==========================================================================
 		FOR LOADING   
    ========================================================================== */
-/* line 517, ../sass/main.scss */
+/* line 525, ../sass/main.scss */
 .loading {
   position: fixed;
   width: 100%;
@@ -516,7 +533,7 @@ footer#footer a:hover {
   background-color: black;
 }
 
-/* line 525, ../sass/main.scss */
+/* line 533, ../sass/main.scss */
 .l-wrapper {
   position: absolute;
   width: 480px;
@@ -532,24 +549,24 @@ footer#footer a:hover {
 /* ==========================================================================
 		FOR FAQ  
    ========================================================================== */
-/* line 542, ../sass/main.scss */
+/* line 551, ../sass/main.scss */
 #FAQ {
   left: 2%;
   position: relative;
 }
-/* line 546, ../sass/main.scss */
+/* line 554, ../sass/main.scss */
 #FAQ h2 {
   margin-top: 70px;
   padding: 30px;
 }
-/* line 550, ../sass/main.scss */
+/* line 558, ../sass/main.scss */
 #FAQ p {
   padding: 20px;
   margin: 10px;
   width: 70%;
   font-weight: bold;
 }
-/* line 556, ../sass/main.scss */
+/* line 564, ../sass/main.scss */
 #FAQ #ghostbiketwo {
   position: relative;
   top: -50px;

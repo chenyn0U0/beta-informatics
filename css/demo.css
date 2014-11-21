@@ -30,7 +30,7 @@ body {
 	font-size: 6.25em;
 }
 
-.layer p {
+.layer > p {
 	position: relative;
 	top: 30%;
 	margin: 0;
@@ -45,7 +45,10 @@ body {
 }
 
 .layer.three {
-	background: #64b9d2;
+	background: #ffffff;
+	background-image: url('../img/mapComment.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
 
 .bullets {
