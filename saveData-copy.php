@@ -23,7 +23,7 @@
 
 
 //$con = mysql_connect("localhost","beta-inf","password");
-$con = mysql_connect("localhost","root","root");
+ $con = mysql_connect("localhost","root","root");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());

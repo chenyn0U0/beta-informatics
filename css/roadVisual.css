@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "chalk";
+  src: url("CoalhandLuke.ttf");
+}
+@font-face {
+  font-family: "robot";
+  src: url("roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "robot-thin";
+  src: url("roboto/Roboto-Thin.ttf");
+}
+@font-face {
+  font-family: "robot-it";
+  src: url("roboto/Roboto-ThinItalic.ttf");
+}
+@font-face {
+  font-family: "robot-med";
+  src: url("roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "robot-bold";
+  src: url("roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "robot-boldIt";
+  src: url("roboto/Roboto-MediumItalic.ttf");
+}
+@font-face {
+  font-family: "robotC-bold";
+  src: url("roboto/RobotoCondensed-LightItalic.ttf");
+}
+/* line 3, ../sass/roadVisual.scss */
+.axis path,
+.axis line {
+  fill: #0054a6;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+
+/* line 10, ../sass/roadVisual.scss */
+.axis text {
+  font-family: Arial;
+  font-size: 24px;
+  fill: white;
+}
+
+/* line 18, ../sass/roadVisual.scss */
+.roadname {
+  position: fixed;
+  font-family: Arial;
+  font-size: 20px;
+  color: white;
+  left: 0px;
+  height: 1000px;
+  width: 500px;
+}
+/* line 27, ../sass/roadVisual.scss */
+.roadname text {
+  fill: white;
+}
+
+/* line 32, ../sass/roadVisual.scss */
+#roadcontainer {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 250px;
+  float: left;
+  padding: 8px;
+  border-right: 10px;
+  border-color: #0072bc;
+  background-color: #0054a6;
+}
+
+/* line 49, ../sass/roadVisual.scss */
+.bike {
+  stroke: green;
+  fill: green;
+  opacity: 0.8;
+}
+
+/* line 55, ../sass/roadVisual.scss */
+.car {
+  stroke: red;
+  fill: red;
+  opacity: 0.8;
+}
+
+/* line 61, ../sass/roadVisual.scss */
+.walk {
+  stroke: blue;
+  fill: blue;
+  opacity: 0.8;
+}
+
+/* line 67, ../sass/roadVisual.scss */
+body {
+  background-color: #454549;
+}
