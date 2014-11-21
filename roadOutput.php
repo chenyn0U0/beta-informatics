@@ -22,11 +22,11 @@
 
 
 var positionallx=20;
-var positionally=50;
+var positionally=100;
 
 var thewidth=15000;
 var theheight=350;
-var thickofrect=5;
+var thickofrect=10;
 var spacebetweenline=1;
 
 var roadboxwidth=250;
@@ -62,43 +62,6 @@ function autoscroll() {
 var collection;
 var jsonData;
 var samepointvalue=0.0003;
-
-// 	$(document).ready(function() {
-// 		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
-// 		//use underscore.js for transformation?
-// 		jsonData = JSON.parse(data);
-// 		collection = createGeoJson(jsonData);
-
-// 	var roadVisual= d3.select("body")
-// 			.append("svg")
-// 			.attr("width","100%")
-// 			.attr("height","100%");
-
-// 	var ascale=d3.scale.linear().domain([100, 500]).range([10, 350]);
-
-// 	roadVisual.selectAll("rect")
-// 		.data(collection.features)
-// 		.enter()
-// 		.append("rect")
-// 		.attr("x",0)
-// 		.attr("y",function(d,i){ return i*100;})
-// 		.attr("width",function(d){return Number(d.properties.distance)/10;})
-// 		.attr("height",50)
-// 		.attr("fill",function(d){if(d.properties.gender=="Male") return "#0072bc";else return "#F750E3";});
-
-// 	roadVisual.selectAll("text")
-// 		.data(collection.features)
-// 		.enter()
-// 		.append("text")
-// 		.attr("x",20)
-// 		.attr("y",function(d,i){ return i*100+30;})
-// 		.text(function(d){ return d.properties.comment ;})
-// 		.attr("fill","black")
-// 		.attr("font-size","9px")
-// 		.attr("font-family","Arial");
-// 		});
-// });
-
 
 
 
