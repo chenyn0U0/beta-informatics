@@ -573,3 +573,17 @@ footer#footer a:hover {
   left: 70%;
   width: 200px;
 }
+
+/* ==========================================================================
+   OUTPUT MAP
+   ========================================================================== */
+/* line 576, ../sass/main.scss */
+#outputSlider {
+  height: 700px;
+}
+@media only screen and (max-width: 800px) {
+  /* line 576, ../sass/main.scss */
+  #outputSlider {
+    height: 500px;
+  }
+}

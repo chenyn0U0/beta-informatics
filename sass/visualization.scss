@@ -1,18 +1,57 @@
 @import "variables";
 
+$header-height: 80px;
 
+
+/* ==========================================================================
+   HEADING
+   ========================================================================== */
+#sliderHeader {
+    background: none repeat scroll 0 0;
+    background-color: transparentize($dark, 0.4);
+    height: $header-height;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    .section-Padding {
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    }
+
+    .sliderHeader-content {
+    	display: none;
+
+    	&.show {
+    		display: block;
+    	}
+    }
+}
+
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
 #outputSlider {
 
 
-
+/* 
+   MAP WITH PATHS
+   ========================================================================== */
 #resultMap {
 	width: 100%;
-	height: 600px;
+	height: 700px;
+
+	//reposition the zoom things, so the header has some space
+	.leaflet-top .leaflet-control {
+	    margin-top: $header-height + 10px;
+	}
 
 	.journey {
 		fill: none;
 		stroke-width: 3;
-		stroke-opacity: 0.3;
+		stroke-opacity: 0.5;
 	}
 
 	.bike {
@@ -38,10 +77,12 @@
 
 #commentOutput {
 	color: $dark;
+	position: relative;
 }
 
 .gridWrapper {
 	max-width: 2000px;
+	padding-top: $header-height;
 }
 
 
@@ -57,27 +98,47 @@
 	height: 100%;
 	overflow: scroll;
 	width: calc(100% - 220px);
+	// position: relative;
+
+
+	#overlayComment {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-color: transparentize($dark, 0.3);
+		display: none;
+	}
 
 	.comment {
 		// border: solid 2px white;
 
 		margin-bottom: 10px;
-		height: 200px;
+		// height: 110px;
 
 		.comment-text{
-			height: 100%;
-			overflow: scroll;
+			// height: 100%;
+			overflow: hidden;
 			background-color: transparentize($dark,0.3);
 			color: $white;
+			text-align: left;
+			padding: 30px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			> p {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
 		}
 
-		.overlay {
-			display: none;
-			height: inherit;
-		}
 
 		&:hover {
-			background-color: transparentize(white,0.5);
+			cursor: pointer;
+
+			.comment-text {
+				background-color: transparentize($dark,0.1);
+			}
 		}
 	}
 

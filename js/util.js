@@ -351,7 +351,7 @@ function drawCommentOutput(featureCollection) {
 		for(var i = 0; i < features.length; i++) {
 
 			var comment = features[i].properties.comment;
-			console.log(comment);
+			// console.log(comment);
 
 			if(comment != "" && comment != null) {
 				//set the classes for filtering
@@ -360,7 +360,7 @@ function drawCommentOutput(featureCollection) {
 					classes = classes + ' ' + "weekday";
 				}
 
-				$('#comment-pane').append("<div class='comment column-4 " + classes + "'><div class='comment-text'><p>" + comment + "</p></div></div>");
+				$('#comment-pane').append("<div class='comment column-4 " + classes + "' onclick='showComment();'><div class='comment-text'><p>" + comment + "</p></div></div>");
 			}
 		}
 	});
@@ -370,5 +370,13 @@ function filterTransport(elem, mode) {
 	console.log(mode);
 	$(elem).toggleClass("clicked");
 	$('#comment-pane').toggleClass(mode);
+}
+
+function showComment(){
+
+	// console.log('showComment was called');
+	// $('#overlayComment').show();
+	// var screenHeight = $(document).height();
+ //        jQuery("#overlay").css("visibility", "visible").height(screenHeight).animate({ opacity: '0.8' }, "slow");
 }
 
