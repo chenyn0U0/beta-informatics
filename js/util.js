@@ -220,7 +220,13 @@ var collection = jQuery.extend(true, {}, featureCollection);
 
 resetall();
 var svg;
+var anothersvg;
 function resetall(){
+
+	if(anothersvg)anothersvg.remove();
+	anothersvg = d3.select(map.getPanes().overlayPane).append("svg");
+
+
 	if(svg)svg.remove();
     svg = d3.select(map.getPanes().overlayPane).append("svg"),
 		g = svg.append("g").attr("class", "leaflet-zoom-hide");
@@ -236,7 +242,8 @@ function resetall(){
 		    .data(collection.features)
 		    .enter().append("path");
 
-		  var commentGroups = svg.selectAll("g")
+		
+		var commentGroups = anothersvg.selectAll("g")
 		  					.data(collection.features)
 		  					.enter()
 		  					.append("g")
@@ -247,7 +254,7 @@ function resetall(){
 		  					.attr("display","none");
 
 				 var tooltips = commentGroups.append("rect")
-				 					.attr("width", function(d){return d.properties.comment.length*10})
+				 					.attr("width", function(d){return d.properties.comment.length*8})
 				 					.attr("height", tooltipsheight)
 				 					.attr("fill", "#000000")
 				 					.attr("opacity",0.7)
@@ -260,7 +267,8 @@ function resetall(){
 				 				.attr("fill", "#ffffff")
 				 					.text(function(d){
 				 						return d.properties.comment;
-				 					});
+				 					})
+				 				.style("text-anchor", "middle");
 
 
 
@@ -279,6 +287,14 @@ function resetall(){
 		    .style("top", topLeft[1] + "px");
 			d3.select("body").selectAll("g").attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
+		    anothersvg.attr("width", 1000)
+		    .attr("height",1000)
+		    .style("left", topLeft[0] + "px")
+		    .style("top", topLeft[1] + "px");
+
+
+
+
 
 
 		  	features.attr("d", path)
@@ -304,11 +320,11 @@ function resetall(){
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
 	 						console.log(bla.y);
 
-	 						return bla.y  + 10;
+	 						return bla.y+3+(tooltipsheight/2);
 	 					})
 	 					.attr("x", function(d,i){
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-	 						return bla.x+8;
+	 						return bla.x+(d.properties.comment.length*8/2);
 	 					})
 
 			tooltips.attr("y", function(d,i) {
@@ -331,13 +347,14 @@ function resetall(){
 	function mouseOverLine(d,i) {
 		d3.select(this)
 			.transition().duration(100).style('stroke-width',6);
+
+		$(".commentBox").hide();
 		$("#commentBox" + i).show();
 	}
 
 	function mouseOutLine(d,i) {
 		d3.select(this)
 			.transition().duration(100).style('stroke-width', 3);
-		$(".commentBox").hide();
 	}
 
 }
