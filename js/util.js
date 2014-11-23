@@ -287,8 +287,8 @@ function resetall(){
 		    .style("top", topLeft[1] + "px");
 			d3.select("body").selectAll("g").attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
-		    anothersvg.attr("width", 1000)
-		    .attr("height",1000)
+		    anothersvg.attr("width", 3000)
+		    .attr("height",3000)
 		    .style("left", topLeft[0] + "px")
 		    .style("top", topLeft[1] + "px");
 
@@ -317,25 +317,25 @@ function resetall(){
 
 			texts.attr("y", function(d,i) {
 	 						// console.log(d.geometry.coordinates[0]);
-	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][1],d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][0]));
 	 						console.log(bla.y);
 
 	 						return bla.y+3+(tooltipsheight/2);
 	 					})
 	 					.attr("x", function(d,i){
-	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][1],d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][0]));
 	 						return bla.x+(d.properties.comment.length*8/2);
 	 					})
 
 			tooltips.attr("y", function(d,i) {
 	 						console.log(d.geometry.coordinates[0]);
-	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][1],d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][0]));
 	 						console.log(bla.y);
 
 	 						return bla.y;
 	 					})
 	 					.attr("x", function(d,i){
-	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
+	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][1],d.geometry.coordinates[Math.floor(d.geometry.coordinates.length/2)][0]));
 	 						return bla.x;
 	 					})
 
