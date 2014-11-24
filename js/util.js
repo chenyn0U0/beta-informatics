@@ -202,15 +202,33 @@ function createGeoJson(data) {
 *
 */
 function drawOutputMap(featureCollection) {
+	var filterdistance=500;
+	var tooltipsheight=20;
 
-	var collection = featureCollection;
+	var allCollection = featureCollection;
+
+var collection = jQuery.extend(true, {}, featureCollection); 
+
 	console.log(featureCollection);
 
     //second way to do it
     var map = new L.Map("resultMap", {scrollWheelZoom: false, center: [55.960, -3.210], zoom: 14})
 	.addLayer(new L.TileLayer("http://{s}.tiles.mapbox.com/v3/lucas-g.jj533h5a/{z}/{x}/{y}.png"));
 
-    var svg = d3.select(map.getPanes().overlayPane).append("svg"),
+
+
+
+resetall();
+var svg;
+var anothersvg;
+function resetall(){
+
+	if(anothersvg)anothersvg.remove();
+	anothersvg = d3.select(map.getPanes().overlayPane).append("svg");
+
+
+	if(svg)svg.remove();
+    svg = d3.select(map.getPanes().overlayPane).append("svg"),
 		g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
 	//if we want to load data from json:
@@ -219,11 +237,13 @@ function drawOutputMap(featureCollection) {
 	  	var transform = d3.geo.transform({point: projectPoint}),
     	path = d3.geo.path().projection(transform);
 
+
     	var features = g.selectAll("path")
 		    .data(collection.features)
-		  .enter().append("path");
+		    .enter().append("path");
 
-		  var commentGroups = svg.selectAll("g")
+		
+		var commentGroups = anothersvg.selectAll("g")
 		  					.data(collection.features)
 		  					.enter()
 		  					.append("g")
@@ -234,8 +254,8 @@ function drawOutputMap(featureCollection) {
 		  					.attr("display","none");
 
 				 var tooltips = commentGroups.append("rect")
-				 					.attr("width", 100)
-				 					.attr("height", 20)
+				 					.attr("width", function(d){return d.properties.comment.length*8})
+				 					.attr("height", tooltipsheight)
 				 					.attr("fill", "#000000")
 				 					.attr("opacity",0.7)
 				 					.text(function(d){
@@ -247,7 +267,8 @@ function drawOutputMap(featureCollection) {
 				 				.attr("fill", "#ffffff")
 				 					.text(function(d){
 				 						return d.properties.comment;
-				 					});
+				 					})
+				 				.style("text-anchor", "middle");
 
 
 
@@ -266,6 +287,16 @@ function drawOutputMap(featureCollection) {
 		    .style("top", topLeft[1] + "px");
 			d3.select("body").selectAll("g").attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
+		    anothersvg.attr("width", 1000)
+		    .attr("height",1000)
+		    .style("left", topLeft[0] + "px")
+		    .style("top", topLeft[1] + "px");
+
+
+
+
+
+
 		  	features.attr("d", path)
 		  	.attr("class", function(d) { 
 		  		if(d.properties.transport == "bike") {
@@ -282,19 +313,18 @@ function drawOutputMap(featureCollection) {
 		  		}
 		  	})
 		  	.on("mouseover", mouseOverLine)
-		  	.on("mouseout", mouseOutLine)
-		  	.on("click", showCommentBox);
+		  	.on("mouseout", mouseOutLine);
 
 			texts.attr("y", function(d,i) {
 	 						// console.log(d.geometry.coordinates[0]);
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
 	 						console.log(bla.y);
 
-	 						return bla.y  + 10;
+	 						return bla.y+3+(tooltipsheight/2);
 	 					})
 	 					.attr("x", function(d,i){
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-	 						return bla.x;
+	 						return bla.x+(d.properties.comment.length*8/2);
 	 					})
 
 			tooltips.attr("y", function(d,i) {
@@ -309,25 +339,43 @@ function drawOutputMap(featureCollection) {
 	 						return bla.x;
 	 					})
 
+
 		}
 
 	// });
 
-	function mouseOverLine(d) {
+	function mouseOverLine(d,i) {
 		d3.select(this)
 			.transition().duration(100).style('stroke-width',6);
+
+		$(".commentBox").hide();
+		$("#commentBox" + i).show();
 	}
 
-	function mouseOutLine(d) {
+	function mouseOutLine(d,i) {
 		d3.select(this)
 			.transition().duration(100).style('stroke-width', 3);
 	}
 
-	function showCommentBox(d, i) {
-		$(".commentBox").hide();
+}
 
-		$("#commentBox" + i).show();
- 	}
+	map.on('click', function (ev) {
+        var pointclicked= ev.latlng;
+        collection.features.splice(0,collection.features.length);
+        for(var i=0;i<allCollection.features.length;i++)
+        {
+        	var coordinlength=allCollection.features[i].geometry.coordinates.length-1;
+        	var epointinjson= new L.LatLng(allCollection.features[i].geometry.coordinates[coordinlength][1],allCollection.features[i].geometry.coordinates[coordinlength][0]);//end point
+        	var spointinjson= new L.LatLng(allCollection.features[i].geometry.coordinates[0][1],allCollection.features[i].geometry.coordinates[0][0]);//start point
+        	if(Number((spointinjson.distanceTo(pointclicked).toFixed(0)))<filterdistance||Number((epointinjson.distanceTo(pointclicked).toFixed(0)))<filterdistance){
+        		collection.features[collection.features.length]=allCollection.features[i];
+        	}
+        }
+        console.log(collection);
+        resetall();
+    } );
+
+
 
 
 	//necessary to map from d3 to leavelet

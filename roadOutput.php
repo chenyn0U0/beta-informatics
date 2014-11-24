@@ -15,52 +15,53 @@
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> <!-- needs to be before mapbox! -->
 
+
+<script>  
+
+
+
+
+var positionallx=20;
+var positionally=100;
+
+var thewidth=15000;
+var theheight=350;
+var thickofrect=10;
+var spacebetweenline=1;
+
+var roadboxwidth=250;
+var showstarttime=8.5;
+
+var curve=1;
+var junctioncircler=6;
+			
+
+
+<!--  
+locate = 0;  
+function autoscroll() {
+	if (locate !=400 ) {
+		locate++;scroll(thewidth/24*showstarttime-roadboxwidth,0);  
+		clearTimeout(timer);  
+		var timer = setTimeout("autoscroll()",3);timer;
+	}  
+}  
+-->  
+</script>   
+
+
+
+
 </head>
-<body style="height:100%">
+<body style="height:100%" onLoad="autoscroll()">
 	<div id="roadcontainer"></div>
+	<!-- <div id="timeaxiscontainer"></div> -->
 
 <script>
 
 var collection;
 var jsonData;
 var samepointvalue=0.0003;
-
-// 	$(document).ready(function() {
-// 		$.get( "loadData.php?mode=allRows&id=45", function( data ) {
-// 		//use underscore.js for transformation?
-// 		jsonData = JSON.parse(data);
-// 		collection = createGeoJson(jsonData);
-
-// 	var roadVisual= d3.select("body")
-// 			.append("svg")
-// 			.attr("width","100%")
-// 			.attr("height","100%");
-
-// 	var ascale=d3.scale.linear().domain([100, 500]).range([10, 350]);
-
-// 	roadVisual.selectAll("rect")
-// 		.data(collection.features)
-// 		.enter()
-// 		.append("rect")
-// 		.attr("x",0)
-// 		.attr("y",function(d,i){ return i*100;})
-// 		.attr("width",function(d){return Number(d.properties.distance)/10;})
-// 		.attr("height",50)
-// 		.attr("fill",function(d){if(d.properties.gender=="Male") return "#0072bc";else return "#F750E3";});
-
-// 	roadVisual.selectAll("text")
-// 		.data(collection.features)
-// 		.enter()
-// 		.append("text")
-// 		.attr("x",20)
-// 		.attr("y",function(d,i){ return i*100+30;})
-// 		.text(function(d){ return d.properties.comment ;})
-// 		.attr("fill","black")
-// 		.attr("font-size","9px")
-// 		.attr("font-family","Arial");
-// 		});
-// });
-
 
 
 
@@ -95,20 +96,7 @@ $.get( "loadData.php?mode=allRows&id=45", function( data ) {
 console.log(collection);
 console.log(roadData);
 
-//########################### visualization ###################################
-
-var positionallx=20;
-var positionally=80;
-
-var thewidth=15000;
-var theheight=400;
-var thickofrect=5;
-var spacebetweenline=1;
-
-var roadboxwidth=250;
-
-var curve=1;
-			
+//####################################################################################################### visualization #########################################################################################################3############
 
 //change by us variable↑
 
@@ -157,13 +145,19 @@ function getroadposition(astring){
 
 	eachroutepart.append("rect")
 			.attr("x",function(d,i){return timescale(d[3][0]+(d[3][1]/60));})
-			.attr("y",function(d,i){return getroadposition(d[0][0]);})
+			.attr("y",function(d,i){return getroadposition(d[0][0])+4;})
 			.attr("width",function(d,i){return timescale((d[6][0]+(d[6][1]/60))-(d[3][0]+(d[3][1]/60)));})
 			.attr("height",thickofrect)
 			.attr("class",function(d,i){
 				return collection.features[d[8]].properties.transport;
 			})
-			.attr("style","opicity:0.6");
+			.attr("style","opicity:0.6")
+			.on("mouseover", mouseOverRoutePart)
+		  	.on("mouseout", mouseOutRoutePart)
+		  	.on("click", showInformationOfRoutePart)
+
+
+
 
 
 　　//Create X axis
@@ -201,31 +195,84 @@ function getroadposition(astring){
 	
 
 
-			for(var heng=0;heng<collection.features.length;heng++){
-				var translate=0;
-				for(var i=0;i<collection.features[heng].properties.road.length;i++){
-					translate=(heng*spacebetweenline);
-					if(i!=0){
-						var x1=timescale(collection.features[heng].properties.road[i-1][6][0]+(collection.features[heng].properties.road[i-1][6][1]/60))
-						var y1=getroadposition(collection.features[heng].properties.road[i-1][0][0]);
-						var x2=timescale(collection.features[heng].properties.road[i][3][0]+(collection.features[heng].properties.road[i][3][1]/60));
-						var y2=getroadposition(collection.features[heng].properties.road[i][0][0]);
-						var connectionline=d3.svg.diagonal().source({x:x1+positionallx-curve,y:positionally+y1+translate+(thickofrect/2)}).target({x:x2+positionallx+curve,y:positionally+y2+translate+(thickofrect/2)});
-						connection.append("g")
-							.append("path")
-							.attr("fill","none")
-							.attr("stroke-width",curve*2)
-							.attr("class",collection.features[heng].properties.transport)
-							.attr("d",connectionline)
-					}
-				}
+	for(var heng=0;heng<collection.features.length;heng++){
+		var translate=0;
+		for(var i=0;i<collection.features[heng].properties.road.length;i++){
+			translate=(heng*spacebetweenline);
+			if(i!=0){
+				var x1=timescale(collection.features[heng].properties.road[i-1][6][0]+(collection.features[heng].properties.road[i-1][6][1]/60))
+				var y1=getroadposition(collection.features[heng].properties.road[i-1][0][0]);
+				var x2=timescale(collection.features[heng].properties.road[i][3][0]+(collection.features[heng].properties.road[i][3][1]/60));
+				var y2=getroadposition(collection.features[heng].properties.road[i][0][0]);
+				var connectionline=d3.svg.diagonal().source({x:x1+positionallx-curve,y:positionally+y1+translate+(thickofrect/2)}).target({x:x2+positionallx+curve,y:positionally+y2+translate+(thickofrect/2)});
+				connection.append("g")
+					.append("path")
+					.attr("fill","none")
+					.attr("stroke-width",curve*2)
+					.attr("class",collection.features[heng].properties.transport+"-conline")
+					.attr("d",connectionline)
 			}
-
-	function returncolorfromtransport(trans){
-		if (trans=="car") {return "blue"};
-		if (trans=="bike") {return "red"};
-		if (trans=="walk") {return "green"};
+		}
 	}
+
+
+
+	eachroutepart.append("text")//Road name and distance
+		  	.text(function(d){return d[0][0]+" - "+d[7]+"m";})
+   			.attr("x",function(d,i){return timescale(d[3][0]+(d[3][1]/60))+(timescale((d[6][0]+(d[6][1]/60))-(d[3][0]+(d[3][1]/60)))/2);})
+			.attr("y",function(d,i){return getroadposition(d[0][0])-3;})
+			.attr("font-family","Arial")
+			.attr("fill","white")
+			.attr("font-size","12")
+			.attr("visibility","hidden")
+			.style("text-anchor", "middle");
+
+	eachroutepart.append("text")//starttime
+	  	.text(function(d){
+			var time=""+(d[3][0]+Math.floor(d[3][1]/60))+":";
+			if((d[3][1]%60)<10) time+="0"+Math.floor(d[3][1]%60);
+			else time+=Math.floor(d[3][1]%60);
+			return time;})
+		.attr("x",function(d,i){return timescale(d[3][0]+(d[3][1]/60))-20;})
+		.attr("y",function(d,i){return getroadposition(d[0][0])+4+thickofrect;})
+		.attr("font-family","Arial")
+		.attr("fill","white")
+		.attr("font-size","9")
+		.attr("visibility","hidden")
+		.style("text-anchor", "middle");
+
+
+	eachroutepart.append("text")//endtime
+	  	.text(function(d){
+			var time=""+(d[6][0]+Math.floor(d[6][1]/60))+":";
+			if((d[6][1]%60)<10) time+="0"+Math.floor(d[6][1]%60);
+			else time+=Math.floor(d[6][1]%60);
+			return time;})
+		.attr("x",function(d,i){return timescale(d[6][0]+(d[6][1]/60))+20;})
+		.attr("y",function(d,i){return getroadposition(d[0][0])+4+thickofrect;})
+		.attr("font-family","Arial")
+		.attr("fill","white")
+		.attr("font-size","9")
+		.attr("visibility","hidden")
+		.style("text-anchor", "middle");
+
+
+
+
+	function mouseOverRoutePart(d){
+		d3.select(this.parentNode).selectAll("text")
+			.transition().duration(100).attr("visibility", "visible");
+	}
+	function mouseOutRoutePart(d){
+		d3.select(this.parentNode).selectAll("text")
+			.transition().duration(100).attr("visibility", "hidden");
+	}
+	function showInformationOfRoutePart(d,i){
+
+
+		
+	}
+
 
 
 	});
@@ -256,7 +303,7 @@ function getroadposition(astring){
 
 		});
 
-//########################### visualization ###################################
+//##################################################################################### visualization #############################################################################################
 
 
 

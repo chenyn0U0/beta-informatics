@@ -33,14 +33,14 @@ mysql_select_db("beta-informatics", $con);
 
 
 
-// $sql="INSERT INTO journey (travelType, startTime, endTime, weekday, journeyType, age, gender, insertTime, userIP, distance, route, startPoint, finishPoint, comment)
-// VALUES
-// ('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance','$route','$startPoint','$finishPoint','$comment')";
-
-
-$sql="INSERT INTO roads (roadName,coordinates,distance)
+$sql="INSERT INTO journey (travelType, startTime, endTime, weekday, journeyType, age, gender, insertTime, userIP, distance, route, startPoint, finishPoint, comment)
 VALUES
-('$comment','$route','$distance')";
+('$travelType','$startTime','$endTime','$weekday','$journeyType','$age','$gender','$insertTime','$ip','$distance','$route','$startPoint','$finishPoint','$comment')";
+
+
+// $sql="INSERT INTO roads (roadName,coordinates,distance)
+// VALUES
+// ('$comment','$route','$distance')";
 
 
 

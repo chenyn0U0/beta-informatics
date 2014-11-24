@@ -9,7 +9,7 @@
  
 .axis text {
     font-family: Arial;
-    font-size: 24px;
+    font-size: 40px;
     fill:white;   
 }
 
@@ -36,7 +36,8 @@
 	height: 100%;
 	width:250px;
 	float: left;
-	padding: 8px;
+	padding-left: 8px;
+	margin-top: 8px; 
 	
 	border-right: 10px;
 	border-color: $lightBlue;
@@ -45,25 +46,63 @@
 
 
 
-
+g{
 .bike {
 	stroke: green;
 	fill:green;
 	opacity: 0.8;
+
+	&:hover{
+		stroke:#7CFC00;
+		fill:#7CFC00;
+	}
 	}
 
 .car {
 	stroke: red;
 	fill:red;
 	opacity: 0.8;
+
+	&:hover{
+		stroke:#FF7F50;
+		fill:#FF7F50;
+	}
 }
 
 .walk {
 	stroke: blue;
 	fill:blue;
 	opacity: 0.8;
+
+	&:hover{
+		stroke:#87CEEB;
+		fill:#87CEEB;
+	}
 }
+}
+
+
 
 body{
 	background-color: $darkGrey;
+}
+
+
+
+.bike-conline {
+	stroke: green;
+	fill:green;
+	opacity: 0.8;
+	}
+
+.car-conline {
+	stroke: red;
+	fill:red;
+	opacity: 0.8;
+}
+
+.walk-conline {
+	stroke: blue;
+	fill:blue;
+	opacity: 0.8;
 }
