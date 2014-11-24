@@ -176,11 +176,11 @@
   display: block;
 }
 /* line 158, ../sass/visualization.scss */
-#outputSlider #comment-pane.car .comment.walk {
+#outputSlider #comment-pane.car .comment.car {
   display: block;
 }
 /* line 164, ../sass/visualization.scss */
-#outputSlider #comment-pane.walk .comment.car {
+#outputSlider #comment-pane.walk .comment.walk {
   display: block;
 }
 @media only screen and (max-width: 800px) {
