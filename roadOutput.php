@@ -25,12 +25,12 @@ var positionallx=20;
 var positionally=100;
 
 var thewidth=15000;
-var theheight=350;
+var theheight=450;
 var thickofrect=10;
 var spacebetweenline=1;
 
-var roadboxwidth=250;
 var showstarttime=8.5;
+var roadboxwidth=250;
 
 var curve=1;
 var junctioncircler=6;
@@ -175,7 +175,7 @@ function getroadposition(astring){
 
    d3.select("#roadcontainer").append("svg")
    		.attr("width",roadboxwidth)
-   		.attr("height",theheight+positionally)
+   		.attr("height",theheight+positionally+500)
    		.append("g")
 		.attr("class","roadname")
    		.selectAll("text")
@@ -184,7 +184,7 @@ function getroadposition(astring){
    		.append("text")
    		.text(function(d){return d;})
    		.attr("x",positionallx)
-   		.attr("y",function(d){return positionally+getroadposition(d);})
+   		.attr("y",function(d){return positionally+getroadposition(d)+20;})
 
 
 
@@ -373,9 +373,9 @@ function getroadprop(aroute,i){//generate the road property
 			roadinfo[0][6]=[Number(collection.features[i].properties.endTime.split(":")[0]),Number(collection.features[i].properties.endTime.split(":")[1])];
 			
 			
-				var p1= new L.LatLng(collection.features[i].geometry.coordinates[0][0],collection.features[i].geometry.coordinates[0][1]);
-				var p2= new L.LatLng(collection.features[i].geometry.coordinates[collection.features[i].geometry.coordinates.length-1][0],collection.features[i].geometry.coordinates[collection.features[i].geometry.coordinates.length-1][1]);
-				roadinfo[0][7] =  Number((p1.distanceTo(p2)).toFixed(0));
+				// var p1= new L.LatLng(collection.features[i].geometry.coordinates[0][0],collection.features[i].geometry.coordinates[0][1]);
+				// var p2= new L.LatLng(collection.features[i].geometry.coordinates[collection.features[i].geometry.coordinates.length-1][0],collection.features[i].geometry.coordinates[collection.features[i].geometry.coordinates.length-1][1]);
+				roadinfo[0][7] =  collection.features[i].properties.distance;
 				roadinfo[0][8]=i;
 
 		}
