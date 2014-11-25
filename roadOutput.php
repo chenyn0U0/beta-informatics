@@ -27,7 +27,7 @@ var positionally=100;
 var thewidth=15000;
 var theheight=450;
 var thickofrect=10;
-var spacebetweenline=1;
+var spacebetweenline=0.3;
 
 var showstarttime=8.5;
 var roadboxwidth=250;
