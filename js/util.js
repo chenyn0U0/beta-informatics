@@ -8,6 +8,8 @@
 
 	// 	});
 
+	// ^(.*)$  search for all
+
 
 /* 
    STUFF
@@ -196,7 +198,6 @@ function createGeoJson(data) {
 
 
 
-
 /*
 *	Draws the map using Leaflet and d3js. This needs a featureCollection as input!
 *
@@ -207,7 +208,7 @@ function drawOutputMap(featureCollection) {
 
 	var allCollection = featureCollection;
 
-var collection = jQuery.extend(true, {}, featureCollection); 
+	var collection = jQuery.extend(true, {}, featureCollection); 
 
 	console.log(featureCollection);
 
@@ -218,10 +219,13 @@ var collection = jQuery.extend(true, {}, featureCollection);
 
 
 
-resetall();
-var svg;
-var anothersvg;
-function resetall(){
+	resetall();
+	var svg;
+	var anothersvg;
+	var circle;
+
+//
+function resetall(circlePoint){
 
 	if(anothersvg)anothersvg.remove();
 	anothersvg = d3.select(map.getPanes().overlayPane).append("svg");
@@ -242,8 +246,11 @@ function resetall(){
 		    .data(collection.features)
 		    .enter().append("path");
 
+		var notPaths = anothersvg.append("g")
+			.attr('id','noPaths');
+
 		
-		var commentGroups = anothersvg.selectAll("g")
+		var commentGroups = notPaths.selectAll("g")
 		  					.data(collection.features)
 		  					.enter()
 		  					.append("g")
@@ -270,7 +277,17 @@ function resetall(){
 				 					})
 				 				.style("text-anchor", "middle");
 
-
+		//paint a circle of the selected area, if mouse was clicked
+		if (circlePoint){
+			console.log('circle is set');
+			var c = anothersvg.append('circle')
+					.attr('class','juhuu')
+					.attr('r','60')
+					.attr('cy', '50')
+					.attr('cx','50')
+					.attr('fill', 'green')
+					.attr('opacity','0.5');
+		}
 
 		map.on("viewreset", reset);
 		reset();
@@ -287,14 +304,19 @@ function resetall(){
 		    .style("top", topLeft[1] + "px");
 			d3.select("body").selectAll("g").attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
 		  	
-		    anothersvg.attr("width", 1000)
-		    .attr("height",1000)
-		    .style("left", topLeft[0] + "px")
-		    .style("top", topLeft[1] + "px");
 
+			var w = $('#resultMap').width();
+			var h = $('#resultMap').height();
+			console.log('width:' + w);
 
+			notPaths
+				.attr('transform', 'translate(' + -topLeft[0] + "," + -topLeft[1] + ')');
 
-
+		    anothersvg
+			    .attr("width", w)
+			    .attr("height",h);
+			    // .style("left", topLeft[0] + "px")
+			    // .style("top", topLeft[1] + "px");
 
 
 		  	features.attr("d", path)
@@ -318,19 +340,20 @@ function resetall(){
 			texts.attr("y", function(d,i) {
 	 						// console.log(d.geometry.coordinates[0]);
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-	 						console.log(bla.y);
+	 						// console.log(bla.y);
 
 	 						return bla.y+3+(tooltipsheight/2);
 	 					})
 	 					.attr("x", function(d,i){
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
 	 						return bla.x+(d.properties.comment.length*8/2);
+	 						return bla.x;
 	 					})
 
 			tooltips.attr("y", function(d,i) {
-	 						console.log(d.geometry.coordinates[0]);
+	 						// console.log(d.geometry.coordinates[0]);
 	 						var bla = map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[0][1],d.geometry.coordinates[0][0]));
-	 						console.log(bla.y);
+	 						// console.log(bla.y);
 
 	 						return bla.y;
 	 					})
@@ -344,23 +367,26 @@ function resetall(){
 
 	// });
 
-	function mouseOverLine(d,i) {
-		d3.select(this)
-			.transition().duration(100).style('stroke-width',6);
+		function mouseOverLine(d,i) {
+			d3.select(this)
+				.transition().duration(100).style('stroke-width',6);
 
-		$(".commentBox").hide();
-		$("#commentBox" + i).show();
+			$(".commentBox").hide();
+			$("#commentBox" + i).show();
+		}
+
+		function mouseOutLine(d,i) {
+			d3.select(this)
+				.transition().duration(100).style('stroke-width', 3);
+		}
+
 	}
-
-	function mouseOutLine(d,i) {
-		d3.select(this)
-			.transition().duration(100).style('stroke-width', 3);
-	}
-
-}
 
 	map.on('click', function (ev) {
         var pointclicked= ev.latlng;
+
+        console.log(pointclicked);
+
         collection.features.splice(0,collection.features.length);
         for(var i=0;i<allCollection.features.length;i++)
         {
@@ -372,10 +398,11 @@ function resetall(){
         	}
         }
         console.log(collection);
-        resetall();
+        circle = true;
+        resetall(pointclicked);
+
+
     } );
-
-
 
 
 	//necessary to map from d3 to leavelet
@@ -385,7 +412,7 @@ function resetall(){
 	}
 
 	
-}
+} //end draw map
 
 
 /* 
